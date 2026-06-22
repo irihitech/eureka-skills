@@ -37,6 +37,8 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 ### Claude Code / Copilot CLI
 
+Use the GitHub repository path as marketplace source (`irihitech/eureka-skills`), then install plugins from the `irihi-agent-skills` marketplace manifest.
+
 ```text
 /plugin marketplace add irihitech/eureka-skills
 /plugin install irihi-avalonia@irihi-agent-skills
