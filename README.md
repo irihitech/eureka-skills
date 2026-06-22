@@ -37,10 +37,10 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 ### Claude Code / Copilot CLI
 
-Use the GitHub repository path as marketplace source (`irihitech/eureka-skills`), then install plugins from the `eureka-skills` marketplace manifest.
+Use this repository path as the marketplace source (`<owner>/<repository>`), then install plugins from the `eureka-skills` marketplace manifest.
 
 ```text
-/plugin marketplace add irihitech/eureka-skills
+/plugin marketplace add <owner>/<repository>
 /plugin install irihi-avalonia@eureka-skills
 ```
 
