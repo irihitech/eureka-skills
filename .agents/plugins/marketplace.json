@@ -1,0 +1,16 @@
+{
+  "name": "irihi-agent-skills",
+  "owner": {
+    "name": "IRIHI Tech"
+  },
+  "interface": {
+    "displayName": "IRIHI Agent Skills"
+  },
+  "plugins": [
+    {
+      "name": "irihi-avalonia",
+      "source": "./plugins/irihi-avalonia",
+      "description": "Core Avalonia skills for architecture, MVVM patterns, and styling/theming guidance."
+    }
+  ]
+}
