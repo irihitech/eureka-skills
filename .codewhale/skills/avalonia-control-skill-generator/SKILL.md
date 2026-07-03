@@ -26,36 +26,51 @@ inside an existing skill of a control library plugin.
 
 ## Template
 
+All generated references must be **dual-language** (English + Simplified Chinese).
+Every section heading is bilingual. Descriptive text is provided in both
+languages. Code snippets are language-agnostic.
+
 ```markdown
-# <ControlName>
+# <ControlName> / <控件名>
 
-<One-line description of when to use this control, mapped from the sample's
-"何时使用" section.>
+## When to Use / 何时使用
 
-## 基本使用
+<English: one paragraph describing when this control is appropriate.>
+
+<中文：一段描述该控件适用场景的文字。This is the most important section —
+agents use it to decide whether to load the reference.>
+
+## Basic Usage / 基本使用
 
 <Simplest XAML + C# snippet — equivalent to the "基本使用" demo.>
 
-## 常用场景
+## Common Scenarios / 常用场景
 
 <2-4 representative scenarios with XAML/C# snippets, analogous to the sample's
 demo sections (e.g. sizing, data binding, event handling). Each scenario gets a
-short heading and code block.>
+bilingual heading and code block.>
 
-## 属性参考
+## Property Reference / 属性参考
 
 <Key properties and events table. Not an exhaustive API dump; focus on the
 properties agents most often need when generating or reviewing Avalonia code.
-Format: | 属性 | 类型 | 说明 |, optionally with a version/备注 column.>
 
-## 样式与模板
+| Property / 属性 | Type / 类型 | Description / 说明 |
+| --- | --- | --- |
+| ... | ... | ... |
+
+Optionally include a version/备注 column.>
+
+## Styling & Templating / 样式与模板
 
 <How to style the control, relevant style keys, ControlTheme structure, and
-Template Parts — mapping from the sample's "Semantic DOM" section.>
+Template Parts — mapping from the sample's "Semantic DOM" section.
+Dual-language description.>
 
-## 常见问题
+## FAQ / 常见问题
 
-<1-3 known pitfalls or frequently asked questions, analogous to "FAQ".>
+<1-3 known pitfalls or frequently asked questions. Each Q&A pair in both
+languages.>
 ```
 
 ## Rules
@@ -63,6 +78,10 @@ Template Parts — mapping from the sample's "Semantic DOM" section.>
 - Output is a plain markdown reference page — **no YAML front matter**, not a
   standalone `SKILL.md`.
 - Path: `plugins/<library-name>/skills/<parent-skill>/<control-name>.md`.
+- **Dual-language**: every heading and descriptive paragraph in both English and
+  Simplified Chinese. Code blocks are language-neutral.
+- **When to Use / 何时使用** is the most critical section — it must be clear
+  and specific so agents can decide when to load this reference.
 - Derive code snippets from the official Avalonia documentation and IRIHI Tech
   conventions, not from the React sample directly.
 - Keep the property table focused on what an agent actually needs — not a
