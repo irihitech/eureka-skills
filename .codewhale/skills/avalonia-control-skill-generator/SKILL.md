@@ -1,34 +1,32 @@
 ---
 name: avalonia-control-skill-generator
 description: >
-  Repository-local meta-skill for generating a skill that covers a specific
-  Avalonia control. Scaffolds a SKILL.md under the irihi-avalonia plugin with
-  control-specific goals and practices.
+  Repository-local meta-skill for generating a control reference page inside an
+  existing skill under an Avalonia control library plugin. Does not produce a
+  standalone skill.
 license: MIT
 ---
 
 # Avalonia Control Skill Generator
 
-Use this skill when asked to create a skill for a specific Avalonia control
-inside the `irihi-avalonia` plugin.
+Use this skill when asked to create a reference for a specific Avalonia control
+inside an existing skill of a control library plugin.
 
 ## Workflow
 
-1. Ask the user for the control name and a one-line description.
-2. Create `plugins/irihi-avalonia/skills/<control-name>/SKILL.md`.
+1. Ask the user:
+   - **Library name** (e.g. `irihi-avalonia`) — determines the plugin directory.
+   - **Parent skill** (e.g. `controls`) — the existing skill this reference
+     belongs to.
+   - **Control name** (kebab-case, e.g. `color-picker`).
+   - **One-line description** of what the control does.
+2. Create the reference at:
+   `plugins/<library-name>/skills/<parent-skill>/<control-name>.md`
 3. Populate using the template below.
 
-## SKILL.md Template
+## Template
 
 ```markdown
----
-name: <control-name>
-description: >
-  Guidance for using the Avalonia <ControlName> control in IRIHI Tech
-  applications. Covers common patterns, styling, and best practices.
-license: MIT
----
-
 # <ControlName>
 
 <One-line description of when to use this control, mapped from the sample's
@@ -62,9 +60,11 @@ Template Parts — mapping from the sample's "Semantic DOM" section.>
 
 ## Rules
 
-- Output path is always `plugins/irihi-avalonia/skills/<control-name>/SKILL.md`.
+- Output is a plain markdown reference page — **no YAML front matter**, not a
+  standalone `SKILL.md`.
+- Path: `plugins/<library-name>/skills/<parent-skill>/<control-name>.md`.
 - Derive code snippets from the official Avalonia documentation and IRIHI Tech
   conventions, not from the React sample directly.
 - Keep the property table focused on what an agent actually needs — not a
   copy-paste of the full API reference.
-- After writing, read back the file and confirm the front matter is valid YAML.
+- After writing, read back the file to confirm correctness.
