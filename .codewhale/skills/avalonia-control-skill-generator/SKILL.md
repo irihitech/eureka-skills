@@ -21,7 +21,7 @@ inside an existing skill of a control library plugin.
    - **Control name** (kebab-case, e.g. `color-picker`).
    - **One-line description** of what the control does.
 2. Create the reference at:
-   `plugins/<library-name>/skills/<parent-skill>/<control-name>.md`
+   `plugins/<library-name>/skills/<parent-skill>/references/<control-name>.md`
 3. Populate using the template below.
 
 ## Template
@@ -77,7 +77,7 @@ languages.>
 
 - Output is a plain markdown reference page — **no YAML front matter**, not a
   standalone `SKILL.md`.
-- Path: `plugins/<library-name>/skills/<parent-skill>/<control-name>.md`.
+- Path: `plugins/<library-name>/skills/<parent-skill>/references/<control-name>.md`.
 - **Dual-language**: every heading and descriptive paragraph in both English and
   Simplified Chinese. Code blocks are language-neutral.
 - **When to Use / 何时使用** is the most critical section — it must be clear
