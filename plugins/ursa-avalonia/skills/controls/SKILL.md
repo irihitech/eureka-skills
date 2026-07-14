@@ -92,13 +92,11 @@ Each reference contains / 每个参考页面包含：
 
 ### Overlays & Dialogs / 浮层与对话框
 
-> ⚠ Dialog, Drawer, and OverlayMessageBox require an `OverlayDialogHost` in the visual tree.
-> `MessageBox.ShowAsync()` uses a Window dialog — no OverlayDialogHost needed.
-> See [OverlayDialogHost](reference/overlay-dialog-host.md).
+> ℹ `OverlayDialog`, `MessageBox`, and `Drawer` open through an `OverlayDialogHost`. `UrsaWindow` includes one by default.
+> See [OverlayDialogHost](reference/overlay-dialog-host.md) for multi-host setups and HostId rules.
 >
-> ⚠ Dialog、Drawer、OverlayMessageBox 需要可视树中存在 `OverlayDialogHost`。
-> `MessageBox.ShowAsync()` 使用窗口对话框 —— 不需要 OverlayDialogHost。
-> 参见 [OverlayDialogHost](reference/overlay-dialog-host.md)。
+> ℹ `OverlayDialog`、`MessageBox`、`Drawer` 通过 `OverlayDialogHost` 打开。`UrsaWindow` 默认包含一个。
+> 多宿主配置和 HostId 规则参见 [OverlayDialogHost](reference/overlay-dialog-host.md)。
 
 | Control | File | Description |
 | --- | --- | --- |
