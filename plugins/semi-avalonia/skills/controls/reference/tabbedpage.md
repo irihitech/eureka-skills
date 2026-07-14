@@ -294,6 +294,50 @@ TabbedPageIconSize
 | `PART_TabBar` | `ItemsControl` | The tab bar that renders tab items. / 渲染标签项的标签栏。 |
 | `PART_SelectedContentHost` | `ContentPresenter` | Displays the content of the selected tab. / 显示选中标签页的内容。 |
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines two alternative `TabbedPage` themes in `TabbedPage.axaml` that change the visual style of the tab bar.
+
+Semi.Avalonia 在 `TabbedPage.axaml` 中定义了两个替代 `TabbedPage` 主题，用于改变标签栏的视觉风格。
+
+#### `CardTabbedPage`
+
+**TargetType:** `TabbedPage`
+**Resource Key:** `CardTabbedPage`
+
+A card-style `TabbedPage` variant where tabs are rendered with the `CardTabControl` theme and `CardTabItem` item container theme. Tabs appear as connected cards with subtle backgrounds and rounded top corners, with icons positioned above labels. The tab strip items are evenly distributed in a `UniformGrid`.
+
+卡片式 `TabbedPage` 变体，标签使用 `CardTabControl` 主题和 `CardTabItem` 项容器主题渲染。标签呈现为连接的卡片，带有微妙背景和顶部圆角，图标位于标签上方。标签条项目在 `UniformGrid` 中均匀分布。
+
+```xml
+<TabbedPage Theme="{StaticResource CardTabbedPage}">
+    <ContentPage Title="Home" Icon="{StaticResource HomeIcon}" />
+    <ContentPage Title="Search" Icon="{StaticResource SearchIcon}" />
+    <ContentPage Title="Settings" Icon="{StaticResource SettingsIcon}" />
+</TabbedPage>
+```
+
+**Uses:** `CardTabControl` for the inner `TabControl`, `CardTabItem` for the item container, `UniformGrid` for even tab distribution, `TabItem.Padding="8"`, icons docked to `Top`.
+
+#### `ButtonTabbedPage`
+
+**TargetType:** `TabbedPage`
+**Resource Key:** `ButtonTabbedPage`
+
+A button-style `TabbedPage` variant where tabs are rendered with the `ButtonTabControl` theme and `ButtonTabItem` item container theme. Selected tabs have a solid fill background with rounded corners, similar to toggle-button groups. Icons are positioned above labels with slightly more padding for a button-like feel.
+
+按钮式 `TabbedPage` 变体，标签使用 `ButtonTabControl` 主题和 `ButtonTabItem` 项容器主题渲染。选中的标签具有实色填充背景和圆角，类似于切换按钮组。图标位于标签上方，内边距稍大，呈现按钮般的触感。
+
+```xml
+<TabbedPage Theme="{StaticResource ButtonTabbedPage}">
+    <ContentPage Title="Home" Icon="{StaticResource HomeIcon}" />
+    <ContentPage Title="Search" Icon="{StaticResource SearchIcon}" />
+    <ContentPage Title="Profile" Icon="{StaticResource ProfileIcon}" />
+</TabbedPage>
+```
+
+**Uses:** `ButtonTabControl` for the inner `TabControl`, `ButtonTabItem` for the item container, `UniformGrid` for even tab distribution, `TabItem.Padding="12"`, icons docked to `Top`.
+
 ## FAQ / 常见问题
 
 **Q: What is the recommended number of tabs in a TabbedPage? / TabbedPage 推荐多少个标签页？**

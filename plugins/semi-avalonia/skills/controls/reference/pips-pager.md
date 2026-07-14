@@ -112,15 +112,29 @@ Semi.Avalonia provides styling for `PipsPager` with color classes and template p
 
 Semi.Avalonia 通过颜色类和模板部件选择器为 `PipsPager` 提供样式。Pips 渲染为小圆形字形，具有 normal、selected 和 overflow 的不同视觉状态。
 
-### Theme Variants / 主题变体
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
 
-| Theme / 主题 | Resource Key / 资源键 | Appearance / 外观 |
-| --- | --- | --- |
-| **Default** | `{x:Type PipsPager}` | Inline pip indicators with optional nav buttons. / 内联 pip 指示器，带可选的导航按钮。 |
+Semi.Avalonia provides three ControlThemes for `PipsPager` infrastructure — the default `PipsPager` theme plus two sub-themes for internal elements:
+
+Semi.Avalonia 为 `PipsPager` 基础设施提供了三个 ControlTheme — 默认的 `PipsPager` 主题加上两个用于内部元素的子主题：
+
+| Theme / 主题 | Target Type / 目标类型 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- | --- |
+| **Default** | `PipsPager` | `{x:Type PipsPager}` | Inline pip indicators with optional nav buttons. References `PipsPagerButton` for nav buttons and `PipsPagerIndicatorDotListBoxItem` for pip items. / 内联 pip 指示器，带可选的导航按钮。为导航按钮引用 `PipsPagerButton`，为 pip 项引用 `PipsPagerIndicatorDotListBoxItem`。 |
+| **PipsPagerButton** | `Button` | `PipsPagerButton` | Borderless navigation button that renders only a `PathIcon` (triangle glyph) without button chrome. Used for the previous/next buttons in `PipsPager`. Supports `:pointerover` state for colour change. / 无边框导航按钮，仅渲染 `PathIcon`（三角形字形），无按钮装饰。用于 `PipsPager` 中的上一个/下一个按钮。支持 `:pointerover` 状态以改变颜色。 |
+| **PipsPagerIndicatorDotListBoxItem** | `ListBoxItem` | `PipsPagerIndicatorDotListBoxItem` | Renders each pip as an `Ellipse` with configurable fill colour. Supports `:pointerover`, `:pressed`, and `:selected` pseudo-classes for visual feedback. / 将每个 pip 渲染为 `Ellipse`，填充颜色可配置。支持 `:pointerover`、`:pressed` 和 `:selected` 伪类以提供视觉反馈。 |
 
 ```xml
-<!-- Default theme -->
+<!-- Default PipsPager theme (uses sub-themes internally) -->
 <PipsPager NumberOfPages="5" SelectedPageIndex="0" />
+
+<!-- The PipsPagerButton theme renders nav arrows as bare PathIcons -->
+<!-- The PipsPagerIndicatorDotListBoxItem renders pips as Ellipses -->
+
+<!-- Customise navigation button theme -->
+<PipsPager NumberOfPages="5" SelectedPageIndex="0"
+           PreviousButtonTheme="{StaticResource PipsPagerButton}"
+           NextButtonTheme="{StaticResource PipsPagerButton}" />
 ```
 
 ### Color Classes / 颜色类
@@ -144,21 +158,25 @@ Apply via the `Classes` attached property.
 | `:pointerover` | Mouse is hovering over the control. / 鼠标悬停在控件上。 |
 | `:vertical` | Applied when `Orientation` is `Vertical`. / 当 `Orientation` 为 `Vertical` 时应用。 |
 | `:horizontal` | Applied when `Orientation` is `Horizontal` (default). / 当 `Orientation` 为 `Horizontal`（默认）时应用。 |
+| `:first-page` | Applied when on the first page (previous button hidden). / 在第一页时应用（上一个按钮隐藏）。 |
+| `:last-page` | Applied when on the last page (next button hidden). / 在最后一页时应用（下一个按钮隐藏）。 |
 
-Individual pip items carry their own pseudo-classes:
-每个 pip 项带有自己的伪类：
+Individual pip items carry their own pseudo-classes via `PipsPagerIndicatorDotListBoxItem`:
+每个 pip 项通过 `PipsPagerIndicatorDotListBoxItem` 带有自己的伪类：
 
 | Pip Pseudo-class | Description / 说明 |
 | --- | --- |
 | `:selected` | This pip represents the current page. / 此 pip 代表当前页面。 |
 | `:normal` | A standard, non-selected pip within the visible range. / 可见范围内的标准非选中 pip。 |
 | `:overflow` | An overflow glyph indicating hidden pages exist before or after visible pips. / 溢出字形，指示可见 pip 之前或之后存在隐藏页面。 |
+| `:pointerover` | Mouse is hovering over this pip (changes colour). / 鼠标悬停在此 pip 上（改变颜色）。 |
+| `:pressed` | This pip is being pressed (changes colour). / 此 pip 正在被按下（改变颜色）。 |
 
 ### ControlTheme Structure / 控件主题结构
 
-The `PipsPager` theme contains a `PipsPagerItemsPresenter#PART_PipsArea` that hosts the pip items, plus `NavigationButton` instances for previous/next buttons. Pip items are styled via nested selectors combining position state (`:selected`, `:normal`, `:overflow`) with color classes.
+The default `PipsPager` theme uses `PipsPagerButton` for its `PreviousButtonTheme` and `NextButtonTheme`, and `PipsPagerIndicatorDotListBoxItem` as the `ItemContainerTheme` for the inner `ListBox` that hosts pip items. Navigation buttons render triangle `PathIcon` glyphs; pip items render as `Ellipse` elements with colour transitions on pointerover, pressed, and selected states.
 
-`PipsPager` 主题包含 `PipsPagerItemsPresenter#PART_PipsArea`（托管 pip 项）以及用于上下导航按钮的 `NavigationButton` 实例。Pip 项通过结合位置状态（`:selected`、`:normal`、`:overflow`）与颜色类的嵌套选择器进行样式设置。
+默认 `PipsPager` 主题使用 `PipsPagerButton` 作为其 `PreviousButtonTheme` 和 `NextButtonTheme`，并使用 `PipsPagerIndicatorDotListBoxItem` 作为承载 pip 项的内部 `ListBox` 的 `ItemContainerTheme`。导航按钮渲染三角形 `PathIcon` 字形；pip 项渲染为 `Ellipse` 元素，在 pointerover、pressed 和 selected 状态下有颜色过渡。
 
 ### DynamicResource Keys / 动态资源键
 

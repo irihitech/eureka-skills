@@ -139,6 +139,33 @@ Adorners are always rendered on top of normal content. Within the `AdornerLayer`
 
 装饰器始终渲染在普通内容之上。在 `AdornerLayer` 内部，Z 顺序遵循 `Children` 集合顺序：后面的子元素显示在前面的子元素之上。
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines the `AdornerLayerBorder` theme in `AdornerLayer.axaml` for focus-adorner border styling.
+
+Semi.Avalonia 在 `AdornerLayer.axaml` 中定义了 `AdornerLayerBorder` 主题，用于焦点装饰器边框样式。
+
+#### `AdornerLayerBorder`
+
+**TargetType:** `Border`
+**Resource Key:** `AdornerLayerBorder`
+
+A `Border` theme used by focus adorners throughout the Semi.Avalonia theme system. It is referenced in the default `AdornerLayer` theme's `DefaultFocusAdorner` template and is also used by `SolidSplitButton` and `ToggleSplitButton` (via `FocusAdornerTemplate`). Applies semi-transparent border styling from `AdornerLayerBorderBrush` with a configurable `AdornerLayerBorderThickness` and `AdornerLayerCornerRadius`. Supports a `.Solid` class selector that switches to `AdornerLayerSolidBorderBrush` for high-contrast focus indication on solid-background controls.
+
+一个在整个 Semi.Avalonia 主题系统中被焦点装饰器使用的 `Border` 主题。它在默认 `AdornerLayer` 主题的 `DefaultFocusAdorner` 模板中被引用，也被 `SolidSplitButton` 和 `ToggleSplitButton`（通过 `FocusAdornerTemplate`）使用。应用来自 `AdornerLayerBorderBrush` 的半透明边框样式，带有可配置的 `AdornerLayerBorderThickness` 和 `AdornerLayerCornerRadius`。支持 `.Solid` 类选择器，切换为 `AdornerLayerSolidBorderBrush`，用于实色背景控件上的高对比度焦点指示。
+
+```xml
+<!-- Used internally by focus adorners; can be referenced for custom focus styles -->
+<Border Theme="{StaticResource AdornerLayerBorder}" />
+
+<!-- Solid variant for high-contrast focus -->
+<Border Theme="{StaticResource AdornerLayerBorder}" Classes="Solid" />
+```
+
+**Key resources:** `AdornerLayerBorderThickness`, `AdornerLayerBorderBrush`, `AdornerLayerCornerRadius`, `AdornerLayerSolidBorderBrush`
+
+**Class selectors:** `.Solid` — switches border brush to `AdornerLayerSolidBorderBrush`
+
 ## FAQ / 常见问题
 
 **Q: Do I need to create an AdornerLayer manually? / 我需要手动创建 AdornerLayer 吗？**

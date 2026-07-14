@@ -148,6 +148,39 @@ SemiMenuFlyoutPresenterShadowElevation
 | `PART_ItemsPresenter` | `ItemsPresenter` | Renders the `MenuItem` collection vertically. / 垂直渲染 `MenuItem` 集合。 |
 | `PART_ScrollViewer` | `ScrollViewer` | Scroll viewer for overflow content. / 用于溢出内容的滚动查看器。 |
 
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
+
+Semi.Avalonia provides the `HorizontalMenuFlyoutPresenter` ControlTheme as a horizontal variant of the default vertical `MenuFlyoutPresenter`. Items are laid out in a horizontal `StackPanel` with zero padding, suitable for toolbar overflow menus, horizontal action bars, or icon-strip menus.
+
+Semi.Avalonia 提供了 `HorizontalMenuFlyoutPresenter` ControlTheme 作为默认垂直 `MenuFlyoutPresenter` 的水平变体。项目以水平 `StackPanel` 布局，内边距为零，适用于工具栏溢出菜单、水平操作栏或图标条菜单。
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| **HorizontalMenuFlyoutPresenter** | `HorizontalMenuFlyoutPresenter` | Horizontal menu flyout with `StackPanel Orientation="Horizontal"` items panel and zero padding. Based on the default `MenuFlyoutPresenter` theme. / 水平菜单浮层，使用 `StackPanel Orientation="Horizontal"` 项目面板，内边距为零。基于默认 `MenuFlyoutPresenter` 主题。 |
+
+```xml
+<!-- Default: vertical menu flyout -->
+<Button Content="Actions">
+    <Button.Flyout>
+        <MenuFlyout>
+            <MenuItem Header="Edit" />
+            <MenuItem Header="Delete" />
+        </MenuFlyout>
+    </Button.Flyout>
+</Button>
+
+<!-- Horizontal: items laid out side by side -->
+<Button Content="Tools">
+    <Button.Flyout>
+        <MenuFlyout FlyoutPresenterTheme="{StaticResource HorizontalMenuFlyoutPresenter}">
+            <MenuItem Header="Cut" />
+            <MenuItem Header="Copy" />
+            <MenuItem Header="Paste" />
+        </MenuFlyout>
+    </Button.Flyout>
+</Button>
+```
+
 ## FAQ / 常见问题
 
 **Q: How does MenuFlyoutPresenter differ from plain FlyoutPresenter? / MenuFlyoutPresenter 与普通 FlyoutPresenter 有何不同？**

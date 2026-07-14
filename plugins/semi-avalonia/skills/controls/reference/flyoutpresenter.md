@@ -152,6 +152,32 @@ SemiFlyoutPresenterShadowElevation
 | `PART_Popup` | `Popup` | The popup host that manages overlay and positioning. / 管理覆盖层和定位的弹出主机。 |
 | `PART_ContentPresenter` | `ContentPresenter` | Renders the flyout's content. / 渲染浮层内容。 |
 
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
+
+Semi.Avalonia provides the `LightFlyout` ControlTheme as a lighter alternative to the default `FlyoutPresenter`. It uses a transparent background, no border, and no box shadow, making it ideal for hosting content that provides its own chrome (e.g. custom popups, tooltip-like panels, or content with built-in backgrounds).
+
+Semi.Avalonia 提供了 `LightFlyout` ControlTheme 作为默认 `FlyoutPresenter` 的轻量替代。它使用透明背景、无边框、无投影，非常适合承载自带装饰的内容（如自定义弹出框、类工具提示面板或带有内置背景的内容）。
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| **LightFlyout** | `LightFlyout` | Transparent flyout with no border, no box shadow. / 透明浮层，无边框、无投影。 |
+
+```xml
+<!-- Default FlyoutPresenter: visible border and shadow -->
+<Flyout>
+    <StackPanel Spacing="8">
+        <TextBlock Text="Standard flyout" />
+    </StackPanel>
+</Flyout>
+
+<!-- LightFlyout: transparent, no border or shadow -->
+<Flyout FlyoutPresenterTheme="{StaticResource LightFlyout}">
+    <StackPanel Spacing="8">
+        <TextBlock Text="Lightweight flyout" />
+    </StackPanel>
+</Flyout>
+```
+
 ## FAQ / 常见问题
 
 **Q: When should I use FlyoutPresenter vs. Popup? / 何时使用 FlyoutPresenter 而非 Popup？**

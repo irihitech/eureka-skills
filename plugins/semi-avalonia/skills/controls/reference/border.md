@@ -44,6 +44,40 @@ Use `Border` to add visual separation — card containers, highlighted sections,
 
 Semi.Avalonia provides semantic corner radius resources: `SemiCornerRadiusSmall`, `SemiCornerRadiusMedium`, `SemiCornerRadiusLarge`. Border colors: `SemiBorderColor`.
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines the `CardBorder` theme in `Border.axaml` for card-container styling.
+
+Semi.Avalonia 在 `Border.axaml` 中定义了 `CardBorder` 主题，用于卡片容器样式。
+
+#### `CardBorder`
+
+**TargetType:** `Border`
+**Resource Key:** `CardBorder`
+
+A card-container theme that applies Semi Design card styling: padding, border, corner radius, background, and margin from card-specific dynamic resources. Supports two optional CSS classes: `.Shadow` applies a `BoxShadow` for a raised card appearance, and `.Hover` adds a `:pointerover` selector that reveals the shadow on hover (ideal for interactive cards).
+
+一个卡片容器主题，应用 Semi Design 卡片样式：通过卡片专用动态资源设置内边距、边框、圆角、背景和外边距。支持两个可选的 CSS 类：`.Shadow` 应用 `BoxShadow` 产生浮起卡片效果，`.Hover` 添加 `:pointerover` 选择器在悬停时显示阴影（适用于可交互卡片）。
+
+```xml
+<!-- Basic card -->
+<Border Theme="{StaticResource CardBorder}">
+    <TextBlock Text="Card content" />
+</Border>
+
+<!-- Raised card with shadow -->
+<Border Theme="{StaticResource CardBorder}" Classes="Shadow">
+    <TextBlock Text="Raised card" />
+</Border>
+
+<!-- Interactive card: shadow appears on hover -->
+<Border Theme="{StaticResource CardBorder}" Classes="Hover">
+    <TextBlock Text="Hover me" />
+</Border>
+```
+
+**Key resources:** `ThicknessCardPadding`, `BorderCardBorderBrush`, `RadiusCardCornerRadius`, `BorderCardBackground`, `ThicknessCardBorderThickness`, `ThicknessCardMargin`, `BorderCardBoxShadow`
+
 ## FAQ / 常见问题
 
 **Q: How to add a shadow to a card? / 如何给卡片添加阴影？**

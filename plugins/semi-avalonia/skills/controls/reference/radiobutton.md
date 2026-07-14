@@ -125,9 +125,123 @@ RadioButton 继承 `ToggleButton` 的所有属性。关键继承属性：
 
 ### Semi.Avalonia ControlTheme / Semi.Avalonia 控件主题
 
-Semi.Avalonia defines the default `{x:Type RadioButton}` ControlTheme. The glyph (dot indicator) and label are styled through nested `Style` selectors targeting `Ellipse#PART_Glyph` and `ContentPresenter#PART_ContentPresenter`.
+Semi.Avalonia defines four RadioButton themes:
 
-Semi.Avalonia 将 `{x:Type RadioButton}` 定义为默认 ControlTheme。字形（圆点指示器）和标签通过嵌套 `Style` 选择器定位 `Ellipse#PART_Glyph` 和 `ContentPresenter#PART_ContentPresenter` 进行样式设置。
+Semi.Avalonia 定义了四种 RadioButton 主题：
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| Default | `{x:Type RadioButton}` | Standard radio button with visible circle indicator and glyph dot. / 标准单选按钮，带可见圆形指示器和字形圆点。 |
+| Button | `ButtonRadioButton` | Button-style radio button (no radio circle) — appears as a selectable button. Supports `Small` and `Large` size classes. / 按钮式单选按钮（无单选圆圈）—— 外观类似可选中按钮。支持 `Small` 和 `Large` 尺寸类。 |
+| Card | `CardRadioButton` | Card-style with visible radio circle icon and card border. The entire card highlights on selection. / 卡片式，带可见单选圆圈图标和卡片边框。选中时整个卡片高亮。 |
+| Pure Card | `PureCardRadioButton` | Card-style without the radio circle icon — only the card background changes state. / 卡片式，无单选圆圈图标 —— 仅卡片背景改变状态。 |
+
+### Default Theme / 默认主题
+
+```xml
+<RadioButton Content="Option A"
+             GroupName="MyGroup"
+             IsChecked="True" />
+```
+
+The glyph (dot indicator) and label are styled through nested `Style` selectors targeting `Ellipse#OuterEllipse`, `Ellipse#CheckGlyph`, and `ContentPresenter#PART_ContentPresenter`.
+
+字形（圆点指示器）和标签通过嵌套 `Style` 选择器定位 `Ellipse#OuterEllipse`、`Ellipse#CheckGlyph` 和 `ContentPresenter#PART_ContentPresenter` 进行样式设置。
+
+### ButtonRadioButton / 按钮式单选按钮
+
+Applies a button-like appearance to `RadioButton`, hiding the radio circle entirely. Best for toggle-button groups or segmented controls where the button itself conveys selection. Supports `Small` and `Large` size classes.
+
+将按钮式外观应用于 `RadioButton`，完全隐藏单选圆圈。最适用于切换按钮组或分段控件，按钮本身传达选中状态。支持 `Small` 和 `Large` 尺寸类。
+
+```xml
+<StackPanel Orientation="Horizontal" Spacing="4">
+    <RadioButton Content="Daily"
+                 GroupName="Frequency"
+                 Theme="{DynamicResource ButtonRadioButton}"
+                 IsChecked="True" />
+    <RadioButton Content="Weekly"
+                 GroupName="Frequency"
+                 Theme="{DynamicResource ButtonRadioButton}" />
+    <RadioButton Content="Monthly"
+                 GroupName="Frequency"
+                 Theme="{DynamicResource ButtonRadioButton}" />
+</StackPanel>
+
+<!-- With size classes -->
+<RadioButton Content="Small Button"
+             Theme="{DynamicResource ButtonRadioButton}"
+             Classes="Small" />
+<RadioButton Content="Large Button"
+             Theme="{DynamicResource ButtonRadioButton}"
+             Classes="Large" />
+```
+
+### CardRadioButton / 卡片式单选按钮
+
+Presents each `RadioButton` as a card with a visible radio circle icon. The card border and background change based on selection state. Ideal for settings pages where each option needs a larger hit area and descriptive content.
+
+将每个 `RadioButton` 呈现为带可见单选圆圈图标的卡片。卡片边框和背景根据选中状态变化。适用于设置页面，每个选项需要更大的点击区域和描述性内容。
+
+```xml
+<StackPanel Spacing="8">
+    <RadioButton Content="Free Plan"
+                 GroupName="Plan"
+                 Theme="{DynamicResource CardRadioButton}"
+                 IsChecked="True" />
+    <RadioButton Content="Pro Plan"
+                 GroupName="Plan"
+                 Theme="{DynamicResource CardRadioButton}" />
+    <RadioButton Content="Enterprise Plan"
+                 GroupName="Plan"
+                 Theme="{DynamicResource CardRadioButton}" />
+</StackPanel>
+```
+
+### PureCardRadioButton / 纯卡片式单选按钮
+
+Like `CardRadioButton` but completely omits the radio circle icon. Selection is conveyed purely through the card's background and border color change. Use for image or rich-content selection cards where a radio circle would be visually distracting.
+
+类似 `CardRadioButton`，但完全省略单选圆圈图标。选中状态仅通过卡片的背景和边框颜色变化传达。用于图片或富内容选择卡片，单选圆圈会造成视觉干扰的场景。
+
+```xml
+<StackPanel Spacing="8">
+    <RadioButton GroupName="Avatar"
+                 Theme="{DynamicResource PureCardRadioButton}"
+                 IsChecked="True">
+        <StackPanel>
+            <Image Source="avatar1.png" Width="64" Height="64" />
+            <TextBlock Text="Avatar A" HorizontalAlignment="Center" />
+        </StackPanel>
+    </RadioButton>
+    <RadioButton GroupName="Avatar"
+                 Theme="{DynamicResource PureCardRadioButton}">
+        <StackPanel>
+            <Image Source="avatar2.png" Width="64" Height="64" />
+            <TextBlock Text="Avatar B" HorizontalAlignment="Center" />
+        </StackPanel>
+    </RadioButton>
+</StackPanel>
+```
+
+### RadioButtonGroupBorder / 单选按钮组边框
+
+A companion theme for `Border` used to wrap a group of `RadioButton` controls with shared rounded corners and background. Apply `Theme="{DynamicResource RadioButtonGroupBorder}"` on the wrapping `Border`.
+
+一个配套的 `Border` 主题，用于包裹一组 `RadioButton` 控件，提供共享的圆角和背景。在包裹的 `Border` 上应用 `Theme="{DynamicResource RadioButtonGroupBorder}"`。
+
+```xml
+<Border Theme="{DynamicResource RadioButtonGroupBorder}" Padding="4">
+    <StackPanel Spacing="2">
+        <RadioButton Content="Option 1"
+                     GroupName="Grouped"
+                     Theme="{DynamicResource ButtonRadioButton}" />
+        <RadioButton Content="Option 2"
+                     GroupName="Grouped"
+                     Theme="{DynamicResource ButtonRadioButton}" />
+    </StackPanel>
+</Border>
+```
 
 ### Pseudo-classes / 伪类
 

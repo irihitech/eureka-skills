@@ -176,6 +176,47 @@ The `ButtonSpinner` itself does not define additional pseudo-classes. The intern
 
 `ButtonSpinner` 本身不定义额外的伪类。内部 `RepeatButton` 实例响应标准 Button 伪类（`:pointerover`、`:pressed`、`:disabled`）。
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines two additional `ControlTheme` resources within `ButtonSpinner.axaml` beyond the default `{x:Type ButtonSpinner}` theme.
+
+Semi.Avalonia 在 `ButtonSpinner.axaml` 中定义了除默认 `{x:Type ButtonSpinner}` 主题外的两个额外 `ControlTheme` 资源。
+
+#### `ButtonSpinnerRepeatButton`
+
+**TargetType:** `RepeatButton`
+**Resource Key:** `ButtonSpinnerRepeatButton`
+
+A minimalist repeat-button theme used internally by both `ButtonSpinner` and `SplitButtonSpinner`. It renders a bare `ContentPresenter` without chrome — the parent `ButtonSpinner` template supplies the border and background. This theme adds `:pointerover`, `:pressed`, and `:disabled` background color changes via `ButtonSpinnerRepeatButton*` dynamic resources.
+
+一个极简的重复按钮主题，由 `ButtonSpinner` 和 `SplitButtonSpinner` 内部使用。它渲染一个无装饰的 `ContentPresenter` —— 父级 `ButtonSpinner` 模板提供边框和背景。该主题通过 `ButtonSpinnerRepeatButton*` 动态资源添加 `:pointerover`、`:pressed` 和 `:disabled` 背景色变化。
+
+```xml
+<!-- Used internally, but you can reference it for custom RepeatButtons -->
+<RepeatButton Theme="{StaticResource ButtonSpinnerRepeatButton}"
+              Content="+" />
+```
+
+**Key resources:** `ButtonSpinnerRepeatButtonBackground`, `ButtonSpinnerRepeatButtonPointeroverBackground`, `ButtonSpinnerRepeatButtonPressedBackground`, `ButtonSpinnerRepeatButtonDisabledBackground`, `ButtonSpinnerRepeatButtonForeground`, `ButtonSpinnerRepeatButtonBorderBrush`
+
+#### `SplitButtonSpinner`
+
+**TargetType:** `ButtonSpinner`
+**Resource Key:** `SplitButtonSpinner`
+
+An alternative `ButtonSpinner` layout where the decrease and increase buttons are placed on the left and right sides of the content respectively (horizontal split). This is used by `NumericUpDown` when a split-button appearance is desired. Supports `:left` pseudo-class to swap button positions for RTL or left-aligned layouts.
+
+一种替代的 `ButtonSpinner` 布局，减小和增大按钮分别位于内容的左侧和右侧（水平分割）。当需要分割按钮外观时由 `NumericUpDown` 使用。支持 `:left` 伪类以交换按钮位置，适用于 RTL 或左对齐布局。
+
+```xml
+<ButtonSpinner Theme="{StaticResource SplitButtonSpinner}"
+               Spin="OnSpin">
+    <TextBlock Text="{Binding Value}" />
+</ButtonSpinner>
+```
+
+**Key resources:** `SplitButtonSpinnerButtonPadding`, `SplitButtonSpinnerLeftButtonCornerRadius`, `SplitButtonSpinnerRightButtonCornerRadius`, `SplitButtonSpinnerDecreaseButtonGlyph`, `SplitButtonSpinnerIncreaseButtonGlyph`
+
 ## FAQ / 常见问题
 
 **Q: How is ButtonSpinner different from NumericUpDown? / ButtonSpinner 与 NumericUpDown 有何不同？**

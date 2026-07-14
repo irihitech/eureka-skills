@@ -280,6 +280,36 @@ TabControlLinePrimaryPointeroverForeground
 | `PART_SelectedContentHost` | `ContentPresenter` | Displays the `Content` of the selected `TabItem`. / 显示选中 `TabItem` 的 `Content`。 |
 | `PART_HeaderPresenter` | `ContentPresenter` | Renders the `Header` content for each tab in the strip. / 渲染标签条中每个标签页的 `Header` 内容。 |
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines the `BaseTabItem` theme in `TabItem.axaml` as the abstract foundation for all concrete `TabItem` theme variants.
+
+Semi.Avalonia 在 `TabItem.axaml` 中定义了 `BaseTabItem` 主题，作为所有具体 `TabItem` 主题变体的抽象基础。
+
+#### `BaseTabItem`
+
+**TargetType:** `TabItem`
+**Resource Key:** `BaseTabItem`
+
+The foundational theme for all `TabItem` variants (`{x:Type TabItem}`, `LineTabItem`, `CardTabItem`, `ButtonTabItem`). Renders a `Border` (`PART_RootBorder`) containing a `DockPanel` with `PART_IconPresenter` and `PART_HeaderPresenter`. The icon presenter auto-hides when `Icon` is null and supports `Geometry`-based icons via `PathIcon`. Provides comprehensive pseudo-class coverage: `:selected` sets `TabItemLineHeaderSelectedBackground` on the root border and `TabItemLineHeaderSelectedForeground` on the header; `:pointerover` and `:pressed` adjust border/background colors; `:disabled` sets `TabItemLineHeaderDisabledForeground`. Left/Right `TabStripPlacement` selectors change backgrounds instead of borders.
+
+所有 `TabItem` 变体（`{x:Type TabItem}`、`LineTabItem`、`CardTabItem`、`ButtonTabItem`）的基础主题。渲染一个包含 `PART_IconPresenter` 和 `PART_HeaderPresenter` 的 `DockPanel` 的 `Border`（`PART_RootBorder`）。图标呈示器在 `Icon` 为 null 时自动隐藏，并通过 `PathIcon` 支持基于 `Geometry` 的图标。提供全面的伪类覆盖：`:selected` 在根边框上设置 `TabItemLineHeaderSelectedBackground`，在标题上设置 `TabItemLineHeaderSelectedForeground`；`:pointerover` 和 `:pressed` 调整边框/背景颜色；`:disabled` 设置 `TabItemLineHeaderDisabledForeground`。左/右 `TabStripPlacement` 选择器更改背景而非边框。
+
+```xml
+<!-- Used as BasedOn for concrete TabItem themes; not typically applied directly -->
+<TabItem Theme="{StaticResource BaseTabItem}"
+         Header="Settings"
+         Icon="{StaticResource SemiIconSetting}" />
+```
+
+**Template parts:** `PART_RootBorder` (Border), `PART_IconPresenter` (ContentPresenter), `PART_HeaderPresenter` (ContentPresenter)
+
+**Default placements:**
+- `Top`: `Margin="0 0 24 0"`, `Padding="4 16 4 14"`, `BorderThickness="0 0 0 2"`
+- `Bottom`: `Margin="0 0 24 0"`, `Padding="4 14 4 16"`, `BorderThickness="0 2 0 0"`
+- `Left`: `Padding="12"`, `BorderThickness="2 0 0 0"`
+- `Right`: `Padding="12"`, `BorderThickness="0 0 2 0"`
+
 ## FAQ / 常见问题
 
 **Q: How do I hide the tab strip and control tabs programmatically? / 如何隐藏标签条并以编程方式控制标签页？**

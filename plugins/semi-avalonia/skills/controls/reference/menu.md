@@ -187,6 +187,39 @@ SemiMenuItemHorizontalPadding
 | --- | --- | --- |
 | `PART_ItemsPresenter` | `ItemsPresenter` | Renders the collection of top-level `MenuItem` elements in a horizontal stack. / 以水平堆叠方式渲染顶层 `MenuItem` 元素集合。 |
 
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
+
+Semi.Avalonia provides two specialised ControlThemes for `Menu` infrastructure:
+
+Semi.Avalonia 为 `Menu` 基础设施提供了两个专用的 ControlTheme：
+
+| Theme / 主题 | Target Type / 目标类型 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- | --- |
+| **TopLevelMenuItem** | `MenuItem` | `TopLevelMenuItem` | A simplified `MenuItem` theme for top-level menu bar items. Renders only the header text without icon, input gesture text, or expand chevron — designed for horizontal menu bar display. The default `Menu` theme sets this as its `ItemContainerTheme`. / 用于顶层菜单栏项的简化 `MenuItem` 主题。仅渲染标题文本，不包含图标、输入手势文本或展开箭头 —— 专为水平菜单栏显示而设计。默认 `Menu` 主题将其设置为 `ItemContainerTheme`。 |
+| **MenuScrollViewer** | `ScrollViewer` | `MenuScrollViewer` | A `ScrollViewer` theme used inside menu flyouts for scrolling overflow menu items. Uses transparent background, flat RepeatButtons with chevron icons for scroll up/down, no scroll bar chrome. Referenced internally by `MenuFlyoutPresenter` and `TopLevelMenuItem` sub-menus. / 用于菜单浮层内部滚动溢出菜单项的 `ScrollViewer` 主题。使用透明背景、带箭头图标的扁平 RepeatButton 进行上下滚动，无滚动条装饰。由 `MenuFlyoutPresenter` 和 `TopLevelMenuItem` 子菜单内部引用。 |
+
+```xml
+<!-- TopLevelMenuItem: used internally by Menu as ItemContainerTheme -->
+<Menu>
+    <!-- Each top-level MenuItem automatically gets TopLevelMenuItem theme -->
+    <MenuItem Header="_File">
+        <MenuItem Header="_New" />
+    </MenuItem>
+</Menu>
+
+<!-- Explicit use of TopLevelMenuItem -->
+<MenuItem Theme="{StaticResource TopLevelMenuItem}" Header="_File" />
+
+<!-- MenuScrollViewer: used internally by menu flyouts -->
+<!-- When a MenuFlyout has many items, the MenuScrollViewer adds scroll buttons -->
+<MenuFlyout>
+    <!-- Internally uses MenuScrollViewer for overflow -->
+    <MenuItem Header="Item 1" />
+    <MenuItem Header="Item 2" />
+    <!-- ... many items ... -->
+</MenuFlyout>
+```
+
 ## FAQ / 常见问题
 
 **Q: How do I create a vertical sidebar menu instead of a horizontal menu bar? / 如何创建垂直侧边栏菜单而不是水平菜单栏？**

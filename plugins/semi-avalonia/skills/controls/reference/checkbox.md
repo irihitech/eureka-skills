@@ -104,8 +104,62 @@ Semi.Avalonia 定义了三种 CheckBox 主题：
 | Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
 | --- | --- | --- |
 | Default | `{x:Type CheckBox}` | Standard checkbox with visible box and check mark glyph. / 标准复选框，带可见框和勾选标记。 |
-| Card | `CardCheckBox` | Card-style with full background fill when checked. / 卡片样式，选中时完全填充背景。 |
-| Pure Card | `PureCardCheckBox` | Card-style without visible check box, only background change. / 卡片样式，无可见复选框，仅背景变化。 |
+| Card | `CardCheckBox` | Card-style with visible check box icon and card border. The entire card highlights on selection. / 卡片样式，带可见复选框图标和卡片边框。选中时整个卡片高亮。 |
+| Pure Card | `PureCardCheckBox` | Card-style without visible check box — only the card background and border change state. / 卡片样式，无可见复选框 —— 仅卡片背景和边框改变状态。 |
+
+### Default Theme / 默认主题
+
+The default theme renders a check box with a visible box glyph (border, background, and check mark) alongside a content label.
+
+默认主题渲染一个带可见框字形（边框、背景和勾选标记）和内容标签的复选框。
+
+```xml
+<!-- Default CheckBox -->
+<CheckBox Content="I agree to the terms"
+          IsChecked="{Binding AgreedToTerms}" />
+
+<!-- Three-state CheckBox -->
+<CheckBox Content="Select All"
+          IsThreeState="True"
+          IsChecked="{Binding AllSelectedState}" />
+```
+
+### CardCheckBox / 卡片式复选框
+
+Presents each `CheckBox` as a card with a visible check box icon. The entire card shows a background fill when checked, and responds to pointer-over and pressed states with background changes. Ideal for settings pages where each option needs a larger hit area.
+
+将每个 `CheckBox` 呈现为带可见复选框图标的卡片。选中时整个卡片显示背景填充，并通过背景变化响应指针悬停和按下状态。适用于设置页面，每个选项需要更大点击区域的场景。
+
+```xml
+<CheckBox Content="Option A"
+          Theme="{DynamicResource CardCheckBox}"
+          IsChecked="True" />
+<CheckBox Content="Option B"
+          Theme="{DynamicResource CardCheckBox}" />
+```
+
+### PureCardCheckBox / 纯卡片式复选框
+
+Like `CardCheckBox` but completely omits the check box icon. Selection is conveyed purely through the card's background, border color, and text color change. Use for image or rich-content selection cards where a check box icon would be visually distracting.
+
+类似 `CardCheckBox`，但完全省略复选框图标。选中状态仅通过卡片的背景、边框颜色和文本颜色变化传达。用于图片或富内容选择卡片，复选框图标会造成视觉干扰的场景。
+
+```xml
+<CheckBox Theme="{DynamicResource PureCardCheckBox}"
+          IsChecked="True">
+    <StackPanel>
+        <Image Source="photo.png" Width="80" Height="80" />
+        <TextBlock Text="Include this item" />
+    </StackPanel>
+</CheckBox>
+
+<CheckBox Theme="{DynamicResource PureCardCheckBox}">
+    <StackPanel>
+        <Image Source="photo2.png" Width="80" Height="80" />
+        <TextBlock Text="Include this item" />
+    </StackPanel>
+</CheckBox>
+```
 
 ### Pseudo-classes / 伪类
 

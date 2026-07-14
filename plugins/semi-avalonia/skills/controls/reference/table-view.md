@@ -201,6 +201,48 @@ Semi.Avalonia 提供了全面的 `TableView` 样式套件：
 | `PART_Resizer` (TableViewColumnHeader) | `Thumb` | Column resize drag handle. / 列调整大小的拖动手柄。 |
 | `PART_ContentPresenter` (TableViewColumnHeader) | `ContentPresenter` | Renders the header content. / 渲染标题内容。 |
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines two additional resources in `TableView.axaml` beyond the standard `{x:Type TableView}` theme.
+
+Semi.Avalonia 在 `TableView.axaml` 中定义了除标准 `{x:Type TableView}` 主题外的两个额外资源。
+
+#### `TableViewScrollViewerTheme`
+
+**TargetType:** `ScrollViewer`
+**Resource Key:** `TableViewScrollViewerTheme`
+
+The internal `ScrollViewer` theme used by the `TableView` control template. Pins column headers to the top via a `DockPanel`: a `Border` containing `TableViewColumnHeadersPresenter` is docked to `Top`, and `ScrollContentPresenter` fills the remaining space. Includes horizontal and vertical `ScrollBar` elements in a `Grid` layout with `*,Auto` rows/columns. Also wires `ScrollGestureRecognizer` for touch-based scrolling support.
+
+`TableView` 控件模板内部使用的 `ScrollViewer` 主题。通过 `DockPanel` 将列标题固定在顶部：包含 `TableViewColumnHeadersPresenter` 的 `Border` 停靠到 `Top`，`ScrollContentPresenter` 填充剩余空间。在 `Grid` 布局中包含水平和垂直 `ScrollBar` 元素，行/列为 `*,Auto`。还连接了 `ScrollGestureRecognizer` 以支持触控滚动。
+
+```xml
+<!-- Used internally by TableView; can be referenced for custom scroll viewers -->
+<ScrollViewer Theme="{StaticResource TableViewScrollViewerTheme}" />
+```
+
+**Key resources:** `TableViewColumnHeadersBackground`, `TableViewColumnHeaderPadding`, `TableViewGridLineBrush`
+
+**Template parts:** `ContentPanel` (DockPanel), `PART_ContentPresenter` (ScrollContentPresenter), `PART_HorizontalScrollBar`, `PART_VerticalScrollBar`
+
+#### `TableViewColumnHeaderResizerTemplate`
+
+**Resource Type:** `ControlTemplate` (not a `ControlTheme`)
+**Resource Key:** `TableViewColumnHeaderResizerTemplate`
+**TargetType:** `Thumb`
+
+A control template for the column resize drag handle (`PART_Resizer` thumb inside `TableViewColumnHeader`). Renders a transparent `Border` with a centered 1-pixel-wide `Rectangle` using `DataGridLineBrush`. The `Thumb` itself is wrapped in the column header template and uses `Cursor="SizeWestEast"`.
+
+列调整大小拖动手柄（`TableViewColumnHeader` 内的 `PART_Resizer` 拇指控件）的控件模板。渲染一个透明 `Border`，内含使用 `DataGridLineBrush` 的居中 1 像素宽 `Rectangle`。`Thumb` 本身包裹在列标题模板中，使用 `Cursor="SizeWestEast"`。
+
+```xml
+<!-- Used internally; reference for custom column resizer styling -->
+<Thumb Template="{StaticResource TableViewColumnHeaderResizerTemplate}"
+       Cursor="SizeWestEast" />
+```
+
+**Key resource:** `DataGridLineBrush` — the color of the resize grip line
+
 ## FAQ / 常见问题
 
 **Q: How is TableView different from DataGrid? / TableView 与 DataGrid 有何不同？**

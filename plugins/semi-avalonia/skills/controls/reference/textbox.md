@@ -124,9 +124,48 @@ Set `IsReadOnly` for display-only fields that still support selection and copy.
 
 ### Semi.Avalonia ControlTheme / Semi.Avalonia 控件主题
 
-Semi.Avalonia defines `{x:Type TextBox}` as the default ControlTheme with these key resource brushes:
+Semi.Avalonia defines three TextBox themes plus one companion ToggleButton theme:
 
-Semi.Avalonia 将 `{x:Type TextBox}` 定义为默认 ControlTheme，使用以下关键资源笔刷：
+Semi.Avalonia 定义了三种 TextBox 主题和一个配套 ToggleButton 主题：
+
+| Theme / 主题 | Resource Key / 资源键 | Target / 目标 | Description / 说明 |
+| --- | --- | --- | --- |
+| Default | `{x:Type TextBox}` | `TextBox` | Standard text box with border, background, focus visuals, clear button, and reveal-password button. Supports `Small`, `Large`, `Bordered`, `clearButton`, and `revealPasswordButton` style classes. / 标准文本框，带边框、背景、焦点视觉、清除按钮和密码显示按钮。支持 `Small`、`Large`、`Bordered`、`clearButton` 和 `revealPasswordButton` 样式类。 |
+| Non-error | `NonErrorTextBox` | `TextBox` | Like default but wraps content with `SilentDataValidationErrors` — suppresses error visuals. Use when data validation feedback is handled externally. / 类似默认主题但用 `SilentDataValidationErrors` 包裹内容 —— 抑制错误视觉。当数据验证反馈由外部处理时使用。 |
+| Lookless | `LooklessTextBox` | `TextBox` | Borderless text box with no background, border, or error visuals. Only text, placeholder, caret, and inner content are visible. Use for inline editing or seamless text entry. / 无边框文本框，无背景、边框或错误视觉。仅文本、占位符、光标和内部内容可见。用于内联编辑或无缝文本输入。 |
+| Input Toggle Button | `InputToggleButton` | `ToggleButton` | A 16×16 icon toggle button used internally for the password reveal button (`PART_RevealButton`). Toggles between an eye icon (hidden) and an eye-slash icon (visible). Can be reused for custom input adornments. / 一个 16×16 图标切换按钮，内部用于密码显示按钮（`PART_RevealButton`）。在眼睛图标（隐藏）和眼睛斜线图标（可见）之间切换。可复用于自定义输入装饰。 |
+
+### Default Theme / 默认主题
+
+The default theme provides a full-featured text box with border, background, focus, error states, inner left/right content, and optional clear/reveal buttons.
+
+默认主题提供功能齐全的文本框，带边框、背景、焦点、错误状态、内部左右内容以及可选清除/显示按钮。
+
+```xml
+<!-- Default TextBox -->
+<TextBox Watermark="Enter text"
+         Text="{Binding Name}"
+         Width="200" />
+
+<!-- Bordered variant -->
+<TextBox Watermark="Search..."
+         Classes="Bordered" />
+
+<!-- With clear button -->
+<TextBox Watermark="Type to search..."
+         Classes="clearButton" />
+
+<!-- With password reveal button -->
+<TextBox PasswordChar="●"
+         Watermark="Enter password"
+         Classes="revealPasswordButton" />
+
+<!-- Size variants -->
+<TextBox Watermark="Small input" Classes="Small" />
+<TextBox Watermark="Large input" Classes="Large" />
+```
+
+**Key resource brushes / 关键资源笔刷：**
 
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
@@ -136,9 +175,56 @@ Semi.Avalonia 将 `{x:Type TextBox}` 定义为默认 ControlTheme，使用以下
 | `TextBoxDefaultBorderBrush` | Default border / 默认边框 |
 | `TextBoxSelectionBrush` | Selection background / 选择背景色 |
 
+### NonErrorTextBox / 无错误文本框
+
+Identical to the default TextBox in appearance and behavior, but wraps its content in `SilentDataValidationErrors` instead of the standard `DataValidationErrors`. This suppresses the error visual (red background/border) that normally appears when `DataValidationErrors` detects an error. Use when you want to handle validation feedback through a separate mechanism (e.g., a dedicated error label outside the TextBox).
+
+外观和行为与默认 TextBox 相同，但将内容包裹在 `SilentDataValidationErrors` 而非标准 `DataValidationErrors` 中。这会抑制 `DataValidationErrors` 检测到错误时通常显示的错误视觉（红色背景/边框）。当你想通过单独机制处理验证反馈时使用（例如 TextBox 外的专用错误标签）。
+
+```xml
+<StackPanel Spacing="4">
+    <TextBox Theme="{DynamicResource NonErrorTextBox}"
+             Watermark="Username"
+             Text="{Binding Username, Mode=TwoWay}" />
+    <TextBlock Text="{Binding UsernameError}"
+               Foreground="{DynamicResource TextBoxErrorForeground}"
+               IsVisible="{Binding HasUsernameError}" />
+</StackPanel>
+```
+
+### LooklessTextBox / 无外观文本框
+
+A completely borderless and background-less text box. It omits the outer border, background, clear button, reveal button, and error visuals entirely — only the core text editing surface, placeholder, and inner content are rendered. Ideal for inline editing scenarios where the text box should blend seamlessly into surrounding content (e.g., renaming an item in a tree, editing a table cell, or building a custom composite input).
+
+完全无边框、无背景的文本框。它完全省略了外部边框、背景、清除按钮、显示按钮和错误视觉 —— 仅渲染核心文本编辑区域、占位符和内部内容。适用于文本框应与周围内容无缝融合的内联编辑场景（例如在树中重命名项目、编辑表格单元格或构建自定义复合输入）。
+
+```xml
+<!-- Inline rename in a label -->
+<StackPanel Orientation="Horizontal">
+    <TextBlock Text="File name: " VerticalAlignment="Center" />
+    <TextBox Theme="{DynamicResource LooklessTextBox}"
+             Text="{Binding FileName, Mode=TwoWay}"
+             Watermark="Enter file name"
+             Width="200" />
+    <TextBlock Text=".txt" VerticalAlignment="Center" />
+</StackPanel>
+```
+
+### InputToggleButton / 输入切换按钮
+
+A 16×16 icon toggle button used internally as the password reveal toggle. It alternates between two `PathIcon` elements — a reveal icon (eye) when unchecked and a hide icon (eye-slash) when checked. It also provides `:pointerover` and `:pressed` pseudoclass styling. Although designed for `PART_RevealButton`, it can be reused independently for any compact icon toggle inside an input.
+
+一个 16×16 图标切换按钮，内部用作密码显示切换。它在两个 `PathIcon` 元素之间交替 —— 未选中时显示眼睛图标，选中时显示眼睛斜线图标。它还提供 `:pointerover` 和 `:pressed` 伪类样式。虽然设计用于 `PART_RevealButton`，但可独立复用于输入内的任何紧凑图标切换。
+
+```xml
+<!-- Standalone usage -->
+<ToggleButton Theme="{DynamicResource InputToggleButton}"
+              IsChecked="{Binding IsPasswordRevealed}" />
+```
+
 ### Context Flyout / 上下文浮出菜单
 
-Semi.Avalonia provides two built-in context flyouts with Cut/Copy/Paste菜单项：
+Semi.Avalonia provides two built-in context flyouts with Cut/Copy/Paste menu items:
 
 Semi.Avalonia 提供两个内置上下文浮出菜单，包含剪切/复制/粘贴菜单项：
 

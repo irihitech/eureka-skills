@@ -38,7 +38,47 @@ Use `ScrollViewer` whenever content may exceed its allocated space — long list
 
 ## Styling & Templating / 样式与模板
 
-Semi themes scroll bars via `ScrollBarThumbBackground`, `ScrollBarThumbPointeroverBackground`, `ScrollBarTrackBackground`. `ScrollViewer` itself delegates to these resources.
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
+
+Semi.Avalonia provides two additional `ScrollViewer` ControlThemes beyond the default, plus a `ScrollBarRepeatButton` theme used internally by the `ScrollBar` template.
+
+Semi.Avalonia 在默认主题之外提供了两个额外的 `ScrollViewer` ControlTheme，以及一个由 `ScrollBar` 模板内部使用的 `ScrollBarRepeatButton` 主题。
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| **StaticScrollViewer** | `StaticScrollViewer` | ScrollViewer where scroll bars always sit outside the content area — equivalent to applying the `InsetContent` style class to the default theme. / 滚动条始终位于内容区域之外的 ScrollViewer — 等同于对默认主题应用 `InsetContent` 样式类。 |
+| **ScrollBarRepeatButton** | `ScrollBarRepeatButton` | Transparent, borderless `RepeatButton` theme used by line-up/down and page-up/down buttons inside `ScrollBar`. / 透明无边框的 `RepeatButton` 主题，由 `ScrollBar` 内的上下行按钮和上下页按钮使用。 |
+
+```xml
+<!-- StaticScrollViewer: scroll bars stay outside content -->
+<ScrollViewer Theme="{StaticResource StaticScrollViewer}"
+              HorizontalScrollBarVisibility="Auto"
+              VerticalScrollBarVisibility="Auto">
+    <Border Width="800" Height="800" Background="LightGray" />
+</ScrollViewer>
+
+<!-- The default ScrollViewer uses InsetContent class for similar effect -->
+<ScrollViewer Classes="InsetContent"
+              HorizontalScrollBarVisibility="Auto"
+              VerticalScrollBarVisibility="Auto">
+    <Border Width="800" Height="800" Background="LightGray" />
+</ScrollViewer>
+```
+
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ScrollBarThumbBackground` | ScrollBar thumb color. / 滚动条滑块颜色。 |
+| `ScrollBarThumbPointeroverBackground` | Thumb color on hover. / 悬停时的滑块颜色。 |
+| `ScrollBarTrackBackground` | ScrollBar track background. / 滚动条轨道背景。 |
+| `ScrollBarBackground` | ScrollBar background. / 滚动条背景。 |
+| `ScrollBarButtonDefaultForeground` | ScrollBar button icon color. / 滚动条按钮图标颜色。 |
+| `ScrollBarButtonPointeroverForeground` | Button icon color on hover. / 悬停时的按钮图标颜色。 |
+| `ScrollBarThumbCornerRadius` | Thumb corner radius. / 滑块圆角。 |
+| `ScrollBarThumbThickness` | Thumb thickness (width for vertical, height for horizontal). / 滑块厚度。 |
+| `ScrollBarMinLength` | Minimum thumb length. / 滑块最小长度。 |
+| `ScrollBarThickness` | ScrollBar track thickness. / 滚动条轨道厚度。 |
 
 ## FAQ / 常见问题
 

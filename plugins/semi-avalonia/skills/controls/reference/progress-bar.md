@@ -133,14 +133,60 @@ Semi.Avalonia 为 `ProgressBar` 提供了丰富的样式系统，包含颜色类
 
 ### Theme Variants / 主题变体
 
+Semi.Avalonia defines two ProgressBar themes:
+
+Semi.Avalonia 定义了两种 ProgressBar 主题：
+
 | Theme / 主题 | Resource Key / 资源键 | Appearance / 外观 |
 | --- | --- | --- |
-| **Default** | `{x:Type ProgressBar}` | Standard progress bar with rounded fill. / 标准进度条，带圆角填充。 |
+| **Default** | `{x:Type ProgressBar}` | Standard linear progress bar with rounded fill. Supports horizontal and vertical orientations, determinate and indeterminate modes, and progress text overlay. / 标准线性进度条，带圆角填充。支持水平和垂直方向、确定和不确定模式以及进度文本覆盖。 |
+| **ProgressRing** | `ProgressRing` | Circular ring-style progress indicator using `Arc` elements. Shows a circular track with an arc that fills clockwise. Supports determinate (arc sweep), indeterminate (spinning animation), and progress text in the center. / 使用 `Arc` 元素的环形进度指示器。显示圆形轨道，弧线顺时针填充。支持确定（弧线扫描）、不确定（旋转动画）和居中进度文本。 |
+
+### Default Theme / 默认主题
 
 ```xml
 <!-- Default theme -->
 <ProgressBar Value="60" />
 ```
+
+### ProgressRing / 环形进度条
+
+A circular progress indicator rendered with `Arc` shapes. The ring consists of a background arc (full 360° circle) and a foreground indicator arc whose sweep angle represents the current `Percentage`. In indeterminate mode, the indicator arc rotates continuously. The `BorderThickness` property controls the ring stroke width. Supports all six color classes (`Primary`, `Secondary`, `Tertiary`, `Success`, `Warning`, `Danger`) and `ShowProgressText` for centered percentage display.
+
+使用 `Arc` 形状渲染的环形进度指示器。环形由背景弧线（完整 360° 圆）和前景指示弧线组成，扫描角度表示当前 `Percentage`。在不确定模式下，指示弧线持续旋转。`BorderThickness` 属性控制环形描边宽度。支持所有六种颜色类（`Primary`、`Secondary`、`Tertiary`、`Success`、`Warning`、`Danger`）以及用于居中百分比显示的 `ShowProgressText`。
+
+```xml
+<!-- Determinate progress ring -->
+<ProgressBar Theme="{DynamicResource ProgressRing}"
+             Value="65"
+             BorderThickness="6" />
+
+<!-- Indeterminate spinning ring -->
+<ProgressBar Theme="{DynamicResource ProgressRing}"
+             IsIndeterminate="True"
+             BorderThickness="4" />
+
+<!-- With color class and progress text -->
+<ProgressBar Theme="{DynamicResource ProgressRing}"
+             Value="80"
+             Classes="Success"
+             ShowProgressText="True"
+             BorderThickness="8"
+             Width="120"
+             Height="120" />
+
+<!-- Small loading spinner (indeterminate) -->
+<ProgressBar Theme="{DynamicResource ProgressRing}"
+             IsIndeterminate="True"
+             Classes="Secondary"
+             BorderThickness="3"
+             Width="32"
+             Height="32" />
+```
+
+> **Note / 注意:** `ProgressRing` is a complete replacement theme for `ProgressBar`. It reuses the same properties (`Value`, `Minimum`, `Maximum`, `IsIndeterminate`, `ShowProgressText`, `ProgressTextFormat`). The `BorderThickness` property controls the stroke thickness of the ring. All color classes (`Primary`, `Secondary`, `Tertiary`, `Success`, `Warning`, `Danger`) are supported. Horizontal/vertical orientation pseudo-classes are not applicable — the ring is always circular.
+
+> `ProgressRing` 是 `ProgressBar` 的完整替代主题。它复用相同的属性（`Value`、`Minimum`、`Maximum`、`IsIndeterminate`、`ShowProgressText`、`ProgressTextFormat`）。`BorderThickness` 属性控制环形的描边粗细。支持所有颜色类（`Primary`、`Secondary`、`Tertiary`、`Success`、`Warning`、`Danger`）。水平/垂直方向的伪类不适用 —— 环形始终是圆形的。
 
 ### Color Classes / 颜色类
 

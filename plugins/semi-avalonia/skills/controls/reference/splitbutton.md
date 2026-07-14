@@ -216,6 +216,29 @@ Semi.Avalonia 为 `SplitButton` 在主要操作区域和下拉箭头之间设置
 | `PART_Divider` | `Border` | The vertical divider line between the primary and dropdown areas. / 主要区域和下拉区域之间的垂直分隔线。 |
 | `PART_ContentPresenter` | `ContentPresenter` | Renders the `Content` inside the primary action area. / 在主要操作区域内部渲染 `Content`。 |
 
+### Special ControlThemes / 特殊控件主题
+
+Semi.Avalonia defines the `SemiSplitButtonElement` theme in `SplitButton.axaml` as the internal button theme for both the primary and dropdown regions of a `SplitButton`.
+
+Semi.Avalonia 在 `SplitButton.axaml` 中定义了 `SemiSplitButtonElement` 主题，作为 `SplitButton` 主要和下拉区域内部按钮的主题。
+
+#### `SemiSplitButtonElement`
+
+**TargetType:** `Button`
+**Resource Key:** `SemiSplitButtonElement`
+
+The internal button theme used by `PART_PrimaryButton` and `PART_DropDownButton` inside the `SplitButton` control template. It renders a bare `ContentPresenter` so that all backgrounds, borders, and corner radii are supplied by the parent `SplitButton` template rather than the inner buttons themselves. This ensures the two button regions blend seamlessly into a single visual unit with a shared border and divider.
+
+`SplitButton` 控件模板内部 `PART_PrimaryButton` 和 `PART_DropDownButton` 使用的内部按钮主题。它渲染一个裸 `ContentPresenter`，因此所有背景、边框和圆角均由父级 `SplitButton` 模板而非内部按钮自身提供。这确保了两个按钮区域无缝融合成一个具有共享边框和分割线的单一视觉单元。
+
+```xml
+<!-- Used internally; reference for custom split-button patterns -->
+<Button Theme="{StaticResource SemiSplitButtonElement}"
+        Content="Click me" />
+```
+
+**Key inherited properties:** `ButtonDefaultPadding`, `ButtonDefaultPrimaryForeground`, `ButtonBorderThickness`, `ButtonCornerRadius`, `ButtonDefaultFontSize`, `ButtonDefaultFontWeight`, `BackgroundSizing="OuterBorderEdge"`, `Cursor="Hand"`
+
 ## FAQ / 常见问题
 
 **Q: How does SplitButton differ from DropDownButton? / SplitButton 与 DropDownButton 有何不同？**

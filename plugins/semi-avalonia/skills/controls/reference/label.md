@@ -34,7 +34,59 @@ Use `Label` when you need a form field label with keyboard accessibility. For pl
 
 ## Styling & Templating / 样式与模板
 
-Semi styles `Label` with `LabelForeground`, `LabelFontSize`. No special pseudo-classes beyond standard pointer/focus states.
+### Semi.Avalonia ControlThemes / Semi.Avalonia 控件主题
+
+Semi.Avalonia provides the `TagLabel` ControlTheme which transforms a `Label` into a tag/chip component. It supports three variant styles (Light/ghost, Ghost, Solid), two sizes (default Small, Large), two shapes (Square, Circle), 17 colour classes, and AI-assisted styles (Colorful, Gradient).
+
+Semi.Avalonia 提供了 `TagLabel` ControlTheme，将 `Label` 转换为标签/芯片组件。它支持三种变体样式（Light/ghost 浅色、Ghost 幽灵、Solid 实色）、两种尺寸（默认 Small 小、Large 大）、两种形状（Square 方形、Circle 圆形）、17 种颜色类以及 AI 辅助样式（Colorful 多彩、Gradient 渐变）。
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| **TagLabel** | `TagLabel` | Tag/chip theme with Light/Ghost/Solid variants, 17 colours, 2 sizes, 2 shapes, and Colorful/Gradient AI styles. / 标签/芯片主题，支持 Light/Ghost/Solid 变体、17 种颜色、2 种尺寸、2 种形状以及 Colorful/Gradient AI 样式。 |
+
+```xml
+<!-- Default tag (Light style, Grey colour, Small size, Square shape) -->
+<Label Theme="{StaticResource TagLabel}" Content="Tag" />
+
+<!-- Large circle tag -->
+<Label Theme="{StaticResource TagLabel}" Classes="Large Circle" Content="Circle" />
+
+<!-- Ghost red tag -->
+<Label Theme="{StaticResource TagLabel}" Classes="Ghost Red" Content="Red Ghost" />
+
+<!-- Solid blue tag -->
+<Label Theme="{StaticResource TagLabel}" Classes="Solid Blue" Content="Blue Solid" />
+
+<!-- Colorful gradient tag -->
+<Label Theme="{StaticResource TagLabel}" Classes="Colorful Gradient" Content="Gradient" />
+```
+
+### TagLabel Variant Classes / TagLabel 变体类
+
+| Style Class / 样式类 | Description / 说明 |
+| --- | --- |
+| _(default / 默认)_ | Light background with coloured text. / 浅色背景配彩色文字。 |
+| `Ghost` | Transparent background with coloured border and text. / 透明背景配彩色边框和文字。 |
+| `Solid` | Solid coloured background with white text. / 实色背景配白色文字。 |
+
+### TagLabel Colour Classes / TagLabel 颜色类
+
+`Red`, `Pink`, `Purple`, `Violet`, `Indigo`, `Blue`, `LightBlue`, `Cyan`, `Teal`, `Green`, `LightGreen`, `Lime`, `Yellow`, `Amber`, `Orange`, `Grey` (default), `White`.
+
+### TagLabel Size & Shape Classes / TagLabel 尺寸与形状类
+
+| Style Class / 样式类 | Description / 说明 |
+| --- | --- |
+| _(default / 默认)_ | Small size, square shape. / 小尺寸，方形。 |
+| `Large` | Larger padding and height. / 更大的内边距和高度。 |
+| `Circle` | Fully rounded corners. / 完全圆角。 |
+
+### AI Style Classes / AI 样式类
+
+| Style Class / 样式类 | Description / 说明 |
+| --- | --- |
+| `Colorful` | Vibrant gradient text and backgrounds. / 渐变鲜艳的文字和背景。 |
+| `Colorful` + `Gradient` | Gradient background with gradient text. / 渐变背景配渐变文字。 |
 
 ## FAQ / 常见问题
 

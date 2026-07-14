@@ -121,9 +121,71 @@ ToggleSwitch 继承 `ToggleButton` 的所有属性。关键属性：
 
 ### Semi.Avalonia ControlTheme / Semi.Avalonia 控件主题
 
-Semi.Avalonia defines the default `{x:Type ToggleSwitch}` ControlTheme. The switch consists of a track (background rectangle) and a knob (draggable ellipse) that slides between on/off positions. Styles target `Border#PART_MoveBack` (knob), `Grid#PART_SwitchKnob` (knob container), and `ContentPresenter#PART_ContentPresenter` (label).
+Semi.Avalonia defines three ToggleSwitch themes:
 
-Semi.Avalonia 将 `{x:Type ToggleSwitch}` 定义为默认 ControlTheme。开关由滑轨（背景矩形）和滑块（可拖动的椭圆）组成，滑块在开/关位置之间滑动。样式定位 `Border#PART_MoveBack`（滑块）、`Grid#PART_SwitchKnob`（滑块容器）和 `ContentPresenter#PART_ContentPresenter`（标签）。
+Semi.Avalonia 定义了三种 ToggleSwitch 主题：
+
+| Theme / 主题 | Resource Key / 资源键 | Description / 说明 |
+| --- | --- | --- |
+| Default | `{x:Type ToggleSwitch}` | Standard sliding switch with track, knob, and optional On/Off content. Supports `Small` and `Large` size classes. / 标准滑动开关，带滑轨、滑块和可选的开/关内容。支持 `Small` 和 `Large` 尺寸类。 |
+| Simple | `SimpleToggleSwitch` | Text-only toggle without the sliding track — shows only On/Off content labels. Supports `Small` and `Large` size classes. / 纯文本开关，无滑动滑轨 —— 仅显示开/关内容标签。支持 `Small` 和 `Large` 尺寸类。 |
+| Button | `ButtonToggleSwitch` | Button-style toggle that looks like a standard button, toggling between On/Off content text. Supports `Small` and `Large` size classes. / 按钮式开关，外观类似标准按钮，在开/关内容文本之间切换。支持 `Small` 和 `Large` 尺寸类。 |
+
+### Default Theme / 默认主题
+
+The default switch consists of a track (background rectangle) and a knob (draggable ellipse) that slides between on/off positions. Styles target `Border#PART_MoveBack` (knob), `Grid#PART_SwitchKnob` (knob container), and `ContentPresenter#PART_ContentPresenter` (label).
+
+默认开关由滑轨（背景矩形）和滑块（可拖动的椭圆）组成，滑块在开/关位置之间滑动。样式定位 `Border#PART_MoveBack`（滑块）、`Grid#PART_SwitchKnob`（滑块容器）和 `ContentPresenter#PART_ContentPresenter`（标签）。
+
+```xml
+<!-- Default switch -->
+<ToggleSwitch Content="Dark Mode"
+              IsChecked="{Binding IsDarkMode}"
+              OffContent="Off"
+              OnContent="On" />
+
+<!-- Size variants -->
+<ToggleSwitch Content="Small" Classes="Small" />
+<ToggleSwitch Content="Large" Classes="Large" />
+```
+
+### SimpleToggleSwitch / 简单文本开关
+
+A minimal toggle without the sliding track — only the On/Off content labels are shown. The checked state changes the text and its color. Ideal for inline text toggles in toolbars or compact UIs where a full switch would take too much space. Supports `Small` and `Large` size classes.
+
+无滑动滑轨的极简开关 —— 仅显示开/关内容标签。选中状态改变文本及其颜色。适用于工具栏或紧凑 UI 中的内联文本切换，完整开关会占用过多空间。支持 `Small` 和 `Large` 尺寸类。
+
+```xml
+<ToggleSwitch Theme="{DynamicResource SimpleToggleSwitch}"
+              OnContent="是"
+              OffContent="否"
+              IsChecked="{Binding IsEnabled}" />
+
+<!-- Small variant hides On/Off content at small size -->
+<ToggleSwitch Theme="{DynamicResource SimpleToggleSwitch}"
+              OnContent="是"
+              OffContent="否"
+              Classes="Small" />
+```
+
+### ButtonToggleSwitch / 按钮式开关
+
+Renders the toggle as a standard button, toggling between On/Off content. The button uses the default button styling (border, background, corner radius) and responds to pointer-over, pressed, and disabled states. Useful when you want a toggle that looks like a toolbar button or action button. Supports `Small` and `Large` size classes.
+
+将开关渲染为标准按钮，在开/关内容之间切换。按钮使用默认按钮样式（边框、背景、圆角），并响应指针悬停、按下和禁用状态。当你想要一个看起来像工具栏按钮或操作按钮的开关时很有用。支持 `Small` 和 `Large` 尺寸类。
+
+```xml
+<ToggleSwitch Theme="{DynamicResource ButtonToggleSwitch}"
+              OnContent="啟用"
+              OffContent="禁用"
+              IsChecked="{Binding FeatureEnabled}" />
+
+<!-- With size classes -->
+<ToggleSwitch Theme="{DynamicResource ButtonToggleSwitch}"
+              OnContent="On"
+              OffContent="Off"
+              Classes="Large" />
+```
 
 ### Pseudo-classes / 伪类
 
