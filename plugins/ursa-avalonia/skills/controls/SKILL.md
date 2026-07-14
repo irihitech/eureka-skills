@@ -110,8 +110,10 @@ Each reference contains / 每个参考页面包含：
 
 | Control | File | Description |
 | --- | --- | --- |
-| **AutoCompleteBox** | [autocompletebox](reference/autocompletebox.md) | Auto-complete text + MultiAutoCompleteBox. / 自动完成输入。 |
-| **ComboBox** | [combobox](reference/combobox.md) | TreeComboBox + MultiComboBox dropdowns. / 树形+多选下拉。 |
+| **AutoCompleteBox** | [autocompletebox](reference/autocompletebox.md) | Single-value auto-complete text input. / 单值自动完成输入。 |
+| **MultiAutoCompleteBox** | [multi-auto-complete-box](reference/multi-auto-complete-box.md) | Multi-value chip auto-complete with async population. / 多选芯片自动完成。 |
+| **TreeComboBox** | [tree-combo-box](reference/tree-combo-box.md) | Hierarchical tree single-select dropdown. / 树形单选下拉。 |
+| **MultiComboBox** | [multi-combo-box](reference/multi-combo-box.md) | Multi-select dropdown with chip display. / 多选芯片下拉。 |
 | **ControlClassesInput** | [controlclassesinput](reference/controlclassesinput.md) | Visual style-class chip editor. / 样式类标签编辑器。 |
 | **EnumSelector** | [enumselector](reference/enumselector.md) | Enum value dropdown selector. / 枚举值下拉选择。 |
 | **IPv4Box** | [ipv4box](reference/ipv4box.md) | IPv4 address segmented input. / IPv4 地址分段输入。 |
