@@ -8,9 +8,14 @@
   },
   "plugins": [
     {
-      "name": "irihi-avalonia",
-      "source": "./plugins/irihi-avalonia",
-      "description": "Core Avalonia skills for architecture, MVVM patterns, and styling/theming guidance."
+      "name": "semi-avalonia",
+      "source": "./plugins/semi-avalonia",
+      "description": "Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization."
+    },
+    {
+      "name": "ursa-avalonia",
+      "source": "./plugins/ursa-avalonia",
+      "description": "Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources."
     }
   ]
 }

@@ -1,6 +1,0 @@
-{
-  "name": "irihi-avalonia",
-  "version": "0.1.0",
-  "description": "Core Avalonia skills for IRIHI Tech products.",
-  "skills": ["./skills/"]
-}

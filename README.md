@@ -8,7 +8,8 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 | Plugin | Description |
 | --- | --- |
-| [irihi-avalonia](plugins/irihi-avalonia/) | Core Avalonia skills for architecture, MVVM patterns, and styling/theming guidance. |
+| [semi-avalonia](plugins/semi-avalonia/) | Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization. |
+| [ursa-avalonia](plugins/ursa-avalonia/) | Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources. |
 
 ## Agent/Tooling Support
 
@@ -26,11 +27,17 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 ├── .codewhale-plugin/marketplace.json
 ├── .cursor-plugin/marketplace.json
 └── plugins/
-    └── irihi-avalonia/
+    ├── semi-avalonia/
+    │   ├── plugin.json
+    │   └── skills/
+    │       ├── controls/SKILL.md
+    │       │   └── reference/ (65 control files)
+    │       └── theme/SKILL.md
+    └── ursa-avalonia/
         ├── plugin.json
         └── skills/
-            ├── avalonia-styling-theming/SKILL.md
-            └── avalonia-viewmodel-patterns/SKILL.md
+            └── controls/SKILL.md
+                └── reference/ (70+ control files)
 ```
 
 ## Installation
@@ -41,12 +48,13 @@ Use this repository path as the marketplace source (`<owner>/<repository>`), the
 
 ```text
 /plugin marketplace add <owner>/<repository>
-/plugin install irihi-avalonia@eureka-skills
+/plugin install semi-avalonia@eureka-skills
+/plugin install ursa-avalonia@eureka-skills
 ```
 
 ### Cursor
 
-Add this repository as a plugin marketplace and install the `irihi-avalonia` plugin.
+Add this repository as a plugin marketplace and install the `semi-avalonia` or `ursa-avalonia` plugins.
 
 ### Other compatible clients
 
