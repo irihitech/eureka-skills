@@ -46,7 +46,7 @@ Avalonia 内置控件包含文本（如 TextBox 右键菜单）。在 `SemiTheme
 
 ```xml
 <Application.Styles>
-    <semi:SemiTheme Locale="en" />  <!-- "zh" for Chinese (default), "en" for English -->
+    <semi:SemiTheme Locale="zh-CN" /> 
 </Application.Styles>
 ```
 
