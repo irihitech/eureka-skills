@@ -255,3 +255,56 @@ Use `ThemeVariantScope` to apply a different theme to a specific subtree:
     </ThemeVariantScope>
 </Panel>
 ```
+
+## Authoring New Controls / 编写新控件
+
+When creating a new Semi.Avalonia control or custom theme, always reference base
+tokens rather than hardcoding values. This ensures theme consistency and
+automatic Light/Dark support.
+
+编写新的 Semi.Avalonia 控件或自定义主题时，始终引用基础令牌而非硬编码值。
+
+### Step 1: Use Base Tokens Directly / 直接使用基础令牌
+
+```xml
+<!-- ✅ Good -->
+<Setter Property="Height" Value="{DynamicResource SemiHeightControlDefault}" />
+<Setter Property="CornerRadius" Value="{DynamicResource SemiBorderRadiusMedium}" />
+
+<!-- ❌ Bad: hardcoded -->
+<Setter Property="Height" Value="32" />
+```
+
+### Step 2: Create Semantic Aliases / 创建语义别名
+
+Use `StaticResource` with `ResourceKey` to alias a base token without copying values:
+
+```xml
+<!-- ✅ Good -->
+<StaticResource x:Key="AdornerLayerSolidBorderBrush"
+                ResourceKey="SemiColorText0" />
+
+<!-- ❌ Bad -->
+<SolidColorBrush x:Key="AdornerLayerSolidBorderBrush" Color="Black" />
+```
+
+### Step 3: Per-Theme Customization / 按主题自定义
+
+```xml
+<ResourceDictionary x:Key="Light">
+    <SolidColorBrush x:Key="MyControlBg" Color="{StaticResource SemiGrey0Color}" />
+</ResourceDictionary>
+<ResourceDictionary x:Key="Dark">
+    <SolidColorBrush x:Key="MyControlBg" Color="{StaticResource SemiGrey9Color}" />
+</ResourceDictionary>
+```
+
+### Naming Convention / 命名约定
+
+| Scope / 范围 | Pattern / 模式 | Example / 示例 |
+| --- | --- | --- |
+| Base token / 基础令牌 | `Semi{Category}{Variant}` | `SemiColorText0`, `SemiSpacingBase` |
+| Control-specific / 控件专属 | `{ControlName}{Role}` | `AdornerLayerSolidBorderBrush`, `ButtonDefaultBackground` |
+
+See [Design Tokens](reference/design-tokens.md) for the complete base token reference.
+参见 [设计令牌](reference/design-tokens.md) 获取完整基础令牌参考。
