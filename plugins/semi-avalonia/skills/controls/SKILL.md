@@ -47,6 +47,50 @@ Each reference contains / 每个参考页面包含：
 - **DynamicResource Keys / 动态资源键** — every theme resource key used by the control. / 该控件使用的每个主题资源键。
 - **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
+## How to Get Started / 如何开始
+
+Install via NuGet:
+
+```bash
+dotnet add package Semi.Avalonia
+```
+
+Include Semi Design Styles in application:
+
+```xml
+<Application xmlns:semi="https://irihi.tech/semi">
+    <Application.Styles>
+        <semi:SemiTheme Locale="zh-CN" />
+    </Application.Styles>
+</Application>
+```
+
+That's all.
+
+### Optional Packages / 可选包
+
+```bash
+dotnet add package Semi.Avalonia.ColorPicker
+dotnet add package Semi.Avalonia.DataGrid
+dotnet add package Semi.Avalonia.TreeDataGrid
+dotnet add package Semi.Avalonia.Dock
+dotnet add package Semi.Avalonia.Tabalonia
+dotnet add package Semi.Avalonia.AvaloniaEdit
+```
+
+```xml
+<Application.Styles>
+    <semi:ColorPickerSemiTheme />
+    <semi:DataGridSemiTheme />
+    <semi:TreeDataGridSemiTheme />
+    <semi:DockSemiTheme />
+    <semi:TabaloniaSemiTheme />
+    <semi:AvaloniaEditSemiTheme />
+</Application.Styles>
+```
+
+> ℹ Dock, Tabalonia and AvaloniaEdit are delivered via nuget for free, but not open source.
+
 ## Controls Index / 控件索引
 
 ### Basic Input / 基础输入

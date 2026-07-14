@@ -41,6 +41,57 @@ Each reference contains / 每个参考页面包含：
 - **Styling & Templating / 样式与模板** — Ursa.Avalonia themes, pseudo-classes, template parts. / Ursa.Avalonia 主题、伪类、模板部件。
 - **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
+## How to Get Started / 如何开始
+
+### Installation / 安装
+
+1. Ursa
+
+Add nuget package:
+
+```bash
+dotnet add package Irihi.Ursa
+```
+
+2. Ursa.Themes.Semi
+
+To make Ursa controls show up in your application, you need to reference to a theme package designed for Ursa.
+Ursa.Themes.Semi is a theme package for Ursa inspired by Semi Design. You can add it to your project by following steps.
+
+Add nuget package:
+
+```bash
+dotnet add package Semi.Avalonia
+dotnet add package Irihi.Ursa.Themes.Semi
+```
+
+Include Styles in application:
+
+```xaml
+<Application...
+    xmlns:semi="https://irihi.tech/semi"
+    ....>
+
+    <Application.Styles>
+        <semi:SemiTheme Locale="zh-CN" />
+        <semi:UrsaSemiTheme Locale="zh-CN"/>
+    </Application.Styles>
+```
+
+
+You can now use Ursa controls in your Avalonia Application.
+
+```xaml
+<Window
+    ...
+    xmlns:u="https://irihi.tech/ursa"
+    ...>
+    <StackPanel Margin="20">
+        <u:TagInput />
+    </StackPanel>
+</Window>
+```
+
 ## Controls Index / 控件索引
 
 ### Display & Feedback / 显示与反馈
@@ -104,7 +155,7 @@ Each reference contains / 每个参考页面包含：
 | **Drawer** | [drawer](reference/drawer.md) | Slide-out drawer panel. / 滑出抽屉面板。 |
 | **MessageBox** | [messagebox](reference/messagebox.md) | Simple message dialog with buttons. / 简单消息对话框。 |
 | **PopConfirm** | [popconfirm](reference/popconfirm.md) | Popover confirmation before action. / 气泡确认框。 |
-| **OverlayDialogHost** | [overlay-dialog-host](reference/overlay-dialog-host.md) | Canvas host for Dialog/Drawer/MessageBox overlays. / Dialog/Drawer/MessageBox 浮层宿主。 |
+| **OverlayDialogHost** | [overlay-dialog-host](reference/overlay-dialog-host.md) | Canvas host for Dialog/Drawer/OverlayMessageBox overlays. / Dialog/Drawer/OverlayMessageBox 浮层宿主。 |
 
 ### Input / 输入控件
 
