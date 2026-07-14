@@ -281,3 +281,80 @@ theme or overriding `RequestedThemeVariant`.
 高对比度覆盖位于 `/Tokens/HighContrast/`，将低透明度和微妙色彩值替换为更高对比度的
 替代方案，以满足无障碍要求（WCAG 合规）。通过设置系统高对比度主题或覆写
 `RequestedThemeVariant` 启用。
+
+## Authoring New Controls / 编写新控件
+
+When creating a new Semi.Avalonia control or custom theme, always reference base
+tokens rather than hardcoding values. This ensures theme consistency and
+automatic Light/Dark support.
+
+编写新的 Semi.Avalonia 控件或自定义主题时，始终引用基础令牌而非硬编码值。
+这确保主题一致性并自动支持亮色/暗色模式。
+
+### Step 1: Use Base Tokens Directly / 直接使用基础令牌
+
+For spacing, sizing, and border values, reference base tokens:
+
+间距、尺寸和边框值直接引用基础令牌：
+
+```xml
+<!-- ✅ Good: use base tokens -->
+<Setter Property="Height" Value="{DynamicResource SemiHeightControlDefault}" />
+<Setter Property="CornerRadius" Value="{DynamicResource SemiBorderRadiusMedium}" />
+<Setter Property="Padding" Value="{DynamicResource SemiThicknessBase}" />
+
+<!-- ❌ Bad: hardcoded values -->
+<Setter Property="Height" Value="32" />
+<Setter Property="CornerRadius" Value="6" />
+```
+
+### Step 2: Create Semantic Aliases for Colors / 为颜色创建语义别名
+
+For control-specific colors, create a meaningful semantic key that aliases a
+base token. Use `StaticResource` with `ResourceKey` to redirect without copying
+values. This makes the control's theme file self-documenting.
+
+控件专属颜色应为基底令牌创建有意义的语义别名。使用 `StaticResource` 配合
+`ResourceKey` 重定向而不复制值，使控件主题文件自文档化。
+
+```xml
+<!-- ✅ Good: semantic alias pointing to base token -->
+<StaticResource x:Key="AdornerLayerSolidBorderBrush"
+                ResourceKey="SemiColorText0" />
+
+<!-- ❌ Bad: hardcoded color -->
+<SolidColorBrush x:Key="AdornerLayerSolidBorderBrush" Color="Black" />
+```
+
+### Step 3: Customize Per-Theme / 按主题自定义
+
+Override the semantic key in Light/Dark theme dictionaries when the value
+should differ between themes:
+
+当值在亮色/暗色主题间不同时，在对应主题字典中覆写语义键：
+
+```xml
+<!-- Light theme -->
+<ResourceDictionary x:Key="Light">
+    <SolidColorBrush x:Key="MyControlBackground" Color="{StaticResource SemiGrey0Color}" />
+</ResourceDictionary>
+
+<!-- Dark theme -->
+<ResourceDictionary x:Key="Dark">
+    <SolidColorBrush x:Key="MyControlBackground" Color="{StaticResource SemiGrey9Color}" />
+</ResourceDictionary>
+```
+
+### Naming Convention / 命名约定
+
+| Scope / 范围 | Pattern / 模式 | Example / 示例 |
+| --- | --- | --- |
+| Base token / 基础令牌 | `Semi{Category}{Variant}` | `SemiColorText0`, `SemiSpacingBase` |
+| Control-specific / 控件专属 | `{ControlName}{Role}` | `AdornerLayerSolidBorderBrush`, `ButtonDefaultBackground` |
+
+Base tokens live in `/Tokens/` and are shared across all controls. Control-
+specific keys live in the control's AXAML file (`/Controls/{Control}.axaml`)
+and should all ultimately resolve to base tokens.
+
+基础令牌位于 `/Tokens/`，跨所有控件共享。控件专属键位于控件的 AXAML 文件中
+（`/Controls/{Control}.axaml`），最终都解析为基础令牌。
