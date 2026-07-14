@@ -3,6 +3,7 @@ category: Components
 title: ThemeVariantMapper
 subtitle: 主题变体映射器
 description: 用于在多个 ThemeVariant 之间动态切换并传播主题变化的容器控件。
+---
 
 # ThemeVariantMapper / 主题变体映射器
 
