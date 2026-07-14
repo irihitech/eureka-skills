@@ -1,76 +1,85 @@
 ---
-category: Feedback
+category: Components
 title: Skeleton
 subtitle: 骨架屏
 description: >
-  A placeholder loading control that displays a shimmer animation overlay while
-  content is loading. Use Skeleton to mask content during async data fetches,
-  reducing perceived latency with a smooth animated placeholder.
-  占位加载控件，在内容加载时显示闪烁动画遮罩。使用 Skeleton 在异步数据获取时遮罩内容，
-  通过平滑动画占位符降低感知延迟。
+  A placeholder loading indicator that wraps content and displays an animated
+  shimmer overlay while data is being fetched. Supports active animation and
+  loading state control.
+  一种占位加载指示器，包裹内容并在数据加载时显示动画闪光叠加层。
+  支持活动动画和加载状态控制。
 ---
 
 # Skeleton / 骨架屏
 
 ## When to Use / 何时使用
 
-Use `Skeleton` when you need a shimmer-style placeholder that overlays content
-while data is being fetched asynchronously. It wraps any child content and
-shows an animated loading overlay (via `IsLoading`) together with an optional
-shimmer effect (via `IsActive`). This is ideal for card layouts, list items,
-tables, and any block-level content that benefits from a skeleton-screen UX
-pattern.
+Use `Skeleton` to show a placeholder animation while content is loading. It wraps
+existing layout content and overlays a shimmer effect controlled by `IsLoading`
+and `IsActive`. When `IsLoading` becomes `false`, the skeleton overlay hides and
+the real content is revealed.
 
-当需要在异步获取数据时使用闪烁式占位符覆盖内容时，使用 `Skeleton`。它包裹任意
-子内容，并通过 `IsLoading` 显示动画加载遮罩，配合可选的 `IsActive` 闪烁效果。
-适用于卡片布局、列表项、表格及任何受益于骨架屏 UX 模式的块级内容。
+当内容正在加载时，使用 `Skeleton` 显示占位动画。它包裹现有布局内容，并通过
+`IsLoading` 和 `IsActive` 控制闪光叠加效果。当 `IsLoading` 变为 `false` 时，
+骨架覆盖层隐藏，真实内容显示。
 
-Avoid `Skeleton` for inline spinners — use `Loading` or `LoadingIcon` instead.
-Avoid `Skeleton` for page-level loading masks — use `LoadingContainer` instead.
+Do NOT use `Skeleton` for progress bars or spinners — use `Loading` or
+`ProgressBar` instead. `Skeleton` is a content wrapper, not a standalone
+indicator.
 
-避免将 `Skeleton` 用于行内旋转动画——应使用 `Loading` 或 `LoadingIcon`。
-避免将 `Skeleton` 用于页面级别的加载遮罩——应使用 `LoadingContainer`。
+不要将 `Skeleton` 用于进度条或旋转加载器——应使用 `Loading` 或 `ProgressBar`。
+`Skeleton` 是内容包裹器，而非独立指示器。
 
 ## Basic Usage / 基本使用
 
 ```xml
 xmlns:u="https://irihi.tech/ursa"
 
-<!-- Skeleton wrapping a card -->
-<u:Skeleton IsLoading="{Binding IsBusy}" IsActive="True">
-    <Border Padding="16" Background="{DynamicResource SemiGrey0}">
+<!-- Wrap any content with a skeleton loading overlay -->
+<u:Skeleton IsLoading="True" IsActive="True">
+    <Border Padding="40" Background="{DynamicResource SemiColorFill0}">
         <StackPanel Spacing="8">
-            <TextBlock Text="{Binding Title}" FontSize="18" FontWeight="Bold" />
-            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" />
+            <TextBlock Text="Title placeholder" />
+            <TextBlock Text="Description text goes here" />
         </StackPanel>
     </Border>
 </u:Skeleton>
 ```
 
-When `IsLoading` is `true` and `IsActive` is `true`, the content is overlaid
-with a shimmer animation (the `PART_ActiveBorder` with a gradient sweep). When
-`IsLoading` is `true` but `IsActive` is `false`, a static gray placeholder
-(`PART_LoadingBorder`) covers the content instead.
+Toggle `IsLoading` to `false` when data is ready — the skeleton overlay
+disappears and the real content is shown.
 
-当 `IsLoading` 为 `true` 且 `IsActive` 为 `true` 时，内容被闪烁动画覆盖
-（`PART_ActiveBorder` 带渐变扫光）。当 `IsLoading` 为 `true` 但 `IsActive`
-为 `false` 时，静态灰色占位符（`PART_LoadingBorder`）覆盖内容。
+数据就绪时将 `IsLoading` 切换为 `false`——骨架覆盖层消失，真实内容显示。
 
 ## Common Scenarios / 常用场景
 
-### 1. List with skeleton items / 列表骨架项
+### 1. Loading data card / 加载数据卡片
 
 ```xml
-<!-- Show skeleton cards while data loads -->
+<u:Skeleton IsLoading="{Binding IsLoading}" IsActive="True">
+    <Border Padding="16" Classes="Card">
+        <StackPanel Spacing="8">
+            <TextBlock Text="{Binding Title}" Classes="h3" />
+            <TextBlock Text="{Binding Description}" />
+        </StackPanel>
+    </Border>
+</u:Skeleton>
+```
+
+### 2. List loading state / 列表加载状态
+
+```xml
 <ItemsControl ItemsSource="{Binding Items}">
+    <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+            <StackPanel Spacing="8" />
+        </ItemsPanelTemplate>
+    </ItemsControl.ItemsPanel>
     <ItemsControl.ItemTemplate>
         <DataTemplate>
-            <u:Skeleton IsLoading="{Binding IsStillLoading}" IsActive="True">
-                <Border Padding="12" Classes="Card">
-                    <StackPanel Spacing="4">
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text="{Binding Summary}" />
-                    </StackPanel>
+            <u:Skeleton IsLoading="{Binding IsLoading}" IsActive="True">
+                <Border Padding="12" Background="{DynamicResource SemiColorFill0}">
+                    <TextBlock Text="{Binding Name}" />
                 </Border>
             </u:Skeleton>
         </DataTemplate>
@@ -78,30 +87,28 @@ with a shimmer animation (the `PART_ActiveBorder` with a gradient sweep). When
 </ItemsControl>
 ```
 
-### 2. Static placeholder (no shimmer) / 静态占位（无闪烁）
+### 3. Without active animation / 无活动动画
 
 ```xml
-<u:Skeleton IsLoading="{Binding IsBusy}" IsActive="False">
-    <DataGrid ItemsSource="{Binding Rows}" />
+<u:Skeleton IsLoading="True" IsActive="False">
+    <Border Padding="40">
+        <TextBlock Text="Content loading..." />
+    </Border>
 </u:Skeleton>
 ```
 
-### 3. Custom corner radius for the overlay / 自定义遮罩圆角
+When `IsActive` is `false`, the skeleton overlay is static (no shimmer animation).
+This is useful for low-motion preferences or simple loading states.
 
-```xml
-<u:Skeleton IsLoading="True" IsActive="True"
-            CornerRadius="8"
-            Background="Transparent">
-    <Image Source="{Binding AvatarUrl}" Width="64" Height="64" />
-</u:Skeleton>
-```
+`IsActive` 为 `false` 时，骨架覆盖层为静态（无闪光动画）。适用于
+低动态偏好或简单加载状态。
 
 ## Property Reference / 属性参考
 
 | Property / 属性 | Type / 类型 | Default | Description / 说明 |
 |---|---|---|---|
-| `IsActive` | `bool` | `false` | Enables shimmer animation on the overlay (`PART_ActiveBorder`) / 启用遮罩闪烁动画 |
-| `IsLoading` | `bool` | `false` | Shows/hides the loading overlay; also sets `IsHitTestVisible` on the overlay / 显示/隐藏加载遮罩；同时控制遮罩的命中测试 |
+| `IsLoading` | `bool` | `false` | When `true`, shows the skeleton overlay / 为 `true` 时显示骨架覆盖层 |
+| `IsActive` | `bool` | `false` | When `true`, enables shimmer animation on the overlay / 为 `true` 时启用覆盖层闪光动画 |
 
 Inherits all properties from `ContentControl` (`Content`, `ContentTemplate`,
 `Background`, `BorderBrush`, `BorderThickness`, `CornerRadius`, `ClipToBounds`,
@@ -109,57 +116,57 @@ Inherits all properties from `ContentControl` (`Content`, `ContentTemplate`,
 
 继承 `ContentControl` 的全部属性。
 
-## Events / 事件
-
-No custom events. `Skeleton` is a `ContentControl` subclass and supports
-standard pointer and property-changed events.
-
-没有自定义事件。`Skeleton` 继承自 `ContentControl`，支持标准指针和属性变更事件。
-
 ## Styling & Templating / 样式与模板
 
 ### Theme Key / 主题 Key
 
 | Theme Key | Description / 说明 |
 |---|---|
-| `{x:Type u:Skeleton}` | Default theme — transparent background, two overlay layers / 默认主题——透明背景，双层遮罩 |
+| `{x:Type u:Skeleton}` | Default theme for the skeleton wrapper / 骨架包裹器的默认主题 |
 
-### Pseudo-classes / 伪类
+### Theme Resources / 主题资源
 
-| Pseudo-class | Condition / 条件 |
-|---|---|
-| `:active` | Set when `IsActive` is `true` (applied to `PART_LoadingBorder` via `Classes.Active`) |
+| Resource Key | Applies To | Description / 说明 |
+|---|---|---|
+| `SkeletonDefaultBackground` | `PART_LoadingBorder` | Background brush for the loading overlay / 加载覆盖层的背景画刷 |
 
 ### Template Parts / 模板部件
 
 | Part Name | Type | Description / 说明 |
 |---|---|---|
-| `PART_ContentPresenter` | `ContentPresenter` | Hosts the wrapped content / 承载被包裹的内容 |
-| `PART_LoadingBorder` | `PureRectangle` | Static gray overlay; visible when `IsLoading` is `true` / 静态灰色遮罩；IsLoading 为 true 时可见 |
-| `PART_ActiveBorder` | `PureRectangle` | Shimmer overlay; visible when `IsLoading` is `true`, animated when `IsActive` is `true` / 闪烁遮罩；IsLoading 为 true 时可见，IsActive 为 true 时动画播放 |
+| `PART_ContentPresenter` | `ContentPresenter` | Hosts the wrapped content / 承载包裹内容 |
+| `PART_LoadingBorder` | `PureRectangle` | The loading overlay rectangle with Active pseudo-class / 带 Active 伪类的加载覆盖矩形 |
+| `PART_ActiveBorder` | `PureRectangle` | The shimmer animation overlay (hit-test transparent when loading) / 闪光动画覆盖层（加载时点击穿透） |
 
-### Theme Resources / 主题资源
+### Pseudo-classes / 伪类
 
-| Resource Key | Description / 说明 |
+| Pseudo-class | Condition / 条件 |
 |---|---|
-| `SkeletonDefaultBackground` | Background brush for `PART_LoadingBorder` / PART_LoadingBorder 的背景画刷 |
+| `:active` (on `PART_LoadingBorder`) | `IsActive == True` — enables shimmer animation / 启用闪光动画 |
+
+The `PART_LoadingBorder` uses `Classes.Active` bound to `IsActive`, so the
+`:active` pseudo-class applies the shimmer effect. Both `PART_LoadingBorder`
+and `PART_ActiveBorder` are `IsHitTestVisible="{TemplateBinding IsLoading}"`,
+preventing interaction with content underneath while loading.
+
+`PART_LoadingBorder` 通过 `Classes.Active` 绑定到 `IsActive`，`:active` 伪类
+应用闪光效果。两个覆盖层均设置 `IsHitTestVisible="{TemplateBinding IsLoading}"`，
+加载时阻止与下方内容的交互。
 
 ## FAQ / 常见问题
 
-**Q: What's the difference between IsActive and IsLoading? / IsActive 和 IsLoading 的区别？**
-A: `IsLoading` controls whether the overlay is shown at all. `IsActive`
-controls whether the shimmer animation plays on top. When `IsLoading` is
-`false`, neither overlay is visible regardless of `IsActive`.
-
-**Q: How do I style the shimmer color? / 如何自定义闪烁颜色？**
-A: Override the `PART_ActiveBorder` style in your application theme, or
-customize the `SkeletonDefaultBackground` resource for the static layer.
-
-**Q: Can I use Skeleton without content? / 可以不包裹内容使用 Skeleton 吗？**
-A: Yes, but it's less useful — the overlay renders over nothing. For a
-standalone placeholder rectangle, just set `Content` to an empty `Border`
-with the desired dimensions.
-
+**Q: How do I customize the skeleton color? / 如何自定义骨架颜色？**
+A: Override `SkeletonDefaultBackground` in your application resources:
 ```xml
-<u:Skeleton IsLoading="True" IsActive="True" Width="200" Height="20" />
+<SolidColorBrush x:Key="SkeletonDefaultBackground" Color="#E0E0E0" />
 ```
+
+**Q: Can I disable the shimmer animation? / 可以禁用闪光动画吗？**
+A: Yes. Set `IsActive="False"`. The overlay remains static (no shimmer).
+
+**Q: Does the skeleton preserve layout size? / 骨架会保持布局尺寸吗？**
+A: Yes. The wrapped content is always present in the visual tree (just hidden
+behind the overlay). Layout measurements are based on the real content, so
+the page does not jump when loading completes.
+是的。包裹内容始终存在于可视化树中（只是隐藏在覆盖层后面）。布局测量基于真实
+内容，因此加载完成时页面不会跳动。

@@ -1,149 +1,165 @@
 ---
 category: Components
 title: Resizers
-subtitle: 调节器
+subtitle: 调整大小控件
 description: >
-  Controls for enabling drag-to-resize on windows and dialogs. WindowResizer and
-  DialogResizer provide eight-directional resize thumbs, while WindowResizerThumb
-  and DialogResizerThumb handle the low-level drag logic mapped to WindowEdge.
-  用于窗口和对话框拖拽调整大小的控件。WindowResizer 和 DialogResizer 提供八个方向的
-  调节手柄，WindowResizerThumb 和 DialogResizerThumb 处理映射到 WindowEdge 的底层拖拽逻辑。
+  A family of controls for window and dialog resizing: WindowResizer,
+  WindowResizerThumb, DialogResizer, DialogResizerThumb, and ResizeDirection
+  flags enum. Provides edge and corner drag handles for resizable windows
+  and overlay dialogs.
+  一组用于窗口和对话框调整大小的控件：WindowResizer、WindowResizerThumb、
+  DialogResizer、DialogResizerThumb 和 ResizeDirection 标志枚举。为可调整
+  大小的窗口和覆盖对话框提供边缘和角落拖拽手柄。
 ---
 
-# Resizers / 调节器
+# Resizers / 调整大小控件
 
 ## When to Use / 何时使用
 
-Use `WindowResizer` (with `WindowResizerThumb`) to add resize handles to a
-custom `Window` chrome — for example, when you replace the default OS window
-frame with a custom title bar. Use `DialogResizer` (with `DialogResizerThumb`)
-to add resize handles to an `OverlayDialog` or other overlay-hosted dialog.
+Use `WindowResizer` inside a `Window` template to add edge and corner resize
+handles. Use `DialogResizer` inside an overlay dialog template for the same
+purpose but with direction filtering via `ResizeDirection`. Both are
+`TemplatedControl` subclasses that host eight `Thumb`-derived drag handles
+(top, bottom, left, right, and four corners).
 
-当需要为自定义 `Window` 添加调整大小手柄时使用 `WindowResizer`（配合
-`WindowResizerThumb`）——例如用自定义标题栏替换默认 OS 窗口边框时。当需要为
-`OverlayDialog` 或其他浮层托管对话框添加调整大小手柄时使用 `DialogResizer`
-（配合 `DialogResizerThumb`）。
+在 `Window` 模板中使用 `WindowResizer` 添加边缘和角落调整手柄。在覆盖对话框
+模板中使用 `DialogResizer` 实现相同目的，但可通过 `ResizeDirection` 过滤方向。
+两者都是 `TemplatedControl` 子类，承载八个 `Thumb` 派生的拖拽手柄。
 
-Avoid resizers on fixed-size dialogs (e.g., alert boxes) — set
-`ResizeDirection` to limit or disable handles instead.
+Do NOT use `WindowResizer` inside a dialog — use `DialogResizer` instead.
+Do NOT use `DialogResizerThumb` or `WindowResizerThumb` standalone outside
+their parent resizer templates.
+
+不要在对话框中使用 `WindowResizer`——应使用 `DialogResizer`。不要在父级
+调整器模板之外单独使用 `DialogResizerThumb` 或 `WindowResizerThumb`。
+
+## Control Overview / 控件概览
+
+| Control | Base Class | Purpose / 用途 |
+|---|---|---|
+| `WindowResizer` | `TemplatedControl` | Window-level resize handles; always shows all 8 directions / 窗口级调整手柄；始终显示全部 8 个方向 |
+| `WindowResizerThumb` | `Thumb` | Individual edge/corner handle for windows; binds to parent `Window` / 窗口的单个边缘/角落手柄；绑定父级 Window |
+| `DialogResizer` | `TemplatedControl` | Dialog-level resize handles; direction filtered via `ResizeDirection` / 对话框级调整手柄；通过 ResizeDirection 过滤方向 |
+| `DialogResizerThumb` | `Thumb` | Individual edge/corner handle for dialogs; binds to parent `OverlayFeedbackElement` / 对话框的单个边缘/角落手柄；绑定父级 OverlayFeedbackElement |
+| `ResizeDirection` | `[Flags] enum` | Bitmask controlling which edges/corners are active / 控制哪些边缘/角落处于活动状态的位掩码 |
 
 ## Basic Usage / 基本使用
 
+### WindowResizer / 窗口调整器
+
 ```xml
 xmlns:u="https://irihi.tech/ursa"
-```
 
-### WindowResizer — Custom Window Chrome / 自定义窗口边框
-
-```xml
-<!-- Inside a custom Window template -->
+<!-- Inside a Window template, place the resizer as an overlay -->
 <u:WindowResizer />
 ```
 
-`WindowResizer` is a `TemplatedControl` that renders a 3×3 grid of
-`WindowResizerThumb` instances covering all eight directions (Top, Bottom,
-Left, Right, TopLeft, TopRight, BottomLeft, BottomRight). Each thumb invokes
-`Window.BeginResizeDrag(windowEdge, e)` on pointer press.
+`WindowResizer` has no configurable properties — it renders all 8 resize
+thumbs unconditionally. Place it as the last child in a `Grid` overlay so
+it captures input on top of window content.
 
-`WindowResizer` 是一个 `TemplatedControl`，渲染一个 3×3 网格，包含覆盖八个方向的
-`WindowResizerThumb` 实例。每个手柄在指针按下时调用 `Window.BeginResizeDrag`。
+`WindowResizer` 无可配置属性——它无条件渲染全部 8 个调整手柄。将其放置为
+`Grid` 覆盖层的最后一个子元素，以捕获窗口内容上方的输入。
 
-### DialogResizer — Dialog Resize Handles / 对话框调节手柄
-
-```xml
-<!-- Inside a dialog overlay template -->
-<u:DialogResizer ResizeDirection="Sides|Corners" />
-```
-
-`DialogResizer` uses `DialogResizerThumb` instances that locate the parent
-`OverlayFeedbackElement` and call `BeginResizeDrag` on it. You can restrict
-resize directions with the `ResizeDirection` property.
-
-`DialogResizer` 使用 `DialogResizerThumb` 实例，这些实例定位父级
-`OverlayFeedbackElement` 并调用其 `BeginResizeDrag`。可通过
-`ResizeDirection` 属性限制调节方向。
-
-## Common Scenarios / 常用场景
-
-### 1. Custom window with all resize edges / 带全部调节边的自定义窗口
+### DialogResizer / 对话框调整器
 
 ```xml
-<Window>
-    <Panel>
-        <!-- Custom title bar -->
-        <Border Height="32" Background="..." />
-        <!-- Content -->
-        <Border Margin="0,32,0,0">
-            <ContentPresenter Content="{Binding Content}" />
-        </Border>
-        <!-- Resize handles around the window edges -->
-        <u:WindowResizer />
-    </Panel>
-</Window>
+<!-- Full resize (default) -->
+<u:DialogResizer ResizeDirection="All" />
+
+<!-- Horizontal-only resize -->
+<u:DialogResizer ResizeDirection="Left, Right" />
+
+<!-- Bottom-right corner only -->
+<u:DialogResizer ResizeDirection="BottomRight" />
 ```
 
-### 2. Dialog resizer with only corners / 仅四角可调节的对话框
+### WindowResizerThumb (standalone) / 独立窗口手柄
 
 ```xml
-<u:DialogResizer ResizeDirection="Corners" />
+<u:WindowResizerThumb ResizeDirection="BottomRight"
+                       Cursor="BottomRightCorner"
+                       Width="8" Height="8" />
 ```
 
-### 3. Dialog resizer with only horizontal edges / 仅水平边可调节
+`WindowResizerThumb` maps its `ResizeDirection` to a `WindowEdge` and calls
+`Window.BeginResizeDrag()` on left-button press.
+
+`WindowResizerThumb` 将其 `ResizeDirection` 映射到 `WindowEdge` 并在
+左键按下时调用 `Window.BeginResizeDrag()`。
+
+### DialogResizerThumb (standalone) / 独立对话框手柄
 
 ```xml
-<u:DialogResizer ResizeDirection="Left,Right" />
+<u:DialogResizerThumb ResizeDirection="Top"
+                       Cursor="TopSide"
+                       Height="4" />
 ```
 
-### 4. Using a single Thumb directly / 直接使用单个 Thumb
+`DialogResizerThumb` works identically to `WindowResizerThumb` but binds
+to the logical ancestor `OverlayFeedbackElement` instead of `Window`.
 
-```xml
-<!-- A right-edge resize handle -->
-<u:WindowResizerThumb ResizeDirection="Right"
-                       Cursor="RightSide"
-                       Height="Auto" Width="4"
-                       HorizontalAlignment="Right" />
-```
+`DialogResizerThumb` 与 `WindowResizerThumb` 工作方式相同，但绑定到逻辑
+祖先 `OverlayFeedbackElement` 而非 `Window`。
 
 ## Property Reference / 属性参考
 
-### DialogResizer / WindowResizer
+### DialogResizer Properties / DialogResizer 属性
 
 | Property / 属性 | Type / 类型 | Default | Description / 说明 |
 |---|---|---|---|
-| `ResizeDirection` | `ResizeDirection` | `All` | Bitmask of allowed resize directions / 允许的调节方向位掩码 |
+| `ResizeDirection` | `ResizeDirection` | `All` | Bitmask of allowed resize directions / 允许的调整方向位掩码 |
 
-### WindowResizerThumb / DialogResizerThumb
+### WindowResizerThumb Properties / WindowResizerThumb 属性
 
 | Property / 属性 | Type / 类型 | Default | Description / 说明 |
 |---|---|---|---|
-| `ResizeDirection` | `ResizeDirection` | (unset) | The direction this thumb controls; maps to a `WindowEdge` value / 此手柄控制的方向；映射到 WindowEdge 值 |
+| `ResizeDirection` | `ResizeDirection` | (required) | The edge/corner this thumb controls / 此手柄控制的边缘/角落 |
 
-### ResizeDirection enum / ResizeDirection 枚举
+### DialogResizerThumb Properties / DialogResizerThumb 属性
 
-| Value | Description / 说明 |
+| Property / 属性 | Type / 类型 | Default | Description / 说明 |
+|---|---|---|---|
+| `ResizeDirection` | `ResizeDirection` | (required) | The edge/corner this thumb controls / 此手柄控制的边缘/角落 |
+
+### ResizeDirection Enum / ResizeDirection 枚举
+
+`ResizeDirection` is a `[Flags]` enum. Combine values with `,` in XAML
+or `|` in code.
+
+`ResizeDirection` 是 `[Flags]` 枚举。在 XAML 中用 `,` 组合，在代码中用 `|` 组合。
+
+| Value | Bit | Edge/Corner / 边缘/角落 |
+|---|---|---|
+| `Top` | 1 | Top edge / 顶部边缘 |
+| `Bottom` | 2 | Bottom edge / 底部边缘 |
+| `Left` | 4 | Left edge / 左侧边缘 |
+| `Right` | 8 | Right edge / 右侧边缘 |
+| `TopLeft` | 16 | Top-left corner / 左上角 |
+| `TopRight` | 32 | Top-right corner / 右上角 |
+| `BottomLeft` | 64 | Bottom-left corner / 左下角 |
+| `BottomRight` | 128 | Bottom-right corner / 右下角 |
+
+| Composite Value | Composition / 组合 |
 |---|---|
-| `Top` (1) | Top edge / 上边 |
-| `Bottom` (2) | Bottom edge / 下边 |
-| `Left` (4) | Left edge / 左边 |
-| `Right` (8) | Right edge / 右边 |
-| `TopLeft` (16) | Top-left corner / 左上角 |
-| `TopRight` (32) | Top-right corner / 右上角 |
-| `BottomLeft` (64) | Bottom-left corner / 左下角 |
-| `BottomRight` (128) | Bottom-right corner / 右下角 |
-| `Sides` | Combination: `Top \| Bottom \| Left \| Right` / 四条边 |
-| `Corners` | Combination: `TopLeft \| TopRight \| BottomLeft \| BottomRight` / 四个角 |
-| `All` | Combination: `Sides \| Corners` / 所有方向 |
+| `Sides` | `Top \| Bottom \| Left \| Right` |
+| `Corners` | `TopLeft \| TopRight \| BottomLeft \| BottomRight` |
+| `All` | `Sides \| Corners` |
 
-## Events / 事件
+### Cursor Mapping / 光标映射
 
-No custom events. `WindowResizerThumb` and `DialogResizerThumb` inherit
-`PointerPressed` and other pointer events from `Thumb`. The `OnPointerPressed`
-handler translates the `ResizeDirection` to a `WindowEdge` and calls
-`BeginResizeDrag`.
+Each `ResizeDirection` maps to a standard `WindowEdge` and cursor:
 
-没有自定义事件。`WindowResizerThumb` 和 `DialogResizerThumb` 继承自 `Thumb`
-的 `PointerPressed` 等指针事件。`OnPointerPressed` 处理器将 `ResizeDirection`
-转换为 `WindowEdge` 并调用 `BeginResizeDrag`。
+| ResizeDirection | WindowEdge | Cursor |
+|---|---|---|
+| `Top` | `North` | `TopSide` |
+| `TopRight` | `NorthEast` | `TopRightCorner` |
+| `Right` | `East` | `RightSide` |
+| `BottomRight` | `SouthEast` | `BottomRightCorner` |
+| `Bottom` | `South` | `BottomSide` |
+| `BottomLeft` | `SouthWest` | `BottomLeftCorner` |
+| `Left` | `West` | `LeftSide` |
+| `TopLeft` | `NorthWest` | `TopLeftCorner` |
 
 ## Styling & Templating / 样式与模板
 
@@ -151,60 +167,53 @@ handler translates the `ResizeDirection` to a `WindowEdge` and calls
 
 | Theme Key | Description / 说明 |
 |---|---|
-| `{x:Type u:WindowResizer}` | Default theme — 3×3 grid of `WindowResizerThumb` instances / 默认主题——WindowResizerThumb 的 3×3 网格 |
-| `{x:Type u:DialogResizer}` | Default theme — 3×3 grid of `DialogResizerThumb` instances / 默认主题——DialogResizerThumb 的 3×3 网格 |
-| `{x:Type u:WindowResizerThumb}` | Transparent background, stretched `PureRectangle` / 透明背景，拉伸的 PureRectangle |
-| `{x:Type u:DialogResizerThumb}` | Transparent background, panel-wrapped `PureRectangle` / 透明背景，Panel 包裹的 PureRectangle |
-
-### Template Parts / 模板部件
-
-| Part Name | Control | Type | Description / 说明 |
-|---|---|---|---|
-| `PART_Top` | `DialogResizer` | `DialogResizerThumb` | Top edge thumb / 上边手柄 |
-| `PART_Bottom` | `DialogResizer` | `DialogResizerThumb` | Bottom edge thumb / 下边手柄 |
-| `PART_Left` | `DialogResizer` | `DialogResizerThumb` | Left edge thumb / 左边手柄 |
-| `PART_Right` | `DialogResizer` | `DialogResizerThumb` | Right edge thumb / 右边手柄 |
-| `PART_TopLeft` | `DialogResizer` | `DialogResizerThumb` | Top-left corner thumb / 左上角手柄 |
-| `PART_TopRight` | `DialogResizer` | `DialogResizerThumb` | Top-right corner thumb / 右上角手柄 |
-| `PART_BottomLeft` | `DialogResizer` | `DialogResizerThumb` | Bottom-left corner thumb / 左下角手柄 |
-| `PART_BottomRight` | `DialogResizer` | `DialogResizerThumb` | Bottom-right corner thumb / 右下角手柄 |
+| `{x:Type u:WindowResizer}` | 3×3 Grid with 8 WindowResizerThumb handles / 含 8 个 WindowResizerThumb 手柄的 3×3 网格 |
+| `{x:Type u:WindowResizerThumb}` | Transparent background `PureRectangle` / 透明背景 PureRectangle |
+| `{x:Type u:DialogResizer}` | 3×3 Grid with 8 DialogResizerThumb handles, named parts / 含 8 个命名 DialogResizerThumb 手柄的 3×3 网格 |
+| `{x:Type u:DialogResizerThumb}` | Transparent background inside a `Panel` / 透明背景，包裹在 Panel 中 |
 
 ### Theme Resources / 主题资源
 
-| Resource Key | Description / 说明 |
-|---|---|
-| `ResizerThumbHeight` | Height for top/bottom edge thumbs in the resizer grid / 上/下边手柄的网格高度 |
-| `ResizerThumbWidth` | Width for left/right edge thumbs in the resizer grid / 左/右边手柄的网格宽度 |
+| Resource Key | Applies To | Description / 说明 |
+|---|---|---|
+| `ResizerThumbHeight` | Edge thumbs (top/bottom) | Height of horizontal edge resize handles / 水平边缘调整手柄的高度 |
+| `ResizerThumbWidth` | Edge thumbs (left/right) | Width of vertical edge resize handles / 垂直边缘调整手柄的宽度 |
 
-### Pseudo-classes / 伪类
+### Template Parts (DialogResizer) / 模板部件
 
-No custom pseudo-classes. Standard Thumb pseudo-classes apply.
+| Part Name | Type | Description / 说明 |
+|---|---|---|
+| `PART_Top` | `DialogResizerThumb` | Top edge handle / 顶部边缘手柄 |
+| `PART_Bottom` | `DialogResizerThumb` | Bottom edge handle / 底部边缘手柄 |
+| `PART_Left` | `DialogResizerThumb` | Left edge handle / 左侧边缘手柄 |
+| `PART_Right` | `DialogResizerThumb` | Right edge handle / 右侧边缘手柄 |
+| `PART_TopLeft` | `DialogResizerThumb` | Top-left corner handle / 左上角手柄 |
+| `PART_TopRight` | `DialogResizerThumb` | Top-right corner handle / 右上角手柄 |
+| `PART_BottomLeft` | `DialogResizerThumb` | Bottom-left corner handle / 左下角手柄 |
+| `PART_BottomRight` | `DialogResizerThumb` | Bottom-right corner handle / 右下角手柄 |
 
-没有自定义伪类。应用标准 Thumb 伪类。
+All 8 parts are resolved in `OnApplyTemplate` via `NameScope.Find<Thumb>()`.
+Visibility is controlled by `ResizeDirection` flags: each thumb is shown only
+when its corresponding flag is set.
+
+全部 8 个部件在 `OnApplyTemplate` 中通过 `NameScope.Find<Thumb>()` 解析。
+可见性由 `ResizeDirection` 标志控制：每个手柄仅在对应标志设置时显示。
 
 ## FAQ / 常见问题
 
-**Q: What's the difference between WindowResizer and DialogResizer? / WindowResizer 和 DialogResizer 的区别？**
-A: `WindowResizer` uses `WindowResizerThumb` which finds the `Window` parent
-(via `TopLevel.GetTopLevel`) and calls `Window.BeginResizeDrag`. `DialogResizer`
-uses `DialogResizerThumb` which finds the parent `OverlayFeedbackElement` and
-calls its `BeginResizeDrag`. The underlying resize mechanics differ because
-dialogs are overlay-hosted, not native `Window` instances.
+**Q: How do I add resize to a custom Window? / 如何为自定义窗口添加调整大小功能？**
+A: Add a `<u:WindowResizer />` as the last child in your window's root `Grid`.
+Ensure the `Window` has `CanResize="True"` and `ExtendClientAreaToDecorationsHint`
+set appropriately.
 
-**Q: Can I make only certain edges resizable? / 可以只让某些边可调节吗？**
-A: Yes, set the `ResizeDirection` property using the flags enum:
-```xml
-<u:DialogResizer ResizeDirection="Top,Bottom" />
-```
+**Q: Can I limit resize directions on a dialog? / 可以限制对话框的调整方向吗？**
+A: Yes. Set `ResizeDirection` on `DialogResizer` to a subset like `"Bottom, Right"`
+or `"BottomRight"`.
 
-**Q: How do I hide specific thumbs? / 如何隐藏特定手柄？**
-A: Setting `ResizeDirection` on `DialogResizer` automatically toggles
-`IsVisible` on each thumb. `WindowResizer` does not have a direction filter —
-all eight thumbs are always in the template; you can hide individual thumbs by
-overriding the `WindowResizer` template.
+**Q: Do resizer thumbs work with touch? / 调整手柄支持触摸吗？**
+A: The current implementation only responds to left mouse button
+(`Properties.IsLeftButtonPressed`). Touch support is noted as TODO in the source.
 
-**Q: Do these work with touch? / 支持触屏吗？**
-A: `WindowResizerThumb` explicitly checks for left mouse button
-(`IsLeftButtonPressed`) and has a TODO comment for touch support.
-`DialogResizerThumb` has the same limitation. Touch resizing is not yet
-implemented.
+**Q: How do I change the thumb size? / 如何更改手柄大小？**
+A: Override `ResizerThumbHeight` and `ResizerThumbWidth` resources in your
+application theme.
