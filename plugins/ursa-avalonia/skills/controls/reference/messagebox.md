@@ -12,6 +12,10 @@ description: >
 
 # MessageBox / 消息框
 
+> ⚠ **Requires `OverlayDialogHost`** — `MessageBox.ShowAsync()` requires an `OverlayDialogHost` in the visual tree. Use `UrsaWindow` or `UrsaView`.
+>
+> ⚠ **需要 `OverlayDialogHost`** — `MessageBox.ShowAsync()` 需要可视树中存在 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView`。
+
 ## When to Use / 何时使用
 
 Use `MessageBox` for simple modal prompts: alerts, confirmations, yes/no

@@ -66,8 +66,6 @@ Each reference contains / 每个参考页面包含：
 | **Dialog** | `OverlayDialog.Show()` — modal/non-modal dialogs |
 | **Drawer** | `OverlayDrawer.Show()` — slide-out panels |
 | **MessageBox** | `MessageBox.ShowAsync()` — message dialogs |
-| **Toast** | `WindowToastManager` — transient notifications |
-
 These controls find their host through `OverlayDialogHost` in the visual tree.
 Without an `UrsaWindow` or `UrsaView`, overlay APIs will throw.
 
@@ -125,10 +123,10 @@ Without an `UrsaWindow` or `UrsaView`, overlay APIs will throw.
 
 ### Overlays & Dialogs / 浮层与对话框
 
-> ⚠ Dialog, Drawer, MessageBox, and Toast require an `OverlayDialogHost` in the visual tree.
+> ⚠ Dialog, Drawer, and MessageBox require an `OverlayDialogHost` in the visual tree.
 > Use `UrsaWindow` or `UrsaView` as the application root. See [Infrastructure](#infrastructure--基础设施).
 >
-> ⚠ Dialog、Drawer、MessageBox、Toast 需要可视树中存在 `OverlayDialogHost`。
+> ⚠ Dialog、Drawer、MessageBox 需要可视树中存在 `OverlayDialogHost`。
 > 使用 `UrsaWindow` 或 `UrsaView` 作为应用根。参见[基础设施](#infrastructure--基础设施)。
 
 | Control | File | Description |

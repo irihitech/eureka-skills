@@ -12,6 +12,10 @@ description: >
 
 # Drawer / 抽屉
 
+> ⚠ **Requires `OverlayDialogHost`** — `OverlayDrawer.Show()` requires an `OverlayDialogHost` in the visual tree. Use `UrsaWindow` or `UrsaView`.
+>
+> ⚠ **需要 `OverlayDialogHost`** — `OverlayDrawer.Show()` 需要可视树中存在 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView`。
+
 ## When to Use / 何时使用
 
 Use `Drawer` for side panels, settings panels, filter sheets, or any secondary

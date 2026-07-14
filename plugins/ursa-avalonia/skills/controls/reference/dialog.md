@@ -14,6 +14,10 @@ description: >
 
 # Dialog / 对话框
 
+> ⚠ **Requires `OverlayDialogHost`** — `OverlayDialog.Show()` looks for an `OverlayDialogHost` in the visual tree. Use `UrsaWindow` or `UrsaView` as your application root, which contain `OverlayDialogHost` via `PART_DialogHost`. Without it, a `MissingHostException` is thrown.
+>
+> ⚠ **需要 `OverlayDialogHost`** — `OverlayDialog.Show()` 在可视树中查找 `OverlayDialogHost`。使用包含 `OverlayDialogHost`（`PART_DialogHost`）的 `UrsaWindow` 或 `UrsaView` 作为应用根。缺少时会抛出 `MissingHostException`。
+
 ## When to Use / 何时使用
 
 Use `Dialog` for custom modal or modeless overlays that go beyond simple MessageBox
