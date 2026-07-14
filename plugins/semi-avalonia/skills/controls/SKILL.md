@@ -8,16 +8,21 @@ description: >
 license: MIT
 ---
 
-# Semi.Avalonia Controls
+# Semi.Avalonia Controls / Semi.Avalonia 控件
 
 Use this skill when working with Semi.Avalonia controls in XAML or C#. Each
 control has a dedicated reference page under `reference/` with property tables,
 Semi-specific styling, DynamicResource keys, and bilingual usage guidance.
 
+在 XAML 或 C# 中使用 Semi.Avalonia 控件时加载此 Skill。每个控件在 `reference/`
+下都有专属参考页面，包含属性表格、Semi 专属样式、DynamicResource 键和双语使用指南。
+
 ## How to Use / 如何使用
 
 When the user asks about a specific control (e.g., "use a Button", "style a
 TextBox", "add a DataGrid"), load the corresponding reference:
+
+当用户询问某个特定控件时（如"使用 Button"、"给 TextBox 添加样式"），加载对应的参考文件：
 
 ```
 reference/<control-name>.md
@@ -32,15 +37,15 @@ resource key defined by Semi.Avalonia.
 
 当用户询问 **Semi.Avalonia 特殊主题**或**控件专属 DynamicResource 键**（如"Button 支持哪些主题"、"如何使用 CardCheckBox"、"Slider 定义了哪些资源"）时，加载对应的控件参考文件 —— `Styling & Templating` 和 `DynamicResource Keys` 部分记录了 Semi.Avalonia 定义的每个特殊 ControlTheme 和资源键。
 
-Each reference contains:
-- **When to Use** — criteria to decide whether this control is appropriate.
-- **Basic Usage** — minimal XAML + C# snippet.
-- **Common Scenarios** — 2-4 realistic patterns with code.
-- **Property Reference** — key properties and events in a table.
-- **Styling & Templating** — Semi.Avalonia themes, pseudo-classes, template
-  parts, and special ControlThemes.
-- **DynamicResource Keys** — every theme resource key used by the control.
-- **FAQ** — common pitfalls and cross-control comparisons.
+Each reference contains / 每个参考页面包含：
+- **When to Use / 何时使用** — criteria to decide whether this control is appropriate. / 判断是否应使用该控件的条件。
+- **Basic Usage / 基本使用** — minimal XAML + C# snippet. / 最简 XAML + C# 示例。
+- **Common Scenarios / 常用场景** — 2-4 realistic patterns with code. / 2-4 个真实场景及代码。
+- **Property Reference / 属性参考** — key properties and events in a table. / 表格形式的属性和事件。
+- **Styling & Templating / 样式与模板** — Semi.Avalonia themes, pseudo-classes, template
+  parts, and special ControlThemes. / Semi.Avalonia 主题、伪类、模板部件和特殊 ControlTheme。
+- **DynamicResource Keys / 动态资源键** — every theme resource key used by the control. / 该控件使用的每个主题资源键。
+- **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
 ## Controls Index / 控件索引
 
