@@ -43,16 +43,16 @@ Each reference contains / 每个参考页面包含：
 
 ## How to Get Started / 如何开始
 
-### 1. Install NuGet Packages / 安装 NuGet 包
+### Installation / 安装
 
-```xml
-<PackageReference Include="Ursa" Version="0.*" />
-<PackageReference Include="Ursa.Themes.Semi" Version="0.*" />
+```bash
+dotnet add package Ursa
+dotnet add package Ursa.Themes.Semi
 ```
 
-### 2. Configure Theme / 配置主题
+### Theme Configuration / 主题配置
 
-Include the Semi theme style in `App.axaml`:
+Include Semi theme styles in `App.axaml`:
 
 ```xml
 <Application.Styles>
@@ -60,29 +60,27 @@ Include the Semi theme style in `App.axaml`:
 </Application.Styles>
 ```
 
-### 3. Use UrsaWindow / 使用 UrsaWindow
+### Window / 窗口
 
-Replace `<Window>` with `<ursa:UrsaWindow>` to enable overlay controls (Dialog, Drawer, MessageBox):
+Naming conventions differ from standard Avalonia. Use Ursa-specific base classes:
 
 ```xml
-<ursa:UrsaWindow xmlns:ursa="https://irihi.tech/ursa"
-                 x:Class="YourApp.MainWindow"
-                 Width="800" Height="600">
-    <Button Content="Open Dialog"
-            Click="OnOpenDialog" />
-</ursa:UrsaWindow>
+<u:UrsaWindow x:Class="YourApp.MainWindow"
+              xmlns:u="https://irihi.tech/ursa"
+              Width="800" Height="600">
+</u:UrsaWindow>
 ```
 
-### 4. Naming Convention (Optional) / 命名约定（可选）
-
-Add to `.editorconfig` to auto-fix Ursa-specific naming:
-
-```ini
-[*.{cs,axaml}]
-dotnet_diagnostic.URSA0001.severity = error  # missing xmlns:u prefix
-dotnet_diagnostic.URSA0002.severity = error  # non-UrsaWindow usage
-dotnet_diagnostic.URSA0003.severity = error  # non-UrsaView usage
+```xml
+<u:UrsaView x:Class="YourApp.MyView"
+            xmlns:u="https://irihi.tech/ursa">
+</u:UrsaView>
 ```
+
+| Use This / 使用 | Instead of / 替代 |
+| --- | --- |
+| `UrsaWindow` | `Window` |
+| `UrsaView` | `UserControl` |
 
 ## Controls Index / 控件索引
 
@@ -147,7 +145,7 @@ dotnet_diagnostic.URSA0003.severity = error  # non-UrsaView usage
 | **Drawer** | [drawer](reference/drawer.md) | Slide-out drawer panel. / 滑出抽屉面板。 |
 | **MessageBox** | [messagebox](reference/messagebox.md) | Simple message dialog with buttons. / 简单消息对话框。 |
 | **PopConfirm** | [popconfirm](reference/popconfirm.md) | Popover confirmation before action. / 气泡确认框。 |
-| **OverlayDialogHost** | [overlay-dialog-host](reference/overlay-dialog-host.md) | Canvas host for Dialog/Drawer/MessageBox overlays. / Dialog/Drawer/MessageBox 浮层宿主。 |
+| **OverlayDialogHost** | [overlay-dialog-host](reference/overlay-dialog-host.md) | Canvas host for Dialog/Drawer/OverlayMessageBox overlays. / Dialog/Drawer/OverlayMessageBox 浮层宿主。 |
 
 ### Input / 输入控件
 

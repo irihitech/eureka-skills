@@ -49,47 +49,56 @@ Each reference contains / 每个参考页面包含：
 
 ## How to Get Started / 如何开始
 
-### 1. Install NuGet Packages / 安装 NuGet 包
+Install via NuGet:
 
-```xml
-<PackageReference Include="Semi.Avalonia" Version="11.*" />
-<PackageReference Include="Semi.Avalonia.Themes.Semi" Version="11.*" />
-<!-- Optional: DataGrid theme -->
-<PackageReference Include="Semi.Avalonia.DataGrid" Version="11.*" />
+```bash
+dotnet add package Semi.Avalonia
 ```
 
-### 2. Configure App.axaml / 配置 App.axaml
+Include Semi Design Styles in application:
 
 ```xml
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:semi="https://irihi.tech/semi"
-             x:Class="YourApp.App">
+<Application xmlns:semi="https://irihi.tech/semi">
     <Application.Styles>
-        <semi:SemiTheme Locale="zh" />
+        <semi:SemiTheme Locale="zh-CN" />
     </Application.Styles>
 </Application>
 ```
 
-| Setting / 设置 | Description / 说明 |
-| --- | --- |
-| `Locale="zh"` | Chinese (default). Use `"en"` for English. / 中文（默认）。`"en"` 为英文。 |
+That's all.
 
-### 3. Configure .csproj / 配置 .csproj
+### Optional Packages / 可选包
 
-```xml
-<PropertyGroup>
-    <AvaloniaVersion>11.1.0</AvaloniaVersion>
-    <UseWinUI>true</UseWinUI>
-</PropertyGroup>
+```bash
+dotnet add package Semi.Avalonia.ColorPicker
+dotnet add package Semi.Avalonia.DataGrid
+dotnet add package Semi.Avalonia.TreeDataGrid
+dotnet add package Semi.Avalonia.Dock
+dotnet add package Semi.Avalonia.Tabalonia
+dotnet add package Semi.Avalonia.AvaloniaEdit
 ```
 
-| Setting / 设置 | Requirement / 要求 |
-| --- | --- |
-| `AvaloniaVersion >= 11.1.0` | Required by Semi.Avalonia. / Semi.Avalonia 要求。 |
-| `UseWinUI = true` | Required — enables WinUI-compatible rendering. / 必需 —— 启用 WinUI 兼容渲染。 |
+```xml
+<Application.Styles>
+    <semi:ColorPickerSemiTheme />
+    <semi:DataGridSemiTheme />
+    <semi:TreeDataGridSemiTheme />
+    <semi:DockSemiTheme />
+    <semi:TabaloniaSemiTheme />
+    <semi:AvaloniaEditSemiTheme />
+</Application.Styles>
+```
 
-> ℹ **Linux users:** install `ttf-ms-win11-auto` from AUR or use Microsoft YaHei.
-> **Linux 用户：** 从 AUR 安装 `ttf-ms-win11-auto` 或使用微软雅黑。
+> ℹ Dock, Tabalonia and AvaloniaEdit are delivered via nuget for free, but not open source.
+
+### Version Compatibility / 版本兼容性
+
+| Semi Avalonia Version | Avalonia Version |
+|:----------------------|:-----------------|
+| 11.3.7                | >=11.3.7         |
+| 11.2.1                | >=11.2.1         |
+| 11.2.0                | End of Life      |
+| 11.1.x                | End of Life      |
 
 ## Controls Index / 控件索引
 
