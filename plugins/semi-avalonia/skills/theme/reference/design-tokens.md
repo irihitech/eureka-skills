@@ -179,75 +179,94 @@ All shadows are `BoxShadows` resources. / 全部阴影为 `BoxShadows` 资源。
 
 ## Color Palette / 色板
 
-Semi.Avalonia defines a 16-color palette with 14 shades per color (0-13,
-lightest to darkest). Separate `Light` and `Dark` theme dictionaries exist.
+Semi.Avalonia defines a 16-color palette. The lighter shades (0–9) are in the
+Palette files; higher shades (10–13) are typically defined per-theme. Separate
+`Light` and `Dark` theme dictionaries exist.
 
-Semi.Avalonia 定义了 16 色调色板，每种颜色 14 个色阶（0-13，由浅到深）。
-存在独立的 `Light` 和 `Dark` 主题字典。
+Semi.Avalonia 定义了 16 色调色板。较浅色阶（0–9）在 Palette 文件中定义；
+较高色阶（10–13）通常按主题定义。存在独立的 `Light` 和 `Dark` 主题字典。
 
-### Naming Convention / 命名约定
+### Two Key Types / 两种键类型
 
-```
-{Semi|Color|Palette}-{ColorName}-{Shade}
-```
+Each shade is available in two forms:
 
-Example: `SemiColorPaletteBlue5`
+每个色阶有两种形式：
 
-### Color List / 颜色列表
+| Type / 类型 | Pattern / 模式 | Example / 示例 | Resource Type / 资源类型 |
+| --- | --- | --- | --- |
+| **Brush** | `Semi{ColorName}{Shade}` | `SemiBlue5` | `SolidColorBrush` |
+| **Color** | `Semi{ColorName}{Shade}Color` | `SemiBlue5Color` | `Color` |
 
-| Color / 颜色 | Primary Keys (Light) / 主键（亮色） | Typical Shade Range / 常用色阶 |
+### Color List (Brush Keys) / 颜色列表（Brush 键）
+
+All 16 colors × shades 0–9. Each also has a corresponding `{Key}Color` variant.
+
+全部 16 色 × 色阶 0–9。每个键都有对应的 `{Key}Color` 变体。
+
+| Color / 颜色 | Brush Keys / Brush 键 | Shades / 色阶 |
 | --- | --- | --- |
-| **Amber** | `SemiColorPaletteAmber0`–`Amber13` | 0–11 |
-| **Blue** | `SemiColorPaletteBlue0`–`Blue13` | 0–11 |
-| **Cyan** | `SemiColorPaletteCyan0`–`Cyan13` | 0–11 |
-| **Green** | `SemiColorPaletteGreen0`–`Green13` | 0–11 |
-| **Grey** | `SemiColorPaletteGrey0`–`Grey13` | 0–13 |
-| **Indigo** | `SemiColorPaletteIndigo0`–`Indigo13` | 0–11 |
-| **LightBlue** | `SemiColorPaletteLightBlue0`–`LightBlue13` | 0–11 |
-| **LightGreen** | `SemiColorPaletteLightGreen0`–`LightGreen13` | 0–11 |
-| **Lime** | `SemiColorPaletteLime0`–`Lime13` | 0–11 |
-| **Orange** | `SemiColorPaletteOrange0`–`Orange13` | 0–11 |
-| **Pink** | `SemiColorPalettePink0`–`Pink13` | 0–11 |
-| **Purple** | `SemiColorPalettePurple0`–`Purple13` | 0–11 |
-| **Red** | `SemiColorPaletteRed0`–`Red13` | 0–11 |
-| **Teal** | `SemiColorPaletteTeal0`–`Teal13` | 0–11 |
-| **Violet** | `SemiColorPaletteViolet0`–`Violet13` | 0–11 |
-| **Yellow** | `SemiColorPaletteYellow0`–`Yellow13` | 0–11 |
+| **Amber** | `SemiAmber0`–`SemiAmber9` | 0–9 |
+| **Blue** | `SemiBlue0`–`SemiBlue9` | 0–9 |
+| **Cyan** | `SemiCyan0`–`SemiCyan9` | 0–9 |
+| **Green** | `SemiGreen0`–`SemiGreen9` | 0–9 |
+| **Grey** | `SemiGrey0`–`SemiGrey9` | 0–9 |
+| **Indigo** | `SemiIndigo0`–`SemiIndigo9` | 0–9 |
+| **LightBlue** | `SemiLightBlue0`–`SemiLightBlue9` | 0–9 |
+| **LightGreen** | `SemiLightGreen0`–`SemiLightGreen9` | 0–9 |
+| **Lime** | `SemiLime0`–`SemiLime9` | 0–9 |
+| **Orange** | `SemiOrange0`–`SemiOrange9` | 0–9 |
+| **Pink** | `SemiPink0`–`SemiPink9` | 0–9 |
+| **Purple** | `SemiPurple0`–`SemiPurple9` | 0–9 |
+| **Red** | `SemiRed0`–`SemiRed9` | 0–9 |
+| **Teal** | `SemiTeal0`–`SemiTeal9` | 0–9 |
+| **Violet** | `SemiViolet0`–`SemiViolet9` | 0–9 |
+| **Yellow** | `SemiYellow0`–`SemiYellow9` | 0–9 |
+
+Special: `SemiWhite`, `SemiBlack`, `SemiWhiteColor`, `SemiBlackColor`.
+
+特殊：`SemiWhite`、`SemiBlack`、`SemiWhiteColor`、`SemiBlackColor`。
 
 ### Customizing Palette Colors / 自定义色板颜色
 
-Override individual shade in `App.axaml`:
+Override a brush in `App.axaml`:
 
 ```xml
 <Application.Resources>
-    <SolidColorBrush x:Key="SemiColorPaletteBlue5"
-                     Color="#0055CC" />
+    <SolidColorBrush x:Key="SemiBlue5" Color="#0055CC" />
+</Application.Resources>
+```
+
+Or override the underlying `Color`:
+
+```xml
+<Application.Resources>
+    <Color x:Key="SemiBlue5Color">#0055CC</Color>
 </Application.Resources>
 ```
 
 ### Semantic Color Keys / 语义颜色键
 
-The palette feeds into semantic color keys used by controls. Examples:
+The palette feeds into semantic color keys used by controls:
 
-色板驱动控件使用的语义颜色键。示例：
+色板驱动控件使用的语义颜色键：
 
 | Semantic Key / 语义键 | Maps to / 映射至 |
 | --- | --- |
-| `SemiColorPrimary` | `SemiColorPaletteBlue5` (Light) / `SemiColorPaletteBlue6` (Dark) |
-| `SemiColorPrimaryHover` | `SemiColorPaletteBlue4` |
-| `SemiColorPrimaryActive` | `SemiColorPaletteBlue6` |
-| `SemiColorPrimaryDisabled` | `SemiColorPaletteBlue2` |
-| `SemiColorSecondary` | `SemiColorPaletteLightBlue5` |
-| `SemiColorTertiary` | `SemiColorPaletteGrey2` |
-| `SemiColorDanger` | `SemiColorPaletteRed5` |
-| `SemiColorWarning` | `SemiColorPaletteOrange5` |
-| `SemiColorSuccess` | `SemiColorPaletteGreen5` |
-| `SemiColorText0` | `SemiColorPaletteGrey13` (nearly black) |
-| `SemiColorText1` | `SemiColorPaletteGrey11` |
-| `SemiColorText2` | `SemiColorPaletteGrey8` |
-| `SemiColorTextDisabled` | `SemiColorPaletteGrey6` |
-| `SemiColorBg0` | `SemiColorPaletteGrey0` (white) |
-| `SemiColorBg1` | `SemiColorPaletteGrey1` |
+| `SemiColorPrimary` | `SemiBlue5` (Light) / `SemiBlue6` (Dark) |
+| `SemiColorPrimaryHover` | `SemiBlue4` |
+| `SemiColorPrimaryActive` | `SemiBlue6` |
+| `SemiColorPrimaryDisabled` | `SemiBlue2` |
+| `SemiColorSecondary` | `SemiLightBlue5` |
+| `SemiColorTertiary` | `SemiGrey2` |
+| `SemiColorDanger` | `SemiRed5` |
+| `SemiColorWarning` | `SemiOrange5` |
+| `SemiColorSuccess` | `SemiGreen5` |
+| `SemiColorText0` | `SemiGrey9` (nearly black) |
+| `SemiColorText1` | `SemiGrey8` |
+| `SemiColorText2` | `SemiGrey6` |
+| `SemiColorTextDisabled` | `SemiGrey4` |
+| `SemiColorBg0` | `SemiGrey0` (white) |
+| `SemiColorBg1` | `SemiGrey1` |
 
 > ℹ These semantic keys map to different palette shades in Dark theme.
 > 这些语义键在暗色主题中映射到不同色阶。
