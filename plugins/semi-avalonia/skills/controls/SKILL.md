@@ -23,6 +23,15 @@ TextBox", "add a DataGrid"), load the corresponding reference:
 reference/<control-name>.md
 ```
 
+When the user asks about **Semi.Avalonia-specific themes** or **control-specific
+DynamicResource keys** (e.g., "what themes does Button support", "how to
+use a CardCheckBox", "what resources does Slider define"), load the
+corresponding control reference — the `Styling & Templating` and
+`DynamicResource Keys` sections document every special ControlTheme and
+resource key defined by Semi.Avalonia.
+
+当用户询问 **Semi.Avalonia 特殊主题**或**控件专属 DynamicResource 键**（如"Button 支持哪些主题"、"如何使用 CardCheckBox"、"Slider 定义了哪些资源"）时，加载对应的控件参考文件 —— `Styling & Templating` 和 `DynamicResource Keys` 部分记录了 Semi.Avalonia 定义的每个特殊 ControlTheme 和资源键。
+
 Each reference contains:
 - **When to Use** — criteria to decide whether this control is appropriate.
 - **Basic Usage** — minimal XAML + C# snippet.
