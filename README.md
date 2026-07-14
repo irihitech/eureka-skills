@@ -44,10 +44,10 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 ### Claude Code / Copilot CLI
 
-Use this repository path as the marketplace source (`<owner>/<repository>`), then install plugins from the `eureka-skills` marketplace manifest.
+Add this repo as a marketplace source, then install the plugins:
 
 ```text
-/plugin marketplace add <owner>/<repository>
+/plugin marketplace add irihitech/eureka-skills
 /plugin install semi-avalonia@eureka-skills
 /plugin install ursa-avalonia@eureka-skills
 ```
