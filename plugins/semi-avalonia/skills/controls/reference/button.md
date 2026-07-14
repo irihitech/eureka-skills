@@ -231,19 +231,125 @@ Each theme (`LightButton`, `SolidButton`, `OutlineButton`, `BorderlessButton`) f
 
 ### DynamicResource Keys / 动态资源键
 
-Resource keys follow the naming convention `Button{Theme}{Color}{State}{Property}`:
+The following table lists all `DynamicResource` keys consumed by Semi.Avalonia `Button` themes. Override any key in your application-level `Resources` to customize appearance.
 
-资源键遵循命名约定 `Button{主题}{颜色}{状态}{属性}`：
+下表列出了 Semi.Avalonia `Button` 主题使用的所有 `DynamicResource` 键。可在应用程序级 `Resources` 中覆盖任意键以自定义外观。
 
-```
-ButtonSolidPrimaryBackground
-ButtonSolidPrimaryPointeroverBackground
-ButtonSolidPrimaryPressedBackground
-ButtonSolidPrimaryBorderBrush
-ButtonOutlineDangerBackground
-ButtonBorderlessSecondaryForeground
-...
-```
+#### Geometry & Layout / 几何与布局
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ButtonBorderThickness` | Border thickness for all themes / 所有主题的边框粗细 |
+| `ButtonCornerRadius` | Corner radius for all themes / 所有主题的圆角半径 |
+| `ButtonDefaultHeight` | Height for default size / 默认尺寸的高度 |
+| `ButtonDefaultPadding` | Padding for default size / 默认尺寸的内边距 |
+| `ButtonDefaultFontSize` | Font size for default size / 默认尺寸的字体大小 |
+| `ButtonDefaultFontWeight` | Font weight for default size / 默认尺寸的字体粗细 |
+| `ButtonLargeHeight` | Height for Large size class / Large 尺寸类的高度 |
+| `ButtonLargePadding` | Padding for Large size class / Large 尺寸类的内边距 |
+| `ButtonSmallHeight` | Height for Small size class / Small 尺寸类的高度 |
+| `ButtonSmallPadding` | Padding for Small size class / Small 尺寸类的内边距 |
+
+#### Default (Light) Theme / 默认 (Light) 主题
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ButtonDefaultBackground` | Default state background / 默认状态背景 |
+| `ButtonDefaultBorderBrush` | Default state border / 默认状态边框 |
+| `ButtonDefaultPointeroverBackground` | `:pointerover` background / 悬停背景 |
+| `ButtonDefaultPointeroverBorderBrush` | `:pointerover` border / 悬停边框 |
+| `ButtonDefaultPressedBackground` | `:pressed` background / 按下背景 |
+| `ButtonDefaultPressedBorderBrush` | `:pressed` border / 按下边框 |
+| `ButtonDefaultDisabledBorderBrush` | `:disabled` border / 禁用边框 |
+| `ButtonDefaultDisabledForeground` | `:disabled` foreground / 禁用的前景色 |
+| `ButtonDefaultPrimaryForeground` | Foreground when Primary class is applied / 应用 Primary 类时的前景色 |
+| `ButtonDefaultSecondaryForeground` | Foreground when Secondary class is applied / 应用 Secondary 类时的前景色 |
+| `ButtonDefaultTertiaryForeground` | Foreground when Tertiary class is applied / 应用 Tertiary 类时的前景色 |
+| `ButtonDefaultSuccessForeground` | Foreground when Success class is applied / 应用 Success 类时的前景色 |
+| `ButtonDefaultWarningForeground` | Foreground when Warning class is applied / 应用 Warning 类时的前景色 |
+| `ButtonDefaultDangerForeground` | Foreground when Danger class is applied / 应用 Danger 类时的前景色 |
+| `ButtonDefaultColorfulPrimaryForeground` | Foreground when Colorful + Primary classes applied / 应用 Colorful + Primary 类时的前景色 |
+
+#### Solid Theme / Solid 主题
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ButtonSolidForeground` | Default foreground for Solid theme / Solid 主题的默认前景色 |
+| `ButtonSolidDisabledBackground` | `:disabled` background / 禁用背景 |
+| `ButtonSolidDisabledBorderBrush` | `:disabled` border / 禁用边框 |
+| `ButtonSolidDisabledForeground` | `:disabled` foreground / 禁用前景色 |
+| `ButtonSolidPrimaryBackground` | Primary default background / Primary 默认背景 |
+| `ButtonSolidPrimaryBorderBrush` | Primary default border / Primary 默认边框 |
+| `ButtonSolidPrimaryPointeroverBackground` | Primary `:pointerover` background / Primary 悬停背景 |
+| `ButtonSolidPrimaryPointeroverBorderBrush` | Primary `:pointerover` border / Primary 悬停边框 |
+| `ButtonSolidPrimaryPressedBackground` | Primary `:pressed` background / Primary 按下背景 |
+| `ButtonSolidPrimaryPressedBorderBrush` | Primary `:pressed` border / Primary 按下边框 |
+| `ButtonSolidSecondaryBackground` | Secondary default background / Secondary 默认背景 |
+| `ButtonSolidSecondaryBorderBrush` | Secondary default border / Secondary 默认边框 |
+| `ButtonSolidSecondaryPointeroverBackground` | Secondary `:pointerover` background / Secondary 悬停背景 |
+| `ButtonSolidSecondaryPointeroverBorderBrush` | Secondary `:pointerover` border / Secondary 悬停边框 |
+| `ButtonSolidSecondaryPressedBackground` | Secondary `:pressed` background / Secondary 按下背景 |
+| `ButtonSolidSecondaryPressedBorderBrush` | Secondary `:pressed` border / Secondary 按下边框 |
+| `ButtonSolidTertiaryBackground` | Tertiary default background / Tertiary 默认背景 |
+| `ButtonSolidTertiaryBorderBrush` | Tertiary default border / Tertiary 默认边框 |
+| `ButtonSolidTertiaryPointeroverBackground` | Tertiary `:pointerover` background / Tertiary 悬停背景 |
+| `ButtonSolidTertiaryPointeroverBorderBrush` | Tertiary `:pointerover` border / Tertiary 悬停边框 |
+| `ButtonSolidTertiaryPressedBackground` | Tertiary `:pressed` background / Tertiary 按下背景 |
+| `ButtonSolidTertiaryPressedBorderBrush` | Tertiary `:pressed` border / Tertiary 按下边框 |
+| `ButtonSolidSuccessBackground` | Success default background / Success 默认背景 |
+| `ButtonSolidSuccessBorderBrush` | Success default border / Success 默认边框 |
+| `ButtonSolidSuccessPointeroverBackground` | Success `:pointerover` background / Success 悬停背景 |
+| `ButtonSolidSuccessPointeroverBorderBrush` | Success `:pointerover` border / Success 悬停边框 |
+| `ButtonSolidSuccessPressedBackground` | Success `:pressed` background / Success 按下背景 |
+| `ButtonSolidSuccessPressedBorderBrush` | Success `:pressed` border / Success 按下边框 |
+| `ButtonSolidWarningBackground` | Warning default background / Warning 默认背景 |
+| `ButtonSolidWarningBorderBrush` | Warning default border / Warning 默认边框 |
+| `ButtonSolidWarningPointeroverBackground` | Warning `:pointerover` background / Warning 悬停背景 |
+| `ButtonSolidWarningPointeroverBorderBrush` | Warning `:pointerover` border / Warning 悬停边框 |
+| `ButtonSolidWarningPressedBackground` | Warning `:pressed` background / Warning 按下背景 |
+| `ButtonSolidWarningPressedBorderBrush` | Warning `:pressed` border / Warning 按下边框 |
+| `ButtonSolidDangerBackground` | Danger default background / Danger 默认背景 |
+| `ButtonSolidDangerBorderBrush` | Danger default border / Danger 默认边框 |
+| `ButtonSolidDangerPointeroverBackground` | Danger `:pointerover` background / Danger 悬停背景 |
+| `ButtonSolidDangerPointeroverBorderBrush` | Danger `:pointerover` border / Danger 悬停边框 |
+| `ButtonSolidDangerPressedBackground` | Danger `:pressed` background / Danger 按下背景 |
+| `ButtonSolidDangerPressedBorderBrush` | Danger `:pressed` border / Danger 按下边框 |
+| `ButtonSolidColorfulPrimaryBackground` | Colorful Primary default background / Colorful Primary 默认背景 |
+| `ButtonSolidColorfulPrimaryPointeroverBackground` | Colorful Primary `:pointerover` background / Colorful Primary 悬停背景 |
+| `ButtonSolidColorfulPrimaryPressedBackground` | Colorful Primary `:pressed` background / Colorful Primary 按下背景 |
+| `ButtonSolidColorfulTertiaryBackground` | Colorful Tertiary default background / Colorful Tertiary 默认背景 |
+| `ButtonSolidColorfulTertiaryForeground` | Colorful Tertiary foreground / Colorful Tertiary 前景色 |
+| `ButtonSolidColorfulTertiaryPointeroverBackground` | Colorful Tertiary `:pointerover` background / Colorful Tertiary 悬停背景 |
+| `ButtonSolidColorfulTertiaryPressedBackground` | Colorful Tertiary `:pressed` background / Colorful Tertiary 按下背景 |
+
+#### Outline Theme / Outline 主题
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ButtonOutlineBackground` | Default state background / 默认状态背景 |
+| `ButtonOutlineBorderBrush` | Default state border / 默认状态边框 |
+| `ButtonOutlinePointeroverBackground` | `:pointerover` background / 悬停背景 |
+| `ButtonOutlinePressedBackground` | `:pressed` background / 按下背景 |
+| `ButtonOutlineColorfulPrimaryBorderBrush` | Colorful Primary border / Colorful Primary 边框 |
+| `ButtonOutlineColorfulPrimaryForeground` | Colorful Primary foreground / Colorful Primary 前景色 |
+| `ButtonOutlineDangerBorderBrush` | Danger border / Danger 边框 |
+| `ButtonOutlineSuccessBorderBrush` | Success border / Success 边框 |
+| `ButtonOutlineWarningBorderBrush` | Warning border / Warning 边框 |
+
+#### Input Inner / 输入内部按钮
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ButtonInputInnerForeground` | Inner input button foreground / 输入内部按钮前景色 |
+| `ButtonInputInnerPointeroverForeground` | Inner input button `:pointerover` foreground / 输入内部按钮悬停前景色 |
+| `ButtonInputInnerPressedForeground` | Inner input button `:pressed` foreground / 输入内部按钮按下前景色 |
+
+#### Special / 特殊资源
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `InnerIconButton` | Theme key for icon-only button inside inputs / 输入内部纯图标按钮的主题键 |
+| `SemiWidthIconMedium` | Medium icon width shared by icon buttons / 图标按钮共享的中等图标宽度 |
 
 ### Template Parts / 模板部件
 
