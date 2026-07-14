@@ -12,9 +12,11 @@ description: >
 
 # Drawer / 抽屉
 
-> ⚠ **Requires `OverlayDialogHost`** — `OverlayDrawer.Show()` requires an `OverlayDialogHost` in the visual tree. Use `UrsaWindow` or `UrsaView`.
+> ℹ `Drawer` opens through an `OverlayDialogHost`. `UrsaWindow` includes one by default
+> (HostId = null). See [OverlayDialogHost](overlay-dialog-host.md) for custom setups.
 >
-> ⚠ **需要 `OverlayDialogHost`** — `OverlayDrawer.Show()` 需要可视树中存在 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView`。
+> ℹ `Drawer` 通过 `OverlayDialogHost` 打开。`UrsaWindow` 默认包含一个
+> (HostId = null)。自定义配置参见 [OverlayDialogHost](overlay-dialog-host.md)。
 
 ## When to Use / 何时使用
 

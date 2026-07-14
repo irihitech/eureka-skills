@@ -84,7 +84,7 @@ Ursa 的虚拟对话框 API（`OverlayDialog`、`MessageBox`、`Drawer`）通过
 
 ```csharp
 // Pass HostId to target a specific OverlayDialogHost
-await OverlayDialog.ShowModal<V, VM>(new VM(), dialogHostId, options);
+await OverlayDialog.ShowCustom<V, VM>(new VM(), dialogHostId, options);
 ```
 
 ### Host Lookup Rules / 宿主查找规则
