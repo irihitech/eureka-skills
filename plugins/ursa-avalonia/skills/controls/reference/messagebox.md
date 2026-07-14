@@ -12,9 +12,11 @@ description: >
 
 # MessageBox / 消息框
 
-> ⚠ **Requires `OverlayDialogHost`** — `MessageBox.ShowAsync()` requires an `OverlayDialogHost` in the visual tree. Use `UrsaWindow` or `UrsaView`.
+> ℹ `MessageBox.ShowAsync()` opens a **Window**-based dialog (no OverlayDialogHost needed).
+> `OverlayMessageBox.ShowAsync()` opens an **overlay**-hosted dialog (requires `OverlayDialogHost` → `UrsaWindow`/`UrsaView`).
 >
-> ⚠ **需要 `OverlayDialogHost`** — `MessageBox.ShowAsync()` 需要可视树中存在 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView`。
+> ℹ `MessageBox.ShowAsync()` 打开**窗口**对话框（无需 OverlayDialogHost）。
+> `OverlayMessageBox.ShowAsync()` 打开**浮层**对话框（需要 `OverlayDialogHost` → `UrsaWindow`/`UrsaView`）。
 
 ## When to Use / 何时使用
 

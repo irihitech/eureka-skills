@@ -4,8 +4,8 @@ title: OverlayDialogHost
 subtitle: 浮层对话框宿主
 description: >
   Canvas-based overlay host embedded in UrsaWindow/UrsaView that manages Dialog,
-  Drawer and MessageBox layers with modal masking, safe-area padding, and snap-to-edge.
-  嵌入 UrsaWindow/UrsaView 的 Canvas 浮层宿主，管理 Dialog、Drawer、MessageBox 的层级、
+  Drawer and OverlayMessageBox layers with modal masking, safe-area padding, and snap-to-edge.
+  嵌入 UrsaWindow/UrsaView 的 Canvas 浮层宿主，管理 Dialog、Drawer、OverlayMessageBox 的层级、
   模态遮罩、安全区域内边距和边缘吸附。
 ---
 
@@ -67,7 +67,7 @@ in `UrsaWindow` and `UrsaView` templates. Every application using `OverlayDialog
 | --- | --- |
 | **Dialog** | `OverlayDialog.Show()` / `OverlayDialog.ShowCustom()` |
 | **Drawer** | `OverlayDrawer.Show()` |
-| **MessageBox** | `MessageBox.ShowAsync()` |
+| **OverlayMessageBox** | `OverlayMessageBox.ShowAsync()` |
 
 ## Styling & Templating / 样式与模板
 
