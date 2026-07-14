@@ -91,15 +91,6 @@ dotnet add package Semi.Avalonia.AvaloniaEdit
 
 > ℹ Dock, Tabalonia and AvaloniaEdit are delivered via nuget for free, but not open source.
 
-### Version Compatibility / 版本兼容性
-
-| Semi Avalonia Version | Avalonia Version |
-|:----------------------|:-----------------|
-| 11.3.7                | >=11.3.7         |
-| 11.2.1                | >=11.2.1         |
-| 11.2.0                | End of Life      |
-| 11.1.x                | End of Life      |
-
 ## Controls Index / 控件索引
 
 ### Basic Input / 基础输入
