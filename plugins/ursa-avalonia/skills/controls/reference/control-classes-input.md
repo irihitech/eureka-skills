@@ -3,6 +3,7 @@ category: Components
 title: ControlClassesInput
 subtitle: 控件样式类输入
 description: 用于可视化选择和管理 Avalonia 控件 Style Classes 的编辑器。
+---
 
 # ControlClassesInput / 控件样式类输入
 
