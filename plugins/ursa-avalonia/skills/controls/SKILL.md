@@ -45,42 +45,52 @@ Each reference contains / 每个参考页面包含：
 
 ### Installation / 安装
 
+1. Ursa
+
+Add nuget package:
+
 ```bash
-dotnet add package Ursa
-dotnet add package Ursa.Themes.Semi
+dotnet add package Irihi.Ursa
 ```
 
-### Theme Configuration / 主题配置
+2. Ursa.Themes.Semi
 
-Include Semi theme styles in `App.axaml`:
+To make Ursa controls show up in your application, you need to reference to a theme package designed for Ursa.
+Ursa.Themes.Semi is a theme package for Ursa inspired by Semi Design. You can add it to your project by following steps.
 
-```xml
-<Application.Styles>
-    <StyleInclude Source="avares://Ursa.Themes.Semi/Index.axaml" />
-</Application.Styles>
+Add nuget package:
+
+```bash
+dotnet add package Semi.Avalonia
+dotnet add package Irihi.Ursa.Themes.Semi
 ```
 
-### Window / 窗口
+Include Styles in application:
 
-Naming conventions differ from standard Avalonia. Use Ursa-specific base classes:
+```xaml
+<Application...
+    xmlns:semi="https://irihi.tech/semi"
+    ....>
 
-```xml
-<u:UrsaWindow x:Class="YourApp.MainWindow"
-              xmlns:u="https://irihi.tech/ursa"
-              Width="800" Height="600">
-</u:UrsaWindow>
+    <Application.Styles>
+        <semi:SemiTheme Locale="zh-CN" />
+        <semi:UrsaSemiTheme Locale="zh-CN"/>
+    </Application.Styles>
 ```
 
-```xml
-<u:UrsaView x:Class="YourApp.MyView"
-            xmlns:u="https://irihi.tech/ursa">
-</u:UrsaView>
-```
 
-| Use This / 使用 | Instead of / 替代 |
-| --- | --- |
-| `UrsaWindow` | `Window` |
-| `UrsaView` | `UserControl` |
+You can now use Ursa controls in your Avalonia Application.
+
+```xaml
+<Window
+    ...
+    xmlns:u="https://irihi.tech/ursa"
+    ...>
+    <StackPanel Margin="20">
+        <u:TagInput />
+    </StackPanel>
+</Window>
+```
 
 ## Controls Index / 控件索引
 
