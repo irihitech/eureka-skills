@@ -21,12 +21,12 @@ A `Canvas`-based container embedded in `UrsaWindow` and `UrsaView` templates (vi
 
 You rarely instantiate `OverlayDialogHost` directly. It is included automatically
 in `UrsaWindow` and `UrsaView` templates. Every application using `OverlayDialog.Show()`,
-`OverlayDrawer.Show()`, or `MessageBox.ShowAsync()` must have an `UrsaWindow` or
-`UrsaView` as the root. Without it, a host lookup failure occurs.
+`OverlayDrawer.Show()`, or `OverlayMessageBox.ShowAsync()` must have an `UrsaWindow` or
+`UrsaView` as the root.
 
 很少需要直接实例化 `OverlayDialogHost`。它自动包含在 `UrsaWindow` 和 `UrsaView`
-模板中。每个使用 `OverlayDialog.Show()`、`OverlayDrawer.Show()` 或 `MessageBox.ShowAsync()`
-的应用必须以 `UrsaWindow` 或 `UrsaView` 为根。没有宿主会导致查找失败。
+模板中。每个使用 `OverlayDialog.Show()`、`OverlayDrawer.Show()` 或 `OverlayMessageBox.ShowAsync()`
+的应用必须以 `UrsaWindow` 或 `UrsaView` 为根。
 
 ## Basic Usage / 基本使用
 
@@ -83,8 +83,8 @@ A: Use `UrsaView` instead of a plain `Window`. `UrsaView` includes `OverlayDialo
 
 使用 `UrsaView` 替代普通 `Window`。`UrsaView` 在其模板中包含 `OverlayDialogHost`，可嵌入任何 Avalonia `Window` 或作为独立根使用。
 
-**Q: Why do I get "MissingHostException" when calling Dialog.Show()? / 调用 Dialog.Show() 时为什么出现 "MissingHostException"？**
+**Q: Why doesn't Dialog.Show() work from a plain Window? / 为什么在普通 Window 中 Dialog.Show() 不工作？**
 
-A: The visual tree does not contain an `OverlayDialogHost`. Ensure your application root is `UrsaWindow` or that your dialog is called from within an `UrsaView`.
+A: The visual tree does not contain an `OverlayDialogHost`. Use `UrsaWindow` or `UrsaView` as your application root.
 
-可视树中不包含 `OverlayDialogHost`。确保应用根为 `UrsaWindow`，或对话框在 `UrsaView` 内调用。
+可视树中不包含 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView` 作为应用根。
