@@ -41,6 +41,39 @@ Each reference contains / 每个参考页面包含：
 - **Styling & Templating / 样式与模板** — Ursa.Avalonia themes, pseudo-classes, template parts. / Ursa.Avalonia 主题、伪类、模板部件。
 - **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
+## Infrastructure / 基础设施
+
+### OverlayDialogHost / 浮层对话框宿主
+
+`OverlayDialogHost` is a `Canvas` embedded in `UrsaWindow` / `UrsaView` templates (via
+`PART_DialogHost`) that hosts all overlay controls. Controls like `Dialog`, `Drawer`,
+`MessageBox`, and `Toast` require it in the visual tree to function. Key features:
+
+`OverlayDialogHost` 是嵌入 `UrsaWindow` / `UrsaView` 模板（通过 `PART_DialogHost`）
+的 `Canvas`，承载所有浮层控件。`Dialog`、`Drawer`、`MessageBox`、`Toast` 等控件
+需要它存在于可视树中才能工作。关键特性：
+
+- **Layer stack / 层级栈** — Manages z-order of overlay controls with modal mask support. / 管理浮层控件的 z-order，支持模态遮罩。
+- **`IsModalStatusScope`** — Attached property marking a visual root as a modal boundary; set automatically on `UrsaWindow`/`UrsaView`. / 附加属性，标记可视根为模态边界；在 `UrsaWindow`/`UrsaView` 上自动设置。
+- **`IsModalStatusReporter`** — When `true`, sets `IsInModalStatus` pseudo-class on the scope root while any modal overlay is open. / 当 `true` 时，在任何模态浮层打开期间，在范围根上设置 `IsInModalStatus` 伪类。
+- **`SafePadding`** — Respects window decoration margins to keep dialogs within visible bounds. / 遵守窗口装饰边距，保持对话框在可见范围内。
+- **`SnapThickness`** — Snap-to-edge threshold for draggable dialogs. / 可拖动对话框的吸附边缘阈值。
+
+**Controls requiring OverlayDialogHost / 需要 OverlayDialogHost 的控件：**
+
+| Control | How it uses OverlayDialogHost / 使用方式 |
+| --- | --- |
+| **Dialog** | `OverlayDialog.Show()` — modal/non-modal dialogs |
+| **Drawer** | `OverlayDrawer.Show()` — slide-out panels |
+| **MessageBox** | `MessageBox.ShowAsync()` — message dialogs |
+| **Toast** | `WindowToastManager` — transient notifications |
+
+These controls find their host through `OverlayDialogHost` in the visual tree.
+Without an `UrsaWindow` or `UrsaView`, overlay APIs will throw.
+
+这些控件通过可视树中的 `OverlayDialogHost` 查找宿主。没有 `UrsaWindow` 或 `UrsaView`，
+浮层 API 将抛出异常。
+
 ## Controls Index / 控件索引
 
 ### Display & Feedback / 显示与反馈
@@ -91,6 +124,12 @@ Each reference contains / 每个参考页面包含：
 | **ScrollTo** | [scrollto](reference/scrollto.md) | Scroll-to-direction buttons. / 滚动到方向按钮。 |
 
 ### Overlays & Dialogs / 浮层与对话框
+
+> ⚠ Dialog, Drawer, MessageBox, and Toast require an `OverlayDialogHost` in the visual tree.
+> Use `UrsaWindow` or `UrsaView` as the application root. See [Infrastructure](#infrastructure--基础设施).
+>
+> ⚠ Dialog、Drawer、MessageBox、Toast 需要可视树中存在 `OverlayDialogHost`。
+> 使用 `UrsaWindow` 或 `UrsaView` 作为应用根。参见[基础设施](#infrastructure--基础设施)。
 
 | Control | File | Description |
 | --- | --- | --- |
