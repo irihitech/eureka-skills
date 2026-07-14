@@ -41,6 +41,49 @@ Each reference contains / 每个参考页面包含：
 - **Styling & Templating / 样式与模板** — Ursa.Avalonia themes, pseudo-classes, template parts. / Ursa.Avalonia 主题、伪类、模板部件。
 - **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
+## How to Get Started / 如何开始
+
+### 1. Install NuGet Packages / 安装 NuGet 包
+
+```xml
+<PackageReference Include="Ursa" Version="0.*" />
+<PackageReference Include="Ursa.Themes.Semi" Version="0.*" />
+```
+
+### 2. Configure Theme / 配置主题
+
+Include the Semi theme style in `App.axaml`:
+
+```xml
+<Application.Styles>
+    <StyleInclude Source="avares://Ursa.Themes.Semi/Index.axaml" />
+</Application.Styles>
+```
+
+### 3. Use UrsaWindow / 使用 UrsaWindow
+
+Replace `<Window>` with `<ursa:UrsaWindow>` to enable overlay controls (Dialog, Drawer, MessageBox):
+
+```xml
+<ursa:UrsaWindow xmlns:ursa="https://irihi.tech/ursa"
+                 x:Class="YourApp.MainWindow"
+                 Width="800" Height="600">
+    <Button Content="Open Dialog"
+            Click="OnOpenDialog" />
+</ursa:UrsaWindow>
+```
+
+### 4. Naming Convention (Optional) / 命名约定（可选）
+
+Add to `.editorconfig` to auto-fix Ursa-specific naming:
+
+```ini
+[*.{cs,axaml}]
+dotnet_diagnostic.URSA0001.severity = error  # missing xmlns:u prefix
+dotnet_diagnostic.URSA0002.severity = error  # non-UrsaWindow usage
+dotnet_diagnostic.URSA0003.severity = error  # non-UrsaView usage
+```
+
 ## Controls Index / 控件索引
 
 ### Display & Feedback / 显示与反馈

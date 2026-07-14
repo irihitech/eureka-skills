@@ -47,6 +47,50 @@ Each reference contains / 每个参考页面包含：
 - **DynamicResource Keys / 动态资源键** — every theme resource key used by the control. / 该控件使用的每个主题资源键。
 - **FAQ / 常见问题** — common pitfalls and cross-control comparisons. / 常见陷阱和跨控件对比。
 
+## How to Get Started / 如何开始
+
+### 1. Install NuGet Packages / 安装 NuGet 包
+
+```xml
+<PackageReference Include="Semi.Avalonia" Version="11.*" />
+<PackageReference Include="Semi.Avalonia.Themes.Semi" Version="11.*" />
+<!-- Optional: DataGrid theme -->
+<PackageReference Include="Semi.Avalonia.DataGrid" Version="11.*" />
+```
+
+### 2. Configure App.axaml / 配置 App.axaml
+
+```xml
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:semi="https://irihi.tech/semi"
+             x:Class="YourApp.App">
+    <Application.Styles>
+        <semi:SemiTheme Locale="zh" />
+    </Application.Styles>
+</Application>
+```
+
+| Setting / 设置 | Description / 说明 |
+| --- | --- |
+| `Locale="zh"` | Chinese (default). Use `"en"` for English. / 中文（默认）。`"en"` 为英文。 |
+
+### 3. Configure .csproj / 配置 .csproj
+
+```xml
+<PropertyGroup>
+    <AvaloniaVersion>11.1.0</AvaloniaVersion>
+    <UseWinUI>true</UseWinUI>
+</PropertyGroup>
+```
+
+| Setting / 设置 | Requirement / 要求 |
+| --- | --- |
+| `AvaloniaVersion >= 11.1.0` | Required by Semi.Avalonia. / Semi.Avalonia 要求。 |
+| `UseWinUI = true` | Required — enables WinUI-compatible rendering. / 必需 —— 启用 WinUI 兼容渲染。 |
+
+> ℹ **Linux users:** install `ttf-ms-win11-auto` from AUR or use Microsoft YaHei.
+> **Linux 用户：** 从 AUR 安装 `ttf-ms-win11-auto` 或使用微软雅黑。
+
 ## Controls Index / 控件索引
 
 ### Basic Input / 基础输入
