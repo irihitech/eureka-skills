@@ -3,88 +3,125 @@ category: Infrastructure
 title: OverlayDialogHost
 subtitle: 浮层对话框宿主
 description: >
-  Canvas-based overlay host embedded in UrsaWindow/UrsaView that manages Dialog,
-  Drawer and OverlayMessageBox layers with modal masking, safe-area padding, and snap-to-edge.
-  嵌入 UrsaWindow/UrsaView 的 Canvas 浮层宿主，管理 Dialog、Drawer、OverlayMessageBox 的层级、
-  模态遮罩、安全区域内边距和边缘吸附。
+  Shared infrastructure for Ursa virtual dialogs (OverlayDialog, MessageBox, Drawer).
+  Place anywhere in the visual tree to host overlay content that covers UI placed above it.
+  Ursa 虚拟对话框（OverlayDialog、MessageBox、Drawer）的共享基础设施。放置在可视树
+  任意位置，承载覆盖其上方 UI 的浮层内容。
 ---
 
 # OverlayDialogHost / 浮层对话框宿主
 
-A `Canvas`-based container embedded in `UrsaWindow` and `UrsaView` templates (via
-`PART_DialogHost`) that hosts all overlay controls. Derived from `Canvas`.
+`OverlayDialogHost` is the shared infrastructure for Ursa "virtual dialog" controls —
+`OverlayDialog`, `MessageBox`, and `Drawer`. Any code location can access the
+host through Ursa's internal mechanism; you only need to place it once in the
+visual tree.
 
-嵌入 `UrsaWindow` 和 `UrsaView` 模板（通过 `PART_DialogHost`）的 `Canvas` 容器，
-承载所有浮层控件。派生自 `Canvas`。
+`OverlayDialogHost` 是 Ursa "虚拟对话框" 控件（`OverlayDialog`、`MessageBox`、
+`Drawer`）的共享基础设施。代码的任何位置都可以通过 Ursa 的内部机制访问到宿主；
+只需在可视树中放置一次即可。
 
-## When to Use / 何时使用
+## How It Works / 工作原理
 
-You rarely instantiate `OverlayDialogHost` directly. It is included automatically
-in `UrsaWindow` and `UrsaView` templates. Every application using `OverlayDialog.Show()`,
-`OverlayDrawer.Show()`, or `OverlayMessageBox.ShowAsync()` must have an `UrsaWindow` or
-`UrsaView` as the root.
+`OverlayDialogHost` covers content placed **above** it in z-order. Place the UI
+you want to be blocked above, then `OverlayDialogHost` below:
 
-很少需要直接实例化 `OverlayDialogHost`。它自动包含在 `UrsaWindow` 和 `UrsaView`
-模板中。每个使用 `OverlayDialog.Show()`、`OverlayDrawer.Show()` 或 `OverlayMessageBox.ShowAsync()`
-的应用必须以 `UrsaWindow` 或 `UrsaView` 为根。
-
-## Basic Usage / 基本使用
-
-`OverlayDialogHost` is used implicitly — no direct instantiation needed:
-
-`OverlayDialogHost` 隐式使用 —— 无需直接实例化：
+`OverlayDialogHost` 按 z-order 覆盖放置在其**上方**的内容。将需要被遮挡的 UI 放在上方，
+`OverlayDialogHost` 放在下方：
 
 ```xml
-<!-- UrsaWindow automatically includes OverlayDialogHost via PART_DialogHost -->
-<u:UrsaWindow xmlns:u="https://irihi.tech/ursa"
-              Width="800" Height="600">
-    <!-- Dialog.Show() and Drawer.Show() will find the host automatically -->
-    <Button Content="Open Dialog"
-            Click="OnOpenDialog" />
-</u:UrsaWindow>
+<Panel>
+    <!-- UI to be blocked by the dialog mask -->
+    <Your_UI_Elements_To_Be_Blocked />
+    
+    <!-- OverlayDialogHost covers the content above -->
+    <OverlayDialogHost />
+</Panel>
 ```
+
+> ℹ Unlike some libraries where overlay content goes *inside* the host, Ursa
+> requires blocked content to be placed *above* the host.
+
+> ℹ 与某些库中将浮层内容放入宿主*内部*不同，Ursa 要求被遮挡的内容放在宿主*上方*。
+
+## Built-in Host in UrsaWindow / UrsaWindow 内置宿主
+
+`UrsaWindow` includes a built-in `OverlayDialogHost` with `HostId = null`. If
+your application uses `UrsaWindow` and the virtual dialog should cover the
+entire window, the built-in host is sufficient — no extra placement needed.
+
+`UrsaWindow` 内置了一个 `HostId = null` 的 `OverlayDialogHost`。如果程序已使用
+`UrsaWindow` 且虚拟对话框需要覆盖整个窗体，内置宿主即可满足需求，无需额外放置。
+
+## HostId / 宿主标识
+
+Ursa allows multiple `OverlayDialogHost` instances in one visual tree. Use `HostId`
+to identify and target a specific host when opening dialogs.
+
+Ursa 允许一个可视树中存在多个 `OverlayDialogHost` 实例。使用 `HostId` 在打开
+对话框时标识和定位特定宿主。
+
+| Rule / 规则 | Description / 说明 |
+| --- | --- |
+| **Per-window uniqueness / 窗体内唯一** | Each `OverlayDialogHost` within a single window must have a different `HostId`. / 同一窗体内的各 `OverlayDialogHost` 必须有不同的 `HostId`。 |
+| **Cross-window / 跨窗体** | Different windows may have hosts with the same `HostId`. / 不同窗体的宿主可以有相同的 `HostId`。 |
+| **Null HostId** | Only one host can have `HostId = null`. `UrsaWindow`'s built-in host already occupies `null`. Any additional hosts **must** use a non-null `HostId`. / 只能有一个宿主的 `HostId = null`。`UrsaWindow` 内置宿主已占用该值。额外添加的宿主**必须**使用非 null 的 `HostId`。 |
+| **Immutable / 不可变** | `HostId` cannot be changed after the host enters the visual tree. / `HostId` 加入视觉树后不可修改。 |
+
+```xml
+<Panel>
+    <OverlayDialogHost HostId="sidebar-drawer" />
+</Panel>
+```
+
+## Opening Virtual Dialogs / 打开虚拟对话框
+
+Ursa's virtual dialog APIs (`OverlayDialog`, `MessageBox`, `Drawer`) are called
+via static methods. No instance construction needed — call from anywhere
+(View or ViewModel).
+
+Ursa 的虚拟对话框 API（`OverlayDialog`、`MessageBox`、`Drawer`）通过静态方法调用。
+无需构造实例，可在任何位置（View 或 ViewModel 中）直接调用。
+
+```csharp
+// Pass HostId to target a specific OverlayDialogHost
+await OverlayDialog.ShowModal<V, VM>(new VM(), dialogHostId, options);
+```
+
+### Host Lookup Rules / 宿主查找规则
+
+| Scenario / 场景 | Behavior / 行为 |
+| --- | --- |
+| No `hostId` specified / 未指定 hostId | Finds the host with `HostId = null` (default). / 查找 `HostId = null` 的宿主（默认）。 |
+| Explicit `hostId` / 显式指定 hostId | Finds the host with the matching `HostId` in the current window. / 在当前窗体中查找匹配 `HostId` 的宿主。 |
+| Same `HostId` across multiple windows / 多窗体的相同 HostId | Also specify `TopLevelHashCode` in `options` to select the correct window instance. Without it, the first registered host is used. / 在 `options` 中同时指定 `TopLevelHashCode` 选择正确的窗体实例。不指定时默认使用第一个注册的宿主。 |
+| No matching host found / 未找到匹配宿主 | The dialog silently does not open — **no exception is thrown**. / 对话框静默不打开 — **不抛出异常**。 |
 
 ## Property Reference / 属性参考
 
 | Property / 属性 | Type / 类型 | Description / 说明 |
 | --- | --- | --- |
-| `IsModalStatusReporter` | `bool` | When `true`, sets `IsInModalStatus` attached property on the scope root while any modal overlay is open. / 任何模态浮层打开时，在范围根上设置 `IsInModalStatus` 附加属性。 |
-| `IsAnimationDisabled` | `bool` | Disables appear/disappear animations for overlay controls. / 禁用浮层控件出现/消失动画。 |
-| `IsTopLevel` | `bool` | Indicates this host is the top-level overlay manager (window level vs. nested). / 指示此宿主是顶级浮层管理器（窗口级 vs 嵌套）。 |
-| `SnapThickness` | `Thickness` | Snap-to-edge threshold for draggable dialog controls. / 可拖动对话框控件的吸附边缘阈值。 |
-| `SafePadding` | `Thickness` | Padding that respects window decoration margins for safe dialog placement. / 遵守窗口装饰边距的安全对话框放置内边距。 |
-
-### Attached Properties / 附加属性
-
-| Property / 属性 | Type / 类型 | Description / 说明 |
-| --- | --- | --- |
-| `IsModalStatusScope` | `bool` (attached) | Marks a visual root as a modal status boundary. Set automatically on `UrsaWindow`/`UrsaView`. / 标记可视根为模态状态边界。在 `UrsaWindow`/`UrsaView` 上自动设置。 |
-| `IsInModalStatus` | `bool` (attached, read) | Read-only property indicating whether any modal overlay is currently active (triggers `:ismodal` pseudo-class). / 只读属性，指示是否有任何模态浮层当前活动（触发 `:ismodal` 伪类）。 |
-
-## Controls Using OverlayDialogHost / 使用 OverlayDialogHost 的控件
-
-| Control | API / 调用方式 |
-| --- | --- |
-| **Dialog** | `OverlayDialog.Show()` / `OverlayDialog.ShowCustom()` |
-| **Drawer** | `OverlayDrawer.Show()` |
-| **OverlayMessageBox** | `OverlayMessageBox.ShowAsync()` |
-
-## Styling & Templating / 样式与模板
-
-Theme resource: `OverlayDialogHost` ControlTheme key. Primary resource: `OverlayDialogMaskBrush` — the semi-transparent mask brush displayed behind modal dialogs.
-
-主题资源：`OverlayDialogHost` ControlTheme 键。主要资源：`OverlayDialogMaskBrush` —— 模态对话框背后的半透明遮罩画刷。
+| `HostId` | `string?` | Identifier for this host. Use when opening dialogs to target a specific host. / 此宿主的标识符。打开对话框时指定以定位特定宿主。 |
 
 ## FAQ / 常见问题
 
-**Q: How do I add OverlayDialogHost to a non-Ursa window? / 如何在非 Ursa 窗口中添加 OverlayDialogHost？**
+**Q: When do I need to add my own OverlayDialogHost? / 什么情况下需要自己添加 OverlayDialogHost？**
 
-A: Use `UrsaView` instead of a plain `Window`. `UrsaView` includes `OverlayDialogHost` in its template and can be embedded inside any Avalonia `Window` or used as a standalone root.
+A: You need your own `OverlayDialogHost` with a non-null `HostId` when:
+- The dialog should only cover a portion of the window (not the whole window).
+- You're using a plain `Window` instead of `UrsaWindow`.
 
-使用 `UrsaView` 替代普通 `Window`。`UrsaView` 在其模板中包含 `OverlayDialogHost`，可嵌入任何 Avalonia `Window` 或作为独立根使用。
+需要在以下情况下添加自己的带非 null `HostId` 的 `OverlayDialogHost`：
+- 对话框只需要覆盖窗口的一部分（而非整个窗口）。
+- 使用了普通 `Window` 而非 `UrsaWindow`。
 
-**Q: Why doesn't Dialog.Show() work from a plain Window? / 为什么在普通 Window 中 Dialog.Show() 不工作？**
+**Q: Why doesn't my dialog appear? / 为什么我的对话框不显示？**
 
-A: The visual tree does not contain an `OverlayDialogHost`. Use `UrsaWindow` or `UrsaView` as your application root.
+A: Check three things:
+1. Is an `OverlayDialogHost` with the matching `HostId` present?
+2. If using `UrsaWindow` + extra hosts, is the extra `HostId` non-null?
+3. If multiple windows share the same `HostId`, is `TopLevelHashCode` specified in options?
 
-可视树中不包含 `OverlayDialogHost`。使用 `UrsaWindow` 或 `UrsaView` 作为应用根。
+检查三点：
+1. 是否存在匹配 `HostId` 的 `OverlayDialogHost`？
+2. 如果使用 `UrsaWindow` + 额外宿主，额外宿主的 `HostId` 是否非 null？
+3. 如果多窗体共享相同 `HostId`，是否在 options 中指定了 `TopLevelHashCode`？
