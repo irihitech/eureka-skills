@@ -213,18 +213,44 @@ Semi.Avalonia 为 `ComboBox` 设置了以下伪类样式：
 
 ### DynamicResource Keys / 动态资源键
 
-Resource keys follow the naming convention `ComboBox{Theme}{Color}{State}{Property}`:
+Resource keys follow the naming convention `ComboBox{Theme}{Color}{State}{Property}` and resolve via `DynamicResource`:
 
-资源键遵循命名约定 `ComboBox{主题}{颜色}{状态}{属性}`：
+资源键遵循命名约定 `ComboBox{主题}{颜色}{状态}{属性}`，通过 `DynamicResource` 解析：
 
-```
-ComboBoxPrimaryBackground
-ComboBoxPrimaryPointeroverBackground
-ComboBoxPrimaryFocusBorderBrush
-ComboBoxOutlineSecondaryBackground
-ComboBoxPrimaryDropDownOpenBorderBrush
-...
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ComboBoxDefaultHeight` | Default control height / 默认控件高度 |
+| `ComboBoxLargeHeight` | Control height in large size / 大尺寸下控件高度 |
+| `ComboBoxSmallHeight` | Control height in small size / 小尺寸下控件高度 |
+| `ComboBoxDefaultPadding` | Default content padding / 默认内容内边距 |
+| `ComboBoxLargePadding` | Content padding in large size / 大尺寸下内容内边距 |
+| `ComboBoxSmallPadding` | Content padding in small size / 小尺寸下内容内边距 |
+| `ComboBoxDefaultFontSize` | Default font size / 默认字体大小 |
+| `ComboBoxForeground` | Text foreground color / 文本前景色 |
+| `ComboBoxPlaceholderForeground` | Placeholder/watermark text color / 占位符文本颜色 |
+| `ComboBoxDefaultBackground` | Default background brush / 默认背景画刷 |
+| `ComboBoxDefaultBorderBrush` | Default border brush / 默认边框画刷 |
+| `ComboBoxSelectionBrush` | Selected item highlight brush / 选中项高亮画刷 |
+| `ComboBoxDisabledForeground` | Text foreground when disabled / 禁用时文本前景色 |
+| `ComboBoxDisabledBackground` | Background when disabled / 禁用时背景 |
+| `ComboBoxDisabledBorderBrush` | Border brush when disabled / 禁用时边框画刷 |
+| `ComboBoxErrorBorderBrush` | Border brush in error state / 错误状态下边框画刷 |
+| `ComboBoxFocusBackground` | Background when focused / 聚焦时背景 |
+| `ComboBoxFocusBorderBrush` | Border brush when focused / 聚焦时边框画刷 |
+| `ComboBoxPointeroverBackground` | Background on pointerover / 指针悬停时背景 |
+| `ComboBoxPointeroverBorderBrush` | Border brush on pointerover / 指针悬停时边框画刷 |
+| `ComboBoxPopupBackground` | Drop-down popup background / 下拉弹出层背景 |
+| `ComboBoxPopupBorderBrush` | Drop-down popup border brush / 下拉弹出层边框画刷 |
+| `ComboBoxPopupBorderThickness` | Drop-down popup border thickness / 下拉弹出层边框粗细 |
+| `ComboBoxPopupCornerRadius` | Drop-down popup corner radius / 下拉弹出层圆角 |
+| `ComboBoxPopupMargin` | Drop-down popup margin / 下拉弹出层外边距 |
+| `ComboBoxPopupPadding` | Drop-down popup padding / 下拉弹出层内边距 |
+| `ComboBoxItemBackground` | Item background in default state / 默认状态下项背景 |
+| `ComboBoxItemForeground` | Item text foreground / 项文本前景色 |
+| `ComboBoxItemPointeroverBackground` | Item background on pointerover / 指针悬停时项背景 |
+| `ComboBoxItemPointeroverForeground` | Item text foreground on pointerover / 指针悬停时项文本前景色 |
+| `ComboBoxItemSelectedBackground` | Item background when selected / 选中时项背景 |
+| `ComboBoxItemSelectedForeground` | Item text foreground when selected / 选中时项文本前景色 |
 
 ### Template Parts / 模板部件
 

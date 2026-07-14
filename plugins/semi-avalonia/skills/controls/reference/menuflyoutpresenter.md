@@ -130,15 +130,13 @@ Semi.Avalonia 提供了带样式的 `MenuFlyoutPresenter` 主题（`SemiMenuFlyo
 
 ### DynamicResource Keys / 动态资源键
 
-```
-SemiMenuFlyoutPresenterBackground
-SemiMenuFlyoutPresenterBorderBrush
-SemiMenuFlyoutPresenterForeground
-SemiMenuFlyoutPresenterBorderThickness
-SemiMenuFlyoutPresenterCornerRadius
-SemiMenuFlyoutPresenterPadding
-SemiMenuFlyoutPresenterShadowElevation
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `MenuFlyoutPresenterBackground` | Menu flyout background color / 菜单浮层背景色 |
+| `MenuFlyoutPresenterBorderBrush` | Menu flyout border color / 菜单浮层边框颜色 |
+| `MenuFlyoutPresenterBorderThickness` | Menu flyout border thickness / 菜单浮层边框粗细 |
+| `MenuFlyoutPresenterCornerRadius` | Menu flyout corner radius / 菜单浮层圆角半径 |
+| `MenuFlyoutPresenterBoxShadow` | Menu flyout box shadow / 菜单浮层阴影 |
 
 ### Template Parts / 模板部件
 

@@ -205,16 +205,39 @@ Resource keys follow the naming convention `ToggleSwitch{Part}{State}{Property}`
 
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
-| `ToggleSwitchForeground` | Label text color / 标签文本颜色 |
-| `ToggleSwitchKnobBackground` | Knob fill color / 滑块填充颜色 |
-| `ToggleSwitchKnobForeground` | Knob icon/text color / 滑块图标/文本颜色 |
-| `ToggleSwitchTrackBackground` | Track fill color when off / 关闭时滑轨填充颜色 |
-| `ToggleSwitchTrackBackgroundChecked` | Track fill color when on / 开启时滑轨填充颜色 |
-| `ToggleSwitchTrackBorderBrush` | Track border color / 滑轨边框颜色 |
-| `ToggleSwitchKnobStroke` | Knob border/stroke / 滑块描边 |
-| `ToggleSwitchDisabledForeground` | Label color when disabled / 禁用时标签颜色 |
-| `ToggleSwitchStroke` | Outer border stroke / 外边框描边 |
-| `ToggleSwitchStrokeDisabled` | Outer border stroke when disabled / 禁用时外边框描边 |
+| `ToggleSwitchContentMargin` | Content presenter margin / 内容展示区边距 |
+| `ToggleSwitchCornerRadius` | Default track corner radius / 默认滑轨圆角 |
+| `ToggleSwitchDefaultBackground` | Track background in default unchecked state / 默认未选中状态下滑轨背景 |
+| `ToggleSwitchDefaultBorderBrush` | Track border brush in default state / 默认状态下滑轨边框画刷 |
+| `ToggleSwitchDefaultBoxShadow` | Track box shadow in default state / 默认状态下滑轨阴影 |
+| `ToggleSwitchDefaultFontSize` | Label font size / 标签字体大小 |
+| `ToggleSwitchDefaultHeight` | Default switch height / 默认开关高度 |
+| `ToggleSwitchDefaultWidth` | Default switch width / 默认开关宽度 |
+| `ToggleSwitchDisabledBackground` | Track background when disabled / 禁用时滑轨背景 |
+| `ToggleSwitchDisabledBorderBrush` | Track border brush when disabled / 禁用时滑轨边框画刷 |
+| `ToggleSwitchDisabledForeground` | Label text color when disabled / 禁用时标签文本颜色 |
+| `ToggleSwitchDisabledIndicator` | Indicator (checked track) color when disabled / 禁用时指示器（选中滑轨）颜色 |
+| `ToggleSwitchDisabledKnob` | Knob fill color when disabled / 禁用时滑块填充颜色 |
+| `ToggleSwitchDisabledLabelForeground` | Label foreground when disabled / 禁用时标签前景色 |
+| `ToggleSwitchHeaderMargin` | Header margin / 标题边距 |
+| `ToggleSwitchIndicatorBoxShadow` | Indicator (checked track) box shadow / 指示器（选中滑轨）阴影 |
+| `ToggleSwitchIndicatorCornerRadius` | Indicator (checked track) corner radius / 指示器（选中滑轨）圆角 |
+| `ToggleSwitchIndicatorDefaultMargin` | Indicator margin in default size / 默认尺寸下指示器边距 |
+| `ToggleSwitchIndicatorDefaultWidth` | Indicator width in default size / 默认尺寸下指示器宽度 |
+| `ToggleSwitchIndicatorLargeMargin` | Indicator margin in large size / 大尺寸下指示器边距 |
+| `ToggleSwitchIndicatorLargeWidth` | Indicator width in large size / 大尺寸下指示器宽度 |
+| `ToggleSwitchIndicatorSmallMargin` | Indicator margin in small size / 小尺寸下指示器边距 |
+| `ToggleSwitchIndicatorSmallWidth` | Indicator width in small size / 小尺寸下指示器宽度 |
+| `ToggleSwitchLargeCornerRadius` | Track corner radius in large size / 大尺寸下滑轨圆角 |
+| `ToggleSwitchLargeHeight` | Switch height in large size / 大尺寸下开关高度 |
+| `ToggleSwitchLargeWidth` | Switch width in large size / 大尺寸下开关宽度 |
+| `ToggleSwitchLoadingIndicatorDefaultStrokeThickness` | Loading indicator stroke thickness in default size / 默认尺寸下加载指示器描边粗细 |
+| `ToggleSwitchLoadingIndicatorLargeStrokeThickness` | Loading indicator stroke thickness in large size / 大尺寸下加载指示器描边粗细 |
+| `ToggleSwitchLoadingIndicatorSmallStrokeThickness` | Loading indicator stroke thickness in small size / 小尺寸下加载指示器描边粗细 |
+| `ToggleSwitchOnContentMargin` | On/Off content margin / 开/关内容边距 |
+| `ToggleSwitchSmallCornerRadius` | Track corner radius in small size / 小尺寸下滑轨圆角 |
+| `ToggleSwitchSmallHeight` | Switch height in small size / 小尺寸下开关高度 |
+| `ToggleSwitchSmallWidth` | Switch width in small size / 小尺寸下开关宽度 |
 
 ### Template Parts / 模板部件
 

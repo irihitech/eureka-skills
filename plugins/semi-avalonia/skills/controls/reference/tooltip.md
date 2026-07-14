@@ -167,16 +167,15 @@ Semi.Avalonia 提供了带样式的 `ToolTip` 主题（`SemiToolTip`），具有
 
 ### DynamicResource Keys / 动态资源键
 
-```
-SemiToolTipBackground
-SemiToolTipBorderBrush
-SemiToolTipForeground
-SemiToolTipBorderThickness
-SemiToolTipCornerRadius
-SemiToolTipPadding
-SemiToolTipShadowElevation
-SemiToolTipMaxWidth
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ToolTipBackground` | Background of ToolTip. / 工具提示的背景。 |
+| `ToolTipBorderBrush` | Border brush of ToolTip. / 工具提示的边框画刷。 |
+| `ToolTipBorderThickness` | Border thickness of ToolTip. / 工具提示的边框厚度。 |
+| `ToolTipCornerRadius` | Corner radius of ToolTip. / 工具提示的圆角。 |
+| `ToolTipForeground` | Foreground (text) color of ToolTip. / 工具提示的前景（文本）颜色。 |
+| `ToolTipMaxWidth` | Maximum width of ToolTip before text wraps. / 工具提示文本换行前的最大宽度。 |
+| `ToolTipPadding` | Padding inside ToolTip. / 工具提示内部的内边距。 |
 
 ### Template Parts / 模板部件
 

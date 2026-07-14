@@ -135,15 +135,13 @@ Semi.Avalonia 为 `FlyoutPresenter` 设置了以下伪类样式：
 
 ### DynamicResource Keys / 动态资源键
 
-```
-SemiFlyoutPresenterBackground
-SemiFlyoutPresenterBorderBrush
-SemiFlyoutPresenterForeground
-SemiFlyoutPresenterBorderThickness
-SemiFlyoutPresenterCornerRadius
-SemiFlyoutPresenterPadding
-SemiFlyoutPresenterShadowElevation
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `FlyoutPresenterBackground` | Flyout background color / 浮层背景色 |
+| `FlyoutPresenterBorderBrush` | Flyout border color / 浮层边框颜色 |
+| `FlyoutPresenterBorderThickness` | Flyout border thickness / 浮层边框粗细 |
+| `FlyoutPresenterCornerRadius` | Flyout corner radius / 浮层圆角半径 |
+| `FlyoutPresenterBoxShadow` | Flyout box shadow / 浮层阴影 |
 
 ### Template Parts / 模板部件
 

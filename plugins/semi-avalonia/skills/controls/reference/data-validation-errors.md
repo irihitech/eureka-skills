@@ -183,6 +183,14 @@ Semi.Avalonia 提供三种 `DataValidationErrors` ControlTheme：
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
 | `DataValidationErrorsForeground` | Color for error text and icons / 错误文本和图标的颜色 |
+| `DataValidationErrorsErrorBackground` | Background for error messages / 错误消息的背景 |
+| `DataValidationErrorsErrorBorderBrush` | Border brush for error messages / 错误消息的边框画刷 |
+| `DataValidationErrorsErrorForeground` | Foreground color for error messages / 错误消息的前景色 |
+| `DataValidationErrorsErrorIconData` | Geometry data for the error icon / 错误图标的几何数据 |
+| `DataValidationErrorsWarningBackground` | Background for warning messages / 警告消息的背景 |
+| `DataValidationErrorsWarningBorderBrush` | Border brush for warning messages / 警告消息的边框画刷 |
+| `DataValidationErrorsWarningForeground` | Foreground color for warning messages / 警告消息的前景色 |
+| `DataValidationErrorsWarningIconData` | Geometry data for the warning icon / 警告图标的几何数据 |
 
 ### Pseudo-classes / 伪类
 

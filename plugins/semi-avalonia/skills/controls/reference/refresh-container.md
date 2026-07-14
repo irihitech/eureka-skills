@@ -215,14 +215,11 @@ The `RefreshContainer` theme wraps content in a layout that detects pull gesture
 
 ### DynamicResource Keys / 动态资源键
 
-```
-RefreshContainerPrimaryForeground
-RefreshContainerPrimaryIndicatorBackground
-RefreshVisualizerPrimaryBackground
-RefreshVisualizerSecondaryForeground
-RefreshContainerBackground
-...
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `RefreshContainerBackground` | Refresh container background / 刷新容器背景 |
+| `RefreshContainerForeground` | Refresh container foreground / 刷新容器前景 |
+| `RefreshContainerVisualizerBackground` | Refresh visualizer background / 刷新可视化器背景 |
 
 ### Template Parts / 模板部件
 

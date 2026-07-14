@@ -101,6 +101,27 @@ The foundational theme for scrollable tab variants (`ScrollTabControl`, `ScrollL
 
 **Key responsibility:** Scrollable tab strip, `VirtualizingStackPanel` items panel, adaptive scroll bar visibility.
 
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `TabItemBackground` | Default background of TabItem. / TabItem 的默认背景。 |
+| `TabItemForeground` | Default foreground (text) color of TabItem. / TabItem 的默认前景（文本）颜色。 |
+| `TabItemFontSize` | Font size of TabItem header text. / TabItem 标题文本的字体大小。 |
+| `TabItemFontWeight` | Font weight of TabItem header text. / TabItem 标题文本的字体粗细。 |
+| `TabItemHeight` | Height of TabItem. / TabItem 的高度。 |
+| `TabItemHorizontalPadding` | Horizontal padding inside TabItem. / TabItem 内部的水平内边距。 |
+| `TabItemIconMargin` | Margin around the TabItem icon. / TabItem 图标周围的外边距。 |
+| `TabItemSelectedBackground` | Background when TabItem is selected. / TabItem 选中时的背景。 |
+| `TabItemSelectedForeground` | Foreground when TabItem is selected. / TabItem 选中时的前景色。 |
+| `TabItemDisabledForeground` | Foreground when TabItem is disabled. / TabItem 禁用时的前景色。 |
+| `TabItemPointeroverBackground` | Background when pointer hovers over TabItem. / 指针悬停时 TabItem 的背景。 |
+| `TabItemPointeroverForeground` | Foreground when pointer hovers over TabItem. / 指针悬停时 TabItem 的前景色。 |
+| `TabItemPressedBackground` | Background when TabItem is pressed. / TabItem 按下时的背景。 |
+| `TabControlBackground` | Background of TabControl. / TabControl 的背景。 |
+| `TabControlBorderBrush` | Border brush of TabControl. / TabControl 的边框画刷。 |
+| `TabControlBorderThickness` | Border thickness of TabControl. / TabControl 的边框厚度。 |
+
 ## FAQ / 常见问题
 
 **Q: TabControl vs TabStrip? / TabControl 和 TabStrip 的区别？**

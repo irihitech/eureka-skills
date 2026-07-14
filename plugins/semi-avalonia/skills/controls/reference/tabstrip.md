@@ -27,7 +27,20 @@ Use `TabStrip` + `Carousel` when you need custom content transition animations n
 
 ## Styling & Templating / 样式与模板
 
-Semi.Avalonia themes `TabStrip` with `TabStripItem` styling. Key resources: `TabStripItemBackground`, `TabStripItemSelectedForeground`. Pseudo-classes: `:selected`, `:pointerover`.
+Semi.Avalonia themes `TabStrip` with `TabStripItem` styling. Pseudo-classes: `:selected`, `:pointerover`.
+
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `TabStripItemBackground` | Tab item background / 选项卡项背景 |
+| `TabStripItemForeground` | Tab item foreground / 选项卡项前景 |
+| `TabStripItemFontSize` | Tab item font size / 选项卡项字体大小 |
+| `TabStripItemFontWeight` | Tab item font weight / 选项卡项字体粗细 |
+| `TabStripItemSelectedBackground` | Selected tab background / 选中选项卡背景 |
+| `TabStripItemSelectedForeground` | Selected tab foreground / 选中选项卡前景 |
+| `TabStripItemPointeroverBackground` | Hovered tab background / 悬停选项卡背景 |
+| `TabStripItemPointeroverForeground` | Hovered tab foreground / 悬停选项卡前景 |
 
 ### Theme Variants / 主题变体
 

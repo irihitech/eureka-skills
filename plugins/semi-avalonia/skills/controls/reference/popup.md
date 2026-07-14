@@ -157,16 +157,20 @@ Semi.Avalonia 提供了带样式的 `Popup` 根主题，具有与 Semi 覆盖设
 
 ### DynamicResource Keys / 动态资源键
 
-```
-SemiPopupRootBackground
-SemiPopupBackground
-SemiPopupBorderBrush
-SemiPopupForeground
-SemiPopupBorderThickness
-SemiPopupCornerRadius
-SemiPopupShadowElevation
-SemiPopupOverlayMaskBrush
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `SemiPopupRootBackground` | Background of the popup root window / 弹出根窗口的背景 |
+| `SemiPopupBackground` | Background of the popup content area / 弹出内容区域的背景 |
+| `SemiPopupBorderBrush` | Border brush for the popup / 弹出层的边框画刷 |
+| `SemiPopupForeground` | Default foreground for popup content / 弹出内容的默认前景色 |
+| `SemiPopupBorderThickness` | Border thickness of the popup / 弹出层的边框厚度 |
+| `SemiPopupCornerRadius` | Corner radius of the popup / 弹出层的圆角 |
+| `SemiPopupShadowElevation` | Shadow elevation for the popup / 弹出层的阴影高度 |
+| `SemiPopupOverlayMaskBrush` | Overlay mask brush behind the popup / 弹出层后面的叠加遮罩画刷 |
+| `PopupBackground` | Background for popup child content area / 弹出子内容区域的背景 |
+| `PopupBorderBrush` | Border brush for popup child content / 弹出子内容的边框画刷 |
+| `PopupBorderThickness` | Border thickness for popup child content / 弹出子内容的边框厚度 |
+| `PopupCornerRadius` | Corner radius for popup child content / 弹出子内容的圆角 |
 
 ### Template Parts / 模板部件
 

@@ -171,15 +171,24 @@ Semi.Avalonia 提供了带样式的 `Menu` 主题（`SemiMenu`），具有背景
 
 ### DynamicResource Keys / 动态资源键
 
-```
-SemiMenuBackground
-SemiMenuBorderBrush
-SemiMenuForeground
-SemiMenuBorderThickness
-SemiMenuPadding
-SemiMenuItemHeight
-SemiMenuItemHorizontalPadding
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `MenuBackground` | Background of the Menu bar. / 菜单栏的背景。 |
+| `MenuBorderBrush` | Border brush of the Menu bar. / 菜单栏的边框画刷。 |
+| `MenuBorderThickness` | Border thickness of the Menu bar. / 菜单栏的边框厚度。 |
+| `MenuCornerRadius` | Corner radius of the Menu bar. / 菜单栏的圆角。 |
+| `MenuItemBackground` | Default background of MenuItem. / MenuItem 的默认背景。 |
+| `MenuItemForeground` | Default foreground (text) color of MenuItem. / MenuItem 的默认前景（文本）颜色。 |
+| `MenuItemFontSize` | Font size of MenuItem text. / MenuItem 文本的字体大小。 |
+| `MenuItemHeight` | Height of MenuItem. / MenuItem 的高度。 |
+| `MenuItemIconMargin` | Margin around the MenuItem icon. / MenuItem 图标周围的外边距。 |
+| `MenuItemPadding` | Padding inside MenuItem. / MenuItem 内部的内边距。 |
+| `MenuItemPointeroverBackground` | Background when pointer hovers over MenuItem. / 指针悬停时 MenuItem 的背景。 |
+| `MenuItemPointeroverForeground` | Foreground when pointer hovers over MenuItem. / 指针悬停时 MenuItem 的前景色。 |
+| `MenuItemPressedBackground` | Background when MenuItem is pressed. / MenuItem 按下时的背景。 |
+| `MenuItemSubMenuIndicatorMargin` | Margin of the sub-menu expand indicator icon. / 子菜单展开指示图标的外边距。 |
+| `MenuScrollViewerChevronDownData` | Geometry data for the scroll-down chevron icon. / 向下滚动箭头图标的几何数据。 |
+| `MenuScrollViewerChevronUpData` | Geometry data for the scroll-up chevron icon. / 向上滚动箭头图标的几何数据。 |
 
 ### Template Parts / 模板部件
 

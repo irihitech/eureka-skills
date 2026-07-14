@@ -118,6 +118,7 @@ Semi.Avalonia 定义了 Slider 主题 `{x:Type Slider}` 和三个子主题：
 
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
+| `SliderBorderThickness` | Slider border thickness / 滑块控件边框粗细 |
 | `SliderTrackBackground` | Track background color / 轨道背景色 |
 | `SliderTrackForeground` | Filled portion of track / 轨道已填充部分 |
 | `SliderTrackWidth` | Track thickness / 轨道厚度 |

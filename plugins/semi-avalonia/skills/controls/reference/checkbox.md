@@ -174,15 +174,33 @@ Like `CardCheckBox` but completely omits the check box icon. Selection is convey
 
 ### Key Resource Keys / 关键资源键
 
+The following table lists all `DynamicResource` keys consumed by Semi.Avalonia `CheckBox` themes.
+
+下表列出了 Semi.Avalonia `CheckBox` 主题使用的所有 `DynamicResource` 键。
+
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
+| `CheckBoxFontSize` | Label font size / 标签字体大小 |
 | `CheckBoxForeground` | Label text color / 标签文本颜色 |
+| `CheckBoxDisabledForeground` | Text color when disabled / 禁用时文本颜色 |
+| `CheckBoxGlyphForeground` | Check mark / indeterminate glyph color / 勾选标记/不确定标记颜色 |
 | `CheckBoxDefaultBackground` | Box background / 框背景 |
 | `CheckBoxDefaultBorderBrush` | Box border / 框边框 |
 | `CheckBoxBoxCornerRadius` | Box corner rounding / 框圆角 |
-| `CheckBoxBoxWidth` / `CheckBoxBoxHeight` | Box dimensions / 框尺寸 |
-| `CheckBoxGlyphForeground` | Check mark color / 勾选标记颜色 |
-| `CheckBoxDisabledForeground` | Text color when disabled / 禁用时文本颜色 |
+| `CheckBoxBoxWidth` | Box width / 框宽度 |
+| `CheckBoxBoxHeight` | Box height / 框高度 |
+| `CheckBoxCheckGlyphData` | Path geometry data for the check (✓) glyph / 勾选 (✓) 标记的路径几何数据 |
+| `CheckBoxIndeterminateGlyphData` | Path geometry data for the indeterminate (−) glyph / 不确定 (−) 标记的路径几何数据 |
+| `CheckBoxCardBackground` | Card theme default background / 卡片主题默认背景 |
+| `CheckBoxCardBorderBrush` | Card theme default border / 卡片主题默认边框 |
+| `CheckBoxCardCheckedBackground` | Card theme checked background / 卡片主题选中背景 |
+| `CheckBoxCardCheckedBorderBrush` | Card theme checked border / 卡片主题选中边框 |
+| `CheckBoxCardCheckedPointeroverBorderBrush` | Card theme checked `:pointerover` border / 卡片主题选中悬停边框 |
+| `CheckBoxCardCheckedPressedBorderBrush` | Card theme checked `:pressed` border / 卡片主题选中按下边框 |
+| `CheckBoxCardDisabledBackground` | Card theme `:disabled` background / 卡片主题禁用背景 |
+| `CheckBoxCardDisabledBorderBrush` | Card theme `:disabled` border / 卡片主题禁用边框 |
+| `CheckBoxCardPointeroverBorderBrush` | Card theme `:pointerover` border / 卡片主题悬停边框 |
+| `CheckBoxCardPressedBorderBrush` | Card theme `:pressed` border / 卡片主题按下边框 |
 
 ### Template Parts / 模板部件
 

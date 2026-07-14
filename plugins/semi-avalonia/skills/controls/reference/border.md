@@ -76,7 +76,17 @@ A card-container theme that applies Semi Design card styling: padding, border, c
 </Border>
 ```
 
-**Key resources:** `ThicknessCardPadding`, `BorderCardBorderBrush`, `RadiusCardCornerRadius`, `BorderCardBackground`, `ThicknessCardBorderThickness`, `ThicknessCardMargin`, `BorderCardBoxShadow`
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `BorderCardBackground` | Card background color / 卡片背景色 |
+| `BorderCardBorderBrush` | Card border color / 卡片边框颜色 |
+| `BorderCardBoxShadow` | Card box shadow / 卡片阴影 |
+| `RadiusCardCornerRadius` | Card corner radius / 卡片圆角半径 |
+| `ThicknessCardBorderThickness` | Card border thickness / 卡片边框粗细 |
+| `ThicknessCardMargin` | Card margin / 卡片外边距 |
+| `ThicknessCardPadding` | Card padding / 卡片内边距 |
 
 ## FAQ / 常见问题
 

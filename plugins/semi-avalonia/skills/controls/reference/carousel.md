@@ -291,10 +291,22 @@ An ellipse-based page indicator `ListBoxItem` theme. Each item renders as a smal
 
 ### DynamicResource Keys / 动态资源键
 
-```
-CarouselBackground       → Transparent
-CarouselBorderBrush      → Transparent
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `CarouselBackground` | Carousel background. / 轮播背景。 |
+| `CarouselBorderBrush` | Carousel border brush. / 轮播边框笔刷。 |
+| `CarouselButtonForeground` | Navigation button foreground. / 导航按钮前景色。 |
+| `CarouselButtonHeight` | Navigation button height. / 导航按钮高度。 |
+| `CarouselButtonWidth` | Navigation button width. / 导航按钮宽度。 |
+| `CarouselButtonArrowDownData` | Down arrow icon geometry data. / 向下箭头图标几何数据。 |
+| `CarouselButtonArrowUpData` | Up arrow icon geometry data. / 向上箭头图标几何数据。 |
+| `CarouselButtonArrowLeftData` | Left arrow icon geometry data. / 向左箭头图标几何数据。 |
+| `CarouselIndicatorDotSize` | Dot indicator size. / 圆点指示器尺寸。 |
+| `CarouselIndicatorLineHeight` | Line indicator height. / 线条指示器高度。 |
+| `CarouselIndicatorLineWidth` | Line indicator width. / 线条指示器宽度。 |
+| `CarouselIndicatorMargin` | Indicator margin. / 指示器外边距。 |
+| `CarouselIndicatorSelectedOpacity` | Selected indicator opacity. / 选中指示器不透明度。 |
+| `CarouselIndicatorUnselectedColor` | Unselected indicator color. / 未选中指示器颜色。 |
 
 ### Template Parts / 模板部件
 

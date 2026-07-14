@@ -40,7 +40,23 @@ Use `AutoCompleteBox` when the user needs to pick from a known set of values —
 
 ## Styling & Templating / 样式与模板
 
-Semi.Avalonia themes the internal `TextBox` and dropdown `Popup`. Key resources: `AutoCompleteBoxBackground`, `AutoCompleteBoxPopupBackground`. Template part: `PART_TextBox`.
+Semi.Avalonia themes the internal `TextBox` and dropdown `Popup`. Template part: `PART_TextBox`.
+
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `AutoCompleteBoxDefaultHeight` | Default control height / 默认控件高度 |
+| `AutoCompleteBoxLargeHeight` | Large control height / 大号控件高度 |
+| `AutoCompleteBoxSmallHeight` | Small control height / 小号控件高度 |
+| `AutoCompleteBoxPopupBackground` | Dropdown popup background / 下拉弹窗背景 |
+| `AutoCompleteBoxPopupBorderBrush` | Dropdown popup border color / 下拉弹窗边框颜色 |
+| `AutoCompleteBoxPopupBorderThickness` | Dropdown popup border thickness / 下拉弹窗边框粗细 |
+| `AutoCompleteBoxPopupBoxShadow` | Dropdown popup box shadow / 下拉弹窗阴影 |
+| `AutoCompleteBoxPopupCornerRadius` | Dropdown popup corner radius / 下拉弹窗圆角半径 |
+| `AutoCompleteBoxPopupMargin` | Dropdown popup margin / 下拉弹窗外边距 |
+| `AutoCompleteBoxPopupPadding` | Dropdown popup padding / 下拉弹窗内边距 |
+| `AutoCompleteMaxDropdownHeight` | Maximum dropdown height / 下拉列表最大高度 |
 
 ## FAQ / 常见问题
 

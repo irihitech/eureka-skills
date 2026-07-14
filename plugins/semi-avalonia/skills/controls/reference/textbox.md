@@ -167,13 +167,45 @@ The default theme provides a full-featured text box with border, background, foc
 
 **Key resource brushes / 关键资源笔刷：**
 
+The following table lists all `DynamicResource` keys consumed by Semi.Avalonia `TextBox` themes.
+
+下表列出了 Semi.Avalonia `TextBox` 主题使用的所有 `DynamicResource` 键。
+
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
+| `TextBoxDefaultFontSize` | Default font size / 默认字体大小 |
+| `TextBoxDefaultHeight` | Default height / 默认高度 |
+| `TextBoxDefaultPadding` | Default padding / 默认内边距 |
+| `TextBoxDefaultCornerRadius` | Default corner radius / 默认圆角半径 |
 | `TextBoxForeground` | Text color / 文本颜色 |
 | `TextBoxPlaceholderForeground` | Watermark text color / 占位符文本颜色 |
 | `TextBoxDefaultBackground` | Default background / 默认背景 |
 | `TextBoxDefaultBorderBrush` | Default border / 默认边框 |
 | `TextBoxSelectionBrush` | Selection background / 选择背景色 |
+| `TextBoxSelectionForeground` | Selection foreground / 选择前景色 |
+| `TextBoxDisabledBackground` | `:disabled` background / 禁用背景 |
+| `TextBoxDisabledBorderBrush` | `:disabled` border / 禁用边框 |
+| `TextBoxDisabledForeground` | `:disabled` foreground / 禁用前景色 |
+| `TextBoxErrorBackground` | Error state background / 错误状态背景 |
+| `TextBoxErrorBorderBrush` | Error state border / 错误状态边框 |
+| `TextBoxErrorForeground` | Error state foreground / 错误状态前景色 |
+| `TextBoxFocusBackground` | `:focus` background / 焦点背景 |
+| `TextBoxFocusBorderBrush` | `:focus` border / 焦点边框 |
+| `TextBoxFocusForeground` | `:focus` foreground / 焦点前景色 |
+| `TextBoxPointeroverBackground` | `:pointerover` background / 悬停背景 |
+| `TextBoxPointeroverBorderBrush` | `:pointerover` border / 悬停边框 |
+| `TextBoxHoverBackground` | Hover background (alternative to pointerover) / 悬停背景（指针悬停的备选） |
+| `TextBoxLargeHeight` | Height for Large size class / Large 尺寸类的高度 |
+| `TextBoxLargePadding` | Padding for Large size class / Large 尺寸类的内边距 |
+| `TextBoxSmallHeight` | Height for Small size class / Small 尺寸类的高度 |
+| `TextBoxSmallPadding` | Padding for Small size class / Small 尺寸类的内边距 |
+| `TextBoxGlyphData` | Path geometry data for the clear-button glyph / 清除按钮标记的路径几何数据 |
+| `PasswordBoxRevealButtonData` | Path geometry data for the password reveal (eye) icon / 密码显示（眼睛）图标的路径几何数据 |
+| `PasswordBoxHideButtonData` | Path geometry data for the password hide (eye-slash) icon / 密码隐藏（眼睛斜线）图标的路径几何数据 |
+| `NonErrorTextBox` | Theme key for the no-error-validation TextBox variant / 无错误验证 TextBox 变体的主题键 |
+| `ButtonInputInnerForeground` | Inner input button foreground (shared with Button) / 输入内部按钮前景色（与 Button 共享） |
+| `ButtonInputInnerPointeroverForeground` | Inner input button `:pointerover` foreground (shared with Button) / 输入内部按钮悬停前景色（与 Button 共享） |
+| `ButtonInputInnerPressedForeground` | Inner input button `:pressed` foreground (shared with Button) / 输入内部按钮按下前景色（与 Button 共享） |
 
 ### NonErrorTextBox / 无错误文本框
 

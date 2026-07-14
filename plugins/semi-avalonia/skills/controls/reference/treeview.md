@@ -72,6 +72,26 @@ The theme for `PART_ExpandCollapseChevron` — the `ToggleButton` inside every `
 
 **Pseudo-classes:** `:checked` (rotates icon 90°), `:pointerover` (changes icon foreground)
 
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ExpanderIconData` | Geometry data for the expand/collapse chevron icon. / 展开/折叠箭头图标的几何数据。 |
+| `TreeViewItemDefaultBackground` | Default background of TreeViewItem. / TreeViewItem 的默认背景。 |
+| `TreeViewItemDefaultCornerRadius` | Default corner radius of TreeViewItem. / TreeViewItem 的默认圆角。 |
+| `TreeViewItemDefaultForeground` | Default foreground (text) color of TreeViewItem. / TreeViewItem 的默认前景（文本）颜色。 |
+| `TreeViewItemDisabledBackground` | Background when TreeViewItem is disabled. / TreeViewItem 禁用时的背景。 |
+| `TreeViewItemDisabledForeground` | Foreground when TreeViewItem is disabled. / TreeViewItem 禁用时的前景色。 |
+| `TreeViewItemIconDefaultForeground` | Default foreground color of the expand/collapse icon. / 展开/折叠图标的默认前景色。 |
+| `TreeViewItemIconHoverForeground` | Expand/collapse icon foreground on hover. / 悬停时展开/折叠图标的前景色。 |
+| `TreeViewItemIconMargin` | Margin around the expand/collapse icon. / 展开/折叠图标周围的外边距。 |
+| `TreeViewItemPadding` | Padding inside TreeViewItem. / TreeViewItem 内部的内边距。 |
+| `TreeViewItemPointeroverBackground` | Background when pointer hovers over TreeViewItem. / 指针悬停时 TreeViewItem 的背景。 |
+| `TreeViewItemPressedBackground` | Background when TreeViewItem is pressed. / TreeViewItem 按下时的背景。 |
+| `TreeViewItemSelectedBackground` | Background when TreeViewItem is selected. / TreeViewItem 选中时的背景。 |
+| `TreeViewItemSelectedDisabledBackground` | Background when TreeViewItem is selected but disabled. / TreeViewItem 选中但禁用时的背景。 |
+| `TreeViewItemSelectedForeground` | Foreground when TreeViewItem is selected. / TreeViewItem 选中时的前景色。 |
+
 ## FAQ / 常见问题
 
 **Q: How to bind hierarchical data? / 如何绑定层级数据？**

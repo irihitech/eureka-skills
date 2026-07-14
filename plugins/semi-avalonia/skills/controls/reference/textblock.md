@@ -145,6 +145,14 @@ Semi.Avalonia 通过 `DynamicResource` 笔刷提供文本颜色层级。`TextBlo
 | `SemiColorTextDisabled` | Disabled text color. / 禁用文本颜色。 |
 | `TextBlockForeground` | Default foreground for TextBlock. Maps to `SemiColorTextPrimary`. / TextBlock 的默认前景色。映射到 `SemiColorTextPrimary`。 |
 
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `TextBlockFontSize` | Default font size for TextBlock / TextBlock 的默认字体大小 |
+| `TextBlockForeground` | Default foreground color for TextBlock / TextBlock 的默认前景色 |
+| `TextBlockDisabledForeground` | Foreground color when TextBlock is disabled / TextBlock 禁用时的前景色 |
+
 ### Pseudo-classes / 伪类
 
 | Pseudo-class / 伪类 | Description / 说明 |

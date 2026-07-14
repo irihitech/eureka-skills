@@ -164,16 +164,13 @@ Semi.Avalonia 为 `ContextMenu` 设置了以下伪类样式：
 
 ### DynamicResource Keys / 动态资源键
 
-Context menus use the Semi overlay/popup resource keys:
-
-```
-SemiContextMenuBackground
-SemiContextMenuBorderBrush
-SemiContextMenuForeground
-SemiContextMenuBorderThickness
-SemiContextMenuCornerRadius
-SemiContextMenuPadding
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ContextMenuBackground` | Background of ContextMenu. / 上下文菜单的背景。 |
+| `ContextMenuBorderBrush` | Border brush of ContextMenu. / 上下文菜单的边框画刷。 |
+| `ContextMenuBorderThickness` | Border thickness of ContextMenu. / 上下文菜单的边框厚度。 |
+| `ContextMenuCornerRadius` | Corner radius of ContextMenu. / 上下文菜单的圆角。 |
+| `ContextMenuPadding` | Padding inside ContextMenu. / 上下文菜单内部的内边距。 |
 
 ### Template Parts / 模板部件
 

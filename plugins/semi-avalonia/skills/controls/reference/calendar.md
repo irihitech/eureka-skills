@@ -166,24 +166,45 @@ Calendar 通过以下伪类对内部日期按钮和导航元素应用样式：
 
 ### DynamicResource Keys / 动态资源键
 
-Resource keys for Calendar follow the convention `Calendar{Property}{State}`:
-
-```
-CalendarBackground
-CalendarBorderBrush
-CalendarForeground
-CalendarHeaderBackground
-CalendarHeaderForeground
-CalendarDayButtonBackground
-CalendarDayButtonPointeroverBackground
-CalendarDayButtonPressedBackground
-CalendarDayButtonSelectedBackground
-CalendarDayButtonTodayBorderBrush
-CalendarDayButtonInactiveForeground
-CalendarDayButtonBlackoutForeground
-CalendarNavigationButtonBackground
-...
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `CalendarBackground` | Calendar background. / 日历背景。 |
+| `CalendarBorderBrush` | Calendar border brush. / 日历边框笔刷。 |
+| `CalendarForeground` | Calendar foreground. / 日历前景色。 |
+| `CalendarBlackoutBackground` | Blackout date background. / 不可选日期背景。 |
+| `CalendarBlackoutForeground` | Blackout date foreground. / 不可选日期前景色。 |
+| `CalendarButtonBackground` | Navigation button background. / 导航按钮背景。 |
+| `CalendarButtonBorderBrush` | Navigation button border brush. / 导航按钮边框笔刷。 |
+| `CalendarButtonBorderThickness` | Navigation button border thickness. / 导航按钮边框厚度。 |
+| `CalendarButtonCornerRadius` | Navigation button corner radius. / 导航按钮圆角半径。 |
+| `CalendarButtonFontSize` | Navigation button font size. / 导航按钮字体大小。 |
+| `CalendarButtonForeground` | Navigation button foreground. / 导航按钮前景色。 |
+| `CalendarButtonPointeroverBackground` | Navigation button pointerover background. / 导航按钮悬停背景。 |
+| `CalendarButtonPointeroverBorderBrush` | Navigation button pointerover border brush. / 导航按钮悬停边框笔刷。 |
+| `CalendarButtonPressedBackground` | Navigation button pressed background. / 导航按钮按下背景。 |
+| `CalendarButtonPressedBorderBrush` | Navigation button pressed border brush. / 导航按钮按下边框笔刷。 |
+| `CalendarDayButtonBackground` | Day button background. / 日期按钮背景。 |
+| `CalendarDayButtonBorderBrush` | Day button border brush. / 日期按钮边框笔刷。 |
+| `CalendarDayButtonBorderThickness` | Day button border thickness. / 日期按钮边框厚度。 |
+| `CalendarDayButtonCornerRadius` | Day button corner radius. / 日期按钮圆角半径。 |
+| `CalendarDayButtonDisabledBackground` | Day button disabled background. / 日期按钮禁用背景。 |
+| `CalendarDayButtonDisabledBorderBrush` | Day button disabled border brush. / 日期按钮禁用边框笔刷。 |
+| `CalendarDayButtonDisabledForeground` | Day button disabled foreground. / 日期按钮禁用前景色。 |
+| `CalendarDayButtonFontSize` | Day button font size. / 日期按钮字体大小。 |
+| `CalendarDayButtonForeground` | Day button foreground. / 日期按钮前景色。 |
+| `CalendarDayButtonPointeroverBackground` | Day button pointerover background. / 日期按钮悬停背景。 |
+| `CalendarDayButtonPointeroverBorderBrush` | Day button pointerover border brush. / 日期按钮悬停边框笔刷。 |
+| `CalendarDayButtonPressedBackground` | Day button pressed background. / 日期按钮按下背景。 |
+| `CalendarDayButtonPressedBorderBrush` | Day button pressed border brush. / 日期按钮按下边框笔刷。 |
+| `CalendarDayButtonSelectedBackground` | Day button selected background. / 日期按钮选中背景。 |
+| `CalendarDayButtonSelectedBorderBrush` | Day button selected border brush. / 日期按钮选中边框笔刷。 |
+| `CalendarDayButtonSelectedPointeroverBackground` | Day button selected pointerover background. / 日期按钮选中悬停背景。 |
+| `CalendarDayButtonSelectedPointeroverBorderBrush` | Day button selected pointerover border brush. / 日期按钮选中悬停边框笔刷。 |
+| `CalendarDayButtonSelectedPressedBackground` | Day button selected pressed background. / 日期按钮选中按下背景。 |
+| `CalendarDayButtonSelectedPressedBorderBrush` | Day button selected pressed border brush. / 日期按钮选中按下边框笔刷。 |
+| `CalendarDayButtonTodayBorderBrush` | Today day button border brush. / 今日日期按钮边框笔刷。 |
+| `CalendarHeaderBackground` | Header background. / 标题背景。 |
+| `CalendarHeaderFontSize` | Header font size. / 标题字体大小。 |
 
 ### Template Parts / 模板部件
 

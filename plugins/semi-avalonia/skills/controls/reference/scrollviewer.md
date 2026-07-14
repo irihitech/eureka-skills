@@ -69,16 +69,14 @@ Semi.Avalonia 在默认主题之外提供了两个额外的 `ScrollViewer` Contr
 
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
+| `ScrollBarBackground` | ScrollBar background. / 滚动条背景。 |
+| `ScrollBarButtonBackground` | ScrollBar button background. / 滚动条按钮背景。 |
+| `ScrollBarButtonPointeroverBackground` | ScrollBar button background on hover. / 滚动条按钮悬停背景。 |
+| `ScrollBarButtonPressedBackground` | ScrollBar button background when pressed. / 滚动条按钮按下背景。 |
+| `ScrollBarCornerBackground` | ScrollBar corner background (intersection of horizontal/vertical scroll bars). / 滚动条角落背景（水平与垂直滚动条交叉处）。 |
 | `ScrollBarThumbBackground` | ScrollBar thumb color. / 滚动条滑块颜色。 |
 | `ScrollBarThumbPointeroverBackground` | Thumb color on hover. / 悬停时的滑块颜色。 |
-| `ScrollBarTrackBackground` | ScrollBar track background. / 滚动条轨道背景。 |
-| `ScrollBarBackground` | ScrollBar background. / 滚动条背景。 |
-| `ScrollBarButtonDefaultForeground` | ScrollBar button icon color. / 滚动条按钮图标颜色。 |
-| `ScrollBarButtonPointeroverForeground` | Button icon color on hover. / 悬停时的按钮图标颜色。 |
-| `ScrollBarThumbCornerRadius` | Thumb corner radius. / 滑块圆角。 |
-| `ScrollBarThumbThickness` | Thumb thickness (width for vertical, height for horizontal). / 滑块厚度。 |
-| `ScrollBarMinLength` | Minimum thumb length. / 滑块最小长度。 |
-| `ScrollBarThickness` | ScrollBar track thickness. / 滚动条轨道厚度。 |
+| `ScrollBarThumbPressedBackground` | ScrollBar thumb color when pressed. / 滚动条滑块按下颜色。 |
 
 ## FAQ / 常见问题
 

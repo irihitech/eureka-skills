@@ -237,16 +237,28 @@ The `ProgressBar` theme contains a `Border` layout root with an inner `Border#PA
 
 ### DynamicResource Keys / 动态资源键
 
-```
-ProgressBarPrimaryBackground
-ProgressBarPrimaryIndicatorBackground
-ProgressBarPrimaryProgressTextForeground
-ProgressBarSuccessIndicatorBackground
-ProgressBarDangerIndicatorBackground
-ProgressBarLargeHeight
-ProgressBarSmallHeight
-...
-```
+Resource keys follow the naming convention `ProgressBar{Property}` and `ProgressRing{Property}` and resolve via `DynamicResource`:
+
+资源键遵循命名约定 `ProgressBar{属性}` 和 `ProgressRing{属性}`，通过 `DynamicResource` 解析：
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ProgressBarBackground` | Track background color / 轨道背景色 |
+| `ProgressBarBorderBrush` | Track border brush / 轨道边框画刷 |
+| `ProgressBarBorderThickness` | Track border thickness / 轨道边框粗细 |
+| `ProgressBarCornerRadius` | Track corner radius / 轨道圆角 |
+| `ProgressBarForeground` | Indicator (fill) foreground color / 指示器（填充）前景色 |
+| `ProgressBarHeight` | Default progress bar height / 默认进度条高度 |
+| `ProgressBarLargeHeight` | Progress bar height in large size / 大尺寸下进度条高度 |
+| `ProgressBarSmallHeight` | Progress bar height in small size / 小尺寸下进度条高度 |
+| `ProgressRingArcBackground` | ProgressRing background arc color / 环形进度条背景弧线颜色 |
+| `ProgressRingArcForeground` | ProgressRing indicator arc foreground color / 环形进度条指示弧线前景色 |
+| `ProgressRingArcThickness` | ProgressRing arc stroke thickness / 环形进度条弧线描边粗细 |
+| `ProgressRingBackground` | ProgressRing background color / 环形进度条背景色 |
+| `ProgressRingLargeArcThickness` | ProgressRing arc thickness in large size / 大尺寸下环形进度条弧线粗细 |
+| `ProgressRingLargeSize` | ProgressRing size in large size / 大尺寸下环形进度条尺寸 |
+| `ProgressRingSmallArcThickness` | ProgressRing arc thickness in small size / 小尺寸下环形进度条弧线粗细 |
+| `ProgressRingSmallSize` | ProgressRing size in small size / 小尺寸下环形进度条尺寸 |
 
 ### Template Parts / 模板部件
 

@@ -76,14 +76,16 @@ Semi.Avalonia 为 Expander 标题内的 `ToggleButton` 提供了一个专用的 
 | --- | --- |
 | `ExpanderHeaderBackground` | Header background. / 标题背景。 |
 | `ExpanderHeaderForeground` | Header text color. / 标题文字颜色。 |
-| `ExpanderHeaderDefaultBackground` | Default header background. / 默认标题背景。 |
-| `ExpanderHeaderHoverBackground` | Header background on pointer over. / 鼠标悬停时的标题背景。 |
+| `ExpanderHeaderFontSize` | Header font size. / 标题字体大小。 |
+| `ExpanderHeaderFontWeight` | Header font weight. / 标题字体粗细。 |
+| `ExpanderHeaderMinHeight` | Header minimum height. / 标题最小高度。 |
+| `ExpanderHeaderPadding` | Header padding. / 标题内边距。 |
+| `ExpanderHeaderPointeroverBackground` | Header background on pointer over. / 鼠标悬停时的标题背景。 |
 | `ExpanderHeaderPressedBackground` | Header background when pressed. / 按下时的标题背景。 |
-| `ExpanderHeaderDisabledForeground` | Header text color when disabled. / 禁用时的标题文字颜色。 |
 | `ExpanderContentBackground` | Content area background. / 内容区域背景。 |
-| `ExpanderContentForeground` | Content area text color. / 内容区域文字颜色。 |
-| `ExpanderSeparatorBorderBrush` | Border/separator color. / 边框/分隔线颜色。 |
-| `ExpanderIcon` | Chevron icon geometry. / 箭头图标几何数据。 |
+| `ExpanderContentPadding` | Content area padding. / 内容区域内边距。 |
+| `ExpanderIconData` | Expand/collapse chevron icon geometry data. / 展开/收起箭头图标几何数据。 |
+| `ExpanderIconMargin` | Icon margin. / 图标外边距。 |
 
 ### Template Parts / 模板部件
 

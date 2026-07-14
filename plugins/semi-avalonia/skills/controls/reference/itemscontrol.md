@@ -42,7 +42,13 @@ Use `ItemsControl` for simple repeating layouts without selection — tag clouds
 
 ## Styling & Templating / 样式与模板
 
-Semi.Avalonia provides theming via `ItemsControlBackground`. Individual items are not themed — use `ItemTemplate` for custom styling.
+Semi.Avalonia provides theming via the following dynamic resource. Individual items are not themed — use `ItemTemplate` for custom styling.
+
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `ItemsControlBackground` | Items control background / 项目控件背景 |
 
 ## FAQ / 常见问题
 

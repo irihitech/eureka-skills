@@ -39,7 +39,15 @@ Use `GridSplitter` for resizable panels — split-pane layouts, adjustable sideb
 
 ## Styling & Templating / 样式与模板
 
-Semi styles `GridSplitter` with `GridSplitterBackground`, `GridSplitterPointeroverBackground`. Pseudo-classes: `:pointerover`, `:pressed`.
+Semi styles `GridSplitter` with the following dynamic resources. Pseudo-classes: `:pointerover`, `:pressed`.
+
+### DynamicResource Keys / 动态资源键
+
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `GridSplitterBackground` | Grid splitter default background / 网格分割器默认背景 |
+| `GridSplitterPointeroverBackground` | Grid splitter hover background / 网格分割器悬停背景 |
+| `GridSplitterPressedBackground` | Grid splitter pressed background / 网格分割器按下背景 |
 
 ## FAQ / 常见问题
 

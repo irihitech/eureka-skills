@@ -265,13 +265,25 @@ Resource keys follow the naming convention `RadioButton{Property}` and resolve v
 
 | Resource Key / 资源键 | Purpose / 用途 |
 | --- | --- |
-| `RadioButtonForeground` | Label text color / 标签文本颜色 |
-| `RadioButtonDefaultBackground` | Outer circle background / 外圈背景 |
-| `RadioButtonDefaultBorderBrush` | Outer circle border / 外圈边框 |
-| `RadioButtonGlyphForeground` | Inner dot color when checked / 选中时内部圆点颜色 |
-| `RadioButtonGlyphForegroundDisabled` | Inner dot color when disabled / 禁用时内部圆点颜色 |
-| `RadioButtonCheckedBorderBrush` | Outer circle border when checked / 选中时外圈边框 |
+| `RadioButtonBoxCornerRadius` | Outer box corner radius / 外框圆角 |
+| `RadioButtonCheckGlyphFill` | Check glyph (dot) fill color when checked / 选中时勾选字形（圆点）填充色 |
+| `RadioButtonContentMargin` | Content presenter margin / 内容展示区内边距 |
+| `RadioButtonDefaultBackground` | Outer circle background in default state / 默认状态下外圈背景 |
+| `RadioButtonDefaultBorderBrush` | Outer circle border brush in default state / 默认状态下外圈边框画刷 |
 | `RadioButtonDisabledForeground` | Label text color when disabled / 禁用时标签文本颜色 |
+| `RadioButtonFontSize` | Label font size / 标签字体大小 |
+| `RadioButtonForeground` | Label text color / 标签文本颜色 |
+| `RadioButtonGlyphRadius` | Check glyph (dot) radius / 勾选字形（圆点）半径 |
+| `RadioButtonIconRadius` | Outer icon circle radius / 外圈图标半径 |
+| `RadioButtonUncheckIconDefaultBackground` | Unchecked icon background in default state / 默认状态下未选中图标背景 |
+| `RadioButtonUncheckIconDefaultBorderBrush` | Unchecked icon border brush in default state / 默认状态下未选中图标边框画刷 |
+| `RadioButtonUncheckIconDefaultThickness` | Unchecked icon border thickness in default state / 默认状态下未选中图标边框粗细 |
+| `RadioButtonUncheckIconDisabledBackground` | Unchecked icon background when disabled / 禁用时未选中图标背景 |
+| `RadioButtonUncheckIconDisabledBorderBrush` | Unchecked icon border brush when disabled / 禁用时未选中图标边框画刷 |
+| `RadioButtonUncheckIconPointeroverBackground` | Unchecked icon background on pointerover / 指针悬停时未选中图标背景 |
+| `RadioButtonUncheckIconPointeroverBorderBrush` | Unchecked icon border brush on pointerover / 指针悬停时未选中图标边框画刷 |
+| `RadioButtonUncheckIconPressedBackground` | Unchecked icon background when pressed / 按下时未选中图标背景 |
+| `RadioButtonUncheckIconPressedBorderBrush` | Unchecked icon border brush when pressed / 按下时未选中图标边框画刷 |
 
 ### Template Parts / 模板部件
 

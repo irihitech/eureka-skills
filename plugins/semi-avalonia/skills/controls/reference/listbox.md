@@ -145,6 +145,7 @@ Semi.Avalonia 定义了三个与 `ListBox` 相关的主题：
 | `ListBoxItemPointeroverBackground` | Background on hover / 悬停背景 |
 | `ListBoxItemPointeroverForeground` | Foreground on hover / 悬停前景色 |
 | `ListBoxItemPressedBackground` | Background when pressed / 按下背景 |
+| `ListBoxItemPressedForeground` | Foreground when pressed / 按下前景色 |
 | `ListBoxItemSelectedBackground` | Selected item background / 选中项背景 |
 | `ListBoxItemSelectedForeground` | Selected item foreground / 选中项前景色 |
 | `ListBoxItemSelectedPointeroverBackground` | Selected + hover background / 选中且悬停背景 |

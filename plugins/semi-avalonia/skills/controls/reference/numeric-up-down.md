@@ -195,14 +195,22 @@ The `NumericUpDown` theme wraps a `TextBox#PART_TextBox` and `ButtonSpinner#PART
 
 ### DynamicResource Keys / 动态资源键
 
-```
-NumericUpDownPrimaryForeground
-NumericUpDownPrimaryBorderBrush
-NumericUpDownPrimaryFocusedBorderBrush
-NumericUpDownSecondaryForeground
-NumericUpDownDangerBorderBrush
-...
-```
+| Resource Key / 资源键 | Purpose / 用途 |
+| --- | --- |
+| `NumericUpDownButtonBackground` | Default background of spinner buttons / 微调按钮的默认背景 |
+| `NumericUpDownButtonBorderBrush` | Default border brush of spinner buttons / 微调按钮的默认边框画刷 |
+| `NumericUpDownButtonBorderThickness` | Border thickness of spinner buttons / 微调按钮的边框厚度 |
+| `NumericUpDownButtonCornerRadius` | Corner radius of spinner buttons / 微调按钮的圆角 |
+| `NumericUpDownButtonData` | Geometry data for the increase (up) button icon / 增加（上）按钮图标的几何数据 |
+| `NumericUpDownButtonDownData` | Geometry data for the decrease (down) button icon / 减少（下）按钮图标的几何数据 |
+| `NumericUpDownButtonForeground` | Default foreground of spinner buttons / 微调按钮的默认前景色 |
+| `NumericUpDownButtonPointeroverBackground` | Button background on pointer-over / 指针悬停时按钮背景 |
+| `NumericUpDownButtonPointeroverBorderBrush` | Button border brush on pointer-over / 指针悬停时按钮边框画刷 |
+| `NumericUpDownButtonPressedBackground` | Button background when pressed / 按下时按钮背景 |
+| `NumericUpDownButtonPressedBorderBrush` | Button border brush when pressed / 按下时按钮边框画刷 |
+| `NumericUpDownDefaultHeight` | Default control height (standard size) / 默认控件高度（标准尺寸） |
+| `NumericUpDownLargeHeight` | Control height for large size class / 大尺寸控件高度 |
+| `NumericUpDownSmallHeight` | Control height for small size class / 小尺寸控件高度 |
 
 ### Template Parts / 模板部件
 
