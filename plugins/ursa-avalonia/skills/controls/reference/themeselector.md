@@ -1,40 +1,44 @@
 ---
 category: Components
-title: ThemeSelector / ThemeToggleButton
-subtitle: 主题选择器/主题切换按钮
+title: ThemeSelector
+subtitle: 主题选择器
 description: >
-  A toggle button that switches the application or a scoped region between
-  Light, Dark, and Default (system) theme variants. Supports Controller mode
-  (drives theme changes) and Indicator mode (reflects the current theme). Can
-  target a specific ThemeVariantScope or operate globally via the Application.
-  一个切换按钮，可在 Light、Dark 和 Default（系统）主题变体之间切换应用程序或
-  局部区域的主题。支持 Controller 模式（驱动主题变更）和 Indicator 模式（反映
-  当前主题）。可指定目标 ThemeVariantScope 或通过 Application 全局操作。
+  Base class and toggle button for selecting or indicating the current theme
+  variant (Light, Dark, Default). ThemeToggleButton cycles through themes on
+  click and updates either the application-level or a scoped
+  ThemeVariantScope.RequestedThemeVariant. Supports Controller and Indicator
+  modes, optional three-state cycling, and pseudo-classes for per-theme styling.
+  用于选择或指示当前主题变体（Light、Dark、Default）的基类和切换按钮。
+  ThemeToggleButton 在点击时循环切换主题，并更新应用程序级或作用域内的
+  ThemeVariantScope.RequestedThemeVariant。支持 Controller 和 Indicator 模式、
+  可选的三态循环以及用于每个主题样式的伪类。
 ---
 
-# ThemeSelector / ThemeToggleButton / 主题选择器
+# ThemeSelector / 主题选择器
 
 ## When to Use / 何时使用
 
-Use `ThemeToggleButton` to let users toggle between light, dark, and system
-(default) theme variants. It acts as a three-state button: Light, Dark, and
-Default. Place it in toolbars, settings pages, or title bars.
+Use `ThemeSelector` (via `ThemeToggleButton`) to let users toggle between light,
+dark, and default (system) themes. It can operate as a **controller** (actively
+changes the theme) or an **indicator** (reflects the current theme without
+changing it). It can target the application globally or a specific
+`ThemeVariantScope`.
 
-使用 `ThemeToggleButton` 让用户在 Light、Dark 和系统（Default）主题变体之间切换。
-它是一个三态按钮：Light、Dark 和 Default。可放置在工具栏、设置页面或标题栏中。
+使用 `ThemeSelector`（通过 `ThemeToggleButton`）让用户在浅色、深色和默认
+（系统）主题之间切换。它可作为**控制器**（主动更改主题）或**指示器**（反映
+当前主题而不更改）。可以全局作用于应用程序，也可以作用于特定的
+`ThemeVariantScope`。
 
-`ThemeToggleButton` inherits from `ThemeSelectorBase`, which handles the theme
-synchronization logic. `ThemeSelectorBase` is an abstract `TemplatedControl` that
-manages `SelectedTheme`, `TargetScope`, and `Mode` with proper two-way binding
-between the selector and the scope.
+Do NOT use `ThemeToggleButton` to select arbitrary `ThemeVariant` values beyond
+Light/Dark/Default — `ThemeSelectorBase` can be subclassed for custom
+selection UIs.
 
-`ThemeToggleButton` 继承自 `ThemeSelectorBase`，后者处理主题同步逻辑。
-`ThemeSelectorBase` 是一个抽象的 `TemplatedControl`，它通过适当的两向绑定管理
-`SelectedTheme`、`TargetScope` 和 `Mode`。
+不要使用 `ThemeToggleButton` 选择 Light/Dark/Default 之外的任意 `ThemeVariant`
+值——可以子类化 `ThemeSelectorBase` 来实现自定义选择 UI。
 
 ## Basic Usage / 基本使用
 
-### Global Theme Toggle / 全局主题切换
+### Global theme toggle / 全局主题切换
 
 ```xml
 xmlns:u="https://irihi.tech/ursa"
@@ -42,61 +46,88 @@ xmlns:u="https://irihi.tech/ursa"
 <u:ThemeToggleButton />
 ```
 
-This toggles the application-wide `RequestedThemeVariant`. The button cycles
-through Light → Dark → Default on each click.
+By default, this toggles the application's `RequestedThemeVariant` between
+Light and Dark (two-state mode).
 
-这将在应用程序范围内切换 `RequestedThemeVariant`。每次单击时按钮依次循环
-Light → Dark → Default。
+默认情况下，这会在 Light 和 Dark 之间切换应用程序的 `RequestedThemeVariant`
+（双状态模式）。
 
-### Indicator Mode / 指示器模式
+### Three-state toggle (Light / Dark / Default) / 三态切换
+
+```xml
+<u:ThemeToggleButton IsThreeState="True" />
+```
+
+Cycles: Light → Dark → Default → Light → ...
+
+循环：Light → Dark → Default → Light → ...
+
+### Indicator mode / 指示器模式
 
 ```xml
 <u:ThemeToggleButton Mode="Indicator" />
 ```
 
-In `Indicator` mode the button only *reflects* the current theme — clicking does
-not change it directly.
+In `Indicator` mode, the button reflects the current theme but does not change
+it when clicked. Useful for display-only theme status.
 
-在 `Indicator` 模式下，按钮仅*反映*当前主题——单击不会直接更改主题。
+在 `Indicator` 模式下，按钮反映当前主题，但点击时不更改主题。适用于仅显示
+主题状态。
 
-### Two-State Toggle / 双态切换
+### Scoped theme toggle / 作用域主题切换
 
 ```xml
-<u:ThemeToggleButton IsThreeState="False" />
+<ThemeVariantScope Name="scope" RequestedThemeVariant="Dark">
+    <Border Theme="{DynamicResource CardBorder}">
+        <StackPanel>
+            <u:ThemeToggleButton TargetScope="{Binding #scope}" />
+            <Button Content="Inside scope" />
+        </StackPanel>
+    </Border>
+</ThemeVariantScope>
 ```
 
-When `IsThreeState="False"`, the button toggles only between Light and Dark.
+The toggle button controls only the theme of the targeted `ThemeVariantScope`,
+not the entire application.
 
-当 `IsThreeState="False"` 时，按钮仅在 Light 和 Dark 之间切换。
+切换按钮仅控制目标 `ThemeVariantScope` 的主题，而非整个应用程序。
 
 ## Common Scenarios / 常用场景
 
-### Target a Specific Scope / 指定目标作用域
+### 1. Settings panel theme switch / 设置面板主题切换
 
 ```xml
-<StackPanel>
-    <u:ThemeToggleButton TargetScope="{Binding #scope}" />
-    <ThemeVariantScope Name="scope" RequestedThemeVariant="Dark">
-        <Border Theme="{DynamicResource CardBorder}">
-            <Button Content="Hello World" />
-        </Border>
-    </ThemeVariantScope>
+<StackPanel Spacing="10">
+    <TextBlock Text="Application Theme" FontWeight="Bold" />
+    <u:ThemeToggleButton IsThreeState="True" />
 </StackPanel>
 ```
 
-The `TargetScope` property binds to a `ThemeVariantScope` so the toggle only
-affects that region, not the entire application.
+### 2. Per-section theme control / 分区主题控制
 
-`TargetScope` 属性绑定到 `ThemeVariantScope`，使切换仅影响该区域，而非整个应用。
+```xml
+<Grid ColumnDefinitions="Auto, *">
+    <StackPanel Grid.Column="0">
+        <TextBlock Text="Global" />
+        <u:ThemeToggleButton />
+        <TextBlock Text="Scoped" />
+        <u:ThemeToggleButton TargetScope="{Binding #section}" />
+    </StackPanel>
+    <ThemeVariantScope Grid.Column="1" Name="section" RequestedThemeVariant="Dark">
+        <Border Theme="{DynamicResource CardBorder}">
+            <Calendar />
+        </Border>
+    </ThemeVariantScope>
+</Grid>
+```
 
-### Auto-Detect Parent Scope / 自动检测父级作用域
+### 3. Theme indicator in status bar / 状态栏中的主题指示器
 
-If `TargetScope` is not set, the control walks up the logical tree to find the
-nearest ancestor `ThemeVariantScope`. If none is found, it falls back to
-`Application.Current`.
-
-如果未设置 `TargetScope`，控件会沿逻辑树向上查找最近的祖先
-`ThemeVariantScope`。如果未找到，则回退到 `Application.Current`。
+```xml
+<StatusBar>
+    <u:ThemeToggleButton Mode="Indicator" />
+</StatusBar>
+```
 
 ## Property Reference / 属性参考
 
@@ -104,39 +135,52 @@ nearest ancestor `ThemeVariantScope`. If none is found, it falls back to
 
 | Property | Type | Default | Description / 说明 |
 |---|---|---|---|
-| `SelectedTheme` | `ThemeVariant?` | `null` | The currently selected theme variant (Light/Dark/Default). Two-way. / 当前选中的主题变体（Light/Dark/Default）。双向绑定。 |
-| `Mode` | `ThemeSelectorMode` | `Controller` | Controller drives theme changes; Indicator only reflects. / Controller 驱动主题更改；Indicator 仅反映。 |
-| `TargetScope` | `ThemeVariantScope?` | `null` | Specific scope to target. If null, auto-detects or uses Application. / 要指定的目标作用域。如果为 null，自动检测或使用 Application。 |
-
-### ThemeToggleButton Properties / ThemeToggleButton 属性
-
-| Property | Type | Default | Description / 说明 |
-|---|---|---|---|
-| `IsThreeState` | `bool` | `true` | When true, cycles Light→Dark→Default. When false, only Light↔Dark. / 为 true 时循环 Light→Dark→Default；为 false 时仅 Light↔Dark。 |
+| `SelectedTheme` | `ThemeVariant?` | `null` | Currently selected theme variant / 当前选中的主题变体 |
+| `Mode` | `ThemeSelectorMode` | `Controller` | `Controller` changes the theme; `Indicator` only displays it / `Controller` 更改主题；`Indicator` 仅显示 |
+| `TargetScope` | `ThemeVariantScope?` | `null` | Optional scope to control. Null targets the application globally. / 可选的控制范围。为 null 则全局作用于应用程序。 |
 
 ### ThemeSelectorMode Enum / ThemeSelectorMode 枚举
 
 | Value | Description / 说明 |
 |---|---|
-| `Controller` | Clicking the button changes the theme in the target scope. / 单击按钮更改目标作用域中的主题。 |
-| `Indicator` | Button only reflects the current theme; clicking does not change it. / 按钮仅反映当前主题；单击不会更改主题。 |
+| `Controller` | Clicking changes the theme (default) / 点击更改主题（默认） |
+| `Indicator` | Clicking does not change the theme; the button reflects the current state / 点击不更改主题；按钮反映当前状态 |
 
-## Events / 事件
+### ThemeToggleButton Properties / ThemeToggleButton 属性
 
-No custom events. Inherits standard `TemplatedControl` events. Theme changes
-are communicated through the `SelectedTheme` property and
-`ThemeVariantScope.ActualThemeVariantChanged`.
+| Property | Type | Default | Description / 说明 |
+|---|---|---|---|
+| `IsThreeState` | `bool` | `false` | Enable three-state cycling (Light/Dark/Default) instead of two / 启用三态循环（Light/Dark/Default）而非双态 |
 
-无自定义事件。继承标准 `TemplatedControl` 事件。主题变更通过 `SelectedTheme`
-属性和 `ThemeVariantScope.ActualThemeVariantChanged` 传递。
+### Scope Resolution / 范围解析
+
+When `TargetScope` is not set, the control searches for a `ThemeVariantScope`
+among its logical ancestors on attach. If none is found, it targets
+`Application.Current`.
+
+当未设置 `TargetScope` 时，控件在附加时会在逻辑祖先中搜索
+`ThemeVariantScope`。如果找不到，则作用于 `Application.Current`。
 
 ## Styling & Templating / 样式与模板
 
-### ControlTheme Key
+### Theme Resources / 主题资源
 
-| Theme Key | Target Type | Description / 说明 |
+| Resource Key | Applies To | Description |
 |---|---|---|
-| `{x:Type u:ThemeToggleButton}` | `ThemeToggleButton` | Main theme. Uses an `IconButton` with themed glyphs. / 主主题。使用带主题图标的 `IconButton`。 |
+| `ThemeSelectorButtonLightGlyph` | `PART_ThemeButton.Icon` | Icon shown when theme is Light / 主题为 Light 时显示的图标 |
+| `ThemeSelectorButtonDarkGlyph` | `PART_ThemeButton.Icon` | Icon shown when theme is Dark / 主题为 Dark 时显示的图标 |
+| `ThemeSelectorButtonDefaultGlyph` | `PART_ThemeButton.Icon` | Icon shown when theme is Default / 主题为 Default 时显示的图标 |
+| `STRING_THEME_TOGGLE_LIGHT` | `PART_ThemeButton.ToolTip` | Tooltip for Light state / Light 状态的工具提示 |
+| `STRING_THEME_TOGGLE_DARK` | `PART_ThemeButton.ToolTip` | Tooltip for Dark state / Dark 状态的工具提示 |
+| `STRING_THEME_TOGGLE_SYSTEM` | `PART_ThemeButton.ToolTip` | Tooltip for Default state / Default 状态的工具提示 |
+
+### Pseudo-classes / 伪类
+
+| Pseudo-class | Condition / 条件 |
+|---|---|
+| `:light` | `SelectedTheme == ThemeVariant.Light` |
+| `:dark` | `SelectedTheme == ThemeVariant.Dark` |
+| `:default` | `SelectedTheme == null` or `ThemeVariant.Default` |
 
 ### Template Parts / 模板部件
 
@@ -144,52 +188,48 @@ are communicated through the `SelectedTheme` property and
 |---|---|---|
 | `PART_ThemeButton` | `ThemeToggleButton` | `IconButton` |
 
-### Pseudo-classes / 伪类
+### Icon Selection / 图标选择
 
-| Pseudo-class | Description / 说明 |
-|---|---|
-| `:light` | Theme is Light. / 当前为 Light 主题。 |
-| `:dark` | Theme is Dark. / 当前为 Dark 主题。 |
-| `:default` | Theme is Default (system). / 当前为 Default（系统）主题。 |
-
-### Theme Resources / 主题资源
-
-| Resource Key | Applies To | Description / 说明 |
+| Pseudo-class | Icon Resource / 图标资源 | ToolTip Resource |
 |---|---|---|
-| `ThemeSelectorButtonLightGlyph` | Icon (Light) | Icon shown when Light is selected. / Light 选中时显示的图标。 |
-| `ThemeSelectorButtonDarkGlyph` | Icon (Dark) | Icon shown when Dark is selected. / Dark 选中时显示的图标。 |
-| `ThemeSelectorButtonDefaultGlyph` | Icon (Default) | Icon shown when Default is selected. / Default 选中时显示的图标。 |
-
-### ToolTip Resources
-
-| Resource Key | Description / 说明 |
-|---|---|
-| `STRING_THEME_TOGGLE_LIGHT` | Light mode tooltip / Light 模式工具提示 |
-| `STRING_THEME_TOGGLE_DARK` | Dark mode tooltip / Dark 模式工具提示 |
-| `STRING_THEME_TOGGLE_SYSTEM` | System/default mode tooltip / 系统/默认模式工具提示 |
+| `:dark` | `ThemeSelectorButtonDarkGlyph` | `STRING_THEME_TOGGLE_DARK` |
+| `:light` | `ThemeSelectorButtonLightGlyph` | `STRING_THEME_TOGGLE_LIGHT` |
+| _(default)_ | `ThemeSelectorButtonDefaultGlyph` | `STRING_THEME_TOGGLE_SYSTEM` |
 
 ## FAQ / 常见问题
 
-**Q: How is this different from a regular ToggleButton? / 与普通 ToggleButton 有何不同？**
-A: `ThemeToggleButton` directly integrates with Avalonia's `ThemeVariant`
-system. It discovers the nearest `ThemeVariantScope` automatically and supports
-both Controller and Indicator modes for scoped or global theme management.
+**Q: How does ThemeToggleButton differ from ThemeSelectorBase? / ThemeToggleButton 与 ThemeSelectorBase 有何不同？**
+A: `ThemeSelectorBase` is the abstract base that manages scope tracking and
+theme synchronization. `ThemeToggleButton` is the concrete UI implementation
+that cycles Light ↔ Dark (↔ Default if `IsThreeState`). Subclass
+`ThemeSelectorBase` to create custom theme selectors (e.g., a dropdown-based
+picker).
 
-**Q: How do I toggle only between Light and Dark? / 如何仅在 Light 和 Dark 之间切换？**
-A: Set `IsThreeState="False"`. The Default/System option is removed from the
-cycle.
+`ThemeSelectorBase` 是管理范围跟踪和主题同步的抽象基类。`ThemeToggleButton`
+是循环 Light ↔ Dark（如果 `IsThreeState` 则包含 Default）的具体 UI 实现。
+子类化 `ThemeSelectorBase` 可创建自定义主题选择器（例如基于下拉菜单的选择器）。
 
-**Q: What happens when TargetScope is not set? / 未设置 TargetScope 时会发生什么？**
-A: The control walks up the logical tree searching for a `ThemeVariantScope`
-ancestor. If found, it binds to that scope. Otherwise it uses
-`Application.Current` for global theme control.
+**Q: What happens in Indicator mode when clicked? / Indicator 模式下点击会发生什么？**
+A: In `Indicator` mode, clicking still cycles the internal `_state` and
+updates `SelectedTheme`, but does NOT propagate the change to the target scope
+or application. The `OnSelectedThemeChanged` override checks `_syncFromScope`
+and `Mode` before applying.
 
-**Q: Can I customize the icon? / 可以自定义图标吗？**
-A: Override `ThemeSelectorButtonLightGlyph`, `ThemeSelectorButtonDarkGlyph`,
-and `ThemeSelectorButtonDefaultGlyph` resources with your own `Geometry` values.
+在 `Indicator` 模式下，点击仍会循环内部 `_state` 并更新 `SelectedTheme`，但
+不会将更改传播到目标范围或应用程序。`OnSelectedThemeChanged` 覆盖在应用前
+检查 `_syncFromScope` 和 `Mode`。
 
-**Q: What is the difference between Controller and Indicator modes?**
-A: `Controller` mode drives theme changes — clicking the button updates the
-scope's `RequestedThemeVariant`. `Indicator` mode only reflects the current
-theme; it is read-only. Use `Indicator` when you want the button to display
-the current theme without allowing user changes.
+**Q: How does two-state mode differ from three-state? / 双态模式与三态模式有何不同？**
+A: In two-state mode (`IsThreeState="False"`), clicking toggles only between
+Light and Dark. The `Default` state is not reachable via clicking. In three-state
+mode, clicking cycles Light → Dark → Default → Light.
+
+在双态模式（`IsThreeState="False"`）下，点击仅在 Light 和 Dark 之间切换。
+无法通过点击到达 `Default` 状态。在三态模式下，点击循环 Light → Dark →
+Default → Light。
+
+**Q: Can I apply this to only part of my UI? / 可以仅应用于 UI 的一部分吗？**
+A: Yes. Set `TargetScope` to a specific `ThemeVariantScope` that wraps the part
+of the UI you want to control.
+
+可以。将 `TargetScope` 设置为包裹要控制的 UI 部分的特定 `ThemeVariantScope`。
