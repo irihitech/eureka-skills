@@ -3,23 +3,25 @@ category: Display
 title: QRCode
 subtitle: 二维码
 description: >
-  Renders a QR code from string data with configurable error correction level,
-  rounded symbol corners, gradient brush support, and optional quiet zone.
-  Pure Avalonia rendering — no image generation required.
-  从字符串数据渲染二维码，支持可配置的纠错级别、圆角符号、渐变画刷和可选静区。
-  纯 Avalonia 渲染——无需生成图片。
+  Quick Response code (QR Code) control with smooth rounded data symbols, gradient
+  brush support for foreground and background, configurable error correction level,
+  customisable quiet zone, and per-symbol corner rounding. Based on the ISO 18004
+  standard. Ported from Avalonia.Labs.
+  二维码控件，支持平滑圆角数据符号、前景/背景渐变色刷、可配置纠错级别、自定义
+  静区（quiet zone）和逐符号圆角。基于 ISO 18004 标准。从 Avalonia.Labs 移植。
 ---
 
 # QRCode / 二维码
 
 ## When to Use / 何时使用
 
-Use `QRCode` to display machine-readable QR codes in your Avalonia application.
-Common use cases: sharing URLs, displaying identifiers, payment codes, Wi-Fi
-credentials.
+Use `QRCode` to render a 2D barcode that encodes a string. Suitable for
+sharing URLs, identifiers, or payment codes in the UI. It is a lightweight
+`Control` (not `TemplatedControl`) that renders with `DrawingContext`.
 
-使用 `QRCode` 在 Avalonia 应用中显示机器可读的二维码。常见场景：分享链接、显示
-标识符、支付码、Wi-Fi 凭据。
+使用 `QRCode` 渲染编码字符串的二维条码。适用于在 UI 中分享 URL、标识符或
+支付码。它是一个轻量的 `Control`（而非 `TemplatedControl`），通过
+`DrawingContext` 渲染。
 
 ## Basic Usage / 基本使用
 
@@ -27,162 +29,169 @@ credentials.
 xmlns:u="https://irihi.tech/ursa"
 
 <u:QRCode Width="300"
-           Height="300"
-           Data="https://irihi.tech"
-           Foreground="Black" />
+          Height="300"
+          Data="https://example.com"
+          Foreground="Black"
+          Background="White" />
 ```
 
-The `Data` property accepts any string — the QR code is generated from it.
-
-`Data` 属性接受任意字符串——二维码由该字符串生成。
-
-### With error correction / 带纠错级别
+### With gradient / 使用渐变色
 
 ```xml
-<u:QRCode Width="300"
-           Height="300"
-           Data="Hello Avalonia"
-           ErrorCorrection="High"
-           Foreground="White" />
-```
-
-## Common Scenarios / 常用场景
-
-### 1. Rounded corners on QR symbols / 圆角二维码符号
-
-```xml
-<u:QRCode Width="400"
-           Height="400"
-           Data="{Binding #text.Text}"
-           SymbolCornerRatio="0.5"
-           CornerRadius="8"
-           ErrorCorrection="{Binding #eccLevel.Value}" />
-```
-
-`SymbolCornerRatio` ranges from `0.0` (sharp) to `0.5` (fully rounded).
-`CornerRadius` controls the outer border rounding.
-
-### 2. Gradient foreground / 渐变前景
-
-```xml
-<u:QRCode Width="300" Height="300" Data="Hello">
+<u:QRCode Width="300" Height="300"
+          Data="Hello Ursa!">
     <u:QRCode.Foreground>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Offset="0" Color="Blue" />
-            <GradientStop Offset="1" Color="Purple" />
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#667eea" Offset="0" />
+            <GradientStop Color="#764ba2" Offset="1" />
         </LinearGradientBrush>
     </u:QRCode.Foreground>
 </u:QRCode>
 ```
 
-### 3. Custom padding (no quiet zone) / 自定义内边距（无静区）
+### Error correction level / 纠错级别
 
 ```xml
 <u:QRCode Width="300"
-           Height="300"
-           Data="Compact QR"
-           IsQuietZoneEnabled="False"
-           Padding="8" />
+          Height="300"
+          Data="critical data"
+          ErrorCorrection="Highest" />
 ```
 
-### 4. Data-bound QR code / 数据驱动的二维码
+Higher error correction increases the QR code matrix size but makes it more
+resilient to damage or occlusion.
+
+纠错级别越高，二维码矩阵越大，但对损坏或遮挡的容忍度也越高。
+
+## Common Scenarios / 常用场景
+
+### 1. Rounded symbols / 圆角符号
 
 ```xml
-<Grid ColumnDefinitions="*, Auto">
-    <u:QRCode Width="400"
-               Height="400"
-               Data="{Binding #text.Text}"
-               ErrorCorrection="{Binding #eccLevel.Value}" />
-    <StackPanel Grid.Column="1">
-        <TextBox Name="text" Text="Hello Avalonia" />
-        <ComboBox Name="eccLevel"
-                  SelectedIndex="1">
-            <ComboBoxItem>Low</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Quality</ComboBoxItem>
-            <ComboBoxItem>High</ComboBoxItem>
-        </ComboBox>
-    </StackPanel>
-</Grid>
+<u:QRCode Width="300" Height="300"
+          Data="rounded"
+          SymbolCornerRatio="0.5" />
 ```
+
+`SymbolCornerRatio` (0.0–0.5, default 0.5) controls how rounded each data
+module corner appears. At 0.0 modules are sharp squares; at 0.5 they are
+fully rounded.
+
+`SymbolCornerRatio`（0.0–0.5，默认 0.5）控制每个数据模块的圆角程度。0.0 为锐利
+方块，0.5 为完全圆角。
+
+### 2. Disabling the quiet zone / 禁用静区
+
+```xml
+<u:QRCode Width="300"
+          Height="300"
+          Data="no quiet zone"
+          IsQuietZoneEnabled="False"
+          Padding="8" />
+```
+
+The QR standard requires a 4-module quiet zone. Disable it with
+`IsQuietZoneEnabled="False"` and supply fixed `Padding` instead.
+
+QR 标准要求 4 个模块宽度的静区。通过 `IsQuietZoneEnabled="False"` 禁用并改为
+提供固定 `Padding`。
+
+### 3. Rounded outer corners / 外边框圆角
+
+```xml
+<u:QRCode Width="300" Height="300"
+          Data="rounded corners"
+          CornerRadius="16" />
+```
+
+`CornerRadius` clips the entire control, giving the QR code a card-like
+appearance.
+
+`CornerRadius` 裁剪整个控件，使二维码呈现卡片外观。
 
 ## Property Reference / 属性参考
 
 | Property | Type | Default | Description / 说明 |
 |---|---|---|---|
-| `Data` | `string?` | `null` | String to encode / 要编码的字符串 |
-| `ErrorCorrection` | `EccLevel` | `Medium` | Error correction level / 纠错级别 |
-| `Foreground` | `IBrush?` | theme | Data symbol brush / 数据符号画刷 |
-| `Background` | `IBrush?` | theme (transparent) | Background brush / 背景画刷 |
-| `CornerRadius` | `CornerRadius` | `0` | Outer border corner radius / 外边框圆角 |
-| `SymbolCornerRatio` | `double` | `0.5` | Symbol corner roundness (0.0–0.5) / 符号圆角比例 |
-| `Padding` | `Thickness` | `0` | Custom padding / 自定义内边距 |
-| `IsQuietZoneEnabled` | `bool` | `true` | Add standard 4-module quiet zone / 添加标准 4 模块静区 |
+| `Data` | `string?` | `null` | Text to encode. Empty/null hides the QR code. / 要编码的文本，空/null 时隐藏二维码 |
+| `Foreground` | `IBrush?` | theme | Data module (dark) colour. Supports gradients. / 数据模块（深色）颜色，支持渐变 |
+| `Background` | `IBrush?` | theme | Background (light) colour behind modules. / 模块背后的背景（浅色）颜色 |
+| `ErrorCorrection` | `EccLevel` | `Medium` | Error correction level. / 纠错级别 |
+| `SymbolCornerRatio` | `double` | `0.5` | Per-module corner rounding (0.0–0.5). / 逐模块圆角比例 |
+| `CornerRadius` | `CornerRadius` | `0` | Outer border corner radius (clips the control). / 外边框圆角（裁剪控件） |
+| `Padding` | `Thickness` | `0` | Additional margin inside the quiet zone. / 静区内的额外边距 |
+| `IsQuietZoneEnabled` | `bool` | `true` | Include the standard 4-module quiet zone. / 包含标准 4-模块静区 |
 
-### EccLevel Enum / 纠错级别枚举
+### EccLevel Enum / EccLevel 枚举
 
-| Value | Recovery | Use Case |
+| Value | Recovery | Description |
 |---|---|---|
-| `Lowest` | ~7% | Smallest code, minimal redundancy / 最小码，最少冗余 |
-| `Medium` | ~15% | Good balance (default) / 良好平衡（默认） |
-| `Quality` | ~25% | Higher reliability / 较高可靠性 |
-| `Highest` | ~30% | Maximum reliability, largest code / 最高可靠性，最大码 |
+| `Lowest` | ~7% | Smallest footprint, least error recovery |
+| `Medium` | ~15% | Good balance (default) |
+| `Quality` | ~25% | Higher reliability |
+| `Highest` | ~30% | Maximum recoverable data, largest matrix |
 
 ## Events / 事件
 
-No custom events. `QRCode` extends `Control` and supports standard input events.
+No public routed events. `QRCode` inherits from `Control` and redraws on
+property changes.
 
-无自定义事件。`QRCode` 继承自 `Control`，支持标准输入事件。
+无公开路由事件。`QRCode` 继承自 `Control`，在属性变化时重绘。
 
 ## Styling & Templating / 样式与模板
+
+`QRCode` is **not a `TemplatedControl`** — it renders via `DrawingContext.Render`.
+There are no template parts or class selectors.
+
+`QRCode` **不是 `TemplatedControl`** —— 它通过 `DrawingContext.Render` 渲染。
+没有模板部件或类选择器。
 
 ### Theme Resources / 主题资源
 
 | Resource Key | Applies To | Description |
 |---|---|---|
-| `QrCodeForeground` | `QRCode` | Default foreground brush / 默认前景画刷 |
+| `QrCodeForeground` | Foreground | Default data-module brush |
 
-### Rendering Notes / 渲染说明
+### Size guidance / 尺寸建议
 
-- `QRCode` renders via `PathGeometry` — it is a vector, not a bitmap. Resizing
-  the control regenerates crisp geometry.
-- `QRCode` 通过 `PathGeometry` 渲染——是矢量图而非位图。调整控件大小会重新生成清晰几何。
-- Properties that change rendering only (no data re-encoding): `Background`,
-  `Foreground`, `CornerRadius`, `Width`, `Height`.
-- Properties that trigger re-encoding: `Data`, `ErrorCorrection`.
-- The internal `QrCode` bitmap is cached until `Data` or `ErrorCorrection`
-  changes.
+- Provide explicit `Width` and `Height` (equal, square). The QR code fills the
+  available area minus padding.
+- For a sharp rendering, ensure the display size is large enough for the
+  module count — larger `Data` inputs produce larger matrices.
+
+- 提供显式的 `Width` 和 `Height`（等值正方形）。二维码填充可用区域减去内边距。
+- 为保证清晰渲染，请确保显示尺寸足够大以容纳模块数量 —— 更长的 `Data` 输入
+  会产生更大的矩阵。
 
 ## FAQ / 常见问题
 
-**Q: What encoding library does QRCode use? / QRCode 使用什么编码库？**
-A: It uses `Gma.QrCodeNet.Encoding` internally. The QR code standard (ISO
-18004) is followed.
+**Q: Why is nothing rendered? / 为什么什么都看不到？**
+A: Check that `Data` is non-null and non-empty, `Width`/`Height` are > 0,
+and `Foreground`/`Background` brushes are set (or use theme defaults). A `null`
+value in `Data` produces no geometry.
 
-**Q: Why is my QR code blurry when I resize? / 为什么调整大小时二维码模糊？**
-A: QRCode renders vector geometry — it should remain sharp at any size. If you
-see blurriness, ensure `UseLayoutRounding="True"` on the parent.
+检查 `Data` 是否非 null 非空、`Width`/`Height` 是否 > 0，以及 `Foreground`/
+`Background` 画刷是否已设置（或使用主题默认值）。`Data` 为 `null` 时不产生几何图形。
 
-**Q: How large should I make the QR code? / 二维码应该多大？**
-A: At least 200×200 pixels for reliable scanning. Larger is better for
-low-contrast or long-distance scanning. Keep it square (equal Width and Height).
+**Q: Can I make the QR code non-square by omitting the quiet zone? / 可否通过省略静区使二维码非正方形？**
+A: No — the underlying matrix is always square. `Padding` and
+`IsQuietZoneEnabled` only affect interior layout; the control should always be
+given equal `Width` and `Height`.
 
-**Q: What happens if Data is empty or null? / 如果 Data 为空或 null 会怎样？**
-A: Nothing is rendered — no geometry is generated. Set a placeholder or hide
-the control when no data is available.
+不行 —— 底层矩阵始终是正方形。`Padding` 和 `IsQuietZoneEnabled` 仅影响内部
+布局；控件应始终使用相等的 `Width` 和 `Height`。
 
-```xml
-<u:QRCode Data="{Binding QrText}"
-           IsVisible="{Binding QrText, Converter={StaticResource IsNotNullOrEmpty}}" />
-```
+**Q: What QR Code library is used internally? / 内部使用哪个 QR 码库？**
+A: The control was ported from Avalonia.Labs and uses `Gma.QrCodeNet.Encoding`
+(not `QRCoder`). The encoding logic is self-contained in the `Encoding`
+sub-namespace.
 
-**Q: Can I save the QR code as an image? / 能将二维码保存为图片吗？**
-A: QRCode does not have a built-in export method. Use
-`RenderTargetBitmap.RenderAsync()` to capture the control as a bitmap:
+此控件从 Avalonia.Labs 移植，内部使用 `Gma.QrCodeNet.Encoding`（而非 `QRCoder`）。
+编码逻辑自包含在 `Encoding` 子命名空间中。
 
-```csharp
-var bitmap = new RenderTargetBitmap(
-    new PixelSize((int)qrCode.Width, (int)qrCode.Height));
-await bitmap.RenderAsync(qrCode);
-bitmap.Save("qrcode.png");
-```
+**Q: Can I use animated or binding-reactive brushes? / 可以使用动画或绑定响应式画刷吗？**
+A: Yes — `Foreground` and `Background` are standard `IBrush?` properties and
+support any `IBrush` including gradients, bindings, and animations.
+
+可以 —— `Foreground` 和 `Background` 是标准 `IBrush?` 属性，支持任何 `IBrush`，
+包括渐变、绑定和动画。
