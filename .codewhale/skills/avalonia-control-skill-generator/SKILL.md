@@ -26,12 +26,20 @@ inside an existing skill of a control library plugin.
 
 ## Template
 
-All generated references must be **dual-language** (English + Simplified Chinese).
-Every section heading is bilingual. Descriptive text is provided in both
-languages. Code snippets are language-agnostic.
+All generated references must include a **YAML front matter** header followed by
+**dual-language** content (English + Simplified Chinese). Every section heading
+is bilingual. Descriptive text is provided in both languages. Code snippets are
+language-agnostic.
 
 ```markdown
-# <ControlName> / <控件名>
+---
+category: Components
+title: <ControlName>
+subtitle: <控件名>
+description: <One-line description in Simplified Chinese.>
+---
+
+## <ControlName> / <控件名>
 
 ## When to Use / 何时使用
 
@@ -75,15 +83,15 @@ languages.>
 
 ## Rules
 
-- Output is a plain markdown reference page — **no YAML front matter**, not a
-  standalone `SKILL.md`.
+- Output must begin with a **YAML front matter** header containing `category`,
+  `title`, `subtitle`, and `description` fields. This is required — not optional.
 - Path: `plugins/<library-name>/skills/<parent-skill>/references/<control-name>.md`.
 - **Dual-language**: every heading and descriptive paragraph in both English and
   Simplified Chinese. Code blocks are language-neutral.
 - **When to Use / 何时使用** is the most critical section — it must be clear
   and specific so agents can decide when to load this reference.
 - Derive code snippets from the official Avalonia documentation and IRIHI Tech
-  conventions, not from the React sample directly.
+  conventions.
 - Keep the property table focused on what an agent actually needs — not a
   copy-paste of the full API reference.
 - After writing, read back the file to confirm correctness.

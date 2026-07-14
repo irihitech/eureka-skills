@@ -1,4 +1,11 @@
-# Button / 按钮
+---
+category: Components
+title: Button
+subtitle: 按钮
+description: 按钮用于开始一个即时操作。
+---
+
+## Button / 按钮
 
 A standard button control that responds to user click, tap, or keyboard interactions to trigger an immediate action. Inherits from `ContentControl` and implements `ICommandSource` and `IClickableControl`.
 
