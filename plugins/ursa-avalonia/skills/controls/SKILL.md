@@ -67,7 +67,7 @@ dotnet add package Irihi.Ursa.Themes.Semi
 
 Include Styles in application:
 
-```xaml
+```xml
 <Application...
     xmlns:semi="https://irihi.tech/semi"
     ....>
@@ -81,7 +81,7 @@ Include Styles in application:
 
 You can now use Ursa controls in your Avalonia Application.
 
-```xaml
+```xml
 <Window
     ...
     xmlns:u="https://irihi.tech/ursa"
