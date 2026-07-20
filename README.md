@@ -10,6 +10,7 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 | --- | --- |
 | [semi-avalonia](plugins/semi-avalonia/) | Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization. |
 | [ursa-avalonia](plugins/ursa-avalonia/) | Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources. |
+| [irihi-lingua](plugins/irihi-lingua/) | Irihi.Lingua Avalonia i18n setup guide — from NuGet installation, resource files, LanguageManager to runtime culture switching. |
 
 ## Agent/Tooling Support
 
@@ -33,6 +34,10 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
     │       ├── controls/SKILL.md
     │       │   └── reference/ (65 control files)
     │       └── theme/SKILL.md
+    └── irihi-lingua/
+        ├── plugin.json
+        └── skills/
+            └── i18n/SKILL.md
     └── ursa-avalonia/
         ├── plugin.json
         └── skills/
@@ -50,6 +55,7 @@ Add this repo as a marketplace source, then install the plugins:
 /plugin marketplace add irihitech/eureka-skills
 /plugin install semi-avalonia@eureka-skills
 /plugin install ursa-avalonia@eureka-skills
+/plugin install irihi-lingua@eureka-skills
 ```
 
 ### Cursor
