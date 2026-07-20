@@ -13,6 +13,11 @@
       "name": "ursa-avalonia",
       "source": "./plugins/ursa-avalonia",
       "description": "Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources."
+    },
+    {
+      "name": "irihi-lingua",
+      "source": "./plugins/irihi-lingua",
+      "description": "Irihi.Lingua Avalonia i18n setup guide — from NuGet installation, resource files, LanguageManager to runtime culture switching."
     }
   ]
 }
