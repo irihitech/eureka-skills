@@ -1,0 +1,24 @@
+{
+  "name": "eureka-skills",
+  "owner": {
+    "name": "IRIHI Tech"
+  },
+  "description": "Skill plugins for Avalonia and other IRIHI Tech products.",
+  "skills": [
+    {
+      "name": "semi-avalonia",
+      "path": "./plugins/semi-avalonia/skills/",
+      "description": "Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization."
+    },
+    {
+      "name": "ursa-avalonia",
+      "path": "./plugins/ursa-avalonia/skills/",
+      "description": "Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources."
+    },
+    {
+      "name": "irihi-lingua",
+      "path": "./plugins/irihi-lingua/skills/",
+      "description": "Irihi.Lingua Avalonia i18n setup guide — from NuGet installation to runtime culture switching."
+    }
+  ]
+}
