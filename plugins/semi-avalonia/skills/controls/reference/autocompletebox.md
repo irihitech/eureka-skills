@@ -22,7 +22,7 @@ Use `AutoCompleteBox` when the user needs to pick from a known set of values —
 ```xml
 <AutoCompleteBox ItemsSource="{Binding Countries}"
                  FilterMode="StartsWith"
-                 Watermark="Search country..."
+                 PlaceholderText="Search country..."
                  SelectedItem="{Binding SelectedCountry}" />
 ```
 
@@ -35,7 +35,7 @@ Use `AutoCompleteBox` when the user needs to pick from a known set of values —
 | `SelectedItem` | `object?` | Selected suggestion. / 选中的建议项。 |
 | `FilterMode` | `AutoCompleteFilterMode` | `StartsWith`, `Contains`, `Equals`, `Custom`. |
 | `MinimumPrefixLength` | `int` | Chars before suggestions appear (default 1). / 显示建议前的最小字符数。 |
-| `Watermark` | `string?` | Placeholder text. / 占位符文本。 |
+| `PlaceholderText` | `string?` | Placeholder text. / 占位符文本。 |
 | `IsTextCompletionEnabled` | `bool` | Auto-complete the text field with the first match. / 自动用首个匹配项补全文本。 |
 
 ## Styling & Templating / 样式与模板

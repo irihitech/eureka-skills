@@ -29,7 +29,7 @@ one result. For multi-selection with chip display, use `MultiAutoCompleteBox`.
 ## Basic Usage / 基本使用
 
 ```xml
-<u:AutoCompleteBox Watermark="Search..."
+<u:AutoCompleteBox PlaceholderText="Search..."
                    ItemsSource="{Binding Suggestions}"
                    FilterMode="StartsWith"
                    SelectedItem="{Binding SelectedItem}" />
@@ -49,7 +49,7 @@ myAutoCompleteBox.Clear();
 | `ItemsSource` | `IEnumerable?` | The collection of suggestion items. / 建议项的集合。 |
 | `FilterMode` | `AutoCompleteFilterMode` | Filter strategy: `StartsWith`, `Contains`, `Custom`. / 过滤策略。 |
 | `MinimumPrefixLength` | `int` | Min chars before showing suggestions (default 0). / 显示建议前的最小字符数（默认 0）。 |
-| `Watermark` | `string?` | Placeholder text. / 占位文本。 |
+| `PlaceholderText` | `string?` | Placeholder text. / 占位文本。 |
 
 ## Styling & Templating / 样式与模板
 

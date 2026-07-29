@@ -60,7 +60,7 @@ Set `IsEditable="True"` to let users type a custom value not in the list. The ty
 <ComboBox IsEditable="True"
           Text="{Binding CustomValue}"
           ItemsSource="{Binding Presets}"
-          Watermark="Select or type..."
+          PlaceholderText="Select or type..."
           Width="200" />
 ```
 
@@ -99,10 +99,10 @@ Provide a full `ItemTemplate` for complex item rendering with icons, multi-line 
 
 ### Placeholder Text / 占位符文本
 
-Use `Watermark` (Semi.Avalonia) or `PlaceholderText` (Avalonia) to show hint text when no item is selected. Both properties serve the same purpose; `Watermark` is the Semi convention.
+Use `PlaceholderText` to show hint text when no item is selected.
 
 ```xml
-<ComboBox Watermark="Select a country..."
+<ComboBox PlaceholderText="Select a country..."
           ItemsSource="{Binding Countries}"
           Width="200" />
 ```
@@ -121,8 +121,8 @@ Use `Watermark` (Semi.Avalonia) or `PlaceholderText` (Avalonia) to show hint tex
 | `Text` | `string?` | The text displayed in the editable area. Read-write when `IsEditable`; read-only otherwise. / 可编辑区域显示的文本。`IsEditable` 时读写；否则只读。 |
 | `IsDropDownOpen` | `bool` | Whether the drop-down popup is currently open. / 下拉弹出层当前是否打开。 |
 | `MaxDropDownHeight` | `double` | Maximum height of the drop-down popup before scrolling. / 下拉弹出层出现滚动前的最大高度。 |
-| `PlaceholderText` | `string?` | Text shown when no item is selected. Avalonia built-in. / 未选中项时显示的文本。Avalonia 内置属性。 |
-| `Watermark` | `string?` | Placeholder hint text. Semi.Avalonia convention — same effect as `PlaceholderText`. / 占位符提示文本。Semi.Avalonia 约定 —— 与 `PlaceholderText` 效果相同。 |
+| `PlaceholderText` | `string?` | Text shown when no item is selected. / 未选中项时显示的文本。 |
+| `Watermark` | `string?` | **Deprecated** — use `PlaceholderText` instead. / **已废弃** —— 请使用 `PlaceholderText`。 |
 | `PlaceholderForeground` | `IBrush?` | Brush for the placeholder/watermark text. / 占位符文本的画刷。 |
 | `ItemTemplate` | `IDataTemplate?` | Template for rendering each item in the drop-down. Inherited from `ItemsControl`. / 用于渲染下拉列表中每项的模板。继承自 `ItemsControl`。 |
 | `DisplayMemberBinding` | `IBinding?` | Binding used to extract the display text from each item. Semi.Avalonia extended property. Takes precedence over `DisplayMemberPath`. / 用于从每项提取显示文本的绑定。Semi.Avalonia 扩展属性。优先级高于 `DisplayMemberPath`。 |
@@ -227,7 +227,7 @@ Resource keys follow the naming convention `ComboBox{Theme}{Color}{State}{Proper
 | `ComboBoxSmallPadding` | Content padding in small size / 小尺寸下内容内边距 |
 | `ComboBoxDefaultFontSize` | Default font size / 默认字体大小 |
 | `ComboBoxForeground` | Text foreground color / 文本前景色 |
-| `ComboBoxPlaceholderForeground` | Placeholder/watermark text color / 占位符文本颜色 |
+| `ComboBoxPlaceholderForeground` | Placeholder text color / 占位符文本颜色 |
 | `ComboBoxDefaultBackground` | Default background brush / 默认背景画刷 |
 | `ComboBoxDefaultBorderBrush` | Default border brush / 默认边框画刷 |
 | `ComboBoxSelectionBrush` | Selected item highlight brush / 选中项高亮画刷 |
@@ -269,9 +269,9 @@ A: Use `ComboBox` when you need a compact control that saves screen space by col
 
 **Q: How do I set a default/placeholder prompt? / 如何设置默认/占位符提示？**
 
-A: Use the `Watermark` property (Semi.Avalonia convention) or `PlaceholderText` (Avalonia built-in). Both display a hint when `SelectedItem` is `null`. Note: the watermark disappears automatically when an item is selected. Do not add a dummy "Select..." item as the first element — use `Watermark` instead.
+A: Use the `PlaceholderText` property to display a hint when `SelectedItem` is `null`. Note: the placeholder disappears automatically when an item is selected. Do not add a dummy "Select..." item as the first element — use `PlaceholderText` instead.
 
-使用 `Watermark` 属性（Semi.Avalonia 约定）或 `PlaceholderText`（Avalonia 内置）。两者在 `SelectedItem` 为 `null` 时显示提示。注意：选中项后占位符会自动消失。不要将"请选择…"项作为第一个元素添加到列表中 —— 应使用 `Watermark`。
+使用 `PlaceholderText` 属性在 `SelectedItem` 为 `null` 时显示提示。注意：选中项后占位符会自动消失。不要将"请选择…"项作为第一个元素添加到列表中 —— 应使用 `PlaceholderText`。
 
 **Q: How does DisplayMemberBinding differ from DisplayMemberPath? / DisplayMemberBinding 与 DisplayMemberPath 有何不同？**
 

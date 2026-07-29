@@ -22,8 +22,8 @@ Use `GroupBox` to visually group related form fields or settings. Best for moder
 ```xml
 <GroupBox Header="Connection Settings">
     <StackPanel Spacing="8">
-        <TextBox Watermark="Server address" />
-        <TextBox Watermark="Port" />
+        <TextBox PlaceholderText="Server address" />
+        <TextBox PlaceholderText="Port" />
     </StackPanel>
 </GroupBox>
 ```

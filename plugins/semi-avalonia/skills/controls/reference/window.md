@@ -68,7 +68,7 @@ Create a dialog window that blocks interaction with the owner until dismissed.
         CanResize="False"
         ShowInTaskbar="False">
     <StackPanel Spacing="10" Margin="16">
-        <TextBox Watermark="User Name" />
+        <TextBox PlaceholderText="User Name" />
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right" Spacing="8">
             <Button Content="OK"
