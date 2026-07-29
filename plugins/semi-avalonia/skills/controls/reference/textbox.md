@@ -20,7 +20,7 @@ Use `TextBox` for free-form text input — form fields, search boxes, code edito
 ## Basic Usage / 基本使用
 
 ```xml
-<TextBox Watermark="Enter your name"
+<TextBox PlaceholderText="Enter your name"
          Text="{Binding UserName}"
          Width="200" />
 ```
@@ -40,7 +40,7 @@ myTextBox.TextChanged += (s, e) => { /* handle change */ };
 Enable `AcceptsReturn` and `TextWrapping` for multi-line text areas.
 
 ```xml
-<TextBox Watermark="Type your message..."
+<TextBox PlaceholderText="Type your message..."
          AcceptsReturn="True"
          TextWrapping="Wrap"
          MinLines="3"
@@ -54,7 +54,7 @@ Use `PasswordChar` to mask input. Semi.Avalonia provides a built-in reveal butto
 
 ```xml
 <TextBox PasswordChar="●"
-         Watermark="Enter password"
+         PlaceholderText="Enter password"
          MaxLength="32" />
 ```
 
@@ -64,7 +64,7 @@ Bind `Text` with data validation for real-time feedback. Semi.Avalonia integrate
 
 ```xml
 <TextBox Text="{Binding Email, Mode=TwoWay}"
-         Watermark="Enter email"
+         PlaceholderText="Enter email"
          Classes.error="{Binding Email.HasError}" />
 ```
 
@@ -85,7 +85,7 @@ Set `IsReadOnly` for display-only fields that still support selection and copy.
 | Property / 属性 | Type / 类型 | Description / 说明 |
 | --- | --- | --- |
 | `Text` | `string?` | The current text content. Bind with `Mode=TwoWay` for editable fields. / 当前文本内容。可编辑字段使用 `Mode=TwoWay` 绑定。 |
-| `Watermark` | `string?` | Placeholder text shown when `Text` is empty. / `Text` 为空时显示的占位符文本。 |
+| `PlaceholderText` | `string?` | Placeholder text shown when `Text` is empty. / `Text` 为空时显示的占位符文本。 |
 | `AcceptsReturn` | `bool` | When `true`, pressing Enter inserts a newline instead of moving focus. / 设为 `true` 时，按 Enter 插入换行而非移动焦点。 |
 | `AcceptsTab` | `bool` | When `true`, pressing Tab inserts a tab character. / 设为 `true` 时，按 Tab 插入制表符。 |
 | `IsReadOnly` | `bool` | Prevents editing but still allows selection and copy. / 阻止编辑但仍允许选择和复制。 |
@@ -143,26 +143,26 @@ The default theme provides a full-featured text box with border, background, foc
 
 ```xml
 <!-- Default TextBox -->
-<TextBox Watermark="Enter text"
+<TextBox PlaceholderText="Enter text"
          Text="{Binding Name}"
          Width="200" />
 
 <!-- Bordered variant -->
-<TextBox Watermark="Search..."
+<TextBox PlaceholderText="Search..."
          Classes="Bordered" />
 
 <!-- With clear button -->
-<TextBox Watermark="Type to search..."
+<TextBox PlaceholderText="Type to search..."
          Classes="clearButton" />
 
 <!-- With password reveal button -->
 <TextBox PasswordChar="●"
-         Watermark="Enter password"
+         PlaceholderText="Enter password"
          Classes="revealPasswordButton" />
 
 <!-- Size variants -->
-<TextBox Watermark="Small input" Classes="Small" />
-<TextBox Watermark="Large input" Classes="Large" />
+<TextBox PlaceholderText="Small input" Classes="Small" />
+<TextBox PlaceholderText="Large input" Classes="Large" />
 ```
 
 **Key resource brushes / 关键资源笔刷：**
@@ -178,7 +178,7 @@ The following table lists all `DynamicResource` keys consumed by Semi.Avalonia `
 | `TextBoxDefaultPadding` | Default padding / 默认内边距 |
 | `TextBoxDefaultCornerRadius` | Default corner radius / 默认圆角半径 |
 | `TextBoxForeground` | Text color / 文本颜色 |
-| `TextBoxPlaceholderForeground` | Watermark text color / 占位符文本颜色 |
+| `TextBoxPlaceholderForeground` | Placeholder text color / 占位符文本颜色 |
 | `TextBoxDefaultBackground` | Default background / 默认背景 |
 | `TextBoxDefaultBorderBrush` | Default border / 默认边框 |
 | `TextBoxSelectionBrush` | Selection background / 选择背景色 |
@@ -216,7 +216,7 @@ Identical to the default TextBox in appearance and behavior, but wraps its conte
 ```xml
 <StackPanel Spacing="4">
     <TextBox Theme="{DynamicResource NonErrorTextBox}"
-             Watermark="Username"
+             PlaceholderText="Username"
              Text="{Binding Username, Mode=TwoWay}" />
     <TextBlock Text="{Binding UsernameError}"
                Foreground="{DynamicResource TextBoxErrorForeground}"
@@ -236,7 +236,7 @@ A completely borderless and background-less text box. It omits the outer border,
     <TextBlock Text="File name: " VerticalAlignment="Center" />
     <TextBox Theme="{DynamicResource LooklessTextBox}"
              Text="{Binding FileName, Mode=TwoWay}"
-             Watermark="Enter file name"
+             PlaceholderText="Enter file name"
              Width="200" />
     <TextBlock Text=".txt" VerticalAlignment="Center" />
 </StackPanel>
@@ -267,7 +267,7 @@ Semi.Avalonia 提供两个内置上下文浮出菜单，包含剪切/复制/粘�
 
 | Pseudo-class / 伪类 | Description / 说明 |
 | --- | --- |
-| `:empty` | Toggled when `Text` is empty (used for watermark visibility). / `Text` 为空时触发（用于占位符可见性）。 |
+| `:empty` | Toggled when `Text` is empty (used for placeholder visibility). / `Text` 为空时触发（用于占位符可见性）。 |
 | `:touch-mode` | Toggled on touch devices. Semi styles may adjust hit targets. / 在触摸设备上触发。Semi 样式可能调整点击目标大小。 |
 | `:focus` | TextBox has keyboard focus. / TextBox 拥有键盘焦点。 |
 | `:disabled` | TextBox is disabled (`IsEnabled = false`). / TextBox 已禁用。 |

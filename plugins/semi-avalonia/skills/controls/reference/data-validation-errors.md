@@ -25,7 +25,7 @@ Use `DataValidationErrors` inside custom control templates to automatically surf
         <ControlTemplate>
             <DataValidationErrors>
                 <TextBox Text="{Binding Email, Mode=TwoWay}"
-                         Watermark="Enter email" />
+                         PlaceholderText="Enter email" />
             </DataValidationErrors>
         </ControlTemplate>
     </TextBox.Template>

@@ -21,7 +21,7 @@ Use `CalendarDatePicker` when you need a compact date input in a form or dialog 
 
 ```xml
 <CalendarDatePicker SelectedDate="{Binding DateOfBirth}"
-                    Watermark="Select a date"
+                    PlaceholderText="Select a date"
                     SelectedDateFormat="Short" />
 ```
 
@@ -30,7 +30,7 @@ Use `CalendarDatePicker` when you need a compact date input in a form or dialog 
 var picker = new CalendarDatePicker
 {
     SelectedDate = DateTime.Today,
-    Watermark = "Select a date",
+    PlaceholderText = "Select a date",
     SelectedDateFormat = CalendarDatePickerFormat.Short
 };
 picker.SelectedDateChanged += (s, e) =>
@@ -114,7 +114,7 @@ private void OnDateValidationError(object? sender,
 | `IsDropDownOpen` | `bool` | Whether the calendar dropdown is currently open. Two-way bindable. / 日历下拉是否打开。支持双向绑定。 |
 | `SelectedDateFormat` | `CalendarDatePickerFormat` | How the selected date is formatted in the text field: `Short`, `Long`, or `Custom`. / 文本字段中选中日期的格式：`Short`、`Long` 或 `Custom`。 |
 | `CustomDateFormatString` | `string?` | Custom .NET date format string, used when `SelectedDateFormat = Custom`. / 自定义 .NET 日期格式字符串，当 `SelectedDateFormat` 为 `Custom` 时使用。 |
-| `Watermark` | `string?` | Placeholder text displayed when no date is selected. / 未选择日期时显示的占位文本。 |
+| `PlaceholderText` | `string?` | Placeholder text displayed when no date is selected. / 未选择日期时显示的占位文本。 |
 | `Text` | `string?` | The raw text displayed in the text field. Read the current display text. / 文本字段中显示的原始文本。可读取当前显示文本。 |
 | `BlackoutDates` | `CalendarBlackoutDatesCollection` | Collection of date ranges not selectable in the dropdown. / 下拉菜单中不可选的日期范围集合。 |
 | `IsTodayHighlighted` | `bool` | Whether today is highlighted in the dropdown calendar. / 下拉日历中是否高亮今日。 |
@@ -190,7 +190,7 @@ Semi.Avalonia 为 `CalendarDatePicker` 提供了一致的文本字段加下拉�
 
 **Q: How do I clear the selected date programmatically? / 如何通过代码清除已选日期？**
 
-A: Set `SelectedDate = null`. The text field will show the `Watermark` text. / 设置 `SelectedDate = null`。文本字段将显示 `Watermark` 占位文本。
+A: Set `SelectedDate = null`. The text field will show the `PlaceholderText`. / 设置 `SelectedDate = null`。文本字段将显示 `PlaceholderText` 占位文本。
 
 ```csharp
 picker.SelectedDate = null;

@@ -71,7 +71,7 @@ Set `IsDefault` to respond to Enter key; `IsCancel` to respond to Escape key. Co
 
 ```xml
 <StackPanel Spacing="8">
-    <TextBox Watermark="Enter your name" />
+    <TextBox PlaceholderText="Enter your name" />
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
         <Button Content="OK"
                 IsDefault="True"

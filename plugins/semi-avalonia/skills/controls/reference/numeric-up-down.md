@@ -124,7 +124,7 @@ public class OrderViewModel : ObservableObject
 | `ClipValueToMinMax` | `bool` | When `true`, `Value` is clamped to `[Minimum, Maximum]` on text input. Default `false`. / 为 `true` 时，文本输入后 `Value` 被限制在 `[Minimum, Maximum]` 范围。默认为 `false`。 |
 | `IsReadOnly` | `bool` | When `true`, the text input portion is read-only (spinner buttons still work). / 为 `true` 时文本输入为只读（微调按钮仍然可用）。 |
 | `Text` | `string?` | The raw text displayed in the input field. Read from `FormatString`-formatted `Value`. / 输入字段中显示的原始文本。从格式化的 `Value` 读取。 |
-| `Watermark` | `string?` | Placeholder text when no value is entered. / 未输入值时显示的占位符文本。 |
+| `PlaceholderText` | `string?` | Placeholder text when no value is entered. / 未输入值时显示的占位符文本。 |
 
 ### Events / 事件
 

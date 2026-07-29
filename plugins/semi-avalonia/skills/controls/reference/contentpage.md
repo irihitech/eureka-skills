@@ -26,8 +26,8 @@ Use `ContentPage` as the primary building block for individual views in your app
              Title="Settings">
     <StackPanel Spacing="12" Margin="16">
         <TextBlock Text="Settings" FontSize="24" FontWeight="Bold" />
-        <TextBox Watermark="Username" />
-        <TextBox Watermark="Email" />
+        <TextBox PlaceholderText="Username" />
+        <TextBox PlaceholderText="Email" />
         <Button Content="Save" Theme="{DynamicResource SolidButton}" />
     </StackPanel>
 </ContentPage>
@@ -54,7 +54,7 @@ var page = new ContentPage
         Children =
         {
             new TextBlock { Text = "Settings", FontSize = 24 },
-            new TextBox { Watermark = "Username" },
+            new TextBox { PlaceholderText = "Username" },
             new Button { Content = "Save" }
         }
     }

@@ -23,7 +23,7 @@ Use `Expander` to show/hide content sections to reduce visual clutter — settin
 <Expander Header="Advanced Settings">
     <StackPanel Spacing="8">
         <CheckBox Content="Enable logging" />
-        <TextBox Watermark="Log path" />
+        <TextBox PlaceholderText="Log path" />
     </StackPanel>
 </Expander>
 ```

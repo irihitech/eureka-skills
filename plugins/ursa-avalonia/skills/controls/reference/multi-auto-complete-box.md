@@ -23,7 +23,7 @@ Use `MultiAutoCompleteBox` for multi-value text input with suggestion-based comp
 <u:MultiAutoCompleteBox Width="300"
                         SelectedItems="{Binding Recipients}"
                         ItemsSource="{Binding Suggestions}"
-                        Watermark="Add recipients..." />
+                        PlaceholderText="Add recipients..." />
 ```
 
 ```xml
@@ -44,7 +44,7 @@ Use `MultiAutoCompleteBox` for multi-value text input with suggestion-based comp
 | `ItemFilter` | `AutoCompleteFilterPredicate<object?>?` | Custom filter predicate for `Custom` mode. / 自定义过滤谓词。 |
 | `IsDropDownOpen` | `bool` | Whether the suggestions dropdown is open. / 建议下拉是否打开。 |
 | `MinimumPrefixLength` | `int` | Min chars before showing suggestions. / 显示建议前的最小字符数。 |
-| `Watermark` | `string?` | Placeholder text in the input area. / 输入区占位文本。 |
+| `PlaceholderText` | `string?` | Placeholder text in the input area. / 输入区占位文本。 |
 
 ### Events / 事件
 
