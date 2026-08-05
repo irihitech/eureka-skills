@@ -99,12 +99,15 @@ public class MyViewModel
 ### 1. Different positions / 不同位置
 
 ```csharp
-NotificationManager.Position = NotificationPosition.TopRight;      // default
-NotificationManager.Position = NotificationPosition.TopLeft;
-NotificationManager.Position = NotificationPosition.TopCenter;
-NotificationManager.Position = NotificationPosition.BottomRight;
-NotificationManager.Position = NotificationPosition.BottomLeft;
-NotificationManager.Position = NotificationPosition.BottomCenter;
+var manager = vm.NotificationManager!;
+
+// Pick one position that matches your desired placement:
+manager.Position = NotificationPosition.TopRight;      // default
+manager.Position = NotificationPosition.TopLeft;
+manager.Position = NotificationPosition.TopCenter;
+manager.Position = NotificationPosition.BottomRight;
+manager.Position = NotificationPosition.BottomLeft;
+manager.Position = NotificationPosition.BottomCenter;
 ```
 
 ### 2. Notification with click action / 带点击操作的通知
