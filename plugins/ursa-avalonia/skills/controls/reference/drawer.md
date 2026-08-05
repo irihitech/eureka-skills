@@ -126,8 +126,9 @@ var options = new DrawerOptions { CanLightDismiss = false };
 var options = new DrawerOptions { IsCloseButtonVisible = false };
 ```
 
-When the ViewModel implements `IDialogContext`, close button behavior delegates
-to the context.
+When the ViewModel implements `IDialogContext` (from
+`Irihi.Avalonia.Shared.Contracts`), close button behavior delegates to the
+context.
 
 ### Resizable Drawer / 可调整大小
 
@@ -281,8 +282,8 @@ A: 不可以。Drawer 基于 Overlay 承载，必须在可视树中添加 `Overl
 没有它，`OverlayDrawer` 方法会静默返回（无操作）。
 
 **Q: How do I close a drawer from the ViewModel? / 如何从 ViewModel 关闭抽屉？**
-A: Implement `IDialogContext` on the ViewModel. The drawer listens to
-`RequestClose` events.
+A: Implement `IDialogContext` (from `Irihi.Avalonia.Shared.Contracts`) on
+the ViewModel. The drawer listens to `RequestClose` events.
 
 **Q: Can I resize a drawer? / 可以调整抽屉大小吗？**
 A: Yes, set `CanResize = true`. A `DialogResizer` is shown on the inner edge
