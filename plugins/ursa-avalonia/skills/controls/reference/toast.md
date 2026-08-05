@@ -28,23 +28,42 @@ Toast 出现在窗口顶部居中位置，并在可配置的持续时间后自�
 
 ## Basic Usage / 基本使用
 
-### Setup / 设置
+### Setup from code / 在代码中设置
 
-Add a `WindowToastManager` to your window or top-level control:
+Do not place `WindowToastManager` in XAML. Follow the Ursa demo pattern and
+create it from code-behind once the control is attached to the visual tree.
 
-```xml
-<Window xmlns:u="https://irihi.tech/ursa">
-    <Panel>
-        <u:WindowToastManager Name="ToastManager" />
-        <!-- your content -->
-    </Panel>
-</Window>
-```
-
-Or install it programmatically:
+不要在 XAML 中放置 `WindowToastManager`。应遵循 Ursa demo 的方式，在控件附加到
+可视树后于代码中创建。
 
 ```csharp
-var manager = new WindowToastManager(TopLevel.GetTopLevel(this));
+using Avalonia;
+using Avalonia.Controls;
+using Ursa.Controls;
+
+public partial class ToastDemo : UserControl
+{
+    private ToastDemoViewModel? _viewModel;
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+
+        if (DataContext is not ToastDemoViewModel vm) return;
+
+        _viewModel = vm;
+        _viewModel.ToastManager = new WindowToastManager(TopLevel.GetTopLevel(this))
+        {
+            MaxItems = 3
+        };
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnDetachedFromVisualTree(e);
+        _viewModel?.ToastManager?.Uninstall();
+    }
+}
 ```
 
 ### Show a Toast / 显示轻提示
@@ -90,7 +109,7 @@ ToastManager.Show(toast);
 ### Using IToastManager / 通过接口使用
 
 ```csharp
-// For DI / testability
+// For DI / testability, after creating the manager from a TopLevel
 IToastManager manager = new WindowToastManager(topLevel);
 manager.Show(new Toast("Hello from interface!"));
 manager.CloseAll();
@@ -341,8 +360,8 @@ template uses a `ReversibleStackPanel` with `VerticalAlignment="Top"` and
 
 **Q: Can I use Toast without a WindowToastManager? / 可以不用 WindowToastManager 使用 Toast 吗？**
 A: No — a `WindowToastManager` (or any `IToastManager` implementation) must
-be in the visual tree to host `ToastCard` instances. Use
-`TryGetToastManager` to discover an existing one, or add one to your view.
+be available to host `ToastCard` instances. Create it from the current
+`TopLevel` in code-behind, as shown in the Ursa demo.
 
 **Q: How do I control the maximum number of visible toasts? / 如何控制最大可见 Toast 数量？**
 A: Set `MaxItems` on the `WindowToastManager` instance (inherited from
