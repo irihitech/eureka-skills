@@ -19,14 +19,35 @@ Use `CommandBar` for app-level action bars — top toolbar with Save/Delete/Shar
 
 ## Basic Usage / 基本使用
 
+`PrimaryCommands` and `SecondaryCommands` only accept `ICommandBarElement` items. The available types are:
+
+- `CommandBarButton` — a pressable button with optional icon and label
+- `CommandBarToggleButton` — a toggle button with optional icon and label
+- `CommandBarSeparator` — a visual divider between groups of commands
+
+`PrimaryCommands` 和 `SecondaryCommands` 只接受 `ICommandBarElement` 元素。可用类型为：
+
+- `CommandBarButton` — 可按下的按钮，支持图标和标签
+- `CommandBarToggleButton` — 切换按钮，支持图标和标签
+- `CommandBarSeparator` — 命令组之间的视觉分隔符
+
 ```xml
 <CommandBar>
     <CommandBar.PrimaryCommands>
-        <Button Content="Save" Command="{Binding SaveCommand}" />
-        <Button Content="Delete" Classes="Danger" />
+        <CommandBarButton Label="Save" Command="{Binding SaveCommand}">
+            <CommandBarButton.Icon>
+                <SymbolIcon Symbol="Save" />
+            </CommandBarButton.Icon>
+        </CommandBarButton>
+        <CommandBarSeparator />
+        <CommandBarToggleButton Label="Bold" IsChecked="{Binding IsBold}">
+            <CommandBarToggleButton.Icon>
+                <SymbolIcon Symbol="Bold" />
+            </CommandBarToggleButton.Icon>
+        </CommandBarToggleButton>
     </CommandBar.PrimaryCommands>
     <CommandBar.SecondaryCommands>
-        <Button Content="Settings" />
+        <CommandBarButton Label="Settings" />
     </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
