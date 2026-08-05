@@ -199,6 +199,9 @@ var options = new OverlayDialogOptions
 
 ### IDialogContext Interface / IDialogContext 接口
 
+`IDialogContext` comes from the `Irihi.Avalonia.Shared.Contracts` namespace.
+`IDialogContext` 来自 `Irihi.Avalonia.Shared.Contracts` 命名空间。
+
 When a ViewModel implements `IDialogContext`, the dialog's close button and
 default close behavior delegate to the context:
 
@@ -394,12 +397,14 @@ Overlay 对话框需要在可视树中添加 `OverlayDialogHost`。
 
 **Q: How do I return a custom result type? / 如何返回自定义结果类型？**
 A: Use `Dialog.ShowCustomAsync<TView, TViewModel, TResult>` or
-`OverlayDialog.ShowCustomAsync<TResult>`. Implement `IDialogContext` on the
-ViewModel and call `RequestClose?.Invoke(this, yourResult)`.
+`OverlayDialog.ShowCustomAsync<TResult>`. Implement `IDialogContext` (from
+`Irihi.Avalonia.Shared.Contracts`) on the ViewModel and call
+`RequestClose?.Invoke(this, yourResult)`.
 
 **Q: How do I close a dialog from the ViewModel? / 如何从 ViewModel 关闭对话框？**
-A: Implement `IDialogContext` on your ViewModel. The dialog listens to
-`RequestClose` events and will close with the provided result object.
+A: Implement `IDialogContext` (from `Irihi.Avalonia.Shared.Contracts`) on
+your ViewModel. The dialog listens to `RequestClose` events and will close
+with the provided result object.
 
 **Q: Can I have multiple OverlayDialogHosts? / 可以有多个 OverlayDialogHost 吗？**
 A: Yes. Use the `hostId` parameter to target a specific host. Use
