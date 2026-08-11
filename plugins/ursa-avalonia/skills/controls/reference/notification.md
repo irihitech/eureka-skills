@@ -27,16 +27,34 @@ Do NOT use notifications for blocking confirmations — use `MessageBox` instead
 
 ## Basic Usage / 基本使用
 
-### Setup the manager in your Window / 在窗口中设置管理器
+### Create or locate the manager from code / 在代码中创建或获取管理器
 
-```xml
-<Window ...>
-    <Panel>
-        <!-- Your content -->
-        <u:WindowNotificationManager Name="Notifier"
-                                      Position="TopRight" />
-    </Panel>
-</Window>
+Do not place `WindowNotificationManager` directly in XAML. Follow the Ursa demo
+pattern: get the current `TopLevel`, reuse an existing manager when available,
+or create one in code-behind during visual-tree attachment.
+
+不要直接在 XAML 中放置 `WindowNotificationManager`。应遵循 Ursa demo 的方式：
+获取当前 `TopLevel`，优先复用现有管理器；如果没有，再在控件附加到可视树时于代码中创建。
+
+```csharp
+using Avalonia;
+using Avalonia.Controls;
+using Ursa.Controls;
+
+public partial class NotificationDemo : UserControl
+{
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+
+        if (DataContext is not NotificationDemoViewModel vm) return;
+
+        var topLevel = TopLevel.GetTopLevel(this);
+        vm.NotificationManager = WindowNotificationManager.TryGetNotificationManager(topLevel, out var manager)
+            ? manager
+            : new WindowNotificationManager(topLevel);
+    }
+}
 ```
 
 ### Show a notification from code-behind or view-model
@@ -80,13 +98,16 @@ public class MyViewModel
 
 ### 1. Different positions / 不同位置
 
-```xml
-<u:WindowNotificationManager Position="TopRight" />   <!-- default -->
-<u:WindowNotificationManager Position="TopLeft" />
-<u:WindowNotificationManager Position="TopCenter" />
-<u:WindowNotificationManager Position="BottomRight" />
-<u:WindowNotificationManager Position="BottomLeft" />
-<u:WindowNotificationManager Position="BottomCenter" />
+```csharp
+var manager = vm.NotificationManager!;
+
+// Pick one position that matches your desired placement:
+manager.Position = NotificationPosition.TopRight;      // default
+manager.Position = NotificationPosition.TopLeft;
+manager.Position = NotificationPosition.TopCenter;
+manager.Position = NotificationPosition.BottomRight;
+manager.Position = NotificationPosition.BottomLeft;
+manager.Position = NotificationPosition.BottomCenter;
 ```
 
 ### 2. Notification with click action / 带点击操作的通知
@@ -230,3 +251,7 @@ classes are added to the `NotificationCard`:
 ```csharp
 Notifier.Show("Message", NotificationType.Information, classes: ["Light"]);
 ```
+
+**Q: Should I declare `WindowNotificationManager` in XAML? / 应该在 XAML 里声明 `WindowNotificationManager` 吗？**
+A: No. Prefer the Ursa demo pattern: get or create the manager from code using
+`TopLevel.GetTopLevel(this)` when the control is attached to the visual tree.
