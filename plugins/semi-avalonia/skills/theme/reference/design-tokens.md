@@ -20,6 +20,10 @@ change the appearance of all controls.
 的 `DynamicResource` 键引用这些基础值。在 `App.axaml` 中覆写任意令牌即可全局更改
 所有控件的外观。
 
+> **All tokens listed on this page exist in the Semi.Avalonia assembly.** Use them directly as `{DynamicResource <TokenKey>}` — no assembly inspection needed.
+>
+> **本页列出的所有令牌均存在于 Semi.Avalonia 程序集中。** 可直接使用 `{DynamicResource <TokenKey>}` 引用，无需检查程序集。
+
 ## Token Sources / 令牌来源
 
 | File / 文件 | Content / 内容 |

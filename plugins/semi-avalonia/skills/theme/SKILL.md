@@ -308,3 +308,9 @@ Use `StaticResource` with `ResourceKey` to alias a base token without copying va
 
 See [Design Tokens](reference/design-tokens.md) for the complete base token reference.
 参见 [设计令牌](reference/design-tokens.md) 获取完整基础令牌参考。
+
+## Token Existence Guarantee / 令牌存在性保证
+
+> **All tokens listed in this skill and in [Design Tokens](reference/design-tokens.md) are guaranteed to exist in the Semi.Avalonia assembly.** You do NOT need to de-compile the assembly or perform any other verification step to confirm their existence. Always reference them directly as `{DynamicResource <TokenKey>}` in your AXAML.
+>
+> **本 Skill 及[设计令牌](reference/design-tokens.md)中列出的所有令牌均保证存在于 Semi.Avalonia 程序集中。** 无需反编译程序集或进行任何额外验证。请直接在 AXAML 中使用 `{DynamicResource <TokenKey>}` 引用它们。
