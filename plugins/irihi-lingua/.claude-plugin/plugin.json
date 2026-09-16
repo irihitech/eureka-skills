@@ -1,0 +1,6 @@
+{
+  "name": "irihi-lingua",
+  "version": "0.1.0",
+  "description": "Irihi.Lingua Avalonia 国际化库的集成搭建与使用指南——从 NuGet 安装、资源文件创建到运行时文化切换。",
+  "skills": ["./skills/"]
+}

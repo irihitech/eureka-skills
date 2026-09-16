@@ -14,9 +14,10 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 ## Agent/Tooling Support
 
-- **Claude Code / Copilot CLI** via `.claude-plugin/marketplace.json`
+- **Claude Code** via `.claude-plugin/marketplace.json` and each plugin's `.claude-plugin/plugin.json`
+- **GitHub Copilot CLI** via `.github/plugin/marketplace.json`
 - **Cursor** via `.cursor-plugin/marketplace.json`
-- **Open-standard plugin clients** via `.agents/plugins/marketplace.json`
+- **Codex / Open-standard plugin clients** via `.agents/plugins/marketplace.json` and each plugin's `.codex-plugin/plugin.json`
 - **CodeWhale-style marketplaces** via `.codewhale-plugin/marketplace.json`
 
 ## Repository Layout
@@ -24,22 +25,29 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 ```text
 .
 ├── .agents/plugins/marketplace.json
+├── .github/plugin/marketplace.json
 ├── .claude-plugin/marketplace.json
 ├── .codewhale-plugin/marketplace.json
 ├── .cursor-plugin/marketplace.json
 └── plugins/
     ├── semi-avalonia/
     │   ├── plugin.json
+    │   ├── .claude-plugin/plugin.json
+    │   ├── .codex-plugin/plugin.json
     │   └── skills/
     │       ├── controls/SKILL.md
     │       │   └── reference/ (65 control files)
     │       └── theme/SKILL.md
     └── irihi-lingua/
         ├── plugin.json
+        ├── .claude-plugin/plugin.json
+        ├── .codex-plugin/plugin.json
         └── skills/
             └── i18n/SKILL.md
     └── ursa-avalonia/
         ├── plugin.json
+        ├── .claude-plugin/plugin.json
+        ├── .codex-plugin/plugin.json
         └── skills/
             └── controls/SKILL.md
                 └── reference/ (70+ control files)
@@ -47,7 +55,7 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 ## Installation
 
-### Claude Code / Copilot CLI
+### Claude Code
 
 Add this repo as a marketplace source, then install the plugins:
 
@@ -58,10 +66,14 @@ Add this repo as a marketplace source, then install the plugins:
 /plugin install irihi-lingua@eureka-skills
 ```
 
+### GitHub Copilot CLI
+
+Use `.github/plugin/marketplace.json` as the marketplace entry point.
+
 ### Cursor
 
 Add this repository as a plugin marketplace and install the `semi-avalonia` or `ursa-avalonia` plugins.
 
 ### Other compatible clients
 
-Use `.agents/plugins/marketplace.json` as the marketplace entry point for clients that follow the open Agent Skills plugin format.
+Use `.agents/plugins/marketplace.json` as the marketplace entry point for Codex and clients that follow the open Agent Skills plugin format.
