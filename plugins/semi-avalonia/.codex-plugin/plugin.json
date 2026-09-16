@@ -1,0 +1,6 @@
+{
+  "name": "semi-avalonia",
+  "version": "0.1.0",
+  "description": "Semi.Avalonia control reference and theme skills.",
+  "skills": ["./skills/"]
+}

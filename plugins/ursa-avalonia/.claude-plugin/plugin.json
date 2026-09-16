@@ -1,0 +1,6 @@
+{
+  "name": "ursa-avalonia",
+  "version": "0.1.0",
+  "description": "Ursa.Avalonia control library reference skills.",
+  "skills": ["./skills/"]
+}
