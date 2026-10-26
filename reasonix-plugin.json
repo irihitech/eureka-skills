@@ -19,6 +19,11 @@
       "name": "irihi-lingua",
       "path": "./plugins/irihi-lingua/skills/",
       "description": "Irihi.Lingua Avalonia i18n setup guide — from NuGet installation to runtime culture switching."
+    },
+    {
+      "name": "avalonia-headless-test",
+      "path": "./plugins/avalonia-headless-test/skills/",
+      "description": "Avalonia headless test setup for control libraries — xUnit + Avalonia.Headless, optional Skia rendering, Fluent or Semi default theme."
     }
   ]
 }

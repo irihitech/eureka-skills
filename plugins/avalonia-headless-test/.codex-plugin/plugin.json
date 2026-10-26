@@ -1,0 +1,6 @@
+{
+  "name": "avalonia-headless-test",
+  "version": "0.1.0",
+  "description": "Headless test project setup for Avalonia control libraries (xUnit + Avalonia.Headless, optional Skia rendering, Fluent or Semi default theme).",
+  "skills": ["./skills/"]
+}
