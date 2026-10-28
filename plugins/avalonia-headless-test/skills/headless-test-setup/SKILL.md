@@ -6,11 +6,13 @@ description: >
   project. Use when a user wants to add, scaffold, or fix headless tests for
   Avalonia controls (template parts, input simulation, property behavior, and
   optionally rendered-pixel tests through Skia). The skill asks whether the
-  project needs rendering support and which default theme (Fluent or Semi)
-  the test application should load.
+  project needs rendering support (none, Skia, or both as two projects
+  HeadlessTest.<LibName> + RenderTest.<LibName>) and which default theme
+  (Fluent or Semi) the test application should load.
   为 Avalonia 控件库搭建 Headless UI 测试项目（xUnit + Avalonia.Headless），
-  参考 Ursa.Avalonia 的 tests 目录。会先询问用户是否需要渲染支持（Skia 截帧）
-  以及默认主题（Fluent 或 Semi）。
+  参考 Ursa.Avalonia 的 tests 目录。会先询问用户是否需要渲染支持（不需要、Skia 渲染，
+  或同时创建 HeadlessTest.<LibName> 与 RenderTest.<LibName> 两个项目）以及默认主题
+  （Fluent 或 Semi）。
 license: MIT
 ---
 
@@ -69,17 +71,25 @@ files.** Present the default in brackets.
      compare screenshots, or verify a custom `Render(DrawingContext)` override.
      使用 Skia 真实渲染，可通过 `CaptureRenderedFrame()` 获取像素，用于截图对比或
      自定义 `Render` 的验证。
+   - **Both** — two projects: `HeadlessTest.<LibName>` without Skia for the
+     fast behavior tests, and `RenderTest.<LibName>` with Skia for pixel /
+     screenshot tests. Needed because a test assembly can only have one
+     `[assembly: AvaloniaTestApplication]`.
+     同时创建两个项目：不使用 Skia 的 `HeadlessTest.<LibName>`（行为测试）与使用
+     Skia 的 `RenderTest.<LibName>`（像素/截图测试）。因为每个测试程序集只能有一个
+     `AvaloniaTestApplication`。
 2. **Which theme should the test app load by default? / 测试应用默认加载哪个主题？**
    [Semi]
    - **Fluent** — `Avalonia.Themes.Fluent`, `<FluentTheme />`
    - **Semi** — `Semi.Avalonia`, `<semi:SemiTheme />`
 
-Also confirm the values inferred in Step 1 (library project, test project name
-`HeadlessTest.<LibName>`, and whether to include the library's own theme) in
-the same message, so the user can correct them at once.
+Also confirm the values inferred in Step 1 (library project, test project
+name(s) `HeadlessTest.<LibName>` / `RenderTest.<LibName>`, and whether to
+include the library's own theme) in the same message, so the user can correct
+them at once.
 
 同时在同一条消息中确认步骤 1 推断出的信息（被测项目、测试项目名
-`HeadlessTest.<LibName>`、是否包含库自带主题）。
+`HeadlessTest.<LibName>` / `RenderTest.<LibName>`、是否包含库自带主题）。
 
 ---
 
@@ -107,6 +117,33 @@ tests/
 Group tests per control in `Controls/<Control>Tests/` (one folder per control,
 namespace `HeadlessTest.<LibName>.Controls.<Control>Tests`) as Ursa does.
 
+### Rendering support = Both / 同时需要两种模式
+
+Create two sibling projects. `HeadlessTest.<LibName>` is exactly the
+**Rendering = No** project (no `Rendering/` folder, no `Avalonia.Skia`).
+`RenderTest.<LibName>` is the **Rendering = Yes** project with every
+`HeadlessTest.<LibName>` in file names, namespaces and `x:Class` replaced by
+`RenderTest.<LibName>`; it only holds render tests.
+
+创建两个并列项目：`HeadlessTest.<LibName>` 即 **Rendering = No** 的项目；
+`RenderTest.<LibName>` 即 **Rendering = Yes** 的项目，并把文件名、命名空间与
+`x:Class` 中的 `HeadlessTest.<LibName>` 全部替换为 `RenderTest.<LibName>`，只放渲染测试。
+
+```text
+tests/
+├── HeadlessTest.<LibName>/         # no Skia — behavior tests
+│   ├── HeadlessTest.<LibName>.csproj
+│   ├── App.axaml / App.axaml.cs
+│   ├── TestAppBuilder.cs           # "Rendering = No" builder
+│   ├── TestHelpers/ControlExtensions.cs
+│   └── Controls/<Control>Tests/<Control>Tests.cs
+└── RenderTest.<LibName>/           # Skia — pixel / screenshot tests
+    ├── RenderTest.<LibName>.csproj # + Avalonia.Skia
+    ├── App.axaml / App.axaml.cs    # same theme as HeadlessTest.<LibName>
+    ├── TestAppBuilder.cs           # "Rendering = Yes" builder
+    └── Rendering/<Control>RenderTests.cs
+```
+
 ---
 
 ## Step 4 — Test Project File / 步骤 4 — 测试项目文件
@@ -122,7 +159,7 @@ Pin every `Avalonia.*` package to **the same version the library uses**.
 | `xunit` + `xunit.runner.visualstudio` | — | `2.9.x` + `3.1.x` | Avalonia 11 |
 | `Microsoft.NET.Test.Sdk` | yes | yes | always |
 | `Avalonia.HarfBuzz` | `$(AvaloniaVersion)` | — (package does not exist for 11.x) | Avalonia 12 |
-| `Avalonia.Skia` | `$(AvaloniaVersion)` | `$(AvaloniaVersion)` | rendering = Yes |
+| `Avalonia.Skia` | `$(AvaloniaVersion)` | `$(AvaloniaVersion)` | rendering = Yes, or `RenderTest.<LibName>` when Both |
 | `Avalonia.Themes.Fluent` | `$(AvaloniaVersion)` | `$(AvaloniaVersion)` | theme = Fluent |
 | `Semi.Avalonia` | latest `12.x` | latest `11.x` | theme = Semi |
 
@@ -153,7 +190,7 @@ Pin every `Avalonia.*` package to **the same version the library uses**.
         <PackageReference Include="xunit.v3" Version="3.2.2" />
         <PackageReference Include="Avalonia.Headless.XUnit" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.HarfBuzz" Version="$(AvaloniaVersion)" />
-        <!-- Rendering = Yes only -->
+        <!-- Rendering = Yes, or RenderTest.<LibName> when Both -->
         <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
         <!-- Theme: keep exactly one of the two -->
         <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
@@ -313,10 +350,11 @@ public class TestAppBuilder
 ```
 
 > Only **one** `[assembly: AvaloniaTestApplication]` is allowed per test
-> assembly, so every test in the project shares this builder. If the user wants
-> fast non-rendering tests *and* Skia tests, create a second project (e.g.
-> `RenderTest.<LibName>`) with the Skia builder.
-> 每个测试程序集只能有一个 `AvaloniaTestApplication`；如需同时拥有两种模式，请拆成两个项目。
+> assembly, so every test in the project shares this builder. When the user
+> answered **Both**, put the "Rendering = No" builder in
+> `HeadlessTest.<LibName>` and this Skia builder in `RenderTest.<LibName>`.
+> 每个测试程序集只能有一个 `AvaloniaTestApplication`；选择 **Both** 时，
+> `HeadlessTest.<LibName>` 使用无渲染版本，`RenderTest.<LibName>` 使用本 Skia 版本。
 
 ### `TestHelpers/ControlExtensions.cs`
 
@@ -426,7 +464,7 @@ public class InputTests
 }
 ```
 
-### Render test — Rendering = Yes only
+### Render test — Rendering = Yes / Both (in `RenderTest.<LibName>`)
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -481,6 +519,10 @@ public class <Control>RenderTests
 ```bash
 dotnet sln add tests/HeadlessTest.<LibName>/HeadlessTest.<LibName>.csproj
 dotnet test tests/HeadlessTest.<LibName>
+
+# Rendering = Both
+dotnet sln add tests/RenderTest.<LibName>/RenderTest.<LibName>.csproj
+dotnet test tests/RenderTest.<LibName>
 ```
 
 Like Ursa's CI, the xunit.v3 test assembly can also be executed directly, which
