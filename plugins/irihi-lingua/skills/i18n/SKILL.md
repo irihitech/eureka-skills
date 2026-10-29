@@ -305,6 +305,81 @@ Example resource template / 对应的资源模板示例：`"Page {0} {1}"` → C
 - `Binding="..."` — standard Avalonia binding (supports `#controlName.Property`
   etc.) / 标准 Avalonia 绑定（支持 `#controlName.Property` 等）
 
+#### C# (`CreateFormat` fluent builder — format translation in code / C# 中的格式化翻译)
+
+`CreateFormat` is the code-side counterpart of `FormatTranslate`. Start from a
+template key, add arguments with `Arg` (in `{0}`, `{1}`… order), and finish with
+`Build()`. The result is a `LinguaFormatObservable` (`IObservable<string?>`).
+
+`CreateFormat` 是 `FormatTranslate` 在 C# 中的对应写法：从模板键开始，按 `{0}`、
+`{1}`… 顺序用 `Arg` 添加参数，最后调用 `Build()`，得到 `LinguaFormatObservable`
+（即 `IObservable<string?>`）。
+
+```csharp
+using Irihi.Lingua;
+using CommunityToolkit.Mvvm.ComponentModel;
+
+public partial class MainViewModel : ObservableObject
+{
+    [ObservableProperty] private int _page = 1;
+    [ObservableProperty] private int _totalPages = 10;
+
+    // Build once and store it; don't rebuild in an expression-bodied getter.
+    // 构建一次并保存；不要写成每次 get 都重新 Build 的表达式属性。
+    public LinguaFormatObservable PageText { get; }
+
+    public MainViewModel()
+    {
+        // Resource template / 资源模板："Page {0} of {1}" → "第 {0} 页，共 {1} 页"
+        PageText = LanguageManager.Keys.Page_Template.CreateFormat()
+            .Arg(this, nameof(Page), s => s.Page)
+            .Arg(this, nameof(TotalPages), s => s.TotalPages)
+            .Build();
+    }
+}
+```
+
+```xml
+<TextBlock Text="{Binding PageText^}" />
+```
+
+**Template sources / 模板来源**：
+
+| Entry point / 入口 | Use when / 适用场景 |
+|------|------|
+| `LanguageManager.Keys.X.CreateFormat()` | Template is a resource key (preferred). / 模板来自资源键（首选） |
+| `LanguageManager.Instance.CreateFormat("Total {0}")` | Constant/custom template string. / 常量或自定义模板字符串 |
+| `LanguageManager.Instance.CreateFormat(IObservable<string?>)` | Template composed at runtime, e.g. `LinguaObservableString.FromLiteral(...)`. / 运行时组合的模板 |
+
+**`Arg` overloads / `Arg` 重载**（choose one per argument / 每个参数选一种）：
+
+| Overload / 重载 | Kind / 类型 | Updates / 更新方式 |
+|------|------|------|
+| `Arg(value)` | Constant / 常量 | Fixed at build time. / 构建时固定 |
+| `Arg(IObservable<T>)` | Observable (e.g. another key `LanguageManager.Instance.Greeting_Message`, ReactiveUI `WhenAnyValue`) / 可观察对象（如另一个翻译键、ReactiveUI `WhenAnyValue`） | Push; value types are boxed automatically. / 推送；值类型自动装箱 |
+| `Arg(source, nameof(Prop), s => s.Prop)` | Live `INotifyPropertyChanged` property / 实时属性 | Re-read on `PropertyChanged`; no reflection, AOT/trim-safe. / 收到 `PropertyChanged` 时重新读取；无反射，兼容 AOT/裁剪 |
+| `Arg(() => value)` | Computed / 计算值（source need not notify / 源无需通知） | Read on first subscribe and on `Refresh()` only. / 仅首次订阅与 `Refresh()` 时读取 |
+
+> - To use another translation as an argument, pass its observable property
+>   (`LanguageManager.Instance.Some_Key`), **not** the `LinguaKey` — a
+>   `LinguaKey` would be treated as a constant.
+>   嵌套翻译请传入 observable 属性（`LanguageManager.Instance.Some_Key`），
+>   **不要**传 `LinguaKey`，否则会被当作常量。
+> - Recomputes on template change, live/observable argument change, and
+>   culture change. Formatting uses the manager's `CurrentCulture` (not the
+>   thread culture), so numbers/dates follow the selected language. Identical
+>   results are not re-emitted.
+>   模板变化、实时/可观察参数变化、文化切换时自动重算；格式化使用管理器的
+>   `CurrentCulture`（而非线程文化）；结果相同不会重复推送。
+> - Subscribing emits the current value immediately (behavior-subject style).
+>   Call `PageText.Refresh()` to re-read computed/live getters and force a
+>   notification. 订阅时立即推送当前值；调用 `Refresh()` 重新读取计算/实时参数并强制通知。
+> - The builder is frozen after `Build()` (further `Arg` throws); each
+>   `Build()` call creates an independent observable. Dispose manual
+>   `Subscribe` handles when done.
+>   `Build()` 后构建器冻结（再调用 `Arg` 会抛异常）；每次 `Build()` 都生成独立
+>   observable。手动 `Subscribe` 的订阅用完需 Dispose。
+
 ---
 
 ## Part 2: Adding New Translation Keys / 第二部分：添加新的翻译键值对
@@ -476,6 +551,9 @@ IDisposable sub = LanguageManager.Instance.CultureChanges.Subscribe(culture =>
 | `TranslateExtension` | `Irihi.Lingua.Extensions` | XAML markup extension; accepts a `LinguaKey`, returns a Binding. / XAML 标记扩展；接受 `LinguaKey`，返回 Binding |
 | `FormatTranslateExtension` | `Irihi.Lingua.Extensions` | XAML markup extension; `FormatKey` + `TranslateEntry` child elements. / XAML 标记扩展；`FormatKey` + `TranslateEntry` 子元素 |
 | `TranslateEntry` | `Irihi.Lingua.Extensions` | Format parameter entry; choose `Key` (nested translation) or `Binding` (dynamic bind). / 格式化参数条目；`Key`（嵌套翻译）或 `Binding`（动态绑定）二选一 |
+| `LinguaFormatExtensions` | `Irihi.Lingua` | `CreateFormat` entry points on `LinguaKey` / `ILinguaManager`. / `LinguaKey` 与 `ILinguaManager` 上的 `CreateFormat` 入口 |
+| `LinguaFormatBuilder` | `Irihi.Lingua` | Fluent builder: `Arg(...)` overloads + `Build()`. / 流式构建器：`Arg(...)` 重载 + `Build()` |
+| `LinguaFormatObservable` | `Irihi.Lingua` | Result of `Build()`; `IObservable<string?>` with `Refresh()`. / `Build()` 结果；带 `Refresh()` 的 `IObservable<string?>` |
 
 ## FAQ / 常见问题
 
