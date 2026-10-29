@@ -11,6 +11,7 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 | [semi-avalonia](plugins/semi-avalonia/) | Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization. |
 | [ursa-avalonia](plugins/ursa-avalonia/) | Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources. |
 | [irihi-lingua](plugins/irihi-lingua/) | Irihi.Lingua Avalonia i18n setup guide — from NuGet installation, resource files, LanguageManager to runtime culture switching. |
+| [avalonia-headless-test](plugins/avalonia-headless-test/) | Avalonia headless test setup for control libraries — xUnit + Avalonia.Headless, optional Skia rendering, Fluent or Semi default theme. |
 
 ## Agent/Tooling Support
 
@@ -51,6 +52,12 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
         └── skills/
             └── controls/SKILL.md
                 └── reference/ (70+ control files)
+    └── avalonia-headless-test/
+        ├── plugin.json
+        ├── .claude-plugin/plugin.json
+        ├── .codex-plugin/plugin.json
+        └── skills/
+            └── headless-test-setup/SKILL.md
 ```
 
 ## Installation
@@ -64,6 +71,7 @@ Add this repo as a marketplace source, then install the plugins:
 /plugin install semi-avalonia@eureka-skills
 /plugin install ursa-avalonia@eureka-skills
 /plugin install irihi-lingua@eureka-skills
+/plugin install avalonia-headless-test@eureka-skills
 ```
 
 ### GitHub Copilot CLI
