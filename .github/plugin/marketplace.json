@@ -7,7 +7,7 @@
     {
       "name": "semi-avalonia",
       "source": "./plugins/semi-avalonia",
-      "description": "Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization."
+      "description": "Semi.Avalonia theme facts (generated from the Semi sources: classes, ControlTheme variants, resource keys, tokens) plus a usage-oriented skill (control selection, scenarios, MVVM, accessibility)."
     },
     {
       "name": "ursa-avalonia",

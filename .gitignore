@@ -1,2 +1,6 @@
 .cache/
 .codewhale/state/
+
+# .NET tool build output
+[Bb]in/
+[Oo]bj/

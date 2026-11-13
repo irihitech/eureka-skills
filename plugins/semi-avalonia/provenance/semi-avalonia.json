@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "name": "Semi.Avalonia",
+    "version": "12.1.0.1"
+  },
+  "sourceRevision": "03fb1a2c81d9177f30c4aabb312c89066237ae22",
+  "contract": {
+    "path": "ai/semi-avalonia.contract.json",
+    "sha256": "3f220cd1b6c4edfe53981f7043d16914e9bd95410972aa2dcdc4966dde283cba"
+  },
+  "skill": {
+    "name": "semi-avalonia",
+    "root": "skills/semi-avalonia",
+    "files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "8ac99952c408239a92366f331e3244a65c372df623f552883fea1f72fe0fe651"
+      },
+      {
+        "path": "checklist.md",
+        "sha256": "a498797605bdb1a3cca2fb1366a3daebb4f374c7823b77f827b5ebf430d5e22c"
+      },
+      {
+        "path": "reference/classes.md",
+        "sha256": "e2e6ad2efbb924a524151562046418849f68b1a89c1df5298c938f7d871844db"
+      },
+      {
+        "path": "reference/customization.md",
+        "sha256": "00ef96428ca28e2abb36a7d57bf19c75e5a9bbf1fc2f503e2544467c9a401b51"
+      },
+      {
+        "path": "reference/tokens.md",
+        "sha256": "ac824ca976b5b910a279f7813e2e44a8e012657ab9b50c455252f023ae5bfaae"
+      }
+    ]
+  },
+  "generatedAtUtc": "2026-11-13T18:27:56Z",
+  "notes": [
+    "sha256 values are computed over the exact bytes of the files they name; provenance.json itself is never hashed.",
+    "generatedAtUtc is not covered by any hash, so two builds of the same sources differ only in that field."
+  ]
+}
