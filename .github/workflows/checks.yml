@@ -1,0 +1,43 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tools:
+    name: tool tests and usage lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Run the tool test suites
+        run: dotnet test
+      - name: Lint the usage skill for Semi theme facts
+        run: dotnet run --project tools/semi-usage-lint -- .
+
+  drift:
+    name: generated skill is in sync with the Semi sources
+    # Regenerates from the current Semi.Avalonia sources and re-syncs; a non-empty diff means the
+    # committed generated skill (or its provenance) drifted — rerun the sync and commit the result.
+    # This is the manual-sync era's reminder: it goes red after every merged Semi change until the
+    # sync PR lands, which the planned release-triggered automation will replace.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: irihitech/Semi.Avalonia
+          path: semi
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Regenerate from the Semi sources and re-sync
+        run: |
+          dotnet run --project semi/tools/Semi.Avalonia.Llms -- semi generated-output
+          dotnet run --project tools/semi-sync -- generated-output --repo .
+      - name: Fail when the committed generated skill drifted
+        run: git diff --exit-code -- plugins/semi-avalonia
