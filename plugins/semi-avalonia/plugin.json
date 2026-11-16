@@ -1,6 +1,6 @@
 {
   "name": "semi-avalonia",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "semi-avalonia: authoritative Semi.Avalonia theme facts generated from the Semi sources (do not edit); semi-avalonia-usage: handwritten usage guidance (control selection, scenarios, MVVM, accessibility).",
   "skills": ["./skills/"]
 }
