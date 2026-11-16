@@ -4,10 +4,10 @@
     "name": "Semi.Avalonia",
     "version": "12.1.0.1"
   },
-  "sourceRevision": "03fb1a2c81d9177f30c4aabb312c89066237ae22",
+  "sourceRevision": "a2d0e19a65382ffcc5bc882834e6467920134b32",
   "contract": {
     "path": "ai/semi-avalonia.contract.json",
-    "sha256": "3f220cd1b6c4edfe53981f7043d16914e9bd95410972aa2dcdc4966dde283cba"
+    "sha256": "19025f9663820ebce355401323a1c9f05a51a07665313e582286024ad44980d1"
   },
   "skill": {
     "name": "semi-avalonia",
@@ -35,7 +35,7 @@
       }
     ]
   },
-  "generatedAtUtc": "2026-11-13T18:27:56Z",
+  "generatedAtUtc": "2026-11-16T04:28:42Z",
   "notes": [
     "sha256 values are computed over the exact bytes of the files they name; provenance.json itself is never hashed.",
     "generatedAtUtc is not covered by any hash, so two builds of the same sources differ only in that field."
