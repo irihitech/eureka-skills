@@ -92,7 +92,7 @@ Run it after editing `skills/semi-avalonia-usage/` and after every sync:
 dotnet run --project tools/semi-usage-lint -- .
 ```
 
-Exit code 0 means clean; violations are reported as `file:line: reason`. Narrow exceptions live in `tools/semi-usage-lint/allowlist.json` — every entry must name its file, term and a non-empty reason, or the run fails. Both guards have their own test suites: `dotnet test tools/semi-sync.tests` (path safety, hash checks, failed commits roll back to the previous skill) and `dotnet test tools/semi-usage-lint.tests` (the lint rules themselves).
+Exit code 0 means clean; violations are reported as `file:line: reason`. Narrow exceptions live in `tools/semi-usage-lint/allowlist.json` — every entry must name its file, term and a non-empty reason, or the run fails. Both guards have their own test suites (path safety and hash checks for the sync, the lint rules themselves); `dotnet test` at the repository root runs them all — the tool projects live in the `eureka-skills.slnx` solution with package versions centralized in `Directory.Packages.props`.
 
 ## Installation
 
