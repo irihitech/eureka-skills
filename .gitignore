@@ -1,2 +1,10 @@
 .cache/
 .codewhale/state/
+
+# .NET tool build output
+[Bb]in/
+[Oo]bj/
+
+# IDE and OS artifacts
+.DS_Store
+.idea/

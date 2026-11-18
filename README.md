@@ -8,7 +8,7 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
 
 | Plugin | Description |
 | --- | --- |
-| [semi-avalonia](plugins/semi-avalonia/) | Semi.Avalonia control references (65 controls) with DynamicResource keys and theme customization. |
+| [semi-avalonia](plugins/semi-avalonia/) | Semi.Avalonia theme facts (generated from the Semi sources: classes, ControlTheme variants, resource keys, tokens) plus a usage-oriented skill (control selection, scenarios, MVVM, accessibility). |
 | [ursa-avalonia](plugins/ursa-avalonia/) | Ursa.Avalonia custom control references (~70 controls) with usage patterns and theme resources. |
 | [irihi-lingua](plugins/irihi-lingua/) | Irihi.Lingua Avalonia i18n setup guide — from NuGet installation, resource files, LanguageManager to runtime culture switching. |
 | [avalonia-headless-test](plugins/avalonia-headless-test/) | Avalonia headless test setup for control libraries — xUnit + Avalonia.Headless, optional Skia rendering, Fluent or Semi default theme. |
@@ -35,10 +35,15 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
     │   ├── plugin.json
     │   ├── .claude-plugin/plugin.json
     │   ├── .codex-plugin/plugin.json
+    │   ├── provenance/semi-avalonia.json   # hashes of the generated skill (from Semi's generator)
     │   └── skills/
-    │       ├── controls/SKILL.md
-    │       │   └── reference/ (65 control files)
-    │       └── theme/SKILL.md
+    │       ├── semi-avalonia/               # GENERATED from the Semi.Avalonia sources — do not edit
+    │       │   ├── SKILL.md
+    │       │   ├── checklist.md
+    │       │   └── reference/ (tokens, customization, classes)
+    │       └── semi-avalonia-usage/         # handwritten usage guidance
+    │           ├── SKILL.md
+    │           └── reference/ (65 control files)
     └── irihi-lingua/
         ├── plugin.json
         ├── .claude-plugin/plugin.json
@@ -59,6 +64,35 @@ The structure follows the same plugin-first model used by `dotnet/skills`, so th
         └── skills/
             └── headless-test-setup/SKILL.md
 ```
+
+## Generated Semi skill
+
+`plugins/semi-avalonia/skills/semi-avalonia/` is **generated output**, not hand-written content: it is produced by Semi.Avalonia's own `tools/Semi.Avalonia.Llms` from the theme sources, so its style classes, ControlTheme variants and resource keys always match the Semi release it was generated from. It is synced into this repository by `tools/semi-sync`, which verifies every SHA-256 in the generator's `ai/provenance.json` before replacing the directory:
+
+```bash
+# in the Semi.Avalonia checkout:
+dotnet run --project tools/Semi.Avalonia.Llms -- . <output-dir>
+
+# in this repository:
+dotnet run --project tools/semi-sync -- <output-dir>
+```
+
+The plugin works fully offline once installed — the authoritative Semi skill ships inside the plugin; `plugins/semi-avalonia/provenance/semi-avalonia.json` records which Semi version and source revision it was generated from. Never edit `skills/semi-avalonia/` by hand; rerun the generator and the sync tool instead. `skills/semi-avalonia-usage/` is hand-written and contains only usage knowledge (which control to pick, scenarios, MVVM, accessibility) — it deliberately keeps no second copy of the theme facts.
+
+### Keeping the usage skill fact-free
+
+`tools/semi-usage-lint` guards that boundary in two layers:
+
+1. **Syntax boundary in code blocks** — any theming syntax fails, whether or not the name is in today's catalog, so stale names from older Semi releases cannot slip through: `Classes=…`/`FlyoutPresenterClasses=…`, `Theme=…` in XAML or C# (the ControlTheme assignment; `RequestedThemeVariant` is Avalonia platform API and stays legal), `{DynamicResource …}`, `{StaticResource …}` unless the name is a generic `*Geometry`/`*IconGeometry`/`*Converter` resource, and every hard-coded visual color (`#RGB`/`#RRGGBB`/`#AARRGGBB`, `Brushes.<Color>`, `Brush.Parse(…)`, `rgb()/rgba()`).
+2. **Contract-derived facts in prose and tables** — the sync tool copies the hash-verified contract to `provenance/semi-avalonia.contract.json`, and the lint reads every class, ControlTheme variant, Semi pseudo-class, control override key and global token from it; none may be spelled out in the usage documents — not even a single name in a table cell or a backticked mention. Avalonia platform vocabulary (built-in pseudo-classes like `:checked`, Alignment/PlacementMode/FontWeight/ThemeVariant/NotificationSeverity enum values, control names) is exempt.
+
+Run it after editing `skills/semi-avalonia-usage/` and after every sync:
+
+```bash
+dotnet run --project tools/semi-usage-lint -- .
+```
+
+Exit code 0 means clean; violations are reported as `file:line: reason`. Narrow exceptions live in `tools/semi-usage-lint/allowlist.json` — every entry must name its file, term and a non-empty reason, or the run fails. Both guards have their own test suites (path safety and hash checks for the sync, the lint rules themselves); `dotnet test` at the repository root runs them all — the tool projects live in the `eureka-skills.slnx` solution with package versions centralized in `Directory.Packages.props`.
 
 ## Installation
 

@@ -1,0 +1,7481 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "name": "Semi.Avalonia",
+    "version": "12.1.0.1",
+    "avaloniaVersion": "12.1.0",
+    "repository": "https://github.com/irihitech/Semi.Avalonia"
+  },
+  "sourceRevision": "a2d0e19a65382ffcc5bc882834e6467920134b32",
+  "docs": {
+    "baseUrl": "https://irihitech.github.io/Semi.Avalonia",
+    "llmsTxt": "https://irihitech.github.io/Semi.Avalonia/llms.txt"
+  },
+  "skill": {
+    "name": "semi-avalonia",
+    "rootPath": "skills/semi-avalonia",
+    "files": [
+      "SKILL.md",
+      "checklist.md",
+      "reference/classes.md",
+      "reference/customization.md",
+      "reference/tokens.md"
+    ]
+  },
+  "locales": [
+    "de-DE",
+    "en-GB",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "it-CH",
+    "it-IT",
+    "ja-JP",
+    "ko-KR",
+    "nl-BE",
+    "nl-NL",
+    "pl-PL",
+    "ru-RU",
+    "uk-UA",
+    "zh-CN",
+    "zh-TW"
+  ],
+  "satellites": [
+    {
+      "name": "Semi.Avalonia.ColorPicker",
+      "description": "Theme for Avalonia's ColorPicker control family."
+    },
+    {
+      "name": "Semi.Avalonia.DataGrid",
+      "description": "Theme for Avalonia's DataGrid control."
+    },
+    {
+      "name": "Semi.Avalonia.TreeDataGrid",
+      "description": "Theme for the TreeDataGrid controls."
+    }
+  ],
+  "highContrastPresets": [
+    {
+      "name": "Aquatic",
+      "entries": [
+        {
+          "key": "ButtonFaceColor",
+          "kind": "Color",
+          "value": "#202020"
+        },
+        {
+          "key": "ButtonTextColor",
+          "kind": "Color",
+          "value": "#FFFFFF"
+        },
+        {
+          "key": "GrayTextColor",
+          "kind": "Color",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "HighlightColor",
+          "kind": "Color",
+          "value": "#8EE3F0"
+        },
+        {
+          "key": "HighlightTextColor",
+          "kind": "Color",
+          "value": "#263B50"
+        },
+        {
+          "key": "HotlightColor",
+          "kind": "Color",
+          "value": "#75E9FC"
+        },
+        {
+          "key": "SemiColorButtonFace",
+          "kind": "Brush",
+          "value": "#202020"
+        },
+        {
+          "key": "SemiColorButtonText",
+          "kind": "Brush",
+          "value": "#FFFFFF"
+        },
+        {
+          "key": "SemiColorGrayText",
+          "kind": "Brush",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "SemiColorHighlight",
+          "kind": "Brush",
+          "value": "#8EE3F0"
+        },
+        {
+          "key": "SemiColorHighlightText",
+          "kind": "Brush",
+          "value": "#263B50"
+        },
+        {
+          "key": "SemiColorHotlight",
+          "kind": "Brush",
+          "value": "#75E9FC"
+        },
+        {
+          "key": "SemiColorWindow",
+          "kind": "Brush",
+          "value": "#202020"
+        },
+        {
+          "key": "SemiColorWindowText",
+          "kind": "Brush",
+          "value": "#FFFFFF"
+        },
+        {
+          "key": "WindowColor",
+          "kind": "Color",
+          "value": "#202020"
+        },
+        {
+          "key": "WindowTextColor",
+          "kind": "Color",
+          "value": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "name": "Desert",
+      "entries": [
+        {
+          "key": "ButtonFaceColor",
+          "kind": "Color",
+          "value": "#FFFAEF"
+        },
+        {
+          "key": "ButtonTextColor",
+          "kind": "Color",
+          "value": "#202020"
+        },
+        {
+          "key": "GrayTextColor",
+          "kind": "Color",
+          "value": "#676767"
+        },
+        {
+          "key": "HighlightColor",
+          "kind": "Color",
+          "value": "#903909"
+        },
+        {
+          "key": "HighlightTextColor",
+          "kind": "Color",
+          "value": "#FFF5E3"
+        },
+        {
+          "key": "HotlightColor",
+          "kind": "Color",
+          "value": "#1C5E75"
+        },
+        {
+          "key": "SemiColorButtonFace",
+          "kind": "Brush",
+          "value": "#FFFAEF"
+        },
+        {
+          "key": "SemiColorButtonText",
+          "kind": "Brush",
+          "value": "#202020"
+        },
+        {
+          "key": "SemiColorGrayText",
+          "kind": "Brush",
+          "value": "#676767"
+        },
+        {
+          "key": "SemiColorHighlight",
+          "kind": "Brush",
+          "value": "#903909"
+        },
+        {
+          "key": "SemiColorHighlightText",
+          "kind": "Brush",
+          "value": "#FFF5E3"
+        },
+        {
+          "key": "SemiColorHotlight",
+          "kind": "Brush",
+          "value": "#1C5E75"
+        },
+        {
+          "key": "SemiColorWindow",
+          "kind": "Brush",
+          "value": "#FFFAEF"
+        },
+        {
+          "key": "SemiColorWindowText",
+          "kind": "Brush",
+          "value": "#3D3D3D"
+        },
+        {
+          "key": "WindowColor",
+          "kind": "Color",
+          "value": "#FFFAEF"
+        },
+        {
+          "key": "WindowTextColor",
+          "kind": "Color",
+          "value": "#3D3D3D"
+        }
+      ]
+    },
+    {
+      "name": "Dusk",
+      "entries": [
+        {
+          "key": "ButtonFaceColor",
+          "kind": "Color",
+          "value": "#2D3236"
+        },
+        {
+          "key": "ButtonTextColor",
+          "kind": "Color",
+          "value": "#B6F6F0"
+        },
+        {
+          "key": "GrayTextColor",
+          "kind": "Color",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "HighlightColor",
+          "kind": "Color",
+          "value": "#A1BFDE"
+        },
+        {
+          "key": "HighlightTextColor",
+          "kind": "Color",
+          "value": "#212D3B"
+        },
+        {
+          "key": "HotlightColor",
+          "kind": "Color",
+          "value": "#70EBDE"
+        },
+        {
+          "key": "SemiColorButtonFace",
+          "kind": "Brush",
+          "value": "#2D3236"
+        },
+        {
+          "key": "SemiColorButtonText",
+          "kind": "Brush",
+          "value": "#B6F6F0"
+        },
+        {
+          "key": "SemiColorGrayText",
+          "kind": "Brush",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "SemiColorHighlight",
+          "kind": "Brush",
+          "value": "#A1BFDE"
+        },
+        {
+          "key": "SemiColorHighlightText",
+          "kind": "Brush",
+          "value": "#212D3B"
+        },
+        {
+          "key": "SemiColorHotlight",
+          "kind": "Brush",
+          "value": "#70EBDE"
+        },
+        {
+          "key": "SemiColorWindow",
+          "kind": "Brush",
+          "value": "#2D3236"
+        },
+        {
+          "key": "SemiColorWindowText",
+          "kind": "Brush",
+          "value": "#FFFFFF"
+        },
+        {
+          "key": "WindowColor",
+          "kind": "Color",
+          "value": "#2D3236"
+        },
+        {
+          "key": "WindowTextColor",
+          "kind": "Color",
+          "value": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "name": "NightSky",
+      "entries": [
+        {
+          "key": "ButtonFaceColor",
+          "kind": "Color",
+          "value": "#000000"
+        },
+        {
+          "key": "ButtonTextColor",
+          "kind": "Color",
+          "value": "#FFEE32"
+        },
+        {
+          "key": "GrayTextColor",
+          "kind": "Color",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "HighlightColor",
+          "kind": "Color",
+          "value": "#D6B4FD"
+        },
+        {
+          "key": "HighlightTextColor",
+          "kind": "Color",
+          "value": "#2B2B2B"
+        },
+        {
+          "key": "HotlightColor",
+          "kind": "Color",
+          "value": "#8080FF"
+        },
+        {
+          "key": "SemiColorButtonFace",
+          "kind": "Brush",
+          "value": "#000000"
+        },
+        {
+          "key": "SemiColorButtonText",
+          "kind": "Brush",
+          "value": "#FFEE32"
+        },
+        {
+          "key": "SemiColorGrayText",
+          "kind": "Brush",
+          "value": "#A6A6A6"
+        },
+        {
+          "key": "SemiColorHighlight",
+          "kind": "Brush",
+          "value": "#D6B4FD"
+        },
+        {
+          "key": "SemiColorHighlightText",
+          "kind": "Brush",
+          "value": "#2B2B2B"
+        },
+        {
+          "key": "SemiColorHotlight",
+          "kind": "Brush",
+          "value": "#8080FF"
+        },
+        {
+          "key": "SemiColorWindow",
+          "kind": "Brush",
+          "value": "#000000"
+        },
+        {
+          "key": "SemiColorWindowText",
+          "kind": "Brush",
+          "value": "#FFFFFF"
+        },
+        {
+          "key": "WindowColor",
+          "kind": "Color",
+          "value": "#000000"
+        },
+        {
+          "key": "WindowTextColor",
+          "kind": "Color",
+          "value": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "key": "ButtonFaceColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#202020",
+        "Desert": "#FFFAEF",
+        "Dusk": "#2D3236",
+        "NightSky": "#000000"
+      }
+    },
+    {
+      "key": "ButtonTextColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#FFFFFF",
+        "Desert": "#202020",
+        "Dusk": "#B6F6F0",
+        "NightSky": "#FFEE32"
+      }
+    },
+    {
+      "key": "GrayTextColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#A6A6A6",
+        "Desert": "#676767",
+        "Dusk": "#A6A6A6",
+        "NightSky": "#A6A6A6"
+      }
+    },
+    {
+      "key": "HighlightColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#8EE3F0",
+        "Desert": "#903909",
+        "Dusk": "#A1BFDE",
+        "NightSky": "#D6B4FD"
+      }
+    },
+    {
+      "key": "HighlightTextColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#263B50",
+        "Desert": "#FFF5E3",
+        "Dusk": "#212D3B",
+        "NightSky": "#2B2B2B"
+      }
+    },
+    {
+      "key": "HotlightColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#75E9FC",
+        "Desert": "#1C5E75",
+        "Dusk": "#70EBDE",
+        "NightSky": "#8080FF"
+      }
+    },
+    {
+      "key": "SemiAIGeneral0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIGeneral9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F8EDFF",
+      "dark": "#3A1770",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F8EDFF",
+      "dark": "#3A1770",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F2DAFF",
+      "dark": "#532394",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F2DAFF",
+      "dark": "#532394",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E3B5FF",
+      "dark": "#6F31B8",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E3B5FF",
+      "dark": "#6F31B8",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D191FF",
+      "dark": "#8D41DB",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D191FF",
+      "dark": "#8D41DB",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#BD6CFF",
+      "dark": "#A744FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#BD6CFF",
+      "dark": "#A744FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A647FF",
+      "dark": "#C375FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A647FF",
+      "dark": "#C375FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#8636DB",
+      "dark": "#D598FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#8636DB",
+      "dark": "#D598FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6928B8",
+      "dark": "#E5BAFF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#6928B8",
+      "dark": "#E5BAFF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#4E1C94",
+      "dark": "#F3DDFF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#4E1C94",
+      "dark": "#F3DDFF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#361270",
+      "dark": "#FBF3FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAIPurple9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#361270",
+      "dark": "#FBF3FF",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEFBEB",
+      "dark": "#512E09",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FEFBEB",
+      "dark": "#512E09",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FCF5CE",
+      "dark": "#794B0F",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FCF5CE",
+      "dark": "#794B0F",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F9E89E",
+      "dark": "#A16B16",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F9E89E",
+      "dark": "#A16B16",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F6D86F",
+      "dark": "#CA8F1E",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F6D86F",
+      "dark": "#CA8F1E",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F3C641",
+      "dark": "#F2B726",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F3C641",
+      "dark": "#F2B726",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F0B114",
+      "dark": "#F5CA50",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F0B114",
+      "dark": "#F5CA50",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C88A0F",
+      "dark": "#F7DB7A",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C88A0F",
+      "dark": "#F7DB7A",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A0660A",
+      "dark": "#FAEAA6",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A0660A",
+      "dark": "#FAEAA6",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#784606",
+      "dark": "#FCF6D2",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#784606",
+      "dark": "#FCF6D2",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#502B03",
+      "dark": "#FEFBED",
+      "comment": null
+    },
+    {
+      "key": "SemiAmber9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#502B03",
+      "dark": "#FEFBED",
+      "comment": null
+    },
+    {
+      "key": "SemiBackground0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "#16161A",
+      "comment": null
+    },
+    {
+      "key": "SemiBackground1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "#232429",
+      "comment": null
+    },
+    {
+      "key": "SemiBackground2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "#35363C",
+      "comment": null
+    },
+    {
+      "key": "SemiBackground3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "#43444A",
+      "comment": null
+    },
+    {
+      "key": "SemiBackground4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "#4F5159",
+      "comment": null
+    },
+    {
+      "key": "SemiBlack",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "Black",
+      "dark": "Black",
+      "comment": null
+    },
+    {
+      "key": "SemiBlackColor",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "Black",
+      "dark": "Black",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#EAF5FF",
+      "dark": "#053170",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#EAF5FF",
+      "dark": "#053170",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#CBE7FE",
+      "dark": "#0A4694",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#CBE7FE",
+      "dark": "#0A4694",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "#135CB8",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "#135CB8",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#65B2FC",
+      "dark": "#1D75DB",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#65B2FC",
+      "dark": "#1D75DB",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#3295FB",
+      "dark": "#2990FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#3295FB",
+      "dark": "#2990FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0062D6",
+      "dark": "#7FC1FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#0062D6",
+      "dark": "#7FC1FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004FB3",
+      "dark": "#A9D7FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#004FB3",
+      "dark": "#A9D7FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#003D8F",
+      "dark": "#D4ECFF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#003D8F",
+      "dark": "#D4ECFF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#002C6B",
+      "dark": "#EFF8FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBlue9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#002C6B",
+      "dark": "#EFF8FF",
+      "comment": null
+    },
+    {
+      "key": "SemiBorderRadiusExtraSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "CornerRadius",
+      "value": "3",
+      "light": null,
+      "dark": null,
+      "comment": "圆角 - 超小"
+    },
+    {
+      "key": "SemiBorderRadiusFull",
+      "member": null,
+      "category": "Variables",
+      "type": "CornerRadius",
+      "value": "9999",
+      "light": null,
+      "dark": null,
+      "comment": "圆角 - 全圆"
+    },
+    {
+      "key": "SemiBorderRadiusLarge",
+      "member": null,
+      "category": "Variables",
+      "type": "CornerRadius",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "圆角 - 大"
+    },
+    {
+      "key": "SemiBorderRadiusMedium",
+      "member": null,
+      "category": "Variables",
+      "type": "CornerRadius",
+      "value": "6",
+      "light": null,
+      "dark": null,
+      "comment": "圆角 - 中"
+    },
+    {
+      "key": "SemiBorderRadiusSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "CornerRadius",
+      "value": "3",
+      "light": null,
+      "dark": null,
+      "comment": "圆角 - 小"
+    },
+    {
+      "key": "SemiBorderRadiusSpacingExtraSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "3",
+      "light": null,
+      "dark": null,
+      "comment": "半径 - 超小"
+    },
+    {
+      "key": "SemiBorderRadiusSpacingFull",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "9999",
+      "light": null,
+      "dark": null,
+      "comment": "半径 - 全圆"
+    },
+    {
+      "key": "SemiBorderRadiusSpacingLarge",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "半径 - 大"
+    },
+    {
+      "key": "SemiBorderRadiusSpacingMedium",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "6",
+      "light": null,
+      "dark": null,
+      "comment": "半径 - 中"
+    },
+    {
+      "key": "SemiBorderRadiusSpacingSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "3",
+      "light": null,
+      "dark": null,
+      "comment": "半径 - 小"
+    },
+    {
+      "key": "SemiBorderSpacing",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "0",
+      "light": null,
+      "dark": null,
+      "comment": "描边间距 - 零"
+    },
+    {
+      "key": "SemiBorderSpacingControl",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "1",
+      "light": null,
+      "dark": null,
+      "comment": "描边间距 - 默认状态"
+    },
+    {
+      "key": "SemiBorderSpacingControlFocus",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "1",
+      "light": null,
+      "dark": null,
+      "comment": "描边间距 - focus 状态"
+    },
+    {
+      "key": "SemiBorderThickness",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "0",
+      "light": null,
+      "dark": null,
+      "comment": "描边宽度 - 零"
+    },
+    {
+      "key": "SemiBorderThicknessControl",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "1",
+      "light": null,
+      "dark": null,
+      "comment": "描边宽度 - 默认状态"
+    },
+    {
+      "key": "SemiBorderThicknessControlFocus",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "1",
+      "light": null,
+      "dark": null,
+      "comment": "描边宽度 - focus 状态"
+    },
+    {
+      "key": "SemiColorAIBackgroundBottom",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIBackgroundBottomActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIBackgroundBottomPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIBackgroundTop",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIBackgroundTopActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIBackgroundTopPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIGeneral",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIGeneralActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIGeneralDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIGeneralPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "gradient",
+      "dark": "gradient",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIPurple",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A647FF",
+      "dark": "#C375FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIPurpleActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6928B8",
+      "dark": "#E5BAFF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIPurpleDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E3B5FF",
+      "dark": "#6F31B8",
+      "comment": null
+    },
+    {
+      "key": "SemiColorAIPurplePointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#8636DB",
+      "dark": "#D598FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBackground0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#16161A",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBackground1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#232429",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBackground2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#35363C",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBackground3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#43444A",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBackground4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#4F5159",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBlack",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "Black",
+      "dark": "Black",
+      "comment": null
+    },
+    {
+      "key": "SemiColorBorder",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey9Color @ 0.08 opacity",
+      "dark": "ref:SemiWhiteColor @ 0.08 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorButtonFace",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#202020",
+        "Desert": "#FFFAEF",
+        "Dusk": "#2D3236",
+        "NightSky": "#000000"
+      }
+    },
+    {
+      "key": "SemiColorButtonText",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#FFFFFF",
+        "Desert": "#202020",
+        "Dusk": "#B6F6F0",
+        "NightSky": "#FFEE32"
+      }
+    },
+    {
+      "key": "SemiColorDanger",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F93920",
+      "dark": "#FC725A",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDangerActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#B2140C",
+      "dark": "#FDBEAC",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDangerLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEF2ED",
+      "dark": "ref:SemiRed5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDangerLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDB7A5",
+      "dark": "ref:SemiRed5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDangerLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEDDD2",
+      "dark": "ref:SemiRed5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDangerPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D52515",
+      "dark": "#FD9983",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDisabledBackground",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E6E8EA",
+      "dark": "#2E3238",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDisabledBorder",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E6E8EA",
+      "dark": "#2E3238",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDisabledFill",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey8Color @ 0.02 opacity",
+      "dark": "ref:SemiGrey8Color @ 0.04 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorDisabledText",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey9Color @ 0.35 opacity",
+      "dark": "ref:SemiGrey9Color @ 0.35 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorFill0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey8Color @ 0.05 opacity",
+      "dark": "ref:SemiWhiteColor @ 0.12 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorFill1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey8Color @ 0.09 opacity",
+      "dark": "ref:SemiWhiteColor @ 0.16 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorFill2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey8Color @ 0.13 opacity",
+      "dark": "ref:SemiWhiteColor @ 0.20 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorFocusBorder",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorGrayText",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#A6A6A6",
+        "Desert": "#676767",
+        "Dusk": "#A6A6A6",
+        "NightSky": "#A6A6A6"
+      }
+    },
+    {
+      "key": "SemiColorHighlight",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "Black",
+      "comment": null,
+      "presets": {
+        "Aquatic": "#8EE3F0",
+        "Desert": "#903909",
+        "Dusk": "#A1BFDE",
+        "NightSky": "#D6B4FD"
+      }
+    },
+    {
+      "key": "SemiColorHighlightBackground",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDF398",
+      "dark": "#FCCE14",
+      "comment": null
+    },
+    {
+      "key": "SemiColorHighlightText",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#263B50",
+        "Desert": "#FFF5E3",
+        "Dusk": "#212D3B",
+        "NightSky": "#2B2B2B"
+      }
+    },
+    {
+      "key": "SemiColorHotlight",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#75E9FC",
+        "Desert": "#1C5E75",
+        "Dusk": "#70EBDE",
+        "NightSky": "#8080FF"
+      }
+    },
+    {
+      "key": "SemiColorInformation",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004FB3",
+      "dark": "#A9D7FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "#135CB8",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#EAF5FF",
+      "dark": "ref:SemiBlue5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "ref:SemiBlue5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#CBE7FE",
+      "dark": "ref:SemiBlue5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorInformationPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0062D6",
+      "dark": "#7FC1FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorLink",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorLinkActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004FB3",
+      "dark": "#A9D7FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorLinkPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0062D6",
+      "dark": "#7FC1FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorLinkVisited",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorNavBackground",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "#232429",
+      "comment": null
+    },
+    {
+      "key": "SemiColorOverlayBackground",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#16161A @ 0.6 opacity",
+      "dark": "ref:SemiBackground0Color @ 0.6 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimary",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0064FA",
+      "dark": "#54A9FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004FB3",
+      "dark": "#A9D7FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "#135CB8",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#EAF5FF",
+      "dark": "ref:SemiBlue5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#98CDFD",
+      "dark": "ref:SemiBlue5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#CBE7FE",
+      "dark": "ref:SemiBlue5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorPrimaryPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0062D6",
+      "dark": "#7FC1FF",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondary",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0095EE",
+      "dark": "#40B4F3",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0063A7",
+      "dark": "#9DDCF9",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#95D8F8",
+      "dark": "#0366A9",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E9F7FD",
+      "dark": "ref:SemiLightBlue5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#95D8F8",
+      "dark": "ref:SemiLightBlue5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C9ECFC",
+      "dark": "ref:SemiLightBlue5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSecondaryPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#007BCA",
+      "dark": "#6EC8F6",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccess",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#3BB346",
+      "dark": "#5DC264",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#25772F",
+      "dark": "#A6E1A8",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessDisabled",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A4E0A7",
+      "dark": "#277731",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#ECF7EC",
+      "dark": "ref:SemiGreen5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A4E0A7",
+      "dark": "ref:SemiGreen5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D0F0D1",
+      "dark": "ref:SemiGreen5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorSuccessPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#30953B",
+      "dark": "#7FD184",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiary",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6B7075",
+      "dark": "#888D92",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiaryActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#41464C",
+      "dark": "#C6CACD",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiaryLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F9F9F9",
+      "dark": "ref:SemiGrey5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiaryLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C6CACD",
+      "dark": "ref:SemiGrey5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiaryLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E6E8EA",
+      "dark": "ref:SemiGrey5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorTertiaryPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#555B61",
+      "dark": "#A7ABB0",
+      "comment": null
+    },
+    {
+      "key": "SemiColorText0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#1C1F23",
+      "dark": "#F9F9F9",
+      "comment": null
+    },
+    {
+      "key": "SemiColorText1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey9Color @ 0.8 opacity",
+      "dark": "ref:SemiGrey9Color @ 0.8 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorText2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey9Color @ 0.62 opacity",
+      "dark": "ref:SemiGrey9Color @ 0.6 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorText3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "ref:SemiGrey9Color @ 0.35 opacity",
+      "dark": "ref:SemiGrey9Color @ 0.35 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarning",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FC8800",
+      "dark": "#FFAE43",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarningActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A84A00",
+      "dark": "#FFDDA1",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarningLight",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FFF8EA",
+      "dark": "ref:SemiOrange5Color @ 0.2 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarningLightActive",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FED998",
+      "dark": "ref:SemiOrange5Color @ 0.4 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarningLightPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEEECC",
+      "dark": "ref:SemiOrange5Color @ 0.3 opacity",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWarningPointerover",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D26700",
+      "dark": "#FFC772",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWhite",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "White",
+      "comment": null
+    },
+    {
+      "key": "SemiColorWindow",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#202020",
+        "Desert": "#FFFAEF",
+        "Dusk": "#2D3236",
+        "NightSky": "#000000"
+      }
+    },
+    {
+      "key": "SemiColorWindowText",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Brush",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#FFFFFF",
+        "Desert": "#3D3D3D",
+        "Dusk": "#FFFFFF",
+        "NightSky": "#FFFFFF"
+      }
+    },
+    {
+      "key": "SemiCyan0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E5F7F8",
+      "dark": "#04343D",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E5F7F8",
+      "dark": "#04343D",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C2EFF0",
+      "dark": "#074F5C",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C2EFF0",
+      "dark": "#074F5C",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#8ADDE2",
+      "dark": "#0A6C7B",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#8ADDE2",
+      "dark": "#0A6C7B",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#58CBD3",
+      "dark": "#0E8999",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#58CBD3",
+      "dark": "#0E8999",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#2CB8C5",
+      "dark": "#13A8B8",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#2CB8C5",
+      "dark": "#13A8B8",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#05A4B6",
+      "dark": "#38BBC6",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#05A4B6",
+      "dark": "#38BBC6",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#038698",
+      "dark": "#62CDD4",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#038698",
+      "dark": "#62CDD4",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#016979",
+      "dark": "#91DFE3",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#016979",
+      "dark": "#91DFE3",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004D5B",
+      "dark": "#C6EFF1",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#004D5B",
+      "dark": "#C6EFF1",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#00323D",
+      "dark": "#E7F7F8",
+      "comment": null
+    },
+    {
+      "key": "SemiCyan9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#00323D",
+      "dark": "#E7F7F8",
+      "comment": null
+    },
+    {
+      "key": "SemiFontFamilyRegular",
+      "member": null,
+      "category": "Variables",
+      "type": "FontFamily",
+      "value": "fonts:Inter#Inter, Inter, -apple-system, BlinkMacSystemFont, PingFang SC,",
+      "light": null,
+      "dark": null,
+      "comment": null
+    },
+    {
+      "key": "SemiFontSizeHeader1",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "32",
+      "light": null,
+      "dark": null,
+      "comment": "一级标题字号"
+    },
+    {
+      "key": "SemiFontSizeHeader2",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "28",
+      "light": null,
+      "dark": null,
+      "comment": "二级标题字号"
+    },
+    {
+      "key": "SemiFontSizeHeader3",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "24",
+      "light": null,
+      "dark": null,
+      "comment": "三级标题字号"
+    },
+    {
+      "key": "SemiFontSizeHeader4",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "20",
+      "light": null,
+      "dark": null,
+      "comment": "四级标题字号"
+    },
+    {
+      "key": "SemiFontSizeHeader5",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "18",
+      "light": null,
+      "dark": null,
+      "comment": "五级标题字号"
+    },
+    {
+      "key": "SemiFontSizeHeader6",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "16",
+      "light": null,
+      "dark": null,
+      "comment": "六级标题字号"
+    },
+    {
+      "key": "SemiFontSizeRegular",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "14",
+      "light": null,
+      "dark": null,
+      "comment": "常规文本字号"
+    },
+    {
+      "key": "SemiFontSizeSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "小文本字号"
+    },
+    {
+      "key": "SemiFontWeightBold",
+      "member": null,
+      "category": "Variables",
+      "type": "FontWeight",
+      "value": "600",
+      "light": null,
+      "dark": null,
+      "comment": "字重 - 粗"
+    },
+    {
+      "key": "SemiFontWeightLight",
+      "member": null,
+      "category": "Variables",
+      "type": "FontWeight",
+      "value": "200",
+      "light": null,
+      "dark": null,
+      "comment": "字重 - 轻"
+    },
+    {
+      "key": "SemiFontWeightRegular",
+      "member": null,
+      "category": "Variables",
+      "type": "FontWeight",
+      "value": "400",
+      "light": null,
+      "dark": null,
+      "comment": "字重 - 常规"
+    },
+    {
+      "key": "SemiGreen0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#ECF7EC",
+      "dark": "#123C19",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#ECF7EC",
+      "dark": "#123C19",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D0F0D1",
+      "dark": "#1C5A25",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D0F0D1",
+      "dark": "#1C5A25",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A4E0A7",
+      "dark": "#277731",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A4E0A7",
+      "dark": "#277731",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7DD182",
+      "dark": "#32953D",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7DD182",
+      "dark": "#32953D",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#5AC262",
+      "dark": "#3EB349",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#5AC262",
+      "dark": "#3EB349",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#3BB346",
+      "dark": "#5DC264",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#3BB346",
+      "dark": "#5DC264",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#30953B",
+      "dark": "#7FD184",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#30953B",
+      "dark": "#7FD184",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#25772F",
+      "dark": "#A6E1A8",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#25772F",
+      "dark": "#A6E1A8",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#1B5924",
+      "dark": "#D0F0D1",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#1B5924",
+      "dark": "#D0F0D1",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#113C18",
+      "dark": "#ECF7EC",
+      "comment": null
+    },
+    {
+      "key": "SemiGreen9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#113C18",
+      "dark": "#ECF7EC",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F9F9F9",
+      "dark": "#1C1F23",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F9F9F9",
+      "dark": "#1C1F23",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E6E8EA",
+      "dark": "#2E3238",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E6E8EA",
+      "dark": "#2E3238",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C6CACD",
+      "dark": "#41464C",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C6CACD",
+      "dark": "#41464C",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A7ABB0",
+      "dark": "#555B61",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A7ABB0",
+      "dark": "#555B61",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#888D92",
+      "dark": "#6B7075",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#888D92",
+      "dark": "#6B7075",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6B7075",
+      "dark": "#888D92",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#6B7075",
+      "dark": "#888D92",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#555B61",
+      "dark": "#A7ABB0",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#555B61",
+      "dark": "#A7ABB0",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#41464C",
+      "dark": "#C6CACD",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#41464C",
+      "dark": "#C6CACD",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#2E3238",
+      "dark": "#E6E8EA",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#2E3238",
+      "dark": "#E6E8EA",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#1C1F23",
+      "dark": "#F9F9F9",
+      "comment": null
+    },
+    {
+      "key": "SemiGrey9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#1C1F23",
+      "dark": "#F9F9F9",
+      "comment": null
+    },
+    {
+      "key": "SemiHeightControlDefault",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "32",
+      "light": null,
+      "dark": null,
+      "comment": "表单项高度 - 默认尺寸"
+    },
+    {
+      "key": "SemiHeightControlLarge",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "40",
+      "light": null,
+      "dark": null,
+      "comment": "表单项高度 - 大尺寸"
+    },
+    {
+      "key": "SemiHeightControlSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "24",
+      "light": null,
+      "dark": null,
+      "comment": "表单项高度 - 小尺寸"
+    },
+    {
+      "key": "SemiIndigo0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#ECEFF8",
+      "dark": "#171E65",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#ECEFF8",
+      "dark": "#171E65",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D1D8F0",
+      "dark": "#20297A",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D1D8F0",
+      "dark": "#20297A",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A7B3E1",
+      "dark": "#29368E",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A7B3E1",
+      "dark": "#29368E",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#8090D3",
+      "dark": "#3444A3",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#8090D3",
+      "dark": "#3444A3",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#5E6FC4",
+      "dark": "#4053B7",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#5E6FC4",
+      "dark": "#4053B7",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#3F51B5",
+      "dark": "#5F71C5",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#3F51B5",
+      "dark": "#5F71C5",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#3342A1",
+      "dark": "#8191D4",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#3342A1",
+      "dark": "#8191D4",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#28348C",
+      "dark": "#A7B4E2",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#28348C",
+      "dark": "#A7B4E2",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#1F2878",
+      "dark": "#D1D8F1",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#1F2878",
+      "dark": "#D1D8F1",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#171D63",
+      "dark": "#EDEFF8",
+      "comment": null
+    },
+    {
+      "key": "SemiIndigo9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#171D63",
+      "dark": "#EDEFF8",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E9F7FD",
+      "dark": "#003761",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E9F7FD",
+      "dark": "#003761",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C9ECFC",
+      "dark": "#004D85",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C9ECFC",
+      "dark": "#004D85",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#95D8F8",
+      "dark": "#0366A9",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#95D8F8",
+      "dark": "#0366A9",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#62C3F5",
+      "dark": "#0A81CC",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#62C3F5",
+      "dark": "#0A81CC",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#30ACF1",
+      "dark": "#139FF0",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#30ACF1",
+      "dark": "#139FF0",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0095EE",
+      "dark": "#40B4F3",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#0095EE",
+      "dark": "#40B4F3",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#007BCA",
+      "dark": "#6EC8F6",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#007BCA",
+      "dark": "#6EC8F6",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#0063A7",
+      "dark": "#9DDCF9",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#0063A7",
+      "dark": "#9DDCF9",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#004B83",
+      "dark": "#CEEEFC",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#004B83",
+      "dark": "#CEEEFC",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#00355F",
+      "dark": "#EBF8FE",
+      "comment": null
+    },
+    {
+      "key": "SemiLightBlue9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#00355F",
+      "dark": "#EBF8FE",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F3F8EC",
+      "dark": "#263D13",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F3F8EC",
+      "dark": "#263D13",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E3F0D0",
+      "dark": "#3B5C1D",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E3F0D0",
+      "dark": "#3B5C1D",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C8E2A5",
+      "dark": "#517B28",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C8E2A5",
+      "dark": "#517B28",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#ADD37E",
+      "dark": "#679934",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#ADD37E",
+      "dark": "#679934",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#93C55B",
+      "dark": "#7FB840",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#93C55B",
+      "dark": "#7FB840",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7BB63C",
+      "dark": "#97C65F",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7BB63C",
+      "dark": "#97C65F",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#649830",
+      "dark": "#B0D481",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#649830",
+      "dark": "#B0D481",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#4E7926",
+      "dark": "#C9E3A7",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#4E7926",
+      "dark": "#C9E3A7",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#395B1B",
+      "dark": "#E4F1D1",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#395B1B",
+      "dark": "#E4F1D1",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#253D12",
+      "dark": "#F3F8ED",
+      "comment": null
+    },
+    {
+      "key": "SemiLightGreen9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#253D12",
+      "dark": "#F3F8ED",
+      "comment": null
+    },
+    {
+      "key": "SemiLime0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F2FAE6",
+      "dark": "#314603",
+      "comment": null
+    },
+    {
+      "key": "SemiLime0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F2FAE6",
+      "dark": "#314603",
+      "comment": null
+    },
+    {
+      "key": "SemiLime1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E3F6C5",
+      "dark": "#4B6905",
+      "comment": null
+    },
+    {
+      "key": "SemiLime1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E3F6C5",
+      "dark": "#4B6905",
+      "comment": null
+    },
+    {
+      "key": "SemiLime2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#CBED8E",
+      "dark": "#678D09",
+      "comment": null
+    },
+    {
+      "key": "SemiLime2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#CBED8E",
+      "dark": "#678D09",
+      "comment": null
+    },
+    {
+      "key": "SemiLime3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#B7E35B",
+      "dark": "#84B00C",
+      "comment": null
+    },
+    {
+      "key": "SemiLime3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#B7E35B",
+      "dark": "#84B00C",
+      "comment": null
+    },
+    {
+      "key": "SemiLime4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A7DA2C",
+      "dark": "#A2D311",
+      "comment": null
+    },
+    {
+      "key": "SemiLime4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A7DA2C",
+      "dark": "#A2D311",
+      "comment": null
+    },
+    {
+      "key": "SemiLime5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#9BD100",
+      "dark": "#AEDC3A",
+      "comment": null
+    },
+    {
+      "key": "SemiLime5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#9BD100",
+      "dark": "#AEDC3A",
+      "comment": null
+    },
+    {
+      "key": "SemiLime6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7EAE00",
+      "dark": "#BDE566",
+      "comment": null
+    },
+    {
+      "key": "SemiLime6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7EAE00",
+      "dark": "#BDE566",
+      "comment": null
+    },
+    {
+      "key": "SemiLime7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#638B00",
+      "dark": "#CFED96",
+      "comment": null
+    },
+    {
+      "key": "SemiLime7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#638B00",
+      "dark": "#CFED96",
+      "comment": null
+    },
+    {
+      "key": "SemiLime8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#486800",
+      "dark": "#E5F6C9",
+      "comment": null
+    },
+    {
+      "key": "SemiLime8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#486800",
+      "dark": "#E5F6C9",
+      "comment": null
+    },
+    {
+      "key": "SemiLime9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#2F4600",
+      "dark": "#F3FBE9",
+      "comment": null
+    },
+    {
+      "key": "SemiLime9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#2F4600",
+      "dark": "#F3FBE9",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FFF8EA",
+      "dark": "#551F03",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FFF8EA",
+      "dark": "#551F03",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEEECC",
+      "dark": "#803506",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FEEECC",
+      "dark": "#803506",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FED998",
+      "dark": "#AA500A",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FED998",
+      "dark": "#AA500A",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDC165",
+      "dark": "#D56F0F",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FDC165",
+      "dark": "#D56F0F",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDA633",
+      "dark": "#FF9214",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FDA633",
+      "dark": "#FF9214",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FC8800",
+      "dark": "#FFAE43",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FC8800",
+      "dark": "#FFAE43",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D26700",
+      "dark": "#FFC772",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D26700",
+      "dark": "#FFC772",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A84A00",
+      "dark": "#FFDDA1",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A84A00",
+      "dark": "#FFDDA1",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7E3100",
+      "dark": "#FFEFD0",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7E3100",
+      "dark": "#FFEFD0",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#541D00",
+      "dark": "#FFF9ED",
+      "comment": null
+    },
+    {
+      "key": "SemiOrange9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#541D00",
+      "dark": "#FFF9ED",
+      "comment": null
+    },
+    {
+      "key": "SemiPink0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDECEF",
+      "dark": "#5C0730",
+      "comment": null
+    },
+    {
+      "key": "SemiPink0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FDECEF",
+      "dark": "#5C0730",
+      "comment": null
+    },
+    {
+      "key": "SemiPink1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FBCFD8",
+      "dark": "#800E41",
+      "comment": null
+    },
+    {
+      "key": "SemiPink1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FBCFD8",
+      "dark": "#800E41",
+      "comment": null
+    },
+    {
+      "key": "SemiPink2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F6A0B5",
+      "dark": "#A41751",
+      "comment": null
+    },
+    {
+      "key": "SemiPink2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F6A0B5",
+      "dark": "#A41751",
+      "comment": null
+    },
+    {
+      "key": "SemiPink3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F27396",
+      "dark": "#C72261",
+      "comment": null
+    },
+    {
+      "key": "SemiPink3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F27396",
+      "dark": "#C72261",
+      "comment": null
+    },
+    {
+      "key": "SemiPink4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#ED487B",
+      "dark": "#EB2F71",
+      "comment": null
+    },
+    {
+      "key": "SemiPink4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#ED487B",
+      "dark": "#EB2F71",
+      "comment": null
+    },
+    {
+      "key": "SemiPink5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E91E63",
+      "dark": "#EF5686",
+      "comment": null
+    },
+    {
+      "key": "SemiPink5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E91E63",
+      "dark": "#EF5686",
+      "comment": null
+    },
+    {
+      "key": "SemiPink6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C51356",
+      "dark": "#F37E9F",
+      "comment": null
+    },
+    {
+      "key": "SemiPink6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C51356",
+      "dark": "#F37E9F",
+      "comment": null
+    },
+    {
+      "key": "SemiPink7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A20B48",
+      "dark": "#F7A8BC",
+      "comment": null
+    },
+    {
+      "key": "SemiPink7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A20B48",
+      "dark": "#F7A8BC",
+      "comment": null
+    },
+    {
+      "key": "SemiPink8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7E053A",
+      "dark": "#FBD3DC",
+      "comment": null
+    },
+    {
+      "key": "SemiPink8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7E053A",
+      "dark": "#FBD3DC",
+      "comment": null
+    },
+    {
+      "key": "SemiPink9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#5A012B",
+      "dark": "#FDEEF1",
+      "comment": null
+    },
+    {
+      "key": "SemiPink9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#5A012B",
+      "dark": "#FDEEF1",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F7E9F7",
+      "dark": "#4A1061",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F7E9F7",
+      "dark": "#4A1061",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#EFCAF0",
+      "dark": "#5E1776",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#EFCAF0",
+      "dark": "#5E1776",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#DD9BE0",
+      "dark": "#731F8A",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#DD9BE0",
+      "dark": "#731F8A",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C96FD1",
+      "dark": "#89289F",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C96FD1",
+      "dark": "#89289F",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#B449C2",
+      "dark": "#A033B3",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#B449C2",
+      "dark": "#A033B3",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#9E28B3",
+      "dark": "#B553C2",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#9E28B3",
+      "dark": "#B553C2",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#871E9E",
+      "dark": "#CA78D1",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#871E9E",
+      "dark": "#CA78D1",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#71168A",
+      "dark": "#DDA0E1",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#71168A",
+      "dark": "#DDA0E1",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#5C0F75",
+      "dark": "#EFCEF0",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#5C0F75",
+      "dark": "#EFCEF0",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#490A61",
+      "dark": "#F7EBF7",
+      "comment": null
+    },
+    {
+      "key": "SemiPurple9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#490A61",
+      "dark": "#F7EBF7",
+      "comment": null
+    },
+    {
+      "key": "SemiRed0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEF2ED",
+      "dark": "#6C090B",
+      "comment": null
+    },
+    {
+      "key": "SemiRed0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FEF2ED",
+      "dark": "#6C090B",
+      "comment": null
+    },
+    {
+      "key": "SemiRed1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEDDD2",
+      "dark": "#901110",
+      "comment": null
+    },
+    {
+      "key": "SemiRed1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FEDDD2",
+      "dark": "#901110",
+      "comment": null
+    },
+    {
+      "key": "SemiRed2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDB7A5",
+      "dark": "#B42019",
+      "comment": null
+    },
+    {
+      "key": "SemiRed2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FDB7A5",
+      "dark": "#B42019",
+      "comment": null
+    },
+    {
+      "key": "SemiRed3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FB9078",
+      "dark": "#D73324",
+      "comment": null
+    },
+    {
+      "key": "SemiRed3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FB9078",
+      "dark": "#D73324",
+      "comment": null
+    },
+    {
+      "key": "SemiRed4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FA664C",
+      "dark": "#FB4932",
+      "comment": null
+    },
+    {
+      "key": "SemiRed4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FA664C",
+      "dark": "#FB4932",
+      "comment": null
+    },
+    {
+      "key": "SemiRed5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F93920",
+      "dark": "#FC725A",
+      "comment": null
+    },
+    {
+      "key": "SemiRed5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F93920",
+      "dark": "#FC725A",
+      "comment": null
+    },
+    {
+      "key": "SemiRed6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D52515",
+      "dark": "#FD9983",
+      "comment": null
+    },
+    {
+      "key": "SemiRed6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D52515",
+      "dark": "#FD9983",
+      "comment": null
+    },
+    {
+      "key": "SemiRed7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#B2140C",
+      "dark": "#FDBEAC",
+      "comment": null
+    },
+    {
+      "key": "SemiRed7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#B2140C",
+      "dark": "#FDBEAC",
+      "comment": null
+    },
+    {
+      "key": "SemiRed8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#8E0805",
+      "dark": "#FEE0D5",
+      "comment": null
+    },
+    {
+      "key": "SemiRed8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#8E0805",
+      "dark": "#FEE0D5",
+      "comment": null
+    },
+    {
+      "key": "SemiRed9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6A0103",
+      "dark": "#FFF3EF",
+      "comment": null
+    },
+    {
+      "key": "SemiRed9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#6A0103",
+      "dark": "#FFF3EF",
+      "comment": null
+    },
+    {
+      "key": "SemiSpacingBase",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "16",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 默认"
+    },
+    {
+      "key": "SemiSpacingBaseLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "20",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 偏宽松"
+    },
+    {
+      "key": "SemiSpacingBaseTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 偏紧凑"
+    },
+    {
+      "key": "SemiSpacingExtraLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "32",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 超宽松"
+    },
+    {
+      "key": "SemiSpacingExtraTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "4",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 超紧凑"
+    },
+    {
+      "key": "SemiSpacingLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "24",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 宽松"
+    },
+    {
+      "key": "SemiSpacingNone",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "0",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 零"
+    },
+    {
+      "key": "SemiSpacingSuperLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "40",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 极宽松"
+    },
+    {
+      "key": "SemiSpacingSuperTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "2",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 极紧凑"
+    },
+    {
+      "key": "SemiSpacingTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "8",
+      "light": null,
+      "dark": null,
+      "comment": "间距 - 紧凑"
+    },
+    {
+      "key": "SemiTeal0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E4F7F4",
+      "dark": "#023C39",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E4F7F4",
+      "dark": "#023C39",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C0F0E8",
+      "dark": "#045A55",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C0F0E8",
+      "dark": "#045A55",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#87E0D3",
+      "dark": "#07776F",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#87E0D3",
+      "dark": "#07776F",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#54D1C1",
+      "dark": "#0A9588",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#54D1C1",
+      "dark": "#0A9588",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#27C2B0",
+      "dark": "#0EB3A1",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#27C2B0",
+      "dark": "#0EB3A1",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#00B3A1",
+      "dark": "#33C2B0",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#00B3A1",
+      "dark": "#33C2B0",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#009589",
+      "dark": "#5ED1C1",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#009589",
+      "dark": "#5ED1C1",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#00776F",
+      "dark": "#8EE1D3",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#00776F",
+      "dark": "#8EE1D3",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#005955",
+      "dark": "#C4F0E8",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#005955",
+      "dark": "#C4F0E8",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#003C3A",
+      "dark": "#E6F7F4",
+      "comment": null
+    },
+    {
+      "key": "SemiTeal9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#003C3A",
+      "dark": "#E6F7F4",
+      "comment": null
+    },
+    {
+      "key": "SemiThicknessBase",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "16",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 默认"
+    },
+    {
+      "key": "SemiThicknessBaseLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "20",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 偏宽松"
+    },
+    {
+      "key": "SemiThicknessBaseTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 偏紧凑"
+    },
+    {
+      "key": "SemiThicknessExtraLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "32",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 超宽松"
+    },
+    {
+      "key": "SemiThicknessExtraTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "4",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 超紧凑"
+    },
+    {
+      "key": "SemiThicknessLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "24",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 宽松"
+    },
+    {
+      "key": "SemiThicknessNone",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "0",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 零"
+    },
+    {
+      "key": "SemiThicknessSuperLoose",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "40",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 极宽松"
+    },
+    {
+      "key": "SemiThicknessSuperTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "2",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 极紧凑"
+    },
+    {
+      "key": "SemiThicknessTight",
+      "member": null,
+      "category": "Variables",
+      "type": "Thickness",
+      "value": "8",
+      "light": null,
+      "dark": null,
+      "comment": "宽度 - 紧凑"
+    },
+    {
+      "key": "SemiViolet0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#F3EDF9",
+      "dark": "#401B77",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#F3EDF9",
+      "dark": "#401B77",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#E2D1F4",
+      "dark": "#4C248C",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#E2D1F4",
+      "dark": "#4C248C",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#C4A7E9",
+      "dark": "#582EA0",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#C4A7E9",
+      "dark": "#582EA0",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A67FDD",
+      "dark": "#6439B5",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A67FDD",
+      "dark": "#6439B5",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#885BD2",
+      "dark": "#7246C9",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#885BD2",
+      "dark": "#7246C9",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#6A3AC7",
+      "dark": "#8865D4",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#6A3AC7",
+      "dark": "#8865D4",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#572FB3",
+      "dark": "#A288DF",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#572FB3",
+      "dark": "#A288DF",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#46259E",
+      "dark": "#BEADE9",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#46259E",
+      "dark": "#BEADE9",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#361C8A",
+      "dark": "#DDD4F4",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#361C8A",
+      "dark": "#DDD4F4",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#281475",
+      "dark": "#F1EEFA",
+      "comment": null
+    },
+    {
+      "key": "SemiViolet9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#281475",
+      "dark": "#F1EEFA",
+      "comment": null
+    },
+    {
+      "key": "SemiWhite",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "White",
+      "dark": "White",
+      "comment": null
+    },
+    {
+      "key": "SemiWhiteColor",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "White",
+      "dark": "White",
+      "comment": null
+    },
+    {
+      "key": "SemiWidthIconExtraLarge",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "24",
+      "light": null,
+      "dark": null,
+      "comment": "图标尺寸 - 超大"
+    },
+    {
+      "key": "SemiWidthIconExtraSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "8",
+      "light": null,
+      "dark": null,
+      "comment": "图标尺寸 - 超小"
+    },
+    {
+      "key": "SemiWidthIconLarge",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "20",
+      "light": null,
+      "dark": null,
+      "comment": "图标尺寸 - 大"
+    },
+    {
+      "key": "SemiWidthIconMedium",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "16",
+      "light": null,
+      "dark": null,
+      "comment": "图标尺寸 - 中"
+    },
+    {
+      "key": "SemiWidthIconSmall",
+      "member": null,
+      "category": "Variables",
+      "type": "Double",
+      "value": "12",
+      "light": null,
+      "dark": null,
+      "comment": "图标尺寸 - 小"
+    },
+    {
+      "key": "SemiYellow0",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FFFDEA",
+      "dark": "#544903",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow0Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FFFDEA",
+      "dark": "#544903",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow1",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FEFBCB",
+      "dark": "#7E6C06",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow1Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FEFBCB",
+      "dark": "#7E6C06",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow2",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FDF398",
+      "dark": "#A88E0A",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow2Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FDF398",
+      "dark": "#A88E0A",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow3",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FCE865",
+      "dark": "#D2AF0F",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow3Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FCE865",
+      "dark": "#D2AF0F",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow4",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FBDA32",
+      "dark": "#FCCE14",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow4Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FBDA32",
+      "dark": "#FCCE14",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow5",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#FAC800",
+      "dark": "#FDDE43",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow5Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#FAC800",
+      "dark": "#FDDE43",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow6",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#D0AA00",
+      "dark": "#FDEB71",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow6Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#D0AA00",
+      "dark": "#FDEB71",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow7",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#A78B00",
+      "dark": "#FEF5A0",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow7Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#A78B00",
+      "dark": "#FEF5A0",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow8",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#7D6A00",
+      "dark": "#FEFBD0",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow8Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#7D6A00",
+      "dark": "#FEFBD0",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow9",
+      "member": null,
+      "category": "Palette",
+      "type": "Brush",
+      "value": null,
+      "light": "#534800",
+      "dark": "#FFFEEC",
+      "comment": null
+    },
+    {
+      "key": "SemiYellow9Color",
+      "member": null,
+      "category": "Palette",
+      "type": "Color",
+      "value": null,
+      "light": "#534800",
+      "dark": "#FFFEEC",
+      "comment": null
+    },
+    {
+      "key": "WindowColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#202020",
+        "Desert": "#FFFAEF",
+        "Dusk": "#2D3236",
+        "NightSky": "#000000"
+      }
+    },
+    {
+      "key": "WindowTextColor",
+      "member": null,
+      "category": "HighContrast",
+      "type": "Color",
+      "value": null,
+      "light": null,
+      "dark": null,
+      "comment": null,
+      "presets": {
+        "Aquatic": "#FFFFFF",
+        "Desert": "#3D3D3D",
+        "Dusk": "#FFFFFF",
+        "NightSky": "#FFFFFF"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "name": "AdornerLayer",
+      "defaultThemeFor": "AdornerLayer",
+      "classes": [
+        "Solid"
+      ],
+      "variants": [
+        "AdornerLayerBorder"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "AdornerLayerBorderBrush",
+        "AdornerLayerSolidBorderBrush"
+      ]
+    },
+    {
+      "name": "AutoCompleteBox",
+      "defaultThemeFor": "AutoCompleteBox",
+      "classes": [
+        "Bordered",
+        "Large",
+        "Small"
+      ],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "AutoCompleteBoxPopupBackground",
+        "AutoCompleteBoxPopupBorderBrush",
+        "AutoCompleteBoxPopupBoxShadow"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/AutoCompleteBox.md"
+    },
+    {
+      "name": "Border",
+      "defaultThemeFor": null,
+      "classes": [
+        "Hover",
+        "Shadow"
+      ],
+      "variants": [
+        "CardBorder"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "BorderCardBackground",
+        "BorderCardBorderBrush",
+        "BorderCardBoxShadow"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Border.md"
+    },
+    {
+      "name": "Button",
+      "defaultThemeFor": "Button",
+      "classes": [
+        "Colorful",
+        "Danger",
+        "Large",
+        "Primary",
+        "Secondary",
+        "Small",
+        "Success",
+        "Tertiary",
+        "Warning"
+      ],
+      "variants": [
+        "BorderlessButton",
+        "OutlineButton",
+        "SolidButton"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "ButtonBorderlessBackground",
+        "ButtonBorderlessBorderBrush",
+        "ButtonDefaultBackground",
+        "ButtonDefaultBorderBrush",
+        "ButtonDefaultColorfulPrimaryForeground",
+        "ButtonDefaultDangerForeground",
+        "ButtonDefaultDisabledBorderBrush",
+        "ButtonDefaultDisabledForeground",
+        "ButtonDefaultPointeroverBackground",
+        "ButtonDefaultPointeroverBorderBrush",
+        "ButtonDefaultPressedBackground",
+        "ButtonDefaultPressedBorderBrush",
+        "ButtonDefaultPrimaryForeground",
+        "ButtonDefaultSecondaryForeground",
+        "ButtonDefaultSuccessForeground",
+        "ButtonDefaultTertiaryForeground",
+        "ButtonDefaultWarningForeground",
+        "ButtonInputInnerForeground",
+        "ButtonInputInnerPointeroverForeground",
+        "ButtonInputInnerPressedForeground",
+        "ButtonOutlineBackground",
+        "ButtonOutlineBorderBrush",
+        "ButtonOutlineColorfulPrimaryBorderBrush",
+        "ButtonOutlineColorfulPrimaryForeground",
+        "ButtonOutlineDangerBorderBrush",
+        "ButtonOutlinePointeroverBackground",
+        "ButtonOutlinePressedBackground",
+        "ButtonOutlineSuccessBorderBrush",
+        "ButtonOutlineWarningBorderBrush",
+        "ButtonSolidColorfulPrimaryBackground",
+        "ButtonSolidColorfulPrimaryPointeroverBackground",
+        "ButtonSolidColorfulPrimaryPressedBackground",
+        "ButtonSolidColorfulTertiaryBackground",
+        "ButtonSolidColorfulTertiaryForeground",
+        "ButtonSolidColorfulTertiaryPointeroverBackground",
+        "ButtonSolidColorfulTertiaryPressedBackground",
+        "ButtonSolidDangerBackground",
+        "ButtonSolidDangerBorderBrush",
+        "ButtonSolidDangerPointeroverBackground",
+        "ButtonSolidDangerPointeroverBorderBrush",
+        "ButtonSolidDangerPressedBackground",
+        "ButtonSolidDangerPressedBorderBrush",
+        "ButtonSolidDisabledBackground",
+        "ButtonSolidDisabledBorderBrush",
+        "ButtonSolidDisabledForeground",
+        "ButtonSolidForeground",
+        "ButtonSolidPrimaryBackground",
+        "ButtonSolidPrimaryBorderBrush",
+        "ButtonSolidPrimaryPointeroverBackground",
+        "ButtonSolidPrimaryPointeroverBorderBrush",
+        "ButtonSolidPrimaryPressedBackground",
+        "ButtonSolidPrimaryPressedBorderBrush",
+        "ButtonSolidPrimaryPressedForeground",
+        "ButtonSolidSecondaryBackground",
+        "ButtonSolidSecondaryBorderBrush",
+        "ButtonSolidSecondaryPointeroverBackground",
+        "ButtonSolidSecondaryPointeroverBorderBrush",
+        "ButtonSolidSecondaryPressedBackground",
+        "ButtonSolidSecondaryPressedBorderBrush",
+        "ButtonSolidSuccessBackground",
+        "ButtonSolidSuccessBorderBrush",
+        "ButtonSolidSuccessPointeroverBackground",
+        "ButtonSolidSuccessPointeroverBorderBrush",
+        "ButtonSolidSuccessPressedBackground",
+        "ButtonSolidSuccessPressedBorderBrush",
+        "ButtonSolidTertiaryBackground",
+        "ButtonSolidTertiaryBorderBrush",
+        "ButtonSolidTertiaryPointeroverBackground",
+        "ButtonSolidTertiaryPointeroverBorderBrush",
+        "ButtonSolidTertiaryPressedBackground",
+        "ButtonSolidTertiaryPressedBorderBrush",
+        "ButtonSolidWarningBackground",
+        "ButtonSolidWarningBorderBrush",
+        "ButtonSolidWarningPointeroverBackground",
+        "ButtonSolidWarningPointeroverBorderBrush",
+        "ButtonSolidWarningPressedBackground",
+        "ButtonSolidWarningPressedBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Button.md"
+    },
+    {
+      "name": "ButtonSpinner",
+      "defaultThemeFor": "ButtonSpinner",
+      "classes": [],
+      "variants": [
+        "ButtonSpinnerRepeatButton",
+        "SplitButtonSpinner"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "left",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "ButtonSpinnerRepeatButtonBackground",
+        "ButtonSpinnerRepeatButtonBorderBrush",
+        "ButtonSpinnerRepeatButtonDisabledBackground",
+        "ButtonSpinnerRepeatButtonForeground",
+        "ButtonSpinnerRepeatButtonPointeroverBackground",
+        "ButtonSpinnerRepeatButtonPointeroverBorderBrush",
+        "ButtonSpinnerRepeatButtonPressedBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ButtonSpinner.md"
+    },
+    {
+      "name": "Calendar",
+      "defaultThemeFor": "Calendar",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [
+        "blackout",
+        "disabled",
+        "inactive",
+        "pointerover",
+        "pressed",
+        "selected",
+        "today"
+      ],
+      "overrideKeys": [
+        "CalendarBackground",
+        "CalendarBorderBrush",
+        "CalendarForeground",
+        "CalendarItemCalendarButtonBackground",
+        "CalendarItemCalendarButtonBlackoutForeground",
+        "CalendarItemCalendarButtonBorderBrush",
+        "CalendarItemCalendarButtonDisabledForeground",
+        "CalendarItemCalendarButtonForeground",
+        "CalendarItemCalendarButtonInactiveForeground",
+        "CalendarItemCalendarButtonPointeroverBackground",
+        "CalendarItemCalendarButtonPressedBackground",
+        "CalendarItemCalendarButtonSelectedBackground",
+        "CalendarItemCalendarButtonSelectedForeground",
+        "CalendarItemCalendarDayButtonBackground",
+        "CalendarItemCalendarDayButtonBlackoutForeground",
+        "CalendarItemCalendarDayButtonBorderBrush",
+        "CalendarItemCalendarDayButtonDisabledForeground",
+        "CalendarItemCalendarDayButtonForeground",
+        "CalendarItemCalendarDayButtonInactiveForeground",
+        "CalendarItemCalendarDayButtonPointeroverBackground",
+        "CalendarItemCalendarDayButtonPressedBackground",
+        "CalendarItemCalendarDayButtonSelectedBackground",
+        "CalendarItemCalendarDayButtonSelectedForeground",
+        "CalendarItemCalendarDayButtonTodayBackground",
+        "CalendarItemCalendarDayButtonTodayForeground",
+        "CalendarItemIconForeground",
+        "CalendarItemWeekDayNameForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Calendar.md"
+    },
+    {
+      "name": "CalendarDatePicker",
+      "defaultThemeFor": "CalendarDatePicker",
+      "classes": [
+        "Bordered",
+        "clearButton",
+        "Large",
+        "Small"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "disabled",
+        "error",
+        "focus-within",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "CalendarDatePickerBackground",
+        "CalendarDatePickerBorderBrush",
+        "CalendarDatePickerBorderedDefaultBackground",
+        "CalendarDatePickerBorderedDefaultBorderBrush",
+        "CalendarDatePickerBorderedPointeroverBackground",
+        "CalendarDatePickerBorderedPointeroverBorderBrush",
+        "CalendarDatePickerDisabledBackground",
+        "CalendarDatePickerDisabledIconForeground",
+        "CalendarDatePickerFocusBorderBrush",
+        "CalendarDatePickerForeground",
+        "CalendarDatePickerIconForeground",
+        "CalendarDatePickerIconPointeroverForeground",
+        "CalendarDatePickerPointeroverBackground",
+        "CalendarDatePickerPointeroverBorderBrush",
+        "CalendarDatePickerPopupBoxShadows"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/CalendarDatePicker.md"
+    },
+    {
+      "name": "Carousel",
+      "defaultThemeFor": "Carousel",
+      "classes": [
+        "Center",
+        "Columnar",
+        "Left",
+        "Line",
+        "Right"
+      ],
+      "variants": [
+        "CarouselButton",
+        "CarouselIndicatorColumnarListBoxItem",
+        "CarouselIndicatorDotListBoxItem",
+        "CarouselIndicatorLineListBoxItem",
+        "FullCarousel"
+      ],
+      "pseudoClasses": [
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "CarouselButtonForeground",
+        "CarouselButtonPointeroverForeground",
+        "CarouselIndicatorForeground",
+        "CarouselIndicatorPointeroverForeground",
+        "CarouselIndicatorPressedForeground",
+        "CarouselIndicatorSelectedForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Carousel.md"
+    },
+    {
+      "name": "CarouselPage",
+      "defaultThemeFor": "CarouselPage",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/CarouselPage.md"
+    },
+    {
+      "name": "CheckBox",
+      "defaultThemeFor": "CheckBox",
+      "classes": [],
+      "variants": [
+        "CardCheckBox",
+        "PureCardCheckBox",
+        "SimpleCheckBox"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "indeterminate",
+        "pointerover",
+        "pressed",
+        "unchecked"
+      ],
+      "overrideKeys": [
+        "CheckBoxCardCheckedBackground",
+        "CheckBoxCardCheckedBorderBrush",
+        "CheckBoxCardCheckedDisabledBorderBrush",
+        "CheckBoxCardCheckedPointeroverBorderBrush",
+        "CheckBoxCardCheckedPressedBorderBrush",
+        "CheckBoxCardPointeroverBackground",
+        "CheckBoxCardPressedBackground",
+        "CheckBoxCheckedDefaultBackground",
+        "CheckBoxCheckedDefaultBorderBrush",
+        "CheckBoxCheckedDisabledBackground",
+        "CheckBoxCheckedDisabledBorderBrush",
+        "CheckBoxCheckedPointeroverBackground",
+        "CheckBoxCheckedPointeroverBorderBrush",
+        "CheckBoxCheckedPressedBackground",
+        "CheckBoxCheckedPressedBorderBrush",
+        "CheckBoxDefaultBackground",
+        "CheckBoxDefaultBorderBrush",
+        "CheckBoxDefaultDisabledBackground",
+        "CheckBoxDefaultDisabledBorderBrush",
+        "CheckBoxDisabledForeground",
+        "CheckBoxForeground",
+        "CheckBoxGlyphFill",
+        "CheckBoxPointeroverBackground",
+        "CheckBoxPointeroverBorderBrush",
+        "CheckBoxPressedBackground",
+        "CheckBoxPressedBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/CheckBox.md"
+    },
+    {
+      "name": "ComboBox",
+      "defaultThemeFor": "ComboBox",
+      "classes": [
+        "Bordered",
+        "clearButton",
+        "Large",
+        "Small"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "disabled",
+        "dropdownopen",
+        "error",
+        "focus",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "ComboBoxDisabledForeground",
+        "ComboBoxIconDefaultForeground",
+        "ComboBoxIconDisabledForeground",
+        "ComboBoxIconFocusForeground",
+        "ComboBoxIconPointeroverForeground",
+        "ComboBoxIconPressedForeground",
+        "ComboBoxItemBackground",
+        "ComboBoxItemDisabledBackground",
+        "ComboBoxItemFocusBackground",
+        "ComboBoxItemFocusForeground",
+        "ComboBoxItemForeground",
+        "ComboBoxItemPointeroverBackground",
+        "ComboBoxItemPointeroverForeground",
+        "ComboBoxItemPressedBackground",
+        "ComboBoxItemPressedForeground",
+        "ComboBoxItemSelectedBackground",
+        "ComboBoxItemSelectedDisabledBackground",
+        "ComboBoxItemSelectedForeground",
+        "ComboBoxItemSelectedPointeroverBackground",
+        "ComboBoxPopupBackground",
+        "ComboBoxPopupBorderBrush",
+        "ComboBoxPopupBoxShadow",
+        "ComboBoxSelectorBackground",
+        "ComboBoxSelectorBorderBrush",
+        "ComboBoxSelectorBorderedBackground",
+        "ComboBoxSelectorBorderedBorderBrush",
+        "ComboBoxSelectorBorderedFocusBackground",
+        "ComboBoxSelectorBorderedFocusBorderBrush",
+        "ComboBoxSelectorBorderedPointeroverBackground",
+        "ComboBoxSelectorBorderedPointeroverBorderBrush",
+        "ComboBoxSelectorBorderedPressedBackground",
+        "ComboBoxSelectorBorderedPressedBorderBrush",
+        "ComboBoxSelectorDisabledBackground",
+        "ComboBoxSelectorDisabledBorderBrush",
+        "ComboBoxSelectorFocusBackground",
+        "ComboBoxSelectorFocusBorderBrush",
+        "ComboBoxSelectorPlaceHolderForeground",
+        "ComboBoxSelectorPointeroverBackground",
+        "ComboBoxSelectorPointeroverBorderBrush",
+        "ComboBoxSelectorPressedBackground",
+        "ComboBoxSelectorPressedBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ComboBox.md"
+    },
+    {
+      "name": "CommandBar",
+      "defaultThemeFor": "CommandBarButton",
+      "classes": [],
+      "variants": [
+        "CommandBarButtonBaseTheme"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "CommandBarBackground",
+        "CommandBarBorderBrush",
+        "CommandBarButtonBackground",
+        "CommandBarButtonDisabledForeground",
+        "CommandBarButtonForeground",
+        "CommandBarButtonPointeroverBackground",
+        "CommandBarButtonPressedBackground",
+        "CommandBarForeground",
+        "CommandBarOverflowBackground",
+        "CommandBarOverflowBorderBrush",
+        "CommandBarOverflowBoxShadow",
+        "CommandBarSeparatorBackground",
+        "CommandBarToggleButtonCheckedBackground",
+        "CommandBarToggleButtonCheckedDisabledForeground",
+        "CommandBarToggleButtonCheckedForeground",
+        "CommandBarToggleButtonCheckedPointeroverBackground",
+        "CommandBarToggleButtonCheckedPressedBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/CommandBar.md"
+    },
+    {
+      "name": "ContentPage",
+      "defaultThemeFor": "ContentPage",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "ContentPageBackground",
+        "ContentPageForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ContentPage.md"
+    },
+    {
+      "name": "ContextMenu",
+      "defaultThemeFor": "ContextMenu",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "DataValidationErrors",
+      "defaultThemeFor": "DataValidationErrors",
+      "classes": [],
+      "variants": [
+        "SilentDataValidationErrors",
+        "TooltipDataValidationErrors"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "DataValidationErrorsBackground",
+        "DataValidationErrorsBorderBrush",
+        "DataValidationErrorsForeground",
+        "DataValidationErrorsPointerOverBackground",
+        "DataValidationErrorsPointerOverBorderBrush",
+        "DataValidationErrorsPointeroverBackground",
+        "DataValidationErrorsPointeroverBorderBrush",
+        "DataValidationErrorsPressedBackground",
+        "DataValidationErrorsPressedBorderBrush",
+        "DataValidationErrorsSelectedBackground",
+        "DataValidationErrorsSelectedBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/DataValidationErrors.md"
+    },
+    {
+      "name": "DatePicker",
+      "defaultThemeFor": "DatePickerPresenter",
+      "classes": [
+        "clearButton",
+        "Large",
+        "Small"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "disabled",
+        "hasnodate",
+        "not",
+        "pointerover"
+      ],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/DatePicker.md"
+    },
+    {
+      "name": "DateTimePickerShared",
+      "defaultThemeFor": null,
+      "classes": [],
+      "variants": [
+        "DateTimePickerButton",
+        "DateTimePickerDownButton",
+        "DateTimePickerFlyoutButton",
+        "DateTimePickerItem",
+        "DateTimePickerUpButton"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "error",
+        "focus",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "DateTimePickerButtonBackground",
+        "DateTimePickerButtonBorderBrush",
+        "DateTimePickerButtonDisabledBackground",
+        "DateTimePickerButtonDisabledBorderBrush",
+        "DateTimePickerButtonDisabledIconForeground",
+        "DateTimePickerButtonForeground",
+        "DateTimePickerButtonPointeroverBackground",
+        "DateTimePickerButtonPointeroverBorderBrush",
+        "DateTimePickerEmptyForeground",
+        "DateTimePickerFlyoutBoxShadow",
+        "DateTimePickerFlyoutButtonBackground",
+        "DateTimePickerFlyoutButtonForeground",
+        "DateTimePickerFlyoutButtonPointeroverBackground",
+        "DateTimePickerFlyoutButtonPointeroverForeground",
+        "DateTimePickerFlyoutButtonPressedBackground",
+        "DateTimePickerFlyoutButtonPressedForeground",
+        "DateTimePickerIconForeground",
+        "DateTimePickerListItemBackground",
+        "DateTimePickerPopupBackground",
+        "DateTimePickerPopupBorderBrush",
+        "DateTimePickerSeparatorBackground"
+      ]
+    },
+    {
+      "name": "DrawerPage",
+      "defaultThemeFor": "DrawerPage",
+      "classes": [],
+      "variants": [
+        "DrawerPageToggleButton"
+      ],
+      "pseudoClasses": [
+        "detail-is-navpage",
+        "placement-bottom",
+        "placement-right",
+        "placement-top"
+      ],
+      "overrideKeys": [
+        "DrawerPageBackground",
+        "DrawerPageForeground",
+        "DrawerPagePaneButtonForeground",
+        "DrawerPageTopBarBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/DrawerPage.md"
+    },
+    {
+      "name": "DropDownButton",
+      "defaultThemeFor": "DropDownButton",
+      "classes": [
+        "Colorful",
+        "Danger",
+        "Large",
+        "Primary",
+        "Secondary",
+        "Small",
+        "Success",
+        "Tertiary",
+        "Warning"
+      ],
+      "variants": [
+        "BorderlessDropDownButton",
+        "OutlineDropDownButton",
+        "SolidDropDownButton"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": []
+    },
+    {
+      "name": "EmbeddableControlRoot",
+      "defaultThemeFor": "EmbeddableControlRoot",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "Expander",
+      "defaultThemeFor": "Expander",
+      "classes": [],
+      "variants": [
+        "CardExpander",
+        "CardSplitExpander",
+        "ExpanderHeaderToggleButtonTheme",
+        "SplitExpander"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "down",
+        "expanded",
+        "left",
+        "pointerover",
+        "pressed",
+        "right",
+        "up"
+      ],
+      "overrideKeys": [
+        "ExpanderContentForeground",
+        "ExpanderHeaderDefaultBackground",
+        "ExpanderHeaderDisabledForeground",
+        "ExpanderHeaderForeground",
+        "ExpanderHeaderPointeroverBackground",
+        "ExpanderHeaderPressedBackground",
+        "ExpanderIconForeground",
+        "ExpanderSeparatorBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Expander.md"
+    },
+    {
+      "name": "FlyoutPresenter",
+      "defaultThemeFor": "FlyoutPresenter",
+      "classes": [],
+      "variants": [
+        "LightFlyout"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "GlyphButton",
+      "defaultThemeFor": null,
+      "classes": [
+        "Large",
+        "Small"
+      ],
+      "variants": [
+        "GlyphButton",
+        "GlyphToggleSwitch",
+        "SquareButton",
+        "SquareToggleSwitch"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "GlyphButtonDisabledForeground",
+        "GlyphButtonForeground",
+        "GlyphButtonPointeroverForeground",
+        "GlyphButtonPressedForeground",
+        "SquareButtonForeground"
+      ]
+    },
+    {
+      "name": "GridSplitter",
+      "defaultThemeFor": "GridSplitter",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "GridSplitterBackground",
+        "GridSplitterPreviewBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/GridSplitter.md"
+    },
+    {
+      "name": "GroupBox",
+      "defaultThemeFor": "GroupBox",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "HeaderedContentControl",
+      "defaultThemeFor": "HeaderedContentControl",
+      "classes": [],
+      "variants": [
+        "GroupBox"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "HeaderedContentControlBackground",
+        "HeaderedContentControlBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/HeaderedContentControl.md"
+    },
+    {
+      "name": "HyperlinkButton",
+      "defaultThemeFor": null,
+      "classes": [
+        "OnlyIcon",
+        "Underline",
+        "WithIcon"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed",
+        "visited"
+      ],
+      "overrideKeys": [
+        "HyperlinkButtonDisabledForeground",
+        "HyperlinkButtonForeground",
+        "HyperlinkButtonPointeroverForeground",
+        "HyperlinkButtonPressedForeground",
+        "HyperlinkButtonVisitedForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/HyperlinkButton.md"
+    },
+    {
+      "name": "ItemsControl",
+      "defaultThemeFor": "ItemsControl",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "Label",
+      "defaultThemeFor": "Label",
+      "classes": [
+        "Amber",
+        "Blue",
+        "Circle",
+        "Code",
+        "Colorful",
+        "Cyan",
+        "Danger",
+        "Ghost",
+        "Gradient",
+        "Green",
+        "Grey",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "Indigo",
+        "Large",
+        "LightBlue",
+        "LightGreen",
+        "Lime",
+        "Mark",
+        "Orange",
+        "Pink",
+        "Purple",
+        "Quaternary",
+        "Red",
+        "Secondary",
+        "Solid",
+        "Success",
+        "Teal",
+        "Tertiary",
+        "Violet",
+        "Warning",
+        "White",
+        "Yellow"
+      ],
+      "variants": [
+        "TagLabel",
+        "TitleLabel"
+      ],
+      "pseudoClasses": [
+        "disabled"
+      ],
+      "overrideKeys": [
+        "LabelTagColorfulGhostBackground",
+        "LabelTagColorfulGhostBorderBrush",
+        "LabelTagColorfulGhostForeground",
+        "LabelTagColorfulGradientGhostBackground",
+        "LabelTagColorfulGradientGhostBorderBrush",
+        "LabelTagColorfulGradientGhostForeground",
+        "LabelTagColorfulGradientLightBackground",
+        "LabelTagColorfulGradientLightForeground",
+        "LabelTagColorfulGradientSolidBackground",
+        "LabelTagColorfulGradientSolidForeground",
+        "LabelTagColorfulLightBackground",
+        "LabelTagColorfulLightForeground",
+        "LabelTagColorfulSolidBackground",
+        "LabelTagColorfulSolidForeground",
+        "LabelTagGhostAmberBorderBrush",
+        "LabelTagGhostAmberForeground",
+        "LabelTagGhostBlueBorderBrush",
+        "LabelTagGhostBlueForeground",
+        "LabelTagGhostCyanBorderBrush",
+        "LabelTagGhostCyanForeground",
+        "LabelTagGhostGreenBorderBrush",
+        "LabelTagGhostGreenForeground",
+        "LabelTagGhostGreyBorderBrush",
+        "LabelTagGhostGreyForeground",
+        "LabelTagGhostIndigoBorderBrush",
+        "LabelTagGhostIndigoForeground",
+        "LabelTagGhostLightBlueBorderBrush",
+        "LabelTagGhostLightBlueForeground",
+        "LabelTagGhostLightGreenBorderBrush",
+        "LabelTagGhostLightGreenForeground",
+        "LabelTagGhostLimeBorderBrush",
+        "LabelTagGhostLimeForeground",
+        "LabelTagGhostOrangeBorderBrush",
+        "LabelTagGhostOrangeForeground",
+        "LabelTagGhostPinkBorderBrush",
+        "LabelTagGhostPinkForeground",
+        "LabelTagGhostPurpleBorderBrush",
+        "LabelTagGhostPurpleForeground",
+        "LabelTagGhostRedBorderBrush",
+        "LabelTagGhostRedForeground",
+        "LabelTagGhostTealBorderBrush",
+        "LabelTagGhostTealForeground",
+        "LabelTagGhostVioletBorderBrush",
+        "LabelTagGhostVioletForeground",
+        "LabelTagGhostYellowBorderBrush",
+        "LabelTagGhostYellowForeground",
+        "LabelTagLightAmberBackground",
+        "LabelTagLightAmberForeground",
+        "LabelTagLightBlueBackground",
+        "LabelTagLightBlueForeground",
+        "LabelTagLightCyanBackground",
+        "LabelTagLightCyanForeground",
+        "LabelTagLightGreenBackground",
+        "LabelTagLightGreenForeground",
+        "LabelTagLightGreyBackground",
+        "LabelTagLightGreyForeground",
+        "LabelTagLightIndigoBackground",
+        "LabelTagLightIndigoForeground",
+        "LabelTagLightLightBlueBackground",
+        "LabelTagLightLightBlueForeground",
+        "LabelTagLightLightGreenBackground",
+        "LabelTagLightLightGreenForeground",
+        "LabelTagLightLimeBackground",
+        "LabelTagLightLimeForeground",
+        "LabelTagLightOrangeBackground",
+        "LabelTagLightOrangeForeground",
+        "LabelTagLightPinkBackground",
+        "LabelTagLightPinkForeground",
+        "LabelTagLightPurpleBackground",
+        "LabelTagLightPurpleForeground",
+        "LabelTagLightRedBackground",
+        "LabelTagLightRedForeground",
+        "LabelTagLightTealBackground",
+        "LabelTagLightTealForeground",
+        "LabelTagLightVioletBackground",
+        "LabelTagLightVioletForeground",
+        "LabelTagLightYellowBackground",
+        "LabelTagLightYellowForeground",
+        "LabelTagSolidAmberBackground",
+        "LabelTagSolidBlueBackground",
+        "LabelTagSolidCyanBackground",
+        "LabelTagSolidForeground",
+        "LabelTagSolidGreenBackground",
+        "LabelTagSolidGreyBackground",
+        "LabelTagSolidIndigoBackground",
+        "LabelTagSolidLightBlueBackground",
+        "LabelTagSolidLightGreenBackground",
+        "LabelTagSolidLimeBackground",
+        "LabelTagSolidOrangeBackground",
+        "LabelTagSolidPinkBackground",
+        "LabelTagSolidPurpleBackground",
+        "LabelTagSolidRedBackground",
+        "LabelTagSolidTealBackground",
+        "LabelTagSolidVioletBackground",
+        "LabelTagSolidWhiteBackground",
+        "LabelTagSolidWhiteBorderBrush",
+        "LabelTagSolidWhiteForeground",
+        "LabelTagSolidYellowBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Label.md"
+    },
+    {
+      "name": "ListBox",
+      "defaultThemeFor": "ListBox",
+      "classes": [
+        "Large",
+        "Small"
+      ],
+      "variants": [
+        "ButtonRadioGroupListBox",
+        "ButtonRadioGroupListBoxItem",
+        "CardCheckGroupListBox",
+        "CardCheckGroupListBoxItem",
+        "CardRadioGroupListBox",
+        "CardRadioGroupListBoxItem",
+        "CheckGroupListBox",
+        "CheckGroupListBoxItem",
+        "PureCardRadioGroupListBox",
+        "PureCardRadioGroupListBoxItem",
+        "RadioGroupListBox",
+        "RadioGroupListBoxItem"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "ListBoxItemDefaultBackground",
+        "ListBoxItemDisabledBackground",
+        "ListBoxItemDisabledForeground",
+        "ListBoxItemPointeroverBackground",
+        "ListBoxItemPointeroverForeground",
+        "ListBoxItemPressedBackground",
+        "ListBoxItemPressedForeground",
+        "ListBoxItemSelectedBackground",
+        "ListBoxItemSelectedDisabledBackground",
+        "ListBoxItemSelectedForeground",
+        "ListBoxItemSelectedPointeroverBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ListBox.md"
+    },
+    {
+      "name": "ManagedFileChooser",
+      "defaultThemeFor": null,
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "ManagedFileChooserIconForeground",
+        "ManagedFileChooserTextForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ManagedFileChooser.md"
+    },
+    {
+      "name": "Menu",
+      "defaultThemeFor": "Separator",
+      "classes": [],
+      "variants": [
+        "MenuScrollViewer",
+        "TopLevelMenuItem"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "empty",
+        "icon",
+        "open",
+        "pressed",
+        "selected",
+        "separator"
+      ],
+      "overrideKeys": [
+        "MenuBackground",
+        "MenuFlyoutBackground",
+        "MenuFlyoutBorderBoxShadow",
+        "MenuFlyoutBorderBrush",
+        "MenuFlyoutScrollViewerIconForeground",
+        "MenuItemBackground",
+        "MenuItemDisabledExpandIconForeground",
+        "MenuItemDisabledForeground",
+        "MenuItemDisabledInputGestureTextForeground",
+        "MenuItemExpandIconForeground",
+        "MenuItemExpandIconOpenForeground",
+        "MenuItemForeground",
+        "MenuItemInputGestureTextForeground",
+        "MenuItemPointeroverBackground",
+        "MenuItemPointeroverForeground",
+        "MenuItemPressedBackground",
+        "MenuItemSeparatorBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Menu.md"
+    },
+    {
+      "name": "MenuFlyoutPresenter",
+      "defaultThemeFor": "MenuFlyoutPresenter",
+      "classes": [],
+      "variants": [
+        "HorizontalMenuFlyoutPresenter"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "NavigationPage",
+      "defaultThemeFor": "NavigationPage",
+      "classes": [
+        "Large"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "nav-bar-compact",
+        "nav-bar-inset"
+      ],
+      "overrideKeys": [
+        "NavigationPageBarBackground",
+        "NavigationPageBarBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/NavigationPage.md"
+    },
+    {
+      "name": "NotificationCard",
+      "defaultThemeFor": "NotificationCard",
+      "classes": [
+        "Light"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "error",
+        "information",
+        "success",
+        "warning"
+      ],
+      "overrideKeys": [
+        "NotificationCardBackground",
+        "NotificationCardBorderBrush",
+        "NotificationCardBoxShadows",
+        "NotificationCardErrorIconForeground",
+        "NotificationCardInformationIconForeground",
+        "NotificationCardLightBackground",
+        "NotificationCardLightErrorBackground",
+        "NotificationCardLightErrorBorderBrush",
+        "NotificationCardLightInformationBackground",
+        "NotificationCardLightInformationBorderBrush",
+        "NotificationCardLightSuccessBackground",
+        "NotificationCardLightSuccessBorderBrush",
+        "NotificationCardLightWarningBackground",
+        "NotificationCardLightWarningBorderBrush",
+        "NotificationCardMessageForeground",
+        "NotificationCardSuccessIconForeground",
+        "NotificationCardTitleForeground",
+        "NotificationCardWarningIconForeground"
+      ]
+    },
+    {
+      "name": "NumericUpDown",
+      "defaultThemeFor": "NumericUpDown",
+      "classes": [
+        "Large",
+        "Small",
+        "Split"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "error",
+        "focus",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/NumericUpDown.md"
+    },
+    {
+      "name": "PathIcon",
+      "defaultThemeFor": "PathIcon",
+      "classes": [
+        "Active",
+        "ExtraLarge",
+        "ExtraSmall",
+        "Large",
+        "Small"
+      ],
+      "variants": [
+        "InnerPathIcon"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/PathIcon.md"
+    },
+    {
+      "name": "PipsPager",
+      "defaultThemeFor": "PipsPager",
+      "classes": [],
+      "variants": [
+        "PipsPagerButton",
+        "PipsPagerIndicatorDotListBoxItem"
+      ],
+      "pseudoClasses": [
+        "first-page",
+        "horizontal",
+        "last-page",
+        "pointerover",
+        "pressed",
+        "selected",
+        "vertical"
+      ],
+      "overrideKeys": [
+        "PipsPagerButtonForeground",
+        "PipsPagerButtonPointeroverForeground",
+        "PipsPagerIndicatorForeground",
+        "PipsPagerIndicatorPointeroverForeground",
+        "PipsPagerIndicatorPressedForeground",
+        "PipsPagerIndicatorSelectedForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/PipsPager.md"
+    },
+    {
+      "name": "Popup",
+      "defaultThemeFor": "PopupRoot",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "ProgressBar",
+      "defaultThemeFor": "ProgressBar",
+      "classes": [
+        "Danger",
+        "Left",
+        "Primary",
+        "Right",
+        "Secondary",
+        "Success",
+        "Tertiary",
+        "Warning"
+      ],
+      "variants": [
+        "ProgressRing"
+      ],
+      "pseudoClasses": [
+        "horizontal",
+        "indeterminate",
+        "vertical"
+      ],
+      "overrideKeys": [
+        "ProgressBarBackground",
+        "ProgressBarDangerForeground",
+        "ProgressBarIndicatorBrush",
+        "ProgressBarPrimaryForeground",
+        "ProgressBarRootBorderBrush",
+        "ProgressBarSecondaryForeground",
+        "ProgressBarSuccessForeground",
+        "ProgressBarTertiaryForeground",
+        "ProgressBarTextForeground",
+        "ProgressBarWarningForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ProgressBar.md"
+    },
+    {
+      "name": "RadioButton",
+      "defaultThemeFor": "RadioButton",
+      "classes": [
+        "Large",
+        "Small"
+      ],
+      "variants": [
+        "ButtonRadioButton",
+        "CardRadioButton",
+        "PureCardRadioButton",
+        "RadioButtonGroupBorder"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "pointerover",
+        "pressed",
+        "unchecked"
+      ],
+      "overrideKeys": [
+        "RadioButtonButtonCheckedBackground",
+        "RadioButtonButtonCheckedDisabledForeground",
+        "RadioButtonButtonCheckedForeground",
+        "RadioButtonButtonUncheckedDisabledForeground",
+        "RadioButtonButtonUncheckedForeground",
+        "RadioButtonButtonUncheckedPointeroverBackground",
+        "RadioButtonCardCheckDefaultBorderBrush",
+        "RadioButtonCardCheckPointeroverBorderBrush",
+        "RadioButtonCardCheckPressedBorderBrush",
+        "RadioButtonCardCheckedBackground",
+        "RadioButtonCardDefaultBackground",
+        "RadioButtonCardDefaultBorderBrush",
+        "RadioButtonCardUncheckPointeroverBackground",
+        "RadioButtonCardUncheckPressedBackground",
+        "RadioButtonCheckGlyphFill",
+        "RadioButtonCheckIconDefaultBackground",
+        "RadioButtonCheckIconDefaultBorderBrush",
+        "RadioButtonCheckIconDisabledBackground",
+        "RadioButtonCheckIconDisabledBorderBrush",
+        "RadioButtonCheckIconPointeroverBackground",
+        "RadioButtonCheckIconPointeroverBorderBrush",
+        "RadioButtonCheckIconPressedBackground",
+        "RadioButtonCheckIconPressedBorderBrush",
+        "RadioButtonDefaultBackground",
+        "RadioButtonDefaultBorderBrush",
+        "RadioButtonDisabledForeground",
+        "RadioButtonForeground",
+        "RadioButtonGroupBackground",
+        "RadioButtonUncheckIconDefaultBackground",
+        "RadioButtonUncheckIconDefaultBorderBrush",
+        "RadioButtonUncheckIconDisabledBackground",
+        "RadioButtonUncheckIconDisabledBorderBrush",
+        "RadioButtonUncheckIconPointeroverBackground",
+        "RadioButtonUncheckIconPointeroverBorderBrush",
+        "RadioButtonUncheckIconPressedBackground",
+        "RadioButtonUncheckIconPressedBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/RadioButton.md"
+    },
+    {
+      "name": "RefreshContainer",
+      "defaultThemeFor": "RefreshContainer",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "RefreshVisualizerIconBackground",
+        "RefreshVisualizerIconForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/RefreshContainer.md"
+    },
+    {
+      "name": "RepeatButton",
+      "defaultThemeFor": "RepeatButton",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "ScrollViewer",
+      "defaultThemeFor": "ScrollBar",
+      "classes": [
+        "InsetContent"
+      ],
+      "variants": [
+        "ScrollBarRepeatButton",
+        "StaticScrollViewer"
+      ],
+      "pseudoClasses": [
+        "horizontal",
+        "vertical"
+      ],
+      "overrideKeys": [
+        "ScrollBarBackground",
+        "ScrollBarButtonDefaultForeground",
+        "ScrollBarButtonPointeroverForeground",
+        "ScrollBarThumbForeground",
+        "ScrollBarThumbPointeroverForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ScrollViewer.md"
+    },
+    {
+      "name": "SelectableTextBlock",
+      "defaultThemeFor": "SelectableTextBlock",
+      "classes": [
+        "Danger",
+        "Delete",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "Mark",
+        "Quaternary",
+        "Secondary",
+        "Success",
+        "Tertiary",
+        "Underline",
+        "Warning"
+      ],
+      "variants": [
+        "TitleSelectableTextBlock"
+      ],
+      "pseudoClasses": [
+        "disabled"
+      ],
+      "overrideKeys": []
+    },
+    {
+      "name": "Slider",
+      "defaultThemeFor": "Slider",
+      "classes": [
+        "ToolTip"
+      ],
+      "variants": [
+        "SliderHorizontalRepeatButton",
+        "SliderThumbTheme",
+        "SliderVerticalRepeatButton"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "error",
+        "horizontal",
+        "pointerover",
+        "pressed",
+        "vertical"
+      ],
+      "overrideKeys": [
+        "SliderThumbBackground",
+        "SliderThumbBorderBrush",
+        "SliderThumbDisabledBorderBrush",
+        "SliderThumbPointeroverBorderBrush",
+        "SliderThumbPressedBorderBrush",
+        "SliderTickForeground",
+        "SliderTrackBackground",
+        "SliderTrackDisabledBackground",
+        "SliderTrackDisabledForeground",
+        "SliderTrackForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Slider.md"
+    },
+    {
+      "name": "SplitButton",
+      "defaultThemeFor": "SplitButton",
+      "classes": [
+        "Danger",
+        "Large",
+        "Primary",
+        "Secondary",
+        "Small",
+        "Success",
+        "Tertiary",
+        "Warning"
+      ],
+      "variants": [
+        "BorderlessSplitButton",
+        "OutlineSplitButton",
+        "SemiSplitButtonElement",
+        "SolidSplitButton"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": []
+    },
+    {
+      "name": "SplitView",
+      "defaultThemeFor": "SplitView",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [
+        "bottom",
+        "closed",
+        "compactinline",
+        "compactoverlay",
+        "inline",
+        "left",
+        "lightDismiss",
+        "open",
+        "overlay",
+        "right",
+        "top"
+      ],
+      "overrideKeys": [
+        "SplitViewMaskBrush",
+        "SplitViewPaneBackground",
+        "SplitViewSeparatorBackground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/SplitView.md"
+    },
+    {
+      "name": "TabbedPage",
+      "defaultThemeFor": "TabbedPage",
+      "classes": [],
+      "variants": [
+        "ButtonTabbedPage",
+        "CardTabbedPage"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TabbedPage.md"
+    },
+    {
+      "name": "TabControl",
+      "defaultThemeFor": "TabControl",
+      "classes": [
+        "ReverseSeparator"
+      ],
+      "variants": [
+        "BaseScrollTabControl",
+        "BaseTabControl",
+        "ButtonTabControl",
+        "CardTabControl",
+        "LineTabControl",
+        "ScrollButtonTabControl",
+        "ScrollCardTabControl",
+        "ScrollLineTabControl",
+        "ScrollTabControl"
+      ],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "TabControlSeparatorBorderBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TabControl.md"
+    },
+    {
+      "name": "TabItem",
+      "defaultThemeFor": "TabItem",
+      "classes": [],
+      "variants": [
+        "BaseTabItem",
+        "ButtonTabItem",
+        "CardTabItem",
+        "LineTabItem"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "not",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "TabItemButtonHeaderPointeroverBackground",
+        "TabItemButtonHeaderPressedBackground",
+        "TabItemButtonHeaderSelectedBackground",
+        "TabItemButtonHeaderSelectedForeground",
+        "TabItemCardHeaderPointeroverBackground",
+        "TabItemCardHeaderPressedBackground",
+        "TabItemCardHeaderSelectedBackground",
+        "TabItemHeaderDisabledForeground",
+        "TabItemIconSelectedForeground",
+        "TabItemLineHeaderForeground",
+        "TabItemLineHeaderPointeroverBackground",
+        "TabItemLineHeaderPointeroverForeground",
+        "TabItemLineHeaderPressedBackground",
+        "TabItemLineHeaderSelectedBackground",
+        "TabItemLineHeaderSelectedForeground",
+        "TabItemLinePipeBackground",
+        "TabItemLinePipePointeroverBorderBrush",
+        "TabItemLinePipePressedBorderBrush",
+        "TabItemLinePipeSelectedBackground"
+      ]
+    },
+    {
+      "name": "TableView",
+      "defaultThemeFor": "TableView",
+      "classes": [],
+      "variants": [
+        "TableViewScrollViewerTheme"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "TableViewBackground",
+        "TableViewColumnHeaderBackground",
+        "TableViewColumnHeaderForeground",
+        "TableViewLineBrush",
+        "TableViewRowBackground",
+        "TableViewRowBackgroundDisabled",
+        "TableViewRowBackgroundPointerover",
+        "TableViewRowBackgroundPressed",
+        "TableViewRowBackgroundSelected",
+        "TableViewRowBackgroundSelectedPointerover",
+        "TableViewRowBackgroundSelectedPressed",
+        "TableViewRowForeground",
+        "TableViewRowForegroundDisabled",
+        "TableViewRowForegroundPointerover",
+        "TableViewRowForegroundPressed",
+        "TableViewRowForegroundSelected",
+        "TableViewRowForegroundSelectedPointerover",
+        "TableViewRowForegroundSelectedPressed"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TableView.md"
+    },
+    {
+      "name": "TabStrip",
+      "defaultThemeFor": "TabStrip",
+      "classes": [],
+      "variants": [
+        "BaseTabStripItem",
+        "ButtonTabStrip",
+        "ButtonTabStripItem",
+        "CardTabStrip",
+        "CardTabStripItem",
+        "LineTabStrip",
+        "LineTabStripItem"
+      ],
+      "pseudoClasses": [
+        "not",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TabStrip.md"
+    },
+    {
+      "name": "TextBlock",
+      "defaultThemeFor": "TextBlock",
+      "classes": [
+        "Danger",
+        "Delete",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "Mark",
+        "Quaternary",
+        "Secondary",
+        "Success",
+        "Tertiary",
+        "Underline",
+        "Warning"
+      ],
+      "variants": [
+        "TitleTextBlock"
+      ],
+      "pseudoClasses": [
+        "disabled"
+      ],
+      "overrideKeys": [
+        "TextBlockCodeBackground",
+        "TextBlockCodeBorderBrush",
+        "TextBlockCodeForeground",
+        "TextBlockDangerForeground",
+        "TextBlockDefaultForeground",
+        "TextBlockDisabledForeground",
+        "TextBlockMarkBackground",
+        "TextBlockQuaternaryForeground",
+        "TextBlockSecondaryForeground",
+        "TextBlockSelectionBackground",
+        "TextBlockSelectionForeground",
+        "TextBlockSuccessForeground",
+        "TextBlockTertiaryForeground",
+        "TextBlockWarningForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TextBlock.md"
+    },
+    {
+      "name": "TextBox",
+      "defaultThemeFor": "TextBox",
+      "classes": [
+        "Bordered",
+        "clearButton",
+        "Large",
+        "revealPasswordButton",
+        "Small",
+        "TextArea"
+      ],
+      "variants": [
+        "LooklessTextBox",
+        "NonErrorTextBox"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "error",
+        "focus",
+        "pointerover",
+        "pressed",
+        "touch-mode"
+      ],
+      "overrideKeys": [
+        "TextBoxBorderedDefaultBackground",
+        "TextBoxBorderedDefaultBorderBrush",
+        "TextBoxBorderedPointeroverBackground",
+        "TextBoxBorderedPointeroverBorderBrush",
+        "TextBoxDefaultBackground",
+        "TextBoxDefaultBorderBrush",
+        "TextBoxDisabledBackground",
+        "TextBoxDisabledBorderBrush",
+        "TextBoxDisabledForeground",
+        "TextBoxFocusBorderBrush",
+        "TextBoxForeground",
+        "TextBoxInnerForeground",
+        "TextBoxPlaceholderForeground",
+        "TextBoxPointeroverBackground",
+        "TextBoxPointeroverBorderBrush",
+        "TextBoxPressedBackground",
+        "TextBoxSelectionBackground",
+        "TextBoxSelectionForeground",
+        "TextBoxTextCaretBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TextBox.md"
+    },
+    {
+      "name": "ThemeVariantScope",
+      "defaultThemeFor": "ThemeVariantScope",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "TimePicker",
+      "defaultThemeFor": "TimePickerPresenter",
+      "classes": [
+        "clearButton",
+        "Large",
+        "Small"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "disabled",
+        "hasnotime",
+        "not",
+        "pointerover"
+      ],
+      "overrideKeys": [],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TimePicker.md"
+    },
+    {
+      "name": "ToggleButton",
+      "defaultThemeFor": "ToggleButton",
+      "classes": [
+        "Colorful",
+        "Danger",
+        "Primary",
+        "Secondary",
+        "Success",
+        "Tertiary",
+        "Warning"
+      ],
+      "variants": [],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "indeterminate",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "ToggleButtonPrimaryIndeterminateBorderBrush",
+        "ToggleButtonSecondaryIndeterminateBorderBrush",
+        "ToggleButtonTertiaryIndeterminateBorderBrush"
+      ]
+    },
+    {
+      "name": "ToggleSwitch",
+      "defaultThemeFor": "ToggleSwitch",
+      "classes": [
+        "Accent",
+        "Large",
+        "Loading",
+        "Small"
+      ],
+      "variants": [
+        "SimpleToggleSwitch"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "pointerover",
+        "pressed",
+        "unchecked"
+      ],
+      "overrideKeys": [
+        "SimpleToggleSwitchContainerCheckedForeground",
+        "SimpleToggleSwitchContainerUnCheckedForeground",
+        "ToggleSwitchContainerCheckedDefaultBackground",
+        "ToggleSwitchContainerCheckedDisabledBackground",
+        "ToggleSwitchContainerCheckedPointeroverBackground",
+        "ToggleSwitchContainerCheckedPressedBackground",
+        "ToggleSwitchContainerUnCheckedAccentBackground",
+        "ToggleSwitchContainerUnCheckedAccentDisabledBackground",
+        "ToggleSwitchContainerUnCheckedAccentPointeroverBackground",
+        "ToggleSwitchContainerUnCheckedAccentPressedBackground",
+        "ToggleSwitchContainerUnCheckedDefaultBackground",
+        "ToggleSwitchContainerUnCheckedDisabledBackground",
+        "ToggleSwitchContainerUnCheckedDisabledBorderBrush",
+        "ToggleSwitchContainerUnCheckedPointeroverBackground",
+        "ToggleSwitchContainerUnCheckedPressedBackground",
+        "ToggleSwitchDefaultBorderBrush",
+        "ToggleSwitchIndicatorBackground",
+        "ToggleSwitchIndicatorBoxShadow",
+        "ToggleSwitchLoadingIndicatorBrush"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/ToggleSwitch.md"
+    },
+    {
+      "name": "Tooltip",
+      "defaultThemeFor": "ToolTip",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [
+        "open"
+      ],
+      "overrideKeys": [
+        "ToolTipBackground",
+        "ToolTipBorderBrush",
+        "ToolTipForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/Tooltip.md"
+    },
+    {
+      "name": "TransitioningContentControl",
+      "defaultThemeFor": "TransitioningContentControl",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    },
+    {
+      "name": "TreeView",
+      "defaultThemeFor": "TreeView",
+      "classes": [],
+      "variants": [
+        "ToggleButtonTreeViewItemIconButton"
+      ],
+      "pseudoClasses": [
+        "checked",
+        "disabled",
+        "empty",
+        "pointerover",
+        "pressed",
+        "selected"
+      ],
+      "overrideKeys": [
+        "TreeViewItemDefaultBackground",
+        "TreeViewItemDefaultForeground",
+        "TreeViewItemDisabledBackground",
+        "TreeViewItemDisabledForeground",
+        "TreeViewItemIconDefaultForeground",
+        "TreeViewItemIconHoverForeground",
+        "TreeViewItemPointeroverBackground",
+        "TreeViewItemPointeroverForeground",
+        "TreeViewItemPressedBackground",
+        "TreeViewItemSelectedBackground",
+        "TreeViewItemSelectedDisabledBackground",
+        "TreeViewItemSelectedForeground"
+      ],
+      "demoUrl": "https://irihitech.github.io/Semi.Avalonia/controls/TreeView.md"
+    },
+    {
+      "name": "Window",
+      "defaultThemeFor": "Window",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": [
+        "DefaultForeground",
+        "WindowDefaultBackground",
+        "WindowDefaultForeground"
+      ]
+    },
+    {
+      "name": "WindowDrawnDecorations",
+      "defaultThemeFor": "WindowDrawnDecorations",
+      "classes": [],
+      "variants": [
+        "CaptionButton"
+      ],
+      "pseudoClasses": [
+        "disabled",
+        "fullscreen",
+        "has-border",
+        "has-shadow",
+        "maximized",
+        "not",
+        "pointerover",
+        "pressed"
+      ],
+      "overrideKeys": [
+        "CaptionButtonCloseForeground",
+        "CaptionButtonClosePointeroverBackground",
+        "CaptionButtonClosePressedBackground",
+        "CaptionButtonDisabledForeground",
+        "CaptionButtonForeground",
+        "CaptionButtonPointeroverBackground",
+        "CaptionButtonPressedBackground",
+        "TitleBarBackground",
+        "WindowBackground",
+        "WindowBorderBrush",
+        "WindowBorderShadow"
+      ]
+    },
+    {
+      "name": "WindowNotificationManager",
+      "defaultThemeFor": "WindowNotificationManager",
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [
+        "bottomcenter",
+        "bottomleft",
+        "bottomright",
+        "topcenter",
+        "topleft",
+        "topright"
+      ],
+      "overrideKeys": []
+    },
+    {
+      "name": "_index",
+      "defaultThemeFor": null,
+      "classes": [],
+      "variants": [],
+      "pseudoClasses": [],
+      "overrideKeys": []
+    }
+  ]
+}
