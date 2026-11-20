@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "package": {
     "name": "Semi.Avalonia",
-    "version": "12.1.0.1",
+    "version": "12.1.0.2",
     "avaloniaVersion": "12.1.0",
     "repository": "https://github.com/irihitech/Semi.Avalonia"
   },
-  "sourceRevision": "a2d0e19a65382ffcc5bc882834e6467920134b32",
+  "sourceRevision": "b9b91a69778afb2ea152a8a9da45a83c4f63fc66",
   "docs": {
     "baseUrl": "https://irihitech.github.io/Semi.Avalonia",
     "llmsTxt": "https://irihitech.github.io/Semi.Avalonia/llms.txt"

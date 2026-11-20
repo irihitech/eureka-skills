@@ -22,9 +22,10 @@ jobs:
   drift:
     name: generated skill is in sync with the Semi sources
     # Regenerates from the current Semi.Avalonia sources and re-syncs; a non-empty diff means the
-    # committed generated skill (or its provenance) drifted — rerun the sync and commit the result.
-    # This is the manual-sync era's reminder: it goes red after every merged Semi change until the
-    # sync PR lands, which the planned release-triggered automation will replace.
+    # Anchored to the LATEST RELEASE TAG of Semi.Avalonia (not main): the published skill must
+    # describe what users can actually install, so unreleased main changes do not turn this red.
+    # It fails when the committed generated skill (or its provenance) is older than the latest
+    # tag — rerun the sync from that tag and commit the result.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,12 +33,18 @@ jobs:
         with:
           repository: irihitech/Semi.Avalonia
           path: semi
+          fetch-depth: 0
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 10.0.x
-      - name: Regenerate from the Semi sources and re-sync
+      - name: Resolve the latest release tag and check it out
+        run: |
+          TAG=$(git -C semi describe --tags --abbrev=0)
+          echo "Anchoring the regeneration to $TAG"
+          git -C semi checkout "$TAG"
+      - name: Regenerate from the released sources and re-sync
         run: |
           dotnet run --project semi/tools/Semi.Avalonia.Llms -- semi generated-output
           dotnet run --project tools/semi-sync -- generated-output --repo .
       - name: Fail when the committed generated skill drifted
-        run: git diff --exit-code -- plugins/semi-avalonia
+        run: git diff --exit-code -- plugins/semi-avalonia/skills/semi-avalonia plugins/semi-avalonia/provenance/semi-avalonia.contract.json
